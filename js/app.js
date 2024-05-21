@@ -108,7 +108,7 @@ function doLogout(){
     //sends user to page after logout, needs to be updated
 	window.location.href = "home.html";
 }
-
+//Names are subject to change depending on HTML and css
 function doRegister(){
 
     let newUserFirst = document.getElementById("userFirst").value;
@@ -148,11 +148,39 @@ function doRegister(){
         document.getElementById("registerResult").innerHTML = err.message;
     }
 }
-
+//Names are subject to change based on HTML and css files
 function addContact(){
+    //temp elementById names, need to confirm with style.css
+    let newContactFirst = document.getElementById("contactFirst").innerHTML;
+    let newContactLast = document.getElementById("contactLast").innerHTML;
+    let newContactEmail = document.getElementById("contactEmail").innerHTML;
+    let newContactPhone = document.getElementById("contactPhone").innerHTML;
 
+    document.getElementById("addContactResult").innerHTML = "";
 
+    let tmp = {contactFirst:newContactFirst, contactLast:newContactLast, contactEmail:newContactEmail, contactPhone:newContactPhone};
 
+    let jsonPayload = JSON.stringify( tmp );
+    //temporary name depends on sites URL
+    let url = urlBase + "/contact" + extension;
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    
+    try{
+        xhr.onreadystatechange = function(){
+            if(this.readyState == 4 && this.statust == 200){
+                document.getElementById("addContatctResult").innerHTML = "Contact has been added";
+            }
+        };
+        xhr.send( jsonPayload );
+
+    }
+    catch (err){
+        document.getElementById("addContactResult").innerHTML = err.message;
+    }
 }
 
 function deleteContact(){
