@@ -18,13 +18,13 @@
 
     } else {
 
-        $stmt = $conn->prepare("SELECT ID,firstName,lastName FROM Users WHERE Lo                                                                                                                                                             gin=? AND Password =?");
+        $stmt = $conn->prepare("SELECT ID,firstName,lastName FROM Users WHERE Login=? AND Password =?");
                 $stmt->bind_param("ss", $data["login"], $data["password"]);
                 $stmt->execute();
                 $result = $stmt->get_result();
 
                 if($row = $result->fetch_assoc()){
-                        returnWithInfo( $row['firstName'], $row['lastName'], $ro                                                                                                                                                             w['ID'] );
+                        returnWithInfo( $row['firstName'], $row['lastName'], $row['ID'] );
                 } else {
                         returnWithError("No Records Found");
                 }
@@ -40,12 +40,12 @@
     }
 
     function returnWithError($err) {
-        $retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"                                                                                                                                                             }';
+        $retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
         sendResultInfoAsJson($retValue);
     }
 
     function returnWithInfo($firstName, $lastName, $id) {
-        $retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastNam                                                                                                                                                             e":"' . $lastName . '","error":""}';
+        $retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
         sendResultInfoAsJson($retValue);
     }
 ?>
