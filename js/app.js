@@ -111,9 +111,42 @@ function doLogout(){
 
 function doRegister(){
 
+    let newUserFirst = document.getElementById("userFirst").value;
+    let newUserLast = document.getElementById("userLast").value;
+    let newUserName = document.getElementById("userName").value;
+    let newUserPassword = document.getElementById("userPassword").value;
+    /* This will be used to confirm passwords are the same */
+    //let newUserPasswordConf = document.getElementById("userPasswordConf").value;
 
+    /* This element items implementation is dependant on time*/
+    //let newUserSecurityQ = document.getElementById("userSecurity").value;
 
+    document.getElementById("registerResult").innerHTML = "";
+    
+    let tmp = {firstName:newUserFirst, lastName:newUserLast, login:newUserName, password:newUserPassword};
 
+    let jsonPayload = JSON.stringify( tmp );
+
+    // 'register' is a place holder
+    let url = urlBase + '/register.' + extension;
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("POST", url, true);
+
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    try{
+        xhr.onreadystatechange = function()
+        {
+            if(this.readyState == 4 && this.status == 200){
+                document.getElementById("registerResult").innerHTML = "Registration is complete";
+            }
+        };
+        xhr.send(jsonPayload);
+    }
+    catch(err){
+        document.getElementById("registerResult").innerHTML = err.message;
+    }
 }
 
 function addContact(){
