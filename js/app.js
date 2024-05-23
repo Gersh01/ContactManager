@@ -22,7 +22,7 @@ function doLogin(){
 //	var tmp = {login:login,password:hash};
 	let jsonPayload = JSON.stringify( tmp );
 	
-	let url = urlBase + '/Login.' + extension;
+	let url = urlBase + '/login.' + extension;
 
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -47,7 +47,7 @@ function doLogin(){
 
 				saveCookie();
                 //refers to page after login, needs to be updated
-				window.location.href = "login.html";
+				window.location.href = "login.php";
 			}
 		};
 		xhr.send(jsonPayload);
@@ -128,7 +128,7 @@ function doRegister(){
     let jsonPayload = JSON.stringify( tmp );
 
     // 'register' is a place holder
-    let url = urlBase + '/register.' + extension;
+    let url = urlBase + 'Register.' + extension;
 
     let xhr = new XMLHttpRequest();
 
@@ -162,7 +162,7 @@ function addContact(){
 
     let jsonPayload = JSON.stringify( tmp );
     //temporary name depends on sites URL
-    let url = urlBase + "/contact" + extension;
+    let url = urlBase + "/contacts.php" + extension;
 
     let xhr = new XMLHttpRequest();
 
