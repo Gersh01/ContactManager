@@ -128,7 +128,7 @@ function doRegister(){
     let tmp = {firstName:newUserFirst, lastName:newUserLast, login:newUserName, password:newUserPassword};
 
     let jsonPayload = JSON.stringify( tmp );
-	console.log( jsonPayload );
+	
     // 'register' is a place holder
     let url = urlBase + '/Register.' + extension;
 
@@ -137,6 +137,7 @@ function doRegister(){
     xhr.open("POST", url, true);
 
     xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	console.log(jsonPayload);
     try{
         xhr.onreadystatechange = function()
         {
