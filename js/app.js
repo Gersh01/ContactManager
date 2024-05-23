@@ -16,7 +16,7 @@ function doLogin(){
     /* Do we want to add hashing to the passwords?*/ 
 //	var hash = md5( password );
 	
-	document.getElementById("login-result").innerHTML = "";
+	//document.getElementById("login-result").innerHTML = "";
 
 	let tmp = {login:login,password:password};
 //	var tmp = {login:login,password:hash};
