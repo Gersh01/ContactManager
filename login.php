@@ -7,8 +7,6 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Contact Manager Template</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
