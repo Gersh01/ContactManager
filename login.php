@@ -42,20 +42,20 @@
 
                 <!--Signup Column-->
                 <div id="register-column" class="col">
-                    <div id="register-first-name" class="search-bar row">
-                        <input type="text" placeholder="First Name">
+                    <div class="search-bar row">
+                        <input id="register-first-name" type="text" placeholder="First Name">
                     </div>
-                    <div id="register-last-name" class="search-bar row">
-                        <input type="text" placeholder="Last Name">
+                    <div class="search-bar row">
+                        <input id="register-last-name" type="text" placeholder="Last Name">
                     </div>
-                    <div id="register-username"class="search-bar row">
-                        <input type="text" placeholder="Username">
+                    <div class="search-bar row">
+                        <input id="register-username" type="text" placeholder="Username">
                     </div>
-                    <div id="register-password" class="search-bar row">
-                        <input type="text" placeholder="Password">
+                    <div class="search-bar row">
+                        <input id="register-password" type="text" placeholder="Password">
                     </div>
-                     <div id="register-password-confirm" class="search-bar row">
-                        <input type="text" placeholder="Confirm Password">
+                     <div class="search-bar row">
+                        <input id="register-password-confirm" type="text" placeholder="Confirm Password">
                     </div>
                     <!--Error Message-->
                     <a id="doRegister" href="javascript:doRegister()"><div class="button" type="button">Sign up!</div></a>
