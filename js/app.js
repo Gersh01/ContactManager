@@ -44,7 +44,7 @@ function doLogin(){
 				{		//loginResult is temp name may need to change element .css name
 					element.classList.remove("error-message-hidden");
 					element.classList.add("error-message-showing");
-					document.getElementById("login-result").innerHTML = "User/Password combination incorrect";
+					document.getElementById("login-result").innerHTML = "Username or Password is incorrect";
 					return;
 				}
 		
