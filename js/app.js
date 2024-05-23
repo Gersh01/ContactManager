@@ -22,7 +22,7 @@ function doLogin(){
 //	var tmp = {login:login,password:hash};
 	let jsonPayload = JSON.stringify( tmp );
 	
-	let url = urlBase + '/login.' + extension;
+	let url = urlBase + '/Login.' + extension;
 
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -47,7 +47,7 @@ function doLogin(){
 
 				saveCookie();
                 //refers to page after login, needs to be updated
-				window.location.href = "login.php";
+				window.location.href = "contacts.php";
 			}
 		};
 		xhr.send(jsonPayload);
