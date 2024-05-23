@@ -61,6 +61,32 @@ paths:
           description: URL Not Found
         500:
           description: Server Error
+  
+  /AddUser.php:
+    post:
+      tags:
+      - Contacts
+      summary: Adds a contact to a user's account
+      operationId: dlAdd
+      description: Adds a contact to a user's account
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: addItem
+        description: Add
+        schema:
+          $ref: '#/definitions/AddUser'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
+  
           
 definitions:
   Login:
@@ -96,6 +122,31 @@ definitions:
       password:
         type: string
         example: "secret"
+  
+  AddUser:
+    type: object
+    required:
+    - name
+    - phone
+    - email
+    - userID
+    - favorite
+    properties:
+      name:
+        type: string
+        example: "fred"
+      phone:
+        type: string
+        example: "555-555-5555"
+      email:
+        type: string
+        example: "fredL@gmail.com"
+      userID:
+        type: integer
+        example: 3
+      favorite:
+        type: boolean
+        example: true
 
 
 host: 143.198.9.78
