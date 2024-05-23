@@ -125,7 +125,7 @@ function doRegister(){
 
     document.getElementById("register-result").innerHTML = "";
     
-    let tmp = {firstName:newUserFirst, lastName:newUserLast, login:newUserName, password:newUserPassword};
+    let tmp = {firstName:newUserFirst,lastName:newUserLast,login:newUserName,password:newUserPassword};
 
     let jsonPayload = JSON.stringify( tmp );
 	
