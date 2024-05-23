@@ -11,7 +11,7 @@ jobs:
     - name: testing Oceanic Connections server ssh connection
       uses: appleboy/ssh-action@master
       with:
-        host: 143.198.9.78
+        host: 159.203.115.181
         username: root
         key: ${{ secrets.SSH_SECRET }}
         port: 22
