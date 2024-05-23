@@ -40,7 +40,7 @@ function doLogin(){
 		
 				if( userId < 1 )
 				{		//loginResult is temp name may need to change element .css name
-					document.getElementById("login-result").innerHTML = "Username or Password is incorrect";
+					document.getElementById("login-result").innerHTML = "* Username or Password is incorrect *";
 					return;
 				}
 		
