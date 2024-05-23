@@ -128,7 +128,7 @@ function doRegister(){
     let jsonPayload = JSON.stringify( tmp );
 
     // 'register' is a place holder
-    let url = urlBase + '/login.' + extension;
+    let url = urlBase + 'Register.' + extension;
 
     let xhr = new XMLHttpRequest();
 
