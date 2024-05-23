@@ -37,9 +37,6 @@
                     </div>
                     <!--Error Message-->
                     <span id="login-result"></span>
-                    <div id="login-authentication-error" class="error-message-hidden">
-                        Username/Password is incorrect.
-                    </div>
                     <a id="doLogin" href="javascript:doLogin();"><div id="login-button" class="button" type="button">Log in!</div></a>
                 </div>
 
@@ -62,9 +59,6 @@
                     </div>
                     <!--Error Message-->
                     <span id="login-result"></span>
-                    <div id="register-authentication-error" class="error-message-hidden">
-                        Error with Registration.
-                    </div>
                     <a id="doRegister" href="#"><div class="button" type="button">Sign up!</div></a>
                 </div>
             </div>
