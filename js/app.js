@@ -25,6 +25,9 @@ function doLogin(){
 	let url = urlBase + '/Login.' + extension;
 
 	let xhr = new XMLHttpRequest();
+
+	let element = document.getElementById("login-authentication-error");
+
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	console.log(jsonPayload);
@@ -39,6 +42,8 @@ function doLogin(){
 		
 				if( userId < 1 )
 				{		//loginResult is temp name may need to change element .css name
+					element.classList.remove("error-message-hidden");
+					element.classList.add("error-message-showing");
 					document.getElementById("login-result").innerHTML = "User/Password combination incorrect";
 					return;
 				}
