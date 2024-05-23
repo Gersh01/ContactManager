@@ -36,8 +36,8 @@
                         <input id="login-password" type="text" placeholder="Password">
                     </div>
                     <!--Error Message-->
-                    <span id="login-result"></span>
                     <a id="doLogin" href="javascript:doLogin();"><div id="login-button" class="button" type="button">Log in!</div></a>
+                    <span id="login-result" class="error"></span>
                 </div>
 
                 <!--Signup Column-->
@@ -58,8 +58,8 @@
                         <input type="text" placeholder="Confirm Password">
                     </div>
                     <!--Error Message-->
-                    <span id="login-result"></span>
                     <a id="doRegister" href="#"><div class="button" type="button">Sign up!</div></a>
+                    <span id="register-result" class="error"></span>
                 </div>
             </div>
         </section>
