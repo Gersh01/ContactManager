@@ -92,6 +92,10 @@
 
 }
 
+.error{
+  color:red;
+}
+
 .header{
   margin:3rem;
 }
