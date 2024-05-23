@@ -11,12 +11,12 @@ function doLogin(){
 	firstName = "";
 	lastName = "";
 	
-	let login = document.getElementById("loginName").value;
-	let password = document.getElementById("loginPassword").value;
+	let login = document.getElementById("login-username").value;
+	let password = document.getElementById("login-password").value;
     /* Do we want to add hashing to the passwords?*/ 
 //	var hash = md5( password );
 	
-	document.getElementById("loginResult").innerHTML = "";
+	document.getElementById("login-result").innerHTML = "";
 
 	let tmp = {login:login,password:password};
 //	var tmp = {login:login,password:hash};
@@ -38,7 +38,7 @@ function doLogin(){
 		
 				if( userId < 1 )
 				{		//loginResult is temp name may need to change element .css name
-					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+					document.getElementById("login-result").innerHTML = "User/Password combination incorrect";
 					return;
 				}
 		
@@ -54,7 +54,7 @@ function doLogin(){
 	}
 	catch(err)
 	{
-		document.getElementById("loginResult").innerHTML = err.message;
+		document.getElementById("login-result").innerHTML = err.message;
 	}
 }
 
@@ -108,20 +108,20 @@ function doLogout(){
     //sends user to page after logout, needs to be updated
 	window.location.href = "home.html";
 }
+
 //Names are subject to change depending on HTML and css
 function doRegister(){
 
-    let newUserFirst = document.getElementById("userFirst").value;
-    let newUserLast = document.getElementById("userLast").value;
-    let newUserName = document.getElementById("userName").value;
-    let newUserPassword = document.getElementById("userPassword").value;
-    /* This will be used to confirm passwords are the same */
-    //let newUserPasswordConf = document.getElementById("userPasswordConf").value;
+    let newUserFirst = document.getElementById("register-first-name").value;
+    let newUserLast = document.getElementById("register-last-name").value;
+    let newUserName = document.getElementById("register-username").value;
+    let newUserPassword = document.getElementById("register-password").value;
+    let newUserPasswordConf = document.getElementById("register-password-confirm").value;
 
     /* This element items implementation is dependant on time*/
     //let newUserSecurityQ = document.getElementById("userSecurity").value;
 
-    document.getElementById("registerResult").innerHTML = "";
+    document.getElementById("register-result").innerHTML = "";
     
     let tmp = {firstName:newUserFirst, lastName:newUserLast, login:newUserName, password:newUserPassword};
 
@@ -139,13 +139,13 @@ function doRegister(){
         xhr.onreadystatechange = function()
         {
             if(this.readyState == 4 && this.status == 200){
-                document.getElementById("registerResult").innerHTML = "Registration is complete";
+                document.getElementById("register-result").innerHTML = "Registration is complete";
             }
         };
         xhr.send(jsonPayload);
     }
     catch(err){
-        document.getElementById("registerResult").innerHTML = err.message;
+        document.getElementById("register-result").innerHTML = err.message;
     }
 }
 //Names are subject to change based on HTML and css files
