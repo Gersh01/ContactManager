@@ -128,7 +128,7 @@ function doRegister(){
     let tmp = {firstName:newUserFirst, lastName:newUserLast, login:newUserName, password:newUserPassword};
 
     let jsonPayload = JSON.stringify( tmp );
-
+	console.log( jsonPayload );
     // 'register' is a place holder
     let url = urlBase + '/Register.' + extension;
 
