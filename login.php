@@ -59,7 +59,7 @@
                     </div>
                     <!--Error Message-->
                     <a id="doRegister" href="javascript:doRegister()"><div class="button" type="button">Sign up!</div></a>
-                    <span id="register-result" class="error row cell"></span>
+                    <span id="register-result" class="text-black row cell"></span>
                 </div>
             </div>
         </section>
