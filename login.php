@@ -41,7 +41,8 @@
                 </div>
 
                 <!--Error Message-->
-                <?php 
+                <?php include 'app.js';
+                  
                   define("login-result", "");
                   define("register-result", "");
                 ?>
@@ -73,5 +74,5 @@
             <div class="m-0 text-center text-black">A student project for COP4331, University of Central Florida</div>
         </footer>
     </body>
-    <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
 </html>
