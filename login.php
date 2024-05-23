@@ -73,4 +73,5 @@
             <div class="m-0 text-center text-black">A student project for COP4331, University of Central Florida</div>
         </footer>
     </body>
+    <script src="js/app.js"></script>
 </html>
