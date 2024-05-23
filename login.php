@@ -45,8 +45,8 @@
                 <!--Error Message-->
                 <?php include 'app.js';
                   
-                  define("login-result", "");
-                  define("register-result", "");
+                  define("login-result", " ");
+                  define("register-result", " ");
                 ?>
 
                 <!--Signup Column-->
