@@ -36,18 +36,12 @@
                         <input id="login-password" type="text" placeholder="Password">
                     </div>
                     <!--Error Message-->
+                    <span id="login-result"></span>
                     <div id="login-authentication-error" class="error-message-hidden">
                         Username/Password is incorrect.
                     </div>
                     <a id="doLogin" href="javascript:doLogin();"><div id="login-button" class="button" type="button">Log in!</div></a>
                 </div>
-
-                <!--Error Message-->
-                <?php include 'app.js';
-                  
-                  define("login-result", " ");
-                  define("register-result", " ");
-                ?>
 
                 <!--Signup Column-->
                 <div id="register-column" class="col">
@@ -67,6 +61,7 @@
                         <input type="text" placeholder="Confirm Password">
                     </div>
                     <!--Error Message-->
+                    <span id="login-result"></span>
                     <div id="register-authentication-error" class="error-message-hidden">
                         Error with Registration.
                     </div>
