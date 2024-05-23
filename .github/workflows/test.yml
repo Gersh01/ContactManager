@@ -1,0 +1,22 @@
+name: Testing Workflow
+on:
+  push:
+    branches: [ testing ]
+
+jobs:
+  job_one:
+    name: Testing
+    runs-on: ubuntu-latest
+    steps:
+    - name: testing Oceanic Connections server ssh connection
+      uses: appleboy/ssh-action@master
+      with:
+        host: 159.203.115.181
+        username: root
+        key: ${{ secrets.TESTING_SECRET }}
+        port: 22
+        script: |
+          cd ..
+          cd var/www/html
+          git pull origin testing
+          git status

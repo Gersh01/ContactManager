@@ -1,0 +1,155 @@
+swagger: '2.0'
+info:
+  description: This is the API documentation for the COP 4331 Contact Manager
+  version: 1.0.0
+  title: Oceanic Connections
+  # put the contact info for your development or API team
+  contact:
+    email: alex.gershfeld@gmail.com
+
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+paths:
+  /Login.php:
+    post:
+      tags:
+      - Users
+      summary: Logs in to the contact manager app
+      operationId: dlLogin
+      description: Logs in to contact manager app
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: loginItem
+        description: Login
+        schema:
+          $ref: '#/definitions/Login'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
+          
+  /Register.php:
+    post:
+      tags:
+      - Users
+      summary: Registers a user into the contact manager app
+      operationId: dlRegister
+      description: Registers a user into the contact manager app
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: registerItem
+        description: Register
+        schema:
+          $ref: '#/definitions/Register'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
+  
+  /AddUser.php:
+    post:
+      tags:
+      - Contacts
+      summary: Adds a contact to a user's account
+      operationId: dlAdd
+      description: Adds a contact to a user's account
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: addItem
+        description: Add
+        schema:
+          $ref: '#/definitions/AddUser'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
+  
+          
+definitions:
+  Login:
+    type: object
+    required:
+    - login
+    - password
+    properties:
+      login:
+        type: string
+        example: "fred"
+      password:
+        type: string
+        example: "secret"
+        
+  Register:
+    type: object
+    required:
+    - firstName
+    - lastName
+    - login
+    - password
+    properties:
+      firstName:
+        type: string
+        example: "fred"
+      lastName:
+        type: string
+        example: "labowski"
+      login:
+        type: string
+        example: "fredL"
+      password:
+        type: string
+        example: "secret"
+  
+  AddUser:
+    type: object
+    required:
+    - name
+    - phone
+    - email
+    - userID
+    - favorite
+    properties:
+      name:
+        type: string
+        example: "fred"
+      phone:
+        type: string
+        example: "555-555-5555"
+      email:
+        type: string
+        example: "fredL@gmail.com"
+      userID:
+        type: integer
+        example: 3
+      favorite:
+        type: boolean
+        example: true
+
+
+host: 143.198.9.78
+basePath: /LAMPAPI
+schemes:
+- http
