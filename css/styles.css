@@ -96,6 +96,14 @@
   margin:3rem;
 }
 
+.error-message-hidden{
+  display:none;
+}
+
+.error-message-showing{
+  color:red;
+}
+
 .cell {
   display:flex;
   margin:auto;
