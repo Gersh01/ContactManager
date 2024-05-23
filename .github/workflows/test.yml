@@ -4,11 +4,34 @@ on:
     branches: [ testing ]
 
 jobs:
-  job_one:
-    name: Testing
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: use node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+      - run: npm install
+      - run: npm run build 
+  test: 
+    needs: build
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: use node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+      - run: npm install
+      - run: npm test
+  deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
-    - name: testing Oceanic Connections server ssh connection
+    - name: Deploying Oceanic Connections server ssh connection
       uses: appleboy/ssh-action@master
       with:
         host: 159.203.115.181
