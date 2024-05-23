@@ -14,7 +14,7 @@
     </head>
     <body>
         <!-- Header - set the background image for the header in the line below-->
-        <header class="py-6 bg-image-full" style="background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5236376f-305d-42da-8e2d-48455360a090/ddzsehq-da9525d2-37e0-448f-aa49-a7274ba68387.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUyMzYzNzZmLTMwNWQtNDJkYS04ZTJkLTQ4NDU1MzYwYTA5MFwvZGR6c2VocS1kYTk1MjVkMi0zN2UwLTQ0OGYtYWE0OS1hNzI3NGJhNjgzODcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.nDVDNj0rk3vuQHD7DawjvowvIEn_70NADgE8MevlAOM')">
+        <header id="splash-image" class="py-6 bg-image-full" style="background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5236376f-305d-42da-8e2d-48455360a090/ddzsehq-da9525d2-37e0-448f-aa49-a7274ba68387.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUyMzYzNzZmLTMwNWQtNDJkYS04ZTJkLTQ4NDU1MzYwYTA5MFwvZGR6c2VocS1kYTk1MjVkMi0zN2UwLTQ0OGYtYWE0OS1hNzI3NGJhNjgzODcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.nDVDNj0rk3vuQHD7DawjvowvIEn_70NADgE8MevlAOM')">
             <div class="container">
                 <div class="text-center my-6">
                     <h1 class="text-black fs-3 fw-bolder">Oceanic Connections</h1>
@@ -27,34 +27,37 @@
         <section class="py-5">
 
             <!--Login/Signup Cluster-->
-            <div class="row justify-content-center text-center offset-2 offset-2-right">
+            <div id="login-and-register-cluster" class="row justify-content-center text-center offset-2 offset-2-right">
 
                 <!--Login Column-->
-                <div class="col">
+                <div id="login-column" class="col">
                     <div class="search-bar row">
-                        <input type="text" placeholder="Username">
+                        <input id="login-username" type="text" placeholder="Username">
                     </div>
                     <div class="search-bar row">
-                        <input type="text" placeholder="Password">
+                        <input id="login-password" type="text" placeholder="Password">
                     </div>
-                    <div class="button" type="button">Log in!</div>
+                    <div id="login-button" class="button" type="button">Log in!</div>
                 </div>
 
                 <!--Signup Column-->
-                <div class="col">
-                    <div class="search-bar row">
+                <div id="register-column" class="col">
+                    <div id="register-first-name" class="search-bar row">
                         <input type="text" placeholder="First Name">
                     </div>
-                    <div class="search-bar row">
+                    <div id="register-last-name" class="search-bar row">
                         <input type="text" placeholder="Last Name">
                     </div>
-                    <div class="search-bar row">
+                    <div id="register-username"class="search-bar row">
                         <input type="text" placeholder="Username">
                     </div>
-                    <div class="search-bar row">
+                    <div id="register-password" class="search-bar row">
                         <input type="text" placeholder="Password">
                     </div>
-                    <div class="button" type="button">Sign up!</div>
+                     <div id="register-password-confirm" class="search-bar row">
+                        <input type="text" placeholder="Confirm Password">
+                    </div>
+                    <a id="register-button" href="#"><div class="button" type="button">Sign up!</div></a>
                 </div>
             </div>
         </section>
