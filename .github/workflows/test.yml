@@ -13,10 +13,10 @@ jobs:
       with:
         host: 159.203.115.181
         username: root
-        key: ${{ secrets.SSH_SECRET }}
+        key: ${{ secrets.TESTING_SECRET }}
         port: 22
         script: |
           cd ..
           cd var/www/html
-          git pull origin main
+          git pull origin testing
           git status
