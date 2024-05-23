@@ -37,7 +37,7 @@
                     </div>
                     <!--Error Message-->
                     <a id="doLogin" href="javascript:doLogin();"><div id="login-button" class="button" type="button">Log in!</div></a>
-                    <span id="login-result" class="error"></span>
+                    <span id="login-result" class="error row"></span>
                 </div>
 
                 <!--Signup Column-->
@@ -59,7 +59,7 @@
                     </div>
                     <!--Error Message-->
                     <a id="doRegister" href="#"><div class="button" type="button">Sign up!</div></a>
-                    <span id="register-result" class="error"></span>
+                    <span id="register-result" class="error row" ></span>
                 </div>
             </div>
         </section>
