@@ -58,8 +58,8 @@
                         <input type="text" placeholder="Confirm Password">
                     </div>
                     <!--Error Message-->
-                    <a id="doRegister" href="#"><div class="button" type="button">Sign up!</div></a>
-                    <span id="register-result" class="error row text-center" ></span>
+                    <a id="doRegister" href="javascript:doRegister()"><div class="button" type="button">Sign up!</div></a>
+                    <span id="register-result" class="error row text-center"></span>
                 </div>
             </div>
         </section>
