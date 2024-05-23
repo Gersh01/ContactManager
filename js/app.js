@@ -27,6 +27,7 @@ function doLogin(){
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	console.log(jsonPayload);
 	try
 	{
 		xhr.onreadystatechange = function() 
@@ -106,7 +107,7 @@ function doLogout(){
 	lastName = "";
 	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
     //sends user to page after logout, needs to be updated
-	window.location.href = "home.html";
+	window.location.href = "login.php";
 }
 
 //Names are subject to change depending on HTML and css
