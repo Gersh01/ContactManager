@@ -17,7 +17,7 @@
     <body>
         <header id="nav-header" class="text-black nav py-5 bg-accent"> 
             <div id="home-button" class="text-black nav-link" type="button">Home</div>
-            <div id="about-us-button" href="javascript:readCookie()" class="text-black nav-link" type="button">Logout</div>
+            <div id="about-us-button" class="text-black nav-link" type="button">Logout <a href="javascript:readCookie()"> </a>> </div>
             <div id="about-link" class="text-black nav-link" type="button">About</div>
         </header>
         <!-- Image Background -->
