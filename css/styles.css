@@ -93,22 +93,18 @@
 }
 
 .move-page{
-  display:flex;
+
   border-radius:15px;
   background-color:var(--accent-color);
-  margin:auto;
-  padding:auto;
+  width:fit-content;
 }
 
 .refresh-page{
-  display:flex;
+
   border-radius:15px;
   background-color:var(--accent-color);
-  margin:auto;
-  padding:auto;
+  width:fit-content;
 }
-
-
 
 .error{
   color:red;
