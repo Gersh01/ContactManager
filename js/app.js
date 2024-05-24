@@ -15,7 +15,7 @@ let input = document.getElementById("login-password");
 
 input.addEventListener("keypress", function(event){
 	if(event.key === "Enter"){
-		document.getElementById("doRegister").click();
+		document.getElementById("doLogin").click();
 	}
 });
 
