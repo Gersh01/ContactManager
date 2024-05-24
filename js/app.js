@@ -372,7 +372,7 @@ function loadContacts(jsonObject){
 	}
 	for(let i = 0; i<jsonObject.contacts.length-1; i++){
 		console.log(jsonObject.contacts[i].Name);
-		document.getElementsById("contact-first-name- "+i+1).innerHTML = "jsonObject.contacts[i].Name";
+		document.getElementsById("contact-first-name- "+i+1).innerHTML = "jsonObject.contacts[i].FirstName";
 	}
 
 }
