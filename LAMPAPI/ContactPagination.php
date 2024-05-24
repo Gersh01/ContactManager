@@ -8,7 +8,7 @@
 
     $cursor = isset($data["cursor"]) ? $data["cursor"] : 0; 
     $next = isset($data["next"]) ? $data["next"] : 1; 
-    $userID = $data["userID"];
+    $userID = isset($data["userID"]) ? $data["userID"] : "";
 
     if (empty($data) || !isset($data["userID"])) {
         returnWithError("Invalid input data");
@@ -23,9 +23,9 @@
         returnWithError($conn->connect_error);
     } else {
         if($next == 1){
-            $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID > ? AND UserID = ? ORDER BY ID LIMIT 10");
+            $stmt = $conn->prepare("SELECT ID, SUBSTRING_INDEX(Name, ' ', 1) AS FirstName, SUBSTRING_INDEX(Name, ' ', -1) AS LastName, Phone, Email, UserID, Favorited FROM Contacts WHERE ID > ? AND UserID = ? ORDER BY ID ASC LIMIT 10");
         }else if($next == 0){
-            $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID < ? AND UserID = ? ORDER BY ID DESC LIMIT 10");
+            $stmt = $conn->prepare("SELECT ID, SUBSTRING_INDEX(Name, ' ', 1) AS FirstName, SUBSTRING_INDEX(Name, ' ', -1) AS LastName, Phone, Email, UserID, Favorited FROM Contacts WHERE ID < ? AND UserID = ? ORDER BY ID DESC LIMIT 10");
         }else{
             returnWithError("");
             exit();
