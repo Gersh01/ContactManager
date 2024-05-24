@@ -94,7 +94,7 @@
 
 .move-page{
   margin:auto;
-  padding:2rem;
+  padding:0.5rem;
   border-radius:15px;
   background-color:var(--accent-color);
   width:fit-content;
@@ -107,7 +107,7 @@
 .refresh-page{
   display:flex;
   margin:auto;
-  padding:auto;
+  padding:0.5rem;
   border-radius: 15px;
   background-color: var(--accent-color);
   width: fit-content;
