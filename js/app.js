@@ -363,12 +363,13 @@ function firstPage(){
 }
 
 function loadContacts(jsonObject){
-	if(jsonObject.results.length == 0){
+
+	if(jsonObject.length == 0){
 		document.getElementById("contact-result").innerHTML = "No contacts found";
 		return;
 	}
-	for(let i = 0; i<jsonObject.results.length-1; i++){
-		document.getElementById("contact-row-"+ i + 1).getElementById("contact-first-name").innerHTML = jsonObject[i].results.contactFirst;
+	for(let i = 0; i<jsonObject.length-1; i++){
+		document.getElementById("contact-row-"+ i + 1).getElementById("contact-first-name").innerHTML = jsonObject[i].contactFirst;
 	}
 
 }
