@@ -28,7 +28,7 @@
 
                 <!--Search Bar-->
                 <div class="text-center my-6">
-                    <div id="search-bar" class="search-bar row">
+                    <div id="search-bar" class="search-bar row-alt">
                         <input type="text" placeholder="Search...">
                         <a id="refresh-button" href="javascript:firstPage()" class="refresh-page"><div id="refreshButton" class="refresh-page" type="button">Refresh</div></a>
                     </div>
