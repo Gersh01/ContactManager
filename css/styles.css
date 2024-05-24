@@ -124,6 +124,7 @@
   width:auto;
   justify-content: center;
   background-color:var(--subcolor);
+  border-radius-top:15px;
 }
 
 .spacer{
