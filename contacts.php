@@ -131,7 +131,7 @@
                 <body onload= "firstPage()">
                 <!--TODO: FINISH PAGINATION-->
                 <div id="page-selector" class="row">
-                    <a id="refresh-button" href="javascript:firstPage()"><div id="refresh-button" class="refresh-page cell" type="button">Refresh</div></a>
+                    <a id="refresh-button" href="javascript:firstPage()"><div id="refresh-button" class="refresh-page" type="button">Refresh</div></a>
                     <div id="back-button" class="move-page" type="button">Previous</div>
                     <div id="forward-button" class="move-page" type="button">Next</div>
                 </div>
