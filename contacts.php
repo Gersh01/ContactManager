@@ -39,7 +39,7 @@
                 <div id="contact-table" class="table">
 
                     <!--each nested div at this indentation represents one row/contact-->
-                    <div id="contact-row-1" class="cell-top">
+                    <div id="contact-row-top" class="cell-top">
                         <div id="contact-first-name" class="cell text-black">First Name</div>
                         <div id="contact-last-name" class="cell text-black">Last Name</div>
                         <div id="contact-email" class="cell text-black">Email</div>
@@ -48,12 +48,12 @@
                         <div id="contact-delete" class="cell text-black">Delete</div>
                     </div>
                     <div id="contact-row-01" class="cell">
-                        <div id="contact-first-name" class="cell text-black"></div>
-                        <div id="contact-last-name" class="cell text-black"></div>
-                        <div id="contact-email" class="cell text-black"></div>
-                        <div id="contact-phone-number" class="cell text-black"></div>
-                        <div id="contact-edit" class="cell text-black" type="button">Edit</div>
-                        <div id="contact-delete" class="cell text-black" type="button">Delete</div>
+                        <div id="contact-first-name-01" class="cell text-black"></div>
+                        <div id="contact-last-name-01" class="cell text-black"></div>
+                        <div id="contact-email-01" class="cell text-black"></div>
+                        <div id="contact-phone-number-01" class="cell text-black"></div>
+                        <div id="contact-edit-01" class="cell text-black" type="button">Edit</div>
+                        <div id="contact-delete-01" class="cell text-black" type="button">Delete</div>
                     </div>
                     <div id="contact-row-02" class="cell">
                         <div id="contact-first-name" class="cell text-black"></div>
