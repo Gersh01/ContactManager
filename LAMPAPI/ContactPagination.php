@@ -25,7 +25,7 @@
         if($next == 1){
             $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID > ? AND UserID = ? ORDER BY ID LIMIT 10");
         }else if($next == 0){
-            $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID < ? AND ID >= ? AND UserID = ? ORDER BY ID DESC LIMIT 10");
+            $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID < ? AND UserID = ? ORDER BY ID DESC LIMIT 10");
         }else{
             returnWithError("");
             exit();
