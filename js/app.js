@@ -347,7 +347,7 @@ function firstPage(){
 	try{
 		xhr.onreadystatechange() = function() {
 			if(this.readyState == 4 && this.status == 200){
-				document.getElementById("contactResults").innerHTML = "Contacts have been recieved";
+				document.getElementById("contact-results").innerHTML = "Contacts have been recieved";
 				let jsonObject = JSON.parse( xhr.responseText )
 				loadContacts(jsonObject);
 			}
@@ -355,7 +355,7 @@ function firstPage(){
 		xhr.send(jsonPayload);
 	}
 	catch(err){
-		document.getElementById("contactResults").innerHTML = err.message;
+		document.getElementById("contact-results").innerHTML = err.message;
 	}
 }
 
