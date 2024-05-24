@@ -1,8 +1,8 @@
 <?php
 
-    // ini_set('display_errors', 1);
-    // ini_set('display_startup_errors', 1);
-    // error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 
     $data = json_decode(file_get_contents('php://input'), true);
 
@@ -25,7 +25,7 @@
         if($next == 1){
             $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID > ? AND UserID = ? ORDER BY ID LIMIT 10");
         }else if($next == 0){
-            $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID < ? AND ID >= ? AND UserID = ? ORDER BY DESCID LIMIT 10");
+            $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID < ? AND ID >= ? AND UserID = ? ORDER BY ID DESC LIMIT 10");
         }else{
             returnWithError("");
             exit();
@@ -44,9 +44,9 @@
         $conn->close();
 
 
-        if ($next == 0) {
-            $contacts = array_reverse($contacts);
-        }
+        // if ($next == 0) {
+        //     $contacts = array_reverse($contacts);
+        // }
 
         sendResultInfoAsJson(json_encode(array("contacts" => $contacts)));
 

@@ -94,7 +94,7 @@
 
 .move-page{
   margin:auto;
-  padding:auto;
+  padding:2rem;
   border-radius:15px;
   background-color:var(--accent-color);
   width:fit-content;
@@ -111,6 +111,7 @@
   border-radius: 15px;
   background-color: var(--accent-color);
   width: fit-content;
+  font-style: normal;
 }
 
 .error{
