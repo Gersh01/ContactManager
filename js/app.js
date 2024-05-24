@@ -1,10 +1,14 @@
 const urlBase = 'http://159.203.115.181/LAMPAPI';
 const extension = 'php';
 
+//** MUST DELETE ALL CONSOLE.LOG **
+
 let userId = 0;
 let firstName = "";
 let lastName = "";
 let passwordMatches = false;
+let loginFieldsFull = false;
+let registerFieldsFull = false;
 
 function doLogin(){
 
@@ -19,45 +23,51 @@ function doLogin(){
 	
 	document.getElementById("login-result").innerHTML = "";
 
-	let tmp = {login:login,password:password};
-//	var tmp = {login:login,password:hash};
-	let jsonPayload = JSON.stringify( tmp );
-	
-	let url = urlBase + '/Login.' + extension;
-
-	let xhr = new XMLHttpRequest();
-
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	console.log(jsonPayload);
-	try
-	{
-		xhr.onreadystatechange = function() 
-		{
-			if (this.readyState == 4 && this.status == 200) 
-			{
-				let jsonObject = JSON.parse( xhr.responseText );
-				userId = jsonObject.id;
-		
-				if( userId < 1 )
-				{		//loginResult is temp name may need to change element .css name
-					document.getElementById("login-result").innerHTML = "* Username or Password is incorrect *";
-					return;
-				}
-		
-				firstName = jsonObject.firstName;
-				lastName = jsonObject.lastName;
-
-				saveCookie();
-                //refers to page after login, needs to be updated
-				window.location.href = "contacts.php";
-			}
-		};
-		xhr.send(jsonPayload);
+	if(login===null || password===null){
+		document.getElementById("login-result").innerHTML = "Required fields must be filled";
+		return;
 	}
-	catch(err)
-	{
-		document.getElementById("login-result").innerHTML = err.message;
+	else{
+		let tmp = {login:login,password:password};
+		//	var tmp = {login:login,password:hash};
+			let jsonPayload = JSON.stringify( tmp );
+			
+			let url = urlBase + '/Login.' + extension;
+		
+			let xhr = new XMLHttpRequest();
+		
+			xhr.open("POST", url, true);
+			xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+			console.log(jsonPayload);
+			try
+			{
+				xhr.onreadystatechange = function() 
+				{
+					if (this.readyState == 4 && this.status == 200) 
+					{
+						let jsonObject = JSON.parse( xhr.responseText );
+						userId = jsonObject.id;
+				
+						if( userId < 1 )
+						{		//loginResult is temp name may need to change element .css name
+							document.getElementById("login-result").innerHTML = "* Username or Password is incorrect *";
+							return;
+						}
+				
+						firstName = jsonObject.firstName;
+						lastName = jsonObject.lastName;
+		
+						saveCookie();
+						//refers to page after login, needs to be updated
+						window.location.href = "contacts.php";
+					}
+				};
+				xhr.send(jsonPayload);
+			}
+			catch(err)
+			{
+				document.getElementById("login-result").innerHTML = err.message;
+			}
 	}
 }
 
@@ -94,7 +104,7 @@ function readCookie(){
 	
 	if( userId < 0 )
 	{
-		window.location.href = "index.html";
+		window.location.href = "login.php";
 	}
 	else
 	{
@@ -118,6 +128,7 @@ function doRegister(){
 	document.getElementById("register-result").innerHTML = "";
 
 	if(passwordMatches == false){
+		//need to change color to red, this doesn't work right now
 		document.getElementById("register-result").style.color = "red";
 		document.getElementById("register-result").innerHTML = "* Passwords do not match";
 		return;
@@ -127,40 +138,45 @@ function doRegister(){
 		let newUserLast = document.getElementById("register-last-name").value;
 		let newUserName = document.getElementById("register-username").value;
 		let newUserPassword = document.getElementById("register-password").value;
+		let newUserPasswordConfirm = document.getElementById("register-password-confirm").value;
+
 	
 		/* This element items implementation is dependant on time*/
 		//let newUserSecurityQ = document.getElementById("userSecurity").value;
-	
 		
-		
-		let tmp = {firstName:newUserFirst,lastName:newUserLast,login:newUserName,password:newUserPassword};
-		console.log(tmp);
-		let jsonPayload = JSON.stringify( tmp );
-		
-		// 'register' is a place holder
-		let url = urlBase + '/Register.' + extension;
-	
-		let xhr = new XMLHttpRequest();
-	
-		xhr.open("POST", url, true);
-	
-		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-		console.log(jsonPayload);
-		try{
-			xhr.onreadystatechange = function()
-			{
-				if(this.readyState == 4 && this.status == 200){
-					document.getElementById("register-result").innerHTML = "Registration is complete";
-				}
-			};
-			xhr.send(jsonPayload);
+		if(newUserFirst === null || newUserLast === null || newUserName === null || newUserPassword === null || newUserPasswordConfirm === null){
+			document.getElementById("register-result").innerHTML = "Required fields must be filled";
+			return;
 		}
-		catch(err){
-			document.getElementById("register-result").innerHTML = err.message;
-		}
-	}
+		else{
+			let tmp = {firstName:newUserFirst,lastName:newUserLast,login:newUserName,password:newUserPassword};
 
-    
+			console.log(tmp);
+			let jsonPayload = JSON.stringify( tmp );
+			
+			// 'register' is a place holder
+			let url = urlBase + '/Register.' + extension;
+		
+			let xhr = new XMLHttpRequest();
+		
+			xhr.open("POST", url, true);
+		
+			xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+			console.log(jsonPayload);
+			try{
+				xhr.onreadystatechange = function()
+				{
+					if(this.readyState == 4 && this.status == 200){
+						document.getElementById("register-result").innerHTML = "Registration is complete";
+					}
+				};
+				xhr.send(jsonPayload);
+			}
+			catch(err){
+				document.getElementById("register-result").innerHTML = err.message;
+			}
+		}	
+	}	
 }
 //Names are subject to change based on HTML and css files
 function addContact(){
