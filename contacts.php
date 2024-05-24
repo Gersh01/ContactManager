@@ -32,7 +32,7 @@
                         <input type="text" placeholder="Search...">
                         <a id="refresh-button" href="javascript:firstPage()"><div id="refreshButton" class="refresh-page" type="button">Refresh</div></a>
                     </div>
-                    
+                </div>
 
                 <!--Search Results/Contacts Table-->
                 <h3 class="text-center text-black">Contacts</h3>
