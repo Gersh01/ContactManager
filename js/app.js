@@ -353,13 +353,13 @@ function firstPage(){
 				console.log(typeof(jsonObject));
 				console.log("Length of JSON object "+jsonObject.contacts.length);
 				//loadContacts(jsonObject);
-				if(jsonObject.length == 0){
+				if(jsonObject.contacts.length == 0){
 					document.getElementById("contact-result").innerHTML = "No contacts found";
 					return;
 				}
 				for(let i = 0; i<jsonObject.contacts.length-1; i++){
-					console.log(jsonObject[i].contacts.Name);
-					document.getElementById("contact-row-1").getElementById("contact-first-name").innerHTML = jsonObject[i].contacts.Name;
+					console.log(jsonObject.contacts[i].Name);
+					document.getElementById("contact-row-1").getElementById("contact-first-name").innerHTML = jsonObject.contacts[i].Name;
 				}
 			}
 		};
