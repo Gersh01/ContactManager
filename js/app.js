@@ -250,42 +250,40 @@ function passwordRegexChecker(){
 	document.getElementById("password-number").innerHTML = "";
 	*/
 
-	console.log(password);
-
 	if(eightPasswordRegex.test(password)){
+		console.log("length = true");
+	}
+	else{
 		properPassword = false;
 		console.log("length = false");
 		//document.getElementById("password-length").innerHTML = "Password must be at least 8 characters";
 	}
-	else{
-		console.log("length = true");
-	}
 
 	if(upperPasswordRegex.test(password)){
-		properPassword = false;
-		console.log("upper = false");
-		//document.getElementById("password-lowercase").innerHTML = "Password must contain at least 1 uppercase character";
-	}
+		console.log("upper = true");
+		}
 	else{
-		console.log("length = true");
+		properPassword = false;
+		console.log("length = false");
+		//document.getElementById("password-lowercase").innerHTML = "Password must contain at least 1 uppercase character";
 	}
 
 	if(specialPasswordRegex.test(password)){
+		console.log("special = true");
+	}
+	else{
 		properPassword = false;
 		console.log("special = false");
 		//document.getElementById("password-uppercase").innerHTML = "Password must contain at least 1 specail character";
 	}
-	else{
-		console.log("special = true");
-	}
 
 	if(numberPasswordRegex.test(password)){
+		console.log("number = true");
+	}
+	else{
 		properPassword = false;
 		console.log("number = false");
 		//document.getElementById("password-number").innerHTML = "Password must containt at least 1 number";
-	}
-	else{
-		console.log("number = true");
 	}
 
 	if(wholePasswordRegex.test(password)){
