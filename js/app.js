@@ -87,7 +87,6 @@ function doLogin(){
 		
 						saveCookie();
 						//refers to page after login, needs to be updated
-						firstPage();
 						window.location.href = "contacts.php";
 					}
 				};
