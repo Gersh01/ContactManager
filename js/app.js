@@ -30,6 +30,10 @@ if(inputRegister != null){
 	});
 }
 
+
+function doRedirect(){
+	window.location.href = "login.php";
+}
 	
 
 function doLogin(){
