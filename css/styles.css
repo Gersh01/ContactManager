@@ -100,6 +100,10 @@
   width:fit-content;
 }
 
+.a-link{
+  width: 5rem;
+}
+
 .refresh-page{
   display:block;
   margin:auto;
@@ -768,6 +772,18 @@ progress {
   margin-left: calc(-0.5 * var(--bs-gutter-x));
 
 }
+
+.row-alt {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  margin-top: 0.5rem;
+  margin-bottom:0.5rem;
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+
+}
+
 .row > * {
   flex-shrink: 0;
   width: 100%;
