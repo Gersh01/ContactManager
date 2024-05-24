@@ -349,6 +349,7 @@ function firstPage(){
 			if(this.readyState == 4 && this.status == 200){
 				document.getElementById("contact-result").innerHTML = "Contacts have been recieved";
 				let jsonObject = JSON.parse( xhr.responseText )
+				console.log(jsonObject);
 				loadContacts(jsonObject);
 			}
 		};
