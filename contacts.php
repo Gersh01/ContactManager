@@ -130,7 +130,7 @@
                 <span id="contact-result" class="text-black row cell"></span>
                 <body onload= "firstPage()">
                 <!--TODO: FINISH PAGINATION-->
-                <div id="page-selector" class="row">
+                <div id="page-selector">
                     <input id="refresh-button" class="refresh-page" type="button">Refresh</div>
                     <input id="back-button" class="move-page" type="button">Previous</div>
                     <input id="forward-button" class="move-page" type="button">Next</div>
