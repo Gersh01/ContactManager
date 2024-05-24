@@ -23,7 +23,7 @@ function doLogin(){
 	
 	document.getElementById("login-result").innerHTML = "";
 
-	if(login===null || password===null){
+	if(login === "" || password === ""){
 		document.getElementById("login-result").innerHTML = "Required fields must be filled";
 		return;
 	}
