@@ -6,6 +6,7 @@
     error_reporting(E_ALL);
 
 
+    echo "b";
     $data = json_decode(file_get_contents('php://input'), true);
 
 
@@ -16,7 +17,7 @@
     $favorite = $data["favorite"];
 
     $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331" ,"COP4331");
-    echo "1";
+    echo "a";
 
     if ($conn->connect_error) {
 
@@ -27,7 +28,7 @@
         $stmt1 = $conn->prepare("SELECT ID FROM Contacts WHERE Name=? AND Phone=? AND Email=?");
         $stmt1->bind_param("sss", $name, $phone, $email);
         $stmt1->execute();
-        $result = $stmt1->get_result();c
+        $result = $stmt1->get_result();
 
         if($row = $result->fetch_assoc()){
                 $stmt = $conn->prepare("UPDATE Contacts SET Name=?, Phone=?, Email=?, Favorited=? WHERE ID=?;");
