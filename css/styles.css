@@ -105,7 +105,7 @@
 }
 
 .refresh-page{
-  display:block;
+  display:flex;
   margin:auto;
   padding:auto;
   border-radius: 15px;
