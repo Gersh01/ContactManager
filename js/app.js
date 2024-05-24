@@ -11,6 +11,13 @@ let passwordMatches = false;
 let loginFieldsFull = false;
 let registerFieldsFull = false;
 
+	let input = document.getElementById("login-password");
+
+	input.addEventListener("keypress", function(event){
+		if(event.key === "Enter"){
+			document.getElementById("doLogin").click();
+		}
+	});
 
 function doLogin(){
 
@@ -21,13 +28,7 @@ function doLogin(){
 	let login = document.getElementById("login-username").value;
 	let password = document.getElementById("login-password").value;
 
-	let input = document.getElementById("login-password");
-
-	input.addEventListener("keypress", function(event){
-		if(event.key === "Enter"){
-			document.getElementById("doLogin").click();
-		}
-	});
+	
 
 
 	/* Do we want to add hashing to the passwords?*/ 
