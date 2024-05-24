@@ -360,7 +360,8 @@ function firstPage(){
 				for(let i = 0; i<jsonObject.contacts.length-1; i++){
 					console.log(jsonObject.contacts[i].Name);
 					let tmpElement = document.getElementById("contact-row-"+i+1);
-					tmpElement.getElementById("contact-first-name").innerHTML = jsonObject.contacts[i].Name;
+					let tmpClass = tmpElement.getElementsByClassName("cell");
+					tmpClass.getElementById("contact-first-name").innerHTML = jsonObject.contacts[i].Name;
 				}
 			}
 		};
