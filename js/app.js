@@ -356,6 +356,7 @@ function firstPage(){
 	}
 	catch(err){
 		//document.getElementById("contact-result").innerHTML = err.message;
+		console.log(err.message);
 	}
 }
 
