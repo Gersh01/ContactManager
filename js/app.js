@@ -86,7 +86,7 @@ function doLogin(){
 						lastName = jsonObject.lastName;
 		
 						saveCookie();
-						//refers to page after login, needs to be updated
+						//refers to page after login
 						window.location.href = "contacts.php";
 					}
 				};

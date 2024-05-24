@@ -3,7 +3,6 @@
 <html lang="en">
     <!-- On load event to check for cookies -->
     <body onload = "readCookie()">
-    <body onload= "firstPage()">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -143,6 +142,7 @@
         <footer class="py-5 bg-accent" id="footer">
             <div class="m-0 text-center text-black">A student project for COP4331, University of Central Florida</div>
         </footer>
+    <body onload= "firstPage()">
     </body>
     <script src="js/app.js"></script>
 </html>
