@@ -14,14 +14,49 @@
 
     } else {
 
-        $res = $conn->query("INSERT INTO Users (FirstName, LastName, Login, Password) VALUES ('{$data['firstName']}', '{$data['lastName']}','{$data['login']}', '{$data['password']}')");
+        $unique = true;
 
-        if ($res) {
-            echo "New User created";
-        } else {
-            echo "uh oh" . $conn->error;
+        $stmt = $conn->prepare("SELECT Login FROM Users WHERE Login=?");
+        $stmt->bind_param("s", $data["login"]);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+
+        while ($row = $result->fetch_assoc()) {
+
+            // someone has same name as user trying to register
+            if (strcmp($row["Login"], $data["login"]) == 0) {
+                $unique = false;
+            }
         }
 
-                $conn->close();
+        if ($unique) {
+
+            # add user if username is unique
+            $res = $conn->query("INSERT INTO Users (FirstName, LastName, Login, Password) VALUES ('{$data['firstName']}', '{$data['lastName']}','{$data['login']}', '{$data['password']}')");
+    
+            if ($res) {
+                
+                returnWithVerdict("new user created");
+
+            } else {
+                returnWithVerdict($conn->error);
+            }
+
+        } else {
+            returnWithVerdict("login was taken");
+        }
+
+    }
+
+
+    function sendResultInfoAsJson($obj) {
+        header("Content-type: application/json");
+        echo $obj;
+    }
+
+    function returnWithVerdict($verdict) {
+        $retValue = '{"verdict":"' . $verdict . '"}';
+        sendResultInfoAsJson($retValue);
     }
 ?>
