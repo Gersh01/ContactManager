@@ -8,6 +8,7 @@
 
     $cursor = isset($data["cursor"]) ? $data["cursor"] : 0; 
 
+
     $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 
     if ($conn->connect_error) {
@@ -15,6 +16,7 @@
         returnWithError($conn->connect_error);
     } else {
         $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID > ? ORDER BY ID ASC LIMIT 10");
+                    echo $cursor
                 $stmt->bind_param("i", $cursor);
                 $stmt->execute();
         $result = $stmt->get_result();
