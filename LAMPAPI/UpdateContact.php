@@ -6,7 +6,6 @@
     error_reporting(E_ALL);
 
 
-    echo "b";
     $data = json_decode(file_get_contents('php://input'), true);
 
 
@@ -16,8 +15,12 @@
     $userID = $data["userID"];
     $favorite = $data["favorite"];
 
+    if (empty($data) || !isset($data["name"], $data["phone"], $data["email"], $data["userID"], $data["favorite"])) {
+        returnWithError("Invalid input data");
+        exit();
+    }
+
     $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331" ,"COP4331");
-    echo "a";
 
     if ($conn->connect_error) {
 
