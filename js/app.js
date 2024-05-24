@@ -235,7 +235,6 @@ function passwordRegexChecker(){
 
 	let password = document.getElementById("register-password").value;
 
-	let eightPasswordRegex = new RegExp("^(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,}$");
 	let upperPasswordRegex = new RegExp("(?=.*[A-Z])");
 	let specialPasswordRegex = new RegExp("(?=.*[@$!%*?&])");
 	let numberPasswordRegex = new RegExp("(?=.*[0-9])");
