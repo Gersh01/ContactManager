@@ -95,9 +95,6 @@
 .move-page{
   border-radius:15px;
   background-color:var(--accent-color);
-  justify-content:center;
-  margin:auto;
-  padding:auto;
 }
 
 .page-selector {
