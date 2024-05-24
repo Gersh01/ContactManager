@@ -358,8 +358,8 @@ function firstPage(){
 					return;
 				}
 				for(let i = 0; i<jsonObject.contacts.length-1; i++){
-					console.log(jsonObject[i].Name);
-					document.getElementById("contact-row-1").getElementById("contact-first-name").innerHTML = jsonObject[i].Name;
+					console.log(jsonObject[i].contacts.Name);
+					document.getElementById("contact-row-1").getElementById("contact-first-name").innerHTML = jsonObject[i].contacts.Name;
 				}
 			}
 		};
