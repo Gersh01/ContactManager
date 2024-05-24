@@ -96,7 +96,6 @@
   border-radius:15px;
   background-color:var(--accent-color);
   justify-content:center;
-  display:inline;
   margin:auto;
   padding:auto;
 }
