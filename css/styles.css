@@ -92,6 +92,16 @@
 
 }
 
+.move-page{
+  border-radius:15px;
+  color:accent-color;
+  justify-content:center;
+}
+
+.page-selector {
+  float:right;
+}
+
 .error{
   color:red;
 }
