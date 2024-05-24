@@ -96,6 +96,7 @@
   border-radius:15px;
   color:accent-color;
   justify-content:center;
+  display:flex;
 }
 
 .page-selector {
