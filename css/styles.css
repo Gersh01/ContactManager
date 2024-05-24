@@ -93,19 +93,13 @@
 }
 
 .move-page{
-  display:block;
   border-radius:15px;
-  margin:auto;
   background-color:var(--accent-color);
-  justify-content:right;
 }
 
 .refresh-page{
-  display:block;
   border-radius:15px;
-  margin:auto;
   background-color:var(--accent-color);
-  justify-content:left;
 }
 
 
