@@ -355,7 +355,7 @@ function firstPage(){
 		xhr.send(jsonPayload);
 	}
 	catch(err){
-		document.getElementById("contact-result").innerHTML = err.message;
+		//document.getElementById("contact-result").innerHTML = err.message;
 	}
 }
 
