@@ -24,17 +24,16 @@
     } else {
         if($next == 1){
             $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID > ? AND UserID = ? ORDER BY ID LIMIT 10");
-                $stmt->bind_param("is", $cursor, $userID);
-                $stmt->execute();
-            $result = $stmt->get_result();
         }else if($next == 0){
-            $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID < ? AND ID >= ? AND UserID = ? ORDER BY ID LIMIT 10");
-                $stmt->bind_param("is", $cursor, $userID);
-                $stmt->execute();
-            $result = $stmt->get_result();
+            $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID < ? AND ID >= ? AND UserID = ? ORDER BY DESCID LIMIT 10");
         }else{
             returnWithError("");
+            exit();
         }
+
+        $stmt->bind_param("is", $cursor, $userID);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
         $contacts = array();
         while ($row = $result->fetch_assoc()) {
@@ -44,7 +43,14 @@
         $stmt->close();
         $conn->close();
 
+
+        if ($next == 0) {
+            $contacts = array_reverse($contacts);
+        }
+
         sendResultInfoAsJson(json_encode(array("contacts" => $contacts)));
+
+
     }
 
     function sendResultInfoAsJson($obj) {
