@@ -329,6 +329,8 @@ function passwordRegexChecker(){
 
 function firstPage(){
 
+	console.log("Generating first page");
+
 	let url = urlBase + "/ContactPagination." + extension;
 	
 	let tmp = {userID:userId, cursor:0};
