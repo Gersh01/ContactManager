@@ -11,14 +11,25 @@ let passwordMatches = false;
 let loginFieldsFull = false;
 let registerFieldsFull = false;
 
-	let input = document.getElementById("login-password");
-	if(input != null){
-		input.addEventListener("keypress", function(event){
-			if(event.key === "Enter"){
-				document.getElementById("doLogin").click();
-			}
-		});
-	}
+let inputLogin = document.getElementById("login-password");
+let inputRegister = document.getElementById("register-password-confirm");
+
+if(inputLogin != null){
+	inputLogin.addEventListener("keypress", function(event){
+		if(event.key === "Enter"){
+			document.getElementById("doLogin").click();
+		}
+	});
+}
+
+if(inputRegister != null){
+	inputRegister.addEventListener("keypress", function(event){
+		if(event.key === "Enter"){
+			document.getElementById("doRegister").click();
+		}
+	});
+}
+
 	
 
 function doLogin(){
