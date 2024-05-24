@@ -291,6 +291,7 @@ function passwordRegexChecker(){
 	}
 	else{
 		console.log("password = false");
+		console.log(password);
 	}
 }
 
