@@ -31,7 +31,7 @@
 
         $result = $stmt->get_result();
 
-        if($row = $result->fetch_assoc()){
+        if($stmt->affected_rows > 0){
                 returnWithInfo();
         } else {
                 returnWithError("No Records Found");
