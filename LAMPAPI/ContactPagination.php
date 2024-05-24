@@ -7,6 +7,7 @@
     $data = json_decode(file_get_contents('php://input'), true);
 
     $cursor = isset($data["cursor"]) ? $data["cursor"] : 0; 
+    $next = isset($data["next"]) ? $data["next"] : 1; 
     $userID = $data["userID"];
 
     if (empty($data) || !isset($data["userID"])) {
@@ -21,10 +22,19 @@
         echo "Something went wrong\n";
         returnWithError($conn->connect_error);
     } else {
-        $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID > ? AND UserID = ? ORDER BY ID LIMIT 10");
+        if($next == 1){
+            $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID > ? AND UserID = ? ORDER BY ID LIMIT 10");
                 $stmt->bind_param("is", $cursor, $userID);
                 $stmt->execute();
-        $result = $stmt->get_result();
+            $result = $stmt->get_result();
+        }else if($next == 0){
+            $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID < ? AND UserID = ? ORDER BY ID DESC LIMIT 10");
+                $stmt->bind_param("is", $cursor, $userID);
+                $stmt->execute();
+            $result = $stmt->get_result();
+        }else{
+            returnWithError("");
+        }
 
         $contacts = array();
         while ($row = $result->fetch_assoc()) {
