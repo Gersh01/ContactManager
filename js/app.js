@@ -126,11 +126,8 @@ function doLogout(){
 function doRegister(){
 
 	document.getElementById("register-result").innerHTML = "";
-
-	if(passwordMatches == false){
-		//need to change color to red, this doesn't work right now
-		document.getElementById("register-result").style.color = "red";
-		document.getElementById("register-result").innerHTML = "* Passwords do not match";
+	if(newUserFirst === "" || newUserLast === "" || newUserName === "" || newUserPassword === "" || newUserPasswordConfirm === ""){
+		document.getElementById("register-result").innerHTML = "Required fields must be filled";
 		return;
 	}
 	else{
@@ -144,9 +141,10 @@ function doRegister(){
 		/* This element items implementation is dependant on time*/
 		//let newUserSecurityQ = document.getElementById("userSecurity").value;
 		
-		if(newUserFirst === "" || newUserLast === "" || newUserName === "" || newUserPassword === "" || newUserPasswordConfirm === ""){
-			document.getElementById("register-result").innerHTML = "Required fields must be filled";
-			return;
+		if(passwordMatches == false){
+			//need to change color to red, this doesn't work right now
+			document.getElementById("register-result").style.color = "red";
+			document.getElementById("register-result").innerHTML = "* Passwords do not match";
 		}
 		else{
 			let tmp = {firstName:newUserFirst,lastName:newUserLast,login:newUserName,password:newUserPassword};
