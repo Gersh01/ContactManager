@@ -236,7 +236,7 @@ function passwordRegexChecker(){
 	let password = document.getElementById("register-password").value;
 
 	let eightPasswordRegex = new RegExp("^(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,}$");
-	let upperPasswordRegex = new RegExp("(?=.[A-Z])");
+	let upperPasswordRegex = new RegExp("^(?=.[A-Z])");
 	let specialPasswordRegex = new RegExp("(?=.*[@$!%*?&])");
 	let numberPasswordRegex = new RegExp("(?=.*[0-9])");
 	let wholePasswordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$");
@@ -250,7 +250,7 @@ function passwordRegexChecker(){
 	document.getElementById("password-number").innerHTML = "";
 	*/
 
-	if(eightPasswordRegex.test(password)){
+	if(password.length>=8){
 		console.log("length = true");
 	}
 	else{
