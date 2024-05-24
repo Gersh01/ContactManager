@@ -31,6 +31,7 @@
                     <div id="search-bar" class="search-bar row">
                         <input type="text" placeholder="Search...">
                     </div>
+                    <a id="refresh-button" href="javascript:firstPage()" class="refresh-page"><div id="refreshButton" class="refresh-page" type="button">Refresh</div></a>
                 </div>
 
                 <!--Search Results/Contacts Table-->
