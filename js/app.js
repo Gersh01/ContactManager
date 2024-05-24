@@ -144,7 +144,7 @@ function doRegister(){
 		/* This element items implementation is dependant on time*/
 		//let newUserSecurityQ = document.getElementById("userSecurity").value;
 		
-		if(newUserFirst === null || newUserLast === null || newUserName === null || newUserPassword === null || newUserPasswordConfirm === null){
+		if(newUserFirst === "" || newUserLast === "" || newUserName === "" || newUserPassword === "" || newUserPasswordConfirm === ""){
 			document.getElementById("register-result").innerHTML = "Required fields must be filled";
 			return;
 		}
