@@ -16,7 +16,7 @@
     $favorite = $data["favorite"];
 
     $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331" ,"COP4331");
-
+    echo "1";
 
     if ($conn->connect_error) {
 
