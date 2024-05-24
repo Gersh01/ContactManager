@@ -229,7 +229,7 @@ function addContact(){
 
     let jsonPayload = JSON.stringify( tmp );
     //temporary name depends on sites URL
-    let url = urlBase + "/contacts.php" + extension;
+    let url = urlBase + "/AddContact." + extension;
 
     let xhr = new XMLHttpRequest();
 
@@ -243,7 +243,6 @@ function addContact(){
             }
         };
         xhr.send( jsonPayload );
-
     }
     catch (err){
         document.getElementById("addContactResult").innerHTML = err.message;
@@ -331,6 +330,33 @@ function passwordRegexChecker(){
 	}
 }
 
+function firstPage(){
+
+	let url = urlBase + "/ContactPagination." + extension;
+	
+	let tmp = {userID:userId, cursor:0};
+
+	let jsonPayload = JSON.stringify( tmp );
+
+	let xhr = new XMLHttpRequest();
+
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	try{
+		xhr.onreadystatechange() = function() {
+			if(this.readyState == 4 && this.status == 200){
+				
+			}
+		}
+	}
+	catch{
+
+	}
+
+
+}
+
 function deleteContact(){
 
 
@@ -352,6 +378,12 @@ function updateContact(){
 
 
 function doPagenation(){
+
+
+
+}
+
+function refreshContactTable(){
 
 
 
