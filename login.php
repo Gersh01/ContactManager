@@ -33,7 +33,7 @@
                         <input id="login-username" type="text" placeholder="Username">
                     </div>
                     <div class="search-bar row">
-                        <input id="login-password" type="password" placeholder="Password">
+                        <input id="login-password" type="text" placeholder="Password">
                     </div>
                     <!--Error Message-->
                     <a id="doLogin" href="javascript:doLogin();"><div id="login-button" class="button" type="button">Log in!</div></a>
