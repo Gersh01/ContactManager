@@ -16,7 +16,7 @@
         returnWithError($conn->connect_error);
     } else {
         $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID > ? ORDER BY ID");
-                $stmt->bind_param("is", $cursor);
+                $stmt->bind_param("i", $cursor);
                 $stmt->execute();
         $result = $stmt->get_result();
 
