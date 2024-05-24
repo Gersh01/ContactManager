@@ -13,6 +13,8 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
+        <!-- On load event to check for cookies -->
+        <body onload = "readCookie()">
         <header id="nav-header" class="text-black nav py-5 bg-accent"> 
             <div id="home-button" class="text-black nav-link" type="button">Home</div>
             <div id="about-us-button" class="text-black nav-link" type="button">Logout</div>

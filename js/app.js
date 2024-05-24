@@ -6,6 +6,7 @@ const extension = 'php';
 let userId = 0;
 let firstName = "";
 let lastName = "";
+let properPassword = false;
 let passwordMatches = false;
 let loginFieldsFull = false;
 let registerFieldsFull = false;
@@ -126,7 +127,7 @@ function doLogout(){
 function doRegister(){
 
 	document.getElementById("register-result").innerHTML = "";
-	
+
 	let newUserFirst = document.getElementById("register-first-name").value;
 	let newUserLast = document.getElementById("register-last-name").value;
 	let newUserName = document.getElementById("register-username").value;
@@ -146,8 +147,9 @@ function doRegister(){
 			//need to change color to red, this doesn't work right now
 			document.getElementById("register-result").style.color = "red";
 			document.getElementById("register-result").innerHTML = "* Passwords do not match";
+			return;
 		}
-		else{
+		else if(passwordMatches == true && properPassword == true){
 			let tmp = {firstName:newUserFirst,lastName:newUserLast,login:newUserName,password:newUserPassword};
 
 			console.log(tmp);
@@ -227,6 +229,48 @@ function confirmPassword(){
 		document.getElementById("register-result").innerHTML = "";
 	}
 
+}
+
+function passwordRegexChecker(password){
+
+	let eightPasswordRegex = "[A-Za-z\d@$!%*?&]{8,}$";
+	let upperPasswordRegex = "(?=.[A-Z])";
+	let specialPasswordRegex = "(?=.*[@$!%*?&])";
+	let numberPasswordRegex = "(?=.*[0-9])";
+	let wholePasswordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$";
+
+	
+	//These elements needed to be added to website page
+	/*
+	document.getElementById("password-length").innerHTML = "";
+	document.getElementById("password-lowercase").innerHTML = "";
+	document.getElementById("password-uppercase").innerHTML = "";
+	document.getElementById("password-number").innerHTML = "";
+	*/
+
+	if(password !== eightPasswordRegex){
+		properPassword = false;
+		//document.getElementById("password-length").innerHTML = "Password must be at least 8 characters";
+	}
+
+	if(password !== upperPasswordRegex){
+		properPassword = false;
+		//document.getElementById("password-lowercase").innerHTML = "Password must contain at least 1 uppercase character";
+	}
+
+	if(password !== specialPasswordRegex){
+		properPassword = false;
+		//document.getElementById("password-uppercase").innerHTML = "Password must contain at least 1 specail character";
+	}
+
+	if(password !== numberPasswordRegex){
+		properPassword = false;
+		//document.getElementById("password-number").innerHTML = "Password must containt at least 1 number";
+	}
+
+	if(password === wholePasswordRegex){
+		properPassword = true;
+	}
 }
 
 function deleteContact(){

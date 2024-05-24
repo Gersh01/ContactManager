@@ -52,7 +52,7 @@
                         <input id="register-username" type="text" placeholder="Username">
                     </div>
                     <div class="search-bar row">
-                        <input id="register-password" type="text" placeholder="Password">
+                        <input id="register-password" type="text" placeholder="Password" required onkeyup = "passwordRegexChecker()">
                     </div>
                      <div class="search-bar row">
                         <input id="register-password-confirm" type="text" placeholder="Confirm Password" required onkeyup="confirmPassword()">
