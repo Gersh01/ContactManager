@@ -131,8 +131,8 @@
 
                 <!--TODO: FINISH PAGINATION-->
                 <div id="page-selector" class="page-selector row">
-                    <div id="back-button" class="move-page cell">Previous</div>
-                    <div id="forward-button" class="move-page cell">Next</div>
+                    <div id="back-button" class="move-page cell" type="button">Previous</div>
+                    <div id="forward-button" class="move-page cell" type="button">Next</div>
                 </div>
             </div>
         </div>
