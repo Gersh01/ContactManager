@@ -115,42 +115,52 @@ function doLogout(){
 //Names are subject to change depending on HTML and css
 function doRegister(){
 
-    let newUserFirst = document.getElementById("register-first-name").value;
-    let newUserLast = document.getElementById("register-last-name").value;
-    let newUserName = document.getElementById("register-username").value;
-    let newUserPassword = document.getElementById("register-password").value;
-    let newUserPasswordConf = document.getElementById("register-password-confirm").value;
+	document.getElementById("register-result").innerHTML = "";
 
-    /* This element items implementation is dependant on time*/
-    //let newUserSecurityQ = document.getElementById("userSecurity").value;
-
-    document.getElementById("register-result").innerHTML = "";
-    
-    let tmp = {firstName:newUserFirst,lastName:newUserLast,login:newUserName,password:newUserPassword};
-	console.log(tmp);
-    let jsonPayload = JSON.stringify( tmp );
+	if(passwordMatches == false){
+		document.getElementById("register-result").style.color = "red";
+		document.getElementById("register-result").innerHTML = "* Passwords do not match";
+		return;
+	}
+	else{
+		let newUserFirst = document.getElementById("register-first-name").value;
+		let newUserLast = document.getElementById("register-last-name").value;
+		let newUserName = document.getElementById("register-username").value;
+		let newUserPassword = document.getElementById("register-password").value;
 	
-    // 'register' is a place holder
-    let url = urlBase + '/Register.' + extension;
+		/* This element items implementation is dependant on time*/
+		//let newUserSecurityQ = document.getElementById("userSecurity").value;
+	
+		
+		
+		let tmp = {firstName:newUserFirst,lastName:newUserLast,login:newUserName,password:newUserPassword};
+		console.log(tmp);
+		let jsonPayload = JSON.stringify( tmp );
+		
+		// 'register' is a place holder
+		let url = urlBase + '/Register.' + extension;
+	
+		let xhr = new XMLHttpRequest();
+	
+		xhr.open("POST", url, true);
+	
+		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+		console.log(jsonPayload);
+		try{
+			xhr.onreadystatechange = function()
+			{
+				if(this.readyState == 4 && this.status == 200){
+					document.getElementById("register-result").innerHTML = "Registration is complete";
+				}
+			};
+			xhr.send(jsonPayload);
+		}
+		catch(err){
+			document.getElementById("register-result").innerHTML = err.message;
+		}
+	}
 
-    let xhr = new XMLHttpRequest();
-
-    xhr.open("POST", url, true);
-
-    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	console.log(jsonPayload);
-    try{
-        xhr.onreadystatechange = function()
-        {
-            if(this.readyState == 4 && this.status == 200 && passwordMatches == true){
-                document.getElementById("register-result").innerHTML = "Registration is complete";
-            }
-        };
-        xhr.send(jsonPayload);
-    }
-    catch(err){
-        document.getElementById("register-result").innerHTML = err.message;
-    }
+    
 }
 //Names are subject to change based on HTML and css files
 function addContact(){
