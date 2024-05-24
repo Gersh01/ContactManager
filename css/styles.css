@@ -93,11 +93,13 @@
 }
 
 .move-page{
+  display:flex;
   border-radius:15px;
   background-color:var(--accent-color);
 }
 
 .refresh-page{
+  display:flex;
   border-radius:15px;
   background-color:var(--accent-color);
 }
