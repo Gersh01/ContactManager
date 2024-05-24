@@ -7,6 +7,7 @@
     $data = json_decode(file_get_contents('php://input'), true);
 
     $cursor = isset($data["cursor"]) ? $data["cursor"] : 101; 
+    $userID = $data["userID"];
 
 
     $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
@@ -15,9 +16,8 @@
         echo "Something went wrong\n";
         returnWithError($conn->connect_error);
     } else {
-        // $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID > ? ORDER BY ID LIMIT 10");
-        $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID > ? ORDER BY ID");
-                $stmt->bind_param("i", $cursor);
+        $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID > ? AND UserID = ? ORDER BY ID LIMIT 10");
+                $stmt->bind_param("is", $cursor, $userID);
                 $stmt->execute();
         $result = $stmt->get_result();
 
