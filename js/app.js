@@ -233,11 +233,11 @@ function confirmPassword(){
 
 function passwordRegexChecker(password){
 
-	let eightPasswordRegex = "[A-Za-z\d@$!%*?&]{8,}$";
-	let upperPasswordRegex = "(?=.[A-Z])";
-	let specialPasswordRegex = "(?=.*[@$!%*?&])";
-	let numberPasswordRegex = "(?=.*[0-9])";
-	let wholePasswordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$";
+	let eightPasswordRegex = new RegExp("[A-Za-z\d@$!%*?&]{8,}$");
+	let upperPasswordRegex = new RegExp("(?=.[A-Z])");
+	let specialPasswordRegex = new RegExp("(?=.*[@$!%*?&])");
+	let numberPasswordRegex = new RegExp("(?=.*[0-9])");
+	let wholePasswordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$");
 
 	
 	//These elements needed to be added to website page
@@ -248,27 +248,31 @@ function passwordRegexChecker(password){
 	document.getElementById("password-number").innerHTML = "";
 	*/
 
-	if(password !== eightPasswordRegex){
+	if(eightPasswordRegex.test(password)){
 		properPassword = false;
+		console.log(eightPasswordRegex.test(password));
 		//document.getElementById("password-length").innerHTML = "Password must be at least 8 characters";
 	}
 
-	if(password !== upperPasswordRegex){
+	if(upperPasswordRegex.test(password)){
 		properPassword = false;
+		console.log(upperPasswordRegex.test(password));
 		//document.getElementById("password-lowercase").innerHTML = "Password must contain at least 1 uppercase character";
 	}
 
-	if(password !== specialPasswordRegex){
+	if(specialPasswordRegex.test(password)){
 		properPassword = false;
+		console.log(specialPasswordRegex.test(password));
 		//document.getElementById("password-uppercase").innerHTML = "Password must contain at least 1 specail character";
 	}
 
-	if(password !== numberPasswordRegex){
+	if(numberPasswordRegex.test(password)){
 		properPassword = false;
+		console.log(numberPasswordRegex.test(password));
 		//document.getElementById("password-number").innerHTML = "Password must containt at least 1 number";
 	}
 
-	if(password === wholePasswordRegex){
+	if(wholePasswordRegex.test(password)){
 		properPassword = true;
 	}
 }
