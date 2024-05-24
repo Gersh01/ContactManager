@@ -9,6 +9,11 @@
     $cursor = isset($data["cursor"]) ? $data["cursor"] : 0; 
     $userID = $data["userID"];
 
+    if (empty($data) || !isset($data["userID"])) {
+        returnWithError("Invalid input data");
+        exit();
+    }
+
 
     $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 

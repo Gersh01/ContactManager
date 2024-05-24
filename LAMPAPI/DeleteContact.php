@@ -16,6 +16,11 @@
     // $contactID = $data["contactID"];
     // $favorite = $data["favorite"];
 
+    if (empty($data) || !isset($data["name"], $data["phone"], $data["email"])) {
+        returnWithError("Invalid input data");
+        exit();
+    }
+
     $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331" ,"COP4331");
 
 
