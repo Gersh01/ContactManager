@@ -96,12 +96,16 @@
   display:flex;
   border-radius:15px;
   background-color:var(--accent-color);
+  margin:auto;
+  padding:auto;
 }
 
 .refresh-page{
   display:flex;
   border-radius:15px;
   background-color:var(--accent-color);
+  margin:auto;
+  padding:auto;
 }
 
 
