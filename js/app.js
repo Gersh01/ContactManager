@@ -4,6 +4,7 @@ const extension = 'php';
 let userId = 0;
 let firstName = "";
 let lastName = "";
+let passwordMatches = false;
 
 function doLogin(){
 
@@ -141,7 +142,7 @@ function doRegister(){
     try{
         xhr.onreadystatechange = function()
         {
-            if(this.readyState == 4 && this.status == 200){
+            if(this.readyState == 4 && this.status == 200 && passwordMatches == true){
                 document.getElementById("register-result").innerHTML = "Registration is complete";
             }
         };
@@ -184,6 +185,23 @@ function addContact(){
     catch (err){
         document.getElementById("addContactResult").innerHTML = err.message;
     }
+}
+
+function confirmPassword(){
+	let password = document.getElementById("register-password").value;
+	let confirmPassword = document.getElementById("register-password-confirm").value;
+
+	document.getElementById("register-result").innerHTML = "";
+
+	if(password!==confirmPassword){
+		passwordMatches = false;
+		document.getElementById("register-result").innerHTML = "Password does not match";
+	}
+	else{
+		passwordMatches = true;
+		document.getElementById("register-result").innerHTML = "";
+	}
+
 }
 
 function deleteContact(){

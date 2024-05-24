@@ -55,7 +55,7 @@
                         <input id="register-password" type="text" placeholder="Password">
                     </div>
                      <div class="search-bar row">
-                        <input id="register-password-confirm" type="text" placeholder="Confirm Password">
+                        <input id="register-password-confirm" type="text" placeholder="Confirm Password" required onkeyup="confirmPassword()">
                     </div>
                     <!--Error Message-->
                     <a id="doRegister" href="javascript:doRegister()"><div class="button" type="button">Sign up!</div></a>
