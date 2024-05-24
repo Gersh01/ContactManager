@@ -17,7 +17,7 @@
     } else {
         // $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID > ? ORDER BY ID LIMIT 10");
         $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts ORDER BY ID");
-                $stmt->bind_param("i", $cursor);
+                // $stmt->bind_param("i", $cursor);
                 $stmt->execute();
         $result = $stmt->get_result();
 
