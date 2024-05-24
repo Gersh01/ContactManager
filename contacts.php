@@ -132,7 +132,7 @@
 
                 <!--TODO: FINISH PAGINATION-->
                 <div id="page-selector" class="row">
-                    <input id="refresh-button" class="refresh-page" type="button">Refresh</div>
+                    
                     <input id="back-button" class="move-page" type="button">Previous</div>
                     <input id="forward-button" class="move-page" type="button">Next</div>
                 </div>
