@@ -123,6 +123,17 @@
   width:90%;
 }
 
+.search-bar-pass input[type=password] {
+  border-radius: 15px;
+  filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0,0,0,0.5));
+  padding: 6px;
+  border: none;
+  font-size: 17px;
+  background-color:#ededed;
+  margin:auto;
+  width:90%;
+}
+
 .button {
   color:var(--font-color);
   background-color: var(--subcolor);
