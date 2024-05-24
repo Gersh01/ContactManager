@@ -121,10 +121,9 @@
                 </div>
 
                 <!--TODO: FINISH PAGINATION-->
-                <div id="page-selector" class="page-selector">
-                    <div id="back-button" class="move-page">1</div>
-                    <div>...</div>
-                    <div id="forward-button" class="move-page">10</div>
+                <div id="page-selector row" class="page-selector">
+                    <div id="back-button" class="move-page cell">Previous</div>
+                    <div id="forward-button" class="move-page cell">Next</div>
                 </div>
             </div>
         </div>
