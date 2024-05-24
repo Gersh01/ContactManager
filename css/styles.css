@@ -93,20 +93,16 @@
 }
 
 .move-page{
-  float:right;
   border-radius:15px;
   background-color:var(--accent-color);
 }
 
 .refresh-page{
-  float:left;
   border-radius:15px;
   background-color:var(--accent-color);
 }
 
-.page-selector {
-  display:auto;
-}
+
 
 .error{
   color:red;
