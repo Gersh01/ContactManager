@@ -38,83 +38,91 @@
                 <div id="contact-table" class="table">
 
                     <!--each nested div at this indentation represents one row/contact-->
+                    <div id="contact-row-1" class="cell-top">
+                        <div id="contact-first-name" class="cell text-black"></div>
+                        <div id="contact-last-name" class="cell text-black"></div>
+                        <div id="contact-email" class="cell text-black"></div>
+                        <div id="contact-phone-number"class="cell text-black"></div>
+                        <div id="contact-edit" class="cell text-black" type="button">Edit</div>
+                        <div id="contact-delete" class="cell text-black" type="button">Delete</div>
+                    </div>
                     <div id="contact-row-1" class="cell">
-                        <div id="contact-first-name" class="cell text-black">First Name</div>
-                        <div id="contact-last-name" class="cell text-black">Last Name</div>
-                        <div id="contact-email" class="cell text-black">Email</div>
-                        <div id="contact-phone-number"class="cell text-black">Phone Number</div>
+                        <div id="contact-first-name" class="cell text-black"></div>
+                        <div id="contact-last-name" class="cell text-black"></div>
+                        <div id="contact-email" class="cell text-black"></div>
+                        <div id="contact-phone-number"class="cell text-black"></div>
                         <div id="contact-edit" class="cell text-black" type="button">Edit</div>
                         <div id="contact-delete" class="cell text-black" type="button">Delete</div>
                     </div>
                     <div id="contact-row-2" class="cell">
-                        <div id="contact-first-name" class="cell text-black">First Name</div>
-                        <div id="contact-last-name" class="cell text-black">Last Name</div>
-                        <div id="contact-email" class="cell text-black">Email</div>
-                        <div id="contact-phone-number"class="cell text-black">Phone Number</div>
+                        <div id="contact-first-name" class="cell text-black"></div>
+                        <div id="contact-last-name" class="cell text-black"></div>
+                        <div id="contact-email" class="cell text-black"></div>
+                        <div id="contact-phone-number"class="cell text-black"></div>
                         <div id="contact-edit" class="cell text-black" type="button">Edit</div>
                         <div id="contact-delete" class="cell text-black" type="button">Delete</div>
                     </div>
                     <div id="contact-row-3" class="cell">
-                        <div id="contact-first-name" class="cell text-black">First Name</div>
-                        <div id="contact-last-name" class="cell text-black">Last Name</div>
-                        <div id="contact-email" class="cell text-black">Email</div>
-                        <div id="contact-phone-number"class="cell text-black">Phone Number</div>
+                        <div id="contact-first-name" class="cell text-black"></div>
+                        <div id="contact-last-name" class="cell text-black"></div>
+                        <div id="contact-email" class="cell text-black"></div>
+                        <div id="contact-phone-number"class="cell text-black"></div>
                         <div id="contact-edit" class="cell text-black" type="button">Edit</div>
                         <div id="contact-delete" class="cell text-black" type="button">Delete</div>
                     </div>
                     <div id="contact-row-4" class="cell">
-                        <div id="contact-first-name" class="cell text-black">First Name</div>
-                        <div id="contact-last-name" class="cell text-black">Last Name</div>
-                        <div id="contact-email" class="cell text-black">Email</div>
-                        <div id="contact-phone-number"class="cell text-black">Phone Number</div>
+                        <div id="contact-first-name" class="cell text-black"></div>
+                        <div id="contact-last-name" class="cell text-black"></div>
+                        <div id="contact-email" class="cell text-black"></div>
+                        <div id="contact-phone-number"class="cell text-black"></div>
                         <div id="contact-edit" class="cell text-black" type="button">Edit</div>
                         <div id="contact-delete" class="cell text-black" type="button">Delete</div>
                     </div>
                     <div id="contact-row-5" class="cell">
-                        <div id="contact-first-name" class="cell text-black">First Name</div>
-                        <div id="contact-last-name" class="cell text-black">Last Name</div>
-                        <div id="contact-email" class="cell text-black">Email</div>
-                        <div id="contact-phone-number"class="cell text-black">Phone Number</div>
+                        <div id="contact-first-name" class="cell text-black"></div>
+                        <div id="contact-last-name" class="cell text-black"></div>
+                        <div id="contact-email" class="cell text-black"></div>
+                        <div id="contact-phone-number"class="cell text-black"></div>
                         <div id="contact-edit" class="cell text-black" type="button">Edit</div>
                         <div id="contact-delete" class="cell text-black" type="button">Delete</div>
                     </div>
                     <div id="contact-row-6" class="cell">
-                        <div id="contact-first-name" class="cell text-black">First Name</div>
-                        <div id="contact-last-name" class="cell text-black">Last Name</div>
-                        <div id="contact-email" class="cell text-black">Email</div>
-                        <div id="contact-phone-number"class="cell text-black">Phone Number</div>
+                        <div id="contact-first-name" class="cell text-black"></div>
+                        <div id="contact-last-name" class="cell text-black"></div>
+                        <div id="contact-email" class="cell text-black"></div>
+                        <div id="contact-phone-number"class="cell text-black"></div>
                         <div id="contact-edit" class="cell text-black" type="button">Edit</div>
                         <div id="contact-delete" class="cell text-black" type="button">Delete</div>
                     </div>
                     <div id="contact-row-7" class="cell">
-                        <div id="contact-first-name" class="cell text-black">First Name</div>
-                        <div id="contact-last-name" class="cell text-black">Last Name</div>
-                        <div id="contact-email" class="cell text-black">Email</div>
-                        <div id="contact-phone-number"class="cell text-black">Phone Number</div>
+                        <div id="contact-first-name" class="cell text-black"></div>
+                        <div id="contact-last-name" class="cell text-black"></div>
+                        <div id="contact-email" class="cell text-black"></div>
+                        <div id="contact-phone-number"class="cell text-black"></div>
                         <div id="contact-edit" class="cell text-black" type="button">Edit</div>
                         <div id="contact-delete" class="cell text-black" type="button">Delete</div>
                     </div>
                     <div id="contact-row-8" class="cell">
-                        <div id="contact-first-name" class="cell text-black">First Name</div>
-                        <div id="contact-last-name" class="cell text-black">Last Name</div>
-                        <div id="contact-email" class="cell text-black">Email</div>
-                        <div id="contact-phone-number"class="cell text-black">Phone Number</div>
+                        <div id="contact-first-name" class="cell text-black"></div>
+                        <div id="contact-last-name" class="cell text-black"></div>
+                        <div id="contact-email" class="cell text-black"></div>
+                        <div id="contact-phone-number"class="cell text-black"></div>
                         <div id="contact-edit" class="cell text-black" type="button">Edit</div>
                         <div id="contact-delete" class="cell text-black" type="button">Delete</div>
                     </div>
                     <div id="contact-row-9" class="cell">
-                        <div id="contact-first-name" class="cell text-black">First Name</div>
-                        <div id="contact-last-name" class="cell text-black">Last Name</div>
-                        <div id="contact-email" class="cell text-black">Email</div>
-                        <div id="contact-phone-number"class="cell text-black">Phone Number</div>
+                        <div id="contact-first-name" class="cell text-black"></div>
+                        <div id="contact-last-name" class="cell text-black"></div>
+                        <div id="contact-email" class="cell text-black"></div>
+                        <div id="contact-phone-number"class="cell text-black"></div>
                         <div id="contact-edit" class="cell text-black" type="button">Edit</div>
                         <div id="contact-delete" class="cell text-black" type="button">Delete</div>
                     </div>
                     <div id="contact-row-10" class="cell">
-                        <div id="contact-first-name" class="cell text-black">First Name</div>
-                        <div id="contact-last-name" class="cell text-black">Last Name</div>
-                        <div id="contact-email" class="cell text-black">Email</div>
-                        <div id="contact-phone-number"class="cell text-black">Phone Number</div>
+                        <div id="contact-first-name" class="cell text-black"></div>
+                        <div id="contact-last-name" class="cell text-black"></div>
+                        <div id="contact-email" class="cell text-black"></div>
+                        <div id="contact-phone-number"class="cell text-black"></div>
                         <div id="contact-edit" class="cell text-black" type="button">Edit</div>
                         <div id="contact-delete" class="cell text-black" type="button">Delete</div>
                     </div>
