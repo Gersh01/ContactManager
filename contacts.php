@@ -30,7 +30,7 @@
                 <div class="text-center my-6">
                     <div id="search-bar" class="search-bar row-alt">
                         <input type="text" placeholder="Search...">
-                        <a id="refresh-button" href="javascript:firstPage()" class="text-black"><div id="refreshButton" class="text-black refresh-page" type="button">Refresh</div></a>
+                        <a id="refresh-button" href="javascript:firstPage()" class="text-black a-link"><div id="refreshButton" class="text-black refresh-page" type="button">Refresh</div></a>
                     </div>
                 </div>
 
@@ -131,7 +131,7 @@
                 <span id="contact-result" class="text-black row cell"></span>
                 <body onload= "firstPage()">
                 <!--TODO: FINISH PAGINATION-->
-                <div id="page-selector">
+                <div id="page-selector" class="row">
                     <div id="backButton" class="move-page" type="button">Previous</div>
                     <div id="forwardButton" class="move-page" type="button">Next</div>
                 </div>
