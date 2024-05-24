@@ -93,47 +93,49 @@
 }
 
 .move-page{
-
+  margin:auto;
+  padding:auto;
   border-radius:15px;
   background-color:var(--accent-color);
   width:fit-content;
 }
 
 .refresh-page{
-
-  border-radius:15px;
-  background-color:var(--accent-color);
-  width:fit-content;
+  margin:auto;
+  padding:auto;
+  border-radius: 15px;
+  background-color: var(--accent-color);
+  width: fit-content;
 }
 
 .error{
-  color:red;
+  color: red;
 }
 
 .header{
-  margin:3rem;
+  margin: 3rem;
 }
 
 .cell {
-  display:flex;
-  margin:auto;
-  width:auto;
+  display: flex;
+  margin: auto;
+  width: auto;
   justify-content: center;
 }
 
 .cell-top {
-  display:flex;
-  margin:auto;
-  width:auto;
+  display: flex;
+  margin: auto;
+  width: auto;
   justify-content: center;
-  background-color:var(--subcolor);
-  border-radius:15px;
-  font-style:bold;
+  background-color: var(--subcolor);
+  border-radius: 15px;
+  font-style: bold;
 }
 
 .spacer{
-  width:3.5px;
-  display:block;
+  width: 3.5px;
+  display: block;
 }
 
 .search-bar input[type=text] {
