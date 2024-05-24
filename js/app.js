@@ -250,6 +250,8 @@ function passwordRegexChecker(){
 	document.getElementById("password-number").innerHTML = "";
 	*/
 
+	console.log(password);
+
 	if(eightPasswordRegex.test(password)){
 		properPassword = false;
 		console.log("length = false");
