@@ -351,7 +351,15 @@ function firstPage(){
 				let jsonObject = JSON.parse( xhr.responseText )
 				console.log(jsonObject);
 				console.log(typeof(jsonObject));
-				loadContacts(jsonObject);
+				//loadContacts(jsonObject);
+				if(jsonObject.length == 0){
+					document.getElementById("contact-result").innerHTML = "No contacts found";
+					return;
+				}
+				for(let i = 0; i<jsonObject.length-1; i++){
+					console.log(jsonObject[i].firstName);
+					document.getElementById("contact-row-"+ i + 1).getElementById("contact-first-name").innerHTML = jsonObject[i].contactFirst;
+				}
 			}
 		};
 		xhr.send(jsonPayload);
