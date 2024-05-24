@@ -361,8 +361,7 @@ function firstPage(){
 					console.log(jsonObject.contacts[i].Name);
 					let tmpElement = document.getElementById("contact-row-"+i+1);
 					console.log("contact-row-"+i+1);
-					let tmpClass = tmpElement.getElementsById("contact-first-name");
-					tmpClass.innerHTML = jsonObject.contacts[i].Name;
+					tmpElement.getElementsById("contact-first-name").innerHTML = "jsonObject.contacts[i].Name";
 				}
 			}
 		};
