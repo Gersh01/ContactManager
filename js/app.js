@@ -11,6 +11,14 @@ let passwordMatches = false;
 let loginFieldsFull = false;
 let registerFieldsFull = false;
 
+let input = document.getElementById("login-password");
+
+input.addEventListener("keypress", function(event){
+	if(event.key === "Enter"){
+		document.getElementById("doRegister").click();
+	}
+});
+
 function doLogin(){
 
     userId = 0;
@@ -19,7 +27,8 @@ function doLogin(){
 	
 	let login = document.getElementById("login-username").value;
 	let password = document.getElementById("login-password").value;
-    /* Do we want to add hashing to the passwords?*/ 
+
+	/* Do we want to add hashing to the passwords?*/ 
 //	var hash = md5( password );
 	
 	document.getElementById("login-result").innerHTML = "";
@@ -29,6 +38,7 @@ function doLogin(){
 		return;
 	}
 	else{
+
 		let tmp = {login:login,password:password};
 		//	var tmp = {login:login,password:hash};
 			let jsonPayload = JSON.stringify( tmp );
@@ -173,8 +183,6 @@ function doRegister(){
 						document.getElementById("register-username").value = "";
 						document.getElementById("register-password").value= "";
 						document.getElementById("register-password-confirm").value = "";
-
-
 
 						document.getElementById("register-result").innerHTML = "Registration is complete";
 					}
