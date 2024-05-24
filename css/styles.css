@@ -96,8 +96,6 @@
   display:flex;
   border-radius:15px;
   background-color:var(--accent-color);
-  margin:auto;
-  padding:auto;
   width:10%;
 }
 
@@ -105,8 +103,6 @@
   display:flex;
   border-radius:15px;
   background-color:var(--accent-color);
-  margin:auto;
-  padding:auto;
   width:10%;
 }
 
