@@ -117,6 +117,14 @@
   justify-content: center;
 }
 
+.cell-top {
+  display:flex;
+  margin:auto;
+  width:auto;
+  justify-content: center;
+  background-color:var(--subcolor);
+}
+
 .spacer{
   width:3.5px;
   display:block;
