@@ -116,6 +116,8 @@
   border-radius: 15px;
   background-color: var(--accent-color);
   width: auto;
+  justify-content:center;
+  font-style: normal;
   filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0,0,0,0.5));
 }
 
