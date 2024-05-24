@@ -6,7 +6,7 @@
 
     $data = json_decode(file_get_contents('php://input'), true);
 
-    $cursor = isset($data["cursor"]) ? $data["cursor"] : 102; 
+    $cursor = isset($data["cursor"]) ? $data["cursor"] : 101; 
 
 
     $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
