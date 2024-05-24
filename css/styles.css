@@ -94,7 +94,7 @@
 
 .move-page{
   border-radius:15px;
-  color:var(--accent-color);
+  background-color:var(--accent-color);
   justify-content:center;
   display:flex;
 }
