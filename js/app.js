@@ -168,6 +168,14 @@ function doRegister(){
 				xhr.onreadystatechange = function()
 				{
 					if(this.readyState == 4 && this.status == 200){
+						document.getElementById("register-first-name").value = "";
+						document.getElementById("register-last-name").value = "";
+						document.getElementById("register-username").value = "";
+						document.getElementById("register-password").value= "";
+						document.getElementById("register-password-confirm").value = "";
+
+
+
 						document.getElementById("register-result").innerHTML = "Registration is complete";
 					}
 				};
