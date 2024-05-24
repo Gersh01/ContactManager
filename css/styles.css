@@ -93,14 +93,14 @@
 }
 
 .move-page{
-  display:flex;
+
   border-radius:15px;
   background-color:var(--accent-color);
   width:fit-content;
 }
 
 .refresh-page{
-  display:flex;
+
   border-radius:15px;
   background-color:var(--accent-color);
   width:fit-content;
