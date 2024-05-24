@@ -6,7 +6,8 @@
 
     $data = json_decode(file_get_contents('php://input'), true);
 
-    $cursor = isset($data["cursor"]) ? $data["cursor"] : 0; 
+    $cursorFirst = isset($data["cursorFirst"]) ? $data["cursorFirst"] : 0;
+    $cursorSecond = isset($data["cursorSecond"]) ? $data["cursorSecond"] : -1; 
     $next = isset($data["next"]) ? $data["next"] : 1; 
     $userID = $data["userID"];
 
@@ -28,8 +29,8 @@
                 $stmt->execute();
             $result = $stmt->get_result();
         }else if($next == 0){
-            $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID < ? AND UserID = ? ORDER BY ID LIMIT 10");
-                $stmt->bind_param("is", $cursor, $userID);
+            $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID < ? AND ID >= ? AND UserID = ? ORDER BY ID LIMIT 10");
+                $stmt->bind_param("iis", $cursor, $userID);
                 $stmt->execute();
             $result = $stmt->get_result();
         }else{
