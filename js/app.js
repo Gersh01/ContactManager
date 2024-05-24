@@ -337,6 +337,8 @@ function firstPage(){
 	
 	let tmp = {userID:userId, cursor:0};
 
+	document.getElementById("contact-result").innerHTML = "";
+
 	let jsonPayload = JSON.stringify( tmp );
 
 	let xhr = new XMLHttpRequest();
@@ -355,7 +357,7 @@ function firstPage(){
 		xhr.send(jsonPayload);
 	}
 	catch(err){
-		//document.getElementById("contact-result").innerHTML = err.message;
+		document.getElementById("contact-result").innerHTML = err.message;
 		console.log(err.message);
 	}
 }
