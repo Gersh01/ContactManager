@@ -30,9 +30,9 @@
                 <div class="text-center my-6">
                     <div id="search-bar" class="search-bar row">
                         <input type="text" placeholder="Search...">
+                        <a id="refresh-button" href="javascript:firstPage()"><div id="refreshButton" class="refresh-page" type="button">Refresh</div></a>
                     </div>
-                    <a id="refresh-button" href="javascript:firstPage()" class="refresh-page"><div id="refreshButton" class="refresh-page" type="button">Refresh</div></a>
-                </div>
+                    
 
                 <!--Search Results/Contacts Table-->
                 <h3 class="text-center text-black">Contacts</h3>
