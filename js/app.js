@@ -343,9 +343,9 @@ function firstPage(){
 
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-
+	
 	try{
-		xhr.onreadystatechange() = function() {
+		xhr.onreadystatechange = function() {
 			if(this.readyState == 4 && this.status == 200){
 				document.getElementById("contact-result").innerHTML = "Contacts have been recieved";
 				let jsonObject = JSON.parse( xhr.responseText )
