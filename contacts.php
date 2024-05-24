@@ -128,7 +128,7 @@
                     </div>
                 </div>
                 <span id="contact-result" class="text-black row cell"></span>
-
+                <body onload= "firstPage()">
                 <!--TODO: FINISH PAGINATION-->
                 <div id="page-selector" class="row">
                     <input id="refresh-button" class="refresh-page" type="button">Refresh</div>
@@ -142,7 +142,7 @@
         <footer class="py-5 bg-accent" id="footer">
             <div class="m-0 text-center text-black">A student project for COP4331, University of Central Florida</div>
         </footer>
-    <body onload= "firstPage()">
+
     </body>
     <script src="js/app.js"></script>
 </html>
