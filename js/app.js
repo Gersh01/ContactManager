@@ -352,18 +352,11 @@ function firstPage(){
 				console.log(jsonObject);
 				console.log(typeof(jsonObject));
 				console.log("Length of JSON object "+jsonObject.contacts.length);
-				//loadContacts(jsonObject);
-				if(jsonObject.contacts.length == 0){
-					document.getElementById("contact-result").innerHTML = "No contacts found";
-					return;
-				}
-				for(let i = 0; i<jsonObject.contacts.length-1; i++){
-					console.log(jsonObject.contacts[i].Name);
-					document.getElementsById("contact-first-name- "+i+1).innerHTML = "jsonObject.contacts[i].Name";
-				}
+				loadContacts(jsonObject);
 			}
 		};
 		xhr.send(jsonPayload);
+		
 	}
 	catch(err){
 		document.getElementById("contact-result").innerHTML = err.message;
@@ -373,13 +366,13 @@ function firstPage(){
 
 function loadContacts(jsonObject){
 
-	if(jsonObject.length == 0){
+	if(jsonObject.contacts.length == 0){
 		document.getElementById("contact-result").innerHTML = "No contacts found";
 		return;
 	}
-	for(let i = 0; i<jsonObject.length-1; i++){
-		console.log(jsonObject[i].firstName);
-		document.getElementById("contact-row-"+ i + 1).getElementById("contact-first-name").innerHTML = jsonObject[i].contactFirst;
+	for(let i = 0; i<jsonObject.contacts.length-1; i++){
+		console.log(jsonObject.contacts[i].Name);
+		document.getElementsById("contact-first-name- "+i+1).innerHTML = "jsonObject.contacts[i].Name";
 	}
 
 }
