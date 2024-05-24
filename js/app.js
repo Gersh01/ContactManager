@@ -346,14 +346,23 @@ function firstPage(){
 	try{
 		xhr.onreadystatechange() = function() {
 			if(this.readyState == 4 && this.status == 200){
-				
+				document.getElementById("contactResults").innerHTML = "Contacts have been recieved";
+				let jsonObject = JSON.parse( xhr.responseText )
+				loadContacts(jsonObject);
 			}
-		}
+		};
+		xhr.send(jsonPayload);
 	}
-	catch{
-
+	catch(err){
+		document.getElementById("contactResults").innerHTML = err.message;
 	}
+}
 
+function loadContacts(jsonObject){
+
+	for(let i = 0; i<jsonObject.results.length-1; i++){
+		document.getElementById("contact-row-"+ i + 1).getElementById("contact-first-name").innerHTML = jsonObject[i].results.contactFirst;
+	}
 
 }
 
