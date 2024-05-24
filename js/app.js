@@ -126,17 +126,18 @@ function doLogout(){
 function doRegister(){
 
 	document.getElementById("register-result").innerHTML = "";
+	
+	let newUserFirst = document.getElementById("register-first-name").value;
+	let newUserLast = document.getElementById("register-last-name").value;
+	let newUserName = document.getElementById("register-username").value;
+	let newUserPassword = document.getElementById("register-password").value;
+	let newUserPasswordConfirm = document.getElementById("register-password-confirm").value;
+
 	if(newUserFirst === "" || newUserLast === "" || newUserName === "" || newUserPassword === "" || newUserPasswordConfirm === ""){
 		document.getElementById("register-result").innerHTML = "Required fields must be filled";
 		return;
 	}
 	else{
-		let newUserFirst = document.getElementById("register-first-name").value;
-		let newUserLast = document.getElementById("register-last-name").value;
-		let newUserName = document.getElementById("register-username").value;
-		let newUserPassword = document.getElementById("register-password").value;
-		let newUserPasswordConfirm = document.getElementById("register-password-confirm").value;
-
 	
 		/* This element items implementation is dependant on time*/
 		//let newUserSecurityQ = document.getElementById("userSecurity").value;
