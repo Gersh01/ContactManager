@@ -94,7 +94,7 @@
 
 .move-page{
   border-radius:15px;
-  color:accent-color;
+  color:var(--accent-color);
   justify-content:center;
   display:flex;
 }
@@ -124,7 +124,7 @@
   width:auto;
   justify-content: center;
   background-color:var(--subcolor);
-  border-radius-top:15px;
+  border-radius:15px;
 }
 
 .spacer{
