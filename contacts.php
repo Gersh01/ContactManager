@@ -131,7 +131,6 @@
                 <body onload= "firstPage()">
                 <!--TODO: FINISH PAGINATION-->
                 <div id="page-selector" class="table">
-                    
                     <div id="backButton" class="move-page" type="button">Previous</div>
                     <div id="forwardButton" class="move-page" type="button">Next</div>
                 </div>
