@@ -98,6 +98,7 @@
   background-color:var(--accent-color);
   margin:auto;
   padding:auto;
+  width:10%;
 }
 
 .refresh-page{
@@ -106,6 +107,7 @@
   background-color:var(--accent-color);
   margin:auto;
   padding:auto;
+  width:10%;
 }
 
 
