@@ -12,12 +12,14 @@ let loginFieldsFull = false;
 let registerFieldsFull = false;
 
 	let input = document.getElementById("login-password");
-
-	input.addEventListener("keypress", function(event){
-		if(event.key === "Enter"){
-			document.getElementById("doLogin").click();
-		}
-	});
+	if(input != null){
+		input.addEventListener("keypress", function(event){
+			if(event.key === "Enter"){
+				document.getElementById("doLogin").click();
+			}
+		});
+	}
+	
 
 function doLogin(){
 
