@@ -353,6 +353,7 @@ function firstPage(){
 				console.log(typeof(jsonObject));
 				//loadContacts(jsonObject);
 				if(jsonObject.length == 0){
+					console.log("Length of JSON object "+jsonObject.length);
 					document.getElementById("contact-result").innerHTML = "No contacts found";
 					return;
 				}
