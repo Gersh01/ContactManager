@@ -94,10 +94,11 @@
 
 .move-page{
   margin:auto;
-  padding:0.5rem;
+  padding:0.25rem;
   border-radius:15px;
   background-color:var(--accent-color);
   width:fit-content;
+  filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0,0,0,0.5));
 }
 
 .a-link{
@@ -107,11 +108,12 @@
 .refresh-page{
   display:flex;
   margin:auto;
-  padding:0.5rem;
+  padding:0.25rem;
   border-radius: 15px;
   background-color: var(--accent-color);
   width: fit-content;
   font-style: normal;
+  filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0,0,0,0.5));
 }
 
 .error{
