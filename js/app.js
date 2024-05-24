@@ -350,6 +350,7 @@ function firstPage(){
 				document.getElementById("contact-result").innerHTML = "Contacts have been recieved";
 				let jsonObject = JSON.parse( xhr.responseText )
 				console.log(jsonObject);
+				console.log(typeof(jsonObject));
 				loadContacts(jsonObject);
 			}
 		};
