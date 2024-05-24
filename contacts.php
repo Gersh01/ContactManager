@@ -127,6 +127,7 @@
                         <div id="contact-delete" class="cell text-black" type="button">Delete</div>
                     </div>
                 </div>
+                <span id="contact-result" class="text-black row cell"></span>
 
                 <!--TODO: FINISH PAGINATION-->
                 <div id="page-selector" class="page-selector row">
