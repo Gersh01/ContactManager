@@ -45,9 +45,6 @@ function doLogin(){
 	let login = document.getElementById("login-username").value;
 	let password = document.getElementById("login-password").value;
 
-	
-
-
 	/* Do we want to add hashing to the passwords?*/ 
 //	var hash = md5( password );
 	
