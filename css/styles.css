@@ -94,10 +94,11 @@
 
 .move-page{
   margin:auto;
-  padding:0.25rem;
+  padding:0.3rem;
   border-radius:15px;
   background-color:var(--accent-color);
-  width:fit-content;
+  width: 6rem;
+  justify-content:center;
   filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0,0,0,0.5));
 }
 
@@ -110,11 +111,10 @@
 .refresh-page{
   display:flex;
   margin:0%;
-  padding:0.25rem;
+  padding:0.3rem;
   border-radius: 15px;
   background-color: var(--accent-color);
-  width: fit-content;
-  
+  width: 6rem;
   filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0,0,0,0.5));
 }
 
