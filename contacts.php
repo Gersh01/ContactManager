@@ -17,7 +17,7 @@
     <body>
         <header id="nav-header" class="text-black nav py-5 bg-accent"> 
             <div id="home-button" class="text-black nav-link" type="button">Home</div>
-            <a id="about-us_button" href="javascript:doLogout()"> <div id="about-us-button" class="button" type="button">Logout</a>
+            <a id="about-us_button" href="javascript:doLogout()"> <div id="about-us-button" class="button" type="button">Logout</div></a>
             <div id="about-link" class="text-black nav-link" type="button">About</div>
         </header>
         <!-- Image Background -->
