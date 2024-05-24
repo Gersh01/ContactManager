@@ -347,7 +347,7 @@ function firstPage(){
 	try{
 		xhr.onreadystatechange() = function() {
 			if(this.readyState == 4 && this.status == 200){
-				document.getElementById("contact-results").innerHTML = "Contacts have been recieved";
+				document.getElementById("contact-result").innerHTML = "Contacts have been recieved";
 				let jsonObject = JSON.parse( xhr.responseText )
 				loadContacts(jsonObject);
 			}
@@ -355,13 +355,13 @@ function firstPage(){
 		xhr.send(jsonPayload);
 	}
 	catch(err){
-		document.getElementById("contact-results").innerHTML = err.message;
+		document.getElementById("contact-result").innerHTML = err.message;
 	}
 }
 
 function loadContacts(jsonObject){
 	if(jsonObject.results.length == 0){
-		document.getElementById("contact-results").innerHTML = "No contacts found";
+		document.getElementById("contact-result").innerHTML = "No contacts found";
 		return;
 	}
 	for(let i = 0; i<jsonObject.results.length-1; i++){
