@@ -15,8 +15,7 @@
         echo "Something went wrong\n";
         returnWithError($conn->connect_error);
     } else {
-        $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID > ? ORDER BY ID ASC LIMIT 10");
-                    echo $cursor;
+        $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID > ? ORDER BY ID LIMIT 10");
                 $stmt->bind_param("i", $cursor);
                 $stmt->execute();
         $result = $stmt->get_result();
