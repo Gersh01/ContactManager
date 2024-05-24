@@ -264,7 +264,7 @@ function passwordRegexChecker(){
 		}
 	else{
 		properPassword = false;
-		console.log("length = false");
+		console.log("upper = false");
 		//document.getElementById("password-lowercase").innerHTML = "Password must contain at least 1 uppercase character";
 	}
 
