@@ -238,7 +238,7 @@ function passwordRegexChecker(){
 	let upperPasswordRegex = new RegExp("(?=.*[A-Z])");
 	let specialPasswordRegex = new RegExp("(?=.*[@$!%*?&])");
 	let numberPasswordRegex = new RegExp("(?=.*[0-9])");
-	let wholePasswordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$");
+	let wholePasswordRegex = new RegExp("(?=.*[A-Z])(?=.*[@$!%*?&])(?=.*[0-9])");
 
 	
 	//These elements needed to be added to website page
