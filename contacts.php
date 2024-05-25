@@ -160,6 +160,8 @@
                         <!--Button-->
                         <a id="addContact" href="javascript:addContact()"><div class="button" type="button">Add User</div></a>
                     </div>
+
+                    <span id="add-contact-result" class="text-black row cell"></span>
                 </div>
             </div>
         </div>
