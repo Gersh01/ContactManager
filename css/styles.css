@@ -84,8 +84,8 @@
   --bs-highlight-bg: #fff3cd;
 }
 
-.contacts-hideable{
-  display:block;
+.contacts-hide{
+  display:flex;
 }
 
 #footer{

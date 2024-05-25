@@ -390,11 +390,11 @@ function loadContacts(jsonObject){
 
 function showTable(){
 	let table = document.getElementById("contacts-hideable");
-	if(table.style.display === "block"){
+	if(table.style.display === "flex"){
 		table.style.display = "none"
 	}
 	else{
-		table.style.display = "block"
+		table.style.display = "flex"
 	}
 }
 
@@ -417,7 +417,7 @@ function searchContact(){
 
 	let searchField = document.getElementById("search-bar").value;
 	//ADD cursor{firstname/lastname/contactID}, next(tru||false)
-	let tmp = {UserID:userId, showFavorites:0, search:searchField};
+	let tmp = {UserID:userId, showFavorites:0, search:searchField, cursor:{firstName:"",lastName:"",ID:1,favorite:0}};
 
 	document.getElementById("contact-result").innerHTML = "";
 	
