@@ -13,6 +13,7 @@ let registerFieldsFull = false;
 
 let inputLogin = document.getElementById("login-password");
 let inputRegister = document.getElementById("register-password-confirm");
+let globalJsonObject = null;
 
 if(inputLogin != null){
 	inputLogin.addEventListener("keypress", function(event){
@@ -351,6 +352,7 @@ function firstPage(){
 				console.log(jsonObject);
 				console.log(typeof(jsonObject));
 				console.log("Length of JSON object "+jsonObject.contacts.length);
+				globalJsonObject = jsonObject;
 				loadContacts(jsonObject);
 			}
 		};
@@ -419,9 +421,12 @@ function searchContact(){
 
 }
 
-function deleteContact(){
+function deleteContact(num){
 
+	let trigger = "contact-delete-";
 
+	console.log(num);
+	
 
 }
 
