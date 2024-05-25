@@ -440,9 +440,9 @@ function deleteContact(num){
 	console.log(globalJsonObject);
 
 	let deletedContactID = globalJsonObject.contacts[num-1].ID
-	let convertToString = "" + deletedContactID;
+	// let convertToString = "" + deletedContactID;
 
-	let jsonPayload = {contactID:convertToString};
+	let jsonPayload = {contactID:deletedContactID};
 	
 
 	console.log(convertToString);
