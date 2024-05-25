@@ -367,6 +367,8 @@ function firstPage(){
 
 function loadContacts(jsonObject){
 	let i = 0;
+	let hide = 1;
+	let show = 0;
 	if(jsonObject.contacts.length == 0){
 		document.getElementById("contact-result").innerHTML = "No contacts found";
 		return;
@@ -374,18 +376,34 @@ function loadContacts(jsonObject){
 	for(i = 0; i<jsonObject.contacts.length; i++){
 		console.log(jsonObject.contacts[i].FirstName);
 		console.log("contact-first-name-"+parseInt(i+1));
+
+		let row = document.getElementById("contact-row-"+parseInt(j+1));
+		hideRow(row,show);
 		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
 		document.getElementById("contact-last-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].LastName;
 		document.getElementById("contact-email-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Email;
 		document.getElementById("contact-phone-number-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Phone;
 	}
 	for(j = i; j<10; j++){
+		let row = document.getElementById("contact-row-"+parseInt(j+1));
+		hideRow(row,hide);
 		document.getElementById("contact-first-name-"+parseInt(j+1)).textContent = "";
 		document.getElementById("contact-last-name-"+parseInt(j+1)).textContent = "";
 		document.getElementById("contact-email-"+parseInt(j+1)).textContent = "";
 		document.getElementById("contact-phone-number-"+parseInt(j+1)).textContent = "";
 	}
 
+}
+
+
+function hideRow(row,num){
+	//block = show | none = hide
+	if(num===0){
+		row.style.display="block";
+	}
+	else if(num === 1){
+		row.style.display="none";
+	}
 }
 
 
