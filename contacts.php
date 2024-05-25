@@ -145,7 +145,7 @@
             </div>
         </div>
 
-        <div id=add-contact>
+        <div id="add-contact">
             
         </div>
         
