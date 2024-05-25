@@ -30,6 +30,7 @@ if(inputRegister != null){
 	});
 }
 
+window.onload = firstPage();
 
 function doRedirect(){
 	window.location.href = "login.php";
