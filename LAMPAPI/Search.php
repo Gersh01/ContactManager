@@ -43,6 +43,7 @@
 		}
 
         if ($results == 0) {
+			echo "0";
             returnWithError("No Records Found");
         } else {
 			echo "1";
