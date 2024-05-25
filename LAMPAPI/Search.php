@@ -13,7 +13,14 @@
         return returnWithError($conn->connect_error);
 
     } else {
-        $stmt = $conn->prepare("SELECT * FROM Contacts WHERE (Name like ? OR Phone like ? OR Email like ?) AND UserID = ? ORDER BY Favorited DESC");
+        $stmt = null;
+
+        if ($data["showFavorites"]) {
+            $stmt = $conn->prepare("SELECT * FROM Contacts WHERE (Name like ? OR Phone like ? OR Email like ?) AND UserID = ? AND Favorited = 1 ORDER BY Favorited DESC");
+        } else {
+            $stmt = $conn->prepare("SELECT * FROM Contacts WHERE (Name like ? OR Phone like ? OR Email like ?) AND UserID = ? ORDER BY Favorited DESC");
+        }
+
         $search = "%" . $data["search"] . "%";
 		$stmt->bind_param("ssss", $search, $search, $search, $data["UserID"]);
 		$stmt->execute();
