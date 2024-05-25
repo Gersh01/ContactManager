@@ -393,8 +393,11 @@ function searchContact(){
 	let tmp = {UserID:userId, search:searchField};
 
 	document.getElementById("contact-result").innerHTML = "";
+	
 
 	let jsonPayload = JSON.stringify( tmp );
+
+	console.log(tmp);
 
 	let xhr = new XMLHttpRequest();
 
@@ -424,7 +427,6 @@ function searchContact(){
 function deleteContact(num){
 
 	let trigger = "contact-delete-";
-	let contact = globalJsonObject.findIndex(globalJsonObject.contacts[num-1]);
 
 	console.log(num);
 	console.log(contact);
