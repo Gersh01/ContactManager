@@ -378,7 +378,6 @@ function loadContacts(jsonObject){
 		document.getElementById("contact-email-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Email;
 		document.getElementById("contact-phone-number-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Phone;
 	}
-
 }
 
 function deleteContact(){
