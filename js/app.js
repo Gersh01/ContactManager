@@ -388,6 +388,17 @@ function loadContacts(jsonObject){
 	}
 }
 
+function showTable(){
+	let table = document.getElementById("contacts-hideable");
+	let show = 0;
+	if(table.style.display="flex"){
+		show = 1;
+	}
+	else{
+		show = 0;
+	}
+	toggleElement(table,show)
+}
 
 function toggleElement(row,num){
 	//block = show | none = hide
