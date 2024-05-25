@@ -374,6 +374,9 @@ function loadContacts(jsonObject){
 		console.log(jsonObject.contacts[i].FirstName);
 		console.log("contact-first-name-"+parseInt(i+1));
 		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
+		document.getElementById("contact-last-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
+		document.getElementById("contact-email-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
+		document.getElementById("contact-phonenumber-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
 	}
 
 }
