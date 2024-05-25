@@ -430,14 +430,7 @@ function searchContact(){
 }
 
 function deleteContact(num){
-
-	let trigger = "contact-delete-";
-
 	console.log(num);
-
-	let name = document.getElementById(trigger+num);
-	let email = document.getElementById(trigger+num);
-	let phone = document.getElementById(trigger+num);
 
 	let url = urlBase + "/DeleteContact." + extension;
 
@@ -446,13 +439,8 @@ function deleteContact(num){
 	//globalJsonObject.splice(num-1,1);
 	console.log(globalJsonObject);
 
-	/* Alternative with only sending the contact ID*/
-	/* let contactID = num - 1;*/
-
-	
-
 	let jsonPayload = {contactID:globalJsonObject.contacts[num-1].ID};
-	//let jsonPayload = {ID:contactID};
+
 	console.log(globalJsonObject.contacts[num-1].ID);
 
 	let xhr = new XMLHttpRequest();
@@ -463,11 +451,16 @@ function deleteContact(num){
 	try{
 		xhr.onreadystatechange = function() {
 			if(this.readyState == 4 && this.status == 200){
-				document.getElementById("contact-result").innerHTML = "Contact has been deleted";
+				let jsonObject = JSON.parse(xhr.responseText);
+				if(jsonObject.deleted === "Yes"){
+					document.getElementById("contact-result").innerHTML = "Contact has been deleted";
+				}
+				else{
+					document.getElementById("contact-result").innerHTML = "Contact was not deleted";
+				}
 			}
 		};
 		xhr.send(jsonPayload);
-		
 	}
 	catch(err){
 		document.getElementById("contact-result").innerHTML = err.message;
