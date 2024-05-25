@@ -133,7 +133,7 @@
 
                 
                 <span id="contact-result" class="text-black row cell"></span>
-                <body onload= "firstPage()">
+                
                 <!--TODO: FINISH PAGINATION-->
                 <div id="page-selector" class="row-alt justify-content-end">
                     <a id="refresh-button" href="javascript:firstPage()" class="text-black a-link"><div id="refreshButton" class="text-black refresh-page" type="button">Refresh</div></a>
@@ -147,7 +147,7 @@
         <footer class="py-5 bg-accent" id="footer">
             <div class="m-0 text-center text-black">A student project for COP4331, University of Central Florida</div>
         </footer>
-
+        <body onload= "firstPage()">
     </body>
     <script src="js/app.js"></script>
 </html>
