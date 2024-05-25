@@ -399,7 +399,7 @@ function loadContacts(jsonObject){
 function hideRow(row,num){
 	//block = show | none = hide
 	if(num===0){
-		row.style.display="block";
+		row.style.display="flex";
 	}
 	else if(num === 1){
 		row.style.display="none";
