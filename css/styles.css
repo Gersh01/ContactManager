@@ -120,6 +120,11 @@
   padding:0.25rem;
 }
 
+.a-link-alt{
+  width: 1%;
+  text-decoration: none;
+}
+
 .refresh-page{
   display:flex;
   margin:0%;
