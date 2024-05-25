@@ -386,7 +386,7 @@ function searchContact(){
 
 	let url = urlBase + "/Search." + extension;
 
-	let searchField = document.getElementById("search-bar").value;
+	let searchField = document.getElementById("search-bar-row").value;
 	
 	let tmp = {UserID:userId, search:searchField};
 
