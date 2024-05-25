@@ -131,7 +131,7 @@
                 <span id="contact-result" class="text-black row cell"></span>
                 <body onload= "firstPage()">
                 <!--TODO: FINISH PAGINATION-->
-                <div id="page-selector" class="row-alt justify-content-right">
+                <div id="page-selector" class="row-alt justify-content-end">
                     <div id="backButton" class="move-page" type="button">Previous</div>
                     <div id="forwardButton" class="move-page" type="button">Next</div>
                 </div>
