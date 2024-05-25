@@ -444,7 +444,7 @@ function deleteContact(num){
 
 
 	//globalJsonObject.splice(num-1,1);
-	console(globalJsonObject);
+	console.log(globalJsonObject);
 
 	/* Alternative with only sending the contact ID*/
 	/* let contactID = num - 1;*/
