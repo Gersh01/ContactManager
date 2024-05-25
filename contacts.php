@@ -141,6 +141,25 @@
                             <div id="forwardButton" class="move-page" type="button">Next</div>
                         </div>
                     </div>
+
+                    <!--Add Contact Section (display none by default)-->
+                    <div id="add-contact" display="none" class="table">
+                        <div class="search-bar row">
+                            <input id="add-contact-first-name" type="text" placeholder="First Name">
+                        </div>
+                        <div class="search-bar row">
+                            <input id="add-contact-last-name" type="text" placeholder="Last Name">
+                        </div>
+                        <div class="search-bar row">
+                            <input id="add-contact-email" type="text" placeholder="Email">
+                        </div>
+                        <div class="search-bar row">
+                            <input id="add-contact-phone-number" type="text" placeholder="Phone Number">
+                        </div>
+
+                        <!--Button-->
+                        <a id="addContact" href="javascript:addContact()"><div class="button" type="button">Add User</div></a>
+                    </div>
                 </div>
             </div>
         </div>
