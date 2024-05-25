@@ -366,12 +366,12 @@ function firstPage(){
 }
 
 function loadContacts(jsonObject){
-
+	let i = 0;
 	if(jsonObject.contacts.length == 0){
 		document.getElementById("contact-result").innerHTML = "No contacts found";
 		return;
 	}
-	for(let i = 0; i<jsonObject.contacts.length; i++){
+	for(i = 0; i<jsonObject.contacts.length; i++){
 		console.log(jsonObject.contacts[i].FirstName);
 		console.log("contact-first-name-"+parseInt(i+1));
 		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
@@ -379,6 +379,15 @@ function loadContacts(jsonObject){
 		document.getElementById("contact-email-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Email;
 		document.getElementById("contact-phone-number-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Phone;
 	}
+	for(j = i; i<jsonObject.contacts.length; j++){
+		console.log(jsonObject.contacts[i].FirstName);
+		console.log("contact-first-name-"+parseInt(j+1));
+		document.getElementById("contact-first-name-"+parseInt(j+1)).textContent = "";
+		document.getElementById("contact-last-name-"+parseInt(j+1)).textContent = "";
+		document.getElementById("contact-email-"+parseInt(j+1)).textContent = "";
+		document.getElementById("contact-phone-number-"+parseInt(j+1)).textContent = "";
+	}
+
 }
 
 
@@ -420,8 +429,6 @@ function searchContact(){
 		document.getElementById("contact-result").innerHTML = err.message;
 		console.log(err.message);
 	}
-
-
 }
 
 function deleteContact(num){
