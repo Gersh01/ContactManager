@@ -85,7 +85,7 @@
 }
 
 .contacts-hideable{
-  display:block;
+  display:flex;
 }
 
 #footer{
