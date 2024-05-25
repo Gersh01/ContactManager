@@ -375,7 +375,7 @@ function loadContacts(jsonObject){
 		console.log("contact-first-name-"+parseInt(i+1));
 
 		let row = document.getElementById("contact-row-"+parseInt(i+1));
-		hideRow(row,show);
+		toggleElement(row,show);
 		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
 		document.getElementById("contact-last-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].LastName;
 		document.getElementById("contact-email-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Email;
@@ -384,13 +384,12 @@ function loadContacts(jsonObject){
 	}
 	for(j = i; j<10; j++){
 		let row = document.getElementById("contact-row-"+parseInt(j+1));
-		hideRow(row,hide);
+		toggleElement(row,hide);
 	}
-
 }
 
 
-function hideRow(row,num){
+function toggleElement(row,num){
 	//block = show | none = hide
 	if(num===0){
 		row.style.display="flex";
