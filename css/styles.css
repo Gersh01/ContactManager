@@ -3765,6 +3765,8 @@ textarea.form-control-lg {
   color: var(--bs-nav-link-color);
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  margin-right:2rem;
+  margin-left:2rem;
 }
 @media (prefers-reduced-motion: reduce) {
   .nav-link {
