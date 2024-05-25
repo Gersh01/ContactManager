@@ -63,7 +63,7 @@
                             <div id="contact-email-2" class="cell text-black"></div>
                             <div id="contact-phone-number-2" class="cell text-black"></div>
                             <div id="contact-edit-2" class="text-black icon-cell" type="button">Edit</div>
-                            <div id="contact-delete-222" class="text-black icon-cell" type="button">Delete</div>
+                            <a id="contact-delete-2" href="javascript:deleteContact(2)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
                         </div>
                         <div id="contact-row-03" class="cell">
                             <div id="contact-first-name-3" class="cell text-black"></div>
@@ -71,7 +71,7 @@
                             <div id="contact-email-3" class="cell text-black"></div>
                             <div id="contact-phone-number-3" class="cell text-black"></div>
                             <div id="contact-edit-3" class="text-black icon-cell" type="button">Edit</div>
-                            <div id="contact-delete-3" class="text-black icon-cell" type="button">Delete</div>
+                            <a id="contact-delete-3" href="javascript:deleteContact(3)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
                         </div>
                         <div id="contact-row-04" class="cell">
                             <div id="contact-first-name-4" class="cell text-black"></div>
@@ -79,7 +79,7 @@
                             <div id="contact-email-4" class="cell text-black"></div>
                             <div id="contact-phone-number-4" class="cell text-black"></div>
                             <div id="contact-edit-4" class="text-black icon-cell" type="button">Edit</div>
-                            <div id="contact-delete-4" class="text-black icon-cell" type="button">Delete</div>
+                            <a id="contact-delete-4" href="javascript:deleteContact(4)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
                         </div>
                         <div id="contact-row-05" class="cell">
                             <div id="contact-first-name-5" class="cell text-black"></div>
@@ -87,7 +87,7 @@
                             <div id="contact-email-5" class="cell text-black"></div>
                             <div id="contact-phone-number-5" class="cell text-black"></div>
                             <div id="contact-edit-5" class="text-black icon-cell" type="button">Edit</div>
-                            <div id="contact-delete-5" class="text-black icon-cell" type="button">Delete</div>
+                            <a id="contact-delete-5" href="javascript:deleteContact(5)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
                         </div>
                         <div id="contact-row-06" class="cell">
                             <div id="contact-first-name-6" class="cell text-black"></div>
@@ -95,7 +95,7 @@
                             <div id="contact-email-6" class="cell text-black"></div>
                             <div id="contact-phone-number-6" class="cell text-black"></div>
                             <div id="contact-edit-6" class="text-black icon-cell" type="button">Edit</div>
-                            <div id="contact-delete-6" class="text-black icon-cell" type="button">Delete</div>
+                            <a id="contact-delete-6" href="javascript:deleteContact(6)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
                         </div>
                         <div id="contact-row-07" class="cell">
                             <div id="contact-first-name-7" class="cell text-black"></div>
@@ -103,7 +103,7 @@
                             <div id="contact-email-7" class="cell text-black"></div>
                             <div id="contact-phone-number-7" class="cell text-black"></div>
                             <div id="contact-edit-7" class="text-black icon-cell" type="button">Edit</div>
-                            <div id="contact-delete-7" class="text-black icon-cell" type="button">Delete</div>
+                            <a id="contact-delete-7" href="javascript:deleteContact(7)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
                         </div>
                         <div id="contact-row-08" class="cell">
                             <div id="contact-first-name-8" class="cell text-black"></div>
@@ -111,7 +111,7 @@
                             <div id="contact-email-8" class="cell text-black"></div>
                             <div id="contact-phone-number-8" class="cell text-black"></div>
                             <div id="contact-edit-8" class="text-black icon-cell" type="button">Edit</div>
-                            <div id="contact-delete-8" class="text-black icon-cell" type="button">Delete</div>
+                            <a id="contact-delete-8" href="javascript:deleteContact(8)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
                         </div>
                         <div id="contact-row-09" class="cell">
                             <div id="contact-first-name-9" class="cell text-black"></div>
@@ -119,7 +119,7 @@
                             <div id="contact-email-9" class="cell text-black"></div>
                             <div id="contact-phone-number-9" class="cell text-black"></div>
                             <div id="contact-edit-9" class="text-black icon-cell" type="button">Edit</div>
-                            <div id="contact-delete-9" class="text-black icon-cell" type="button">Delete</div>
+                            <a id="contact-delete-9" href="javascript:deleteContact(9)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
                         </div>
                         <div id="contact-row-10" class="cell">
                             <div id="contact-first-name-10" class="cell text-black"></div>
@@ -127,7 +127,7 @@
                             <div id="contact-email-10" class="cell text-black"></div>
                             <div id="contact-phone-number-10" class="cell text-black"></div>
                             <div id="contact-edit-10" class="text-black icon-cell" type="button">Edit</div>
-                            <div id="contact-delete-10" class="text-black icon-cell" type="button">Delete</div>
+                            <a id="contact-delete-10" href="javascript:deleteContact(10)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
                         </div>
                     </div>
                 </div>
