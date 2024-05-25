@@ -6,7 +6,7 @@
 
     $data = json_decode(file_get_contents('php://input'), true);
 
-    $cursor = isset($data["cursor"]) ? $data["cursor"] : 0; 
+    $cursor = isset($data["cursor"]) ? $data["cursor"] : ""; 
     $next = isset($data["next"]) ? $data["next"] : 1; 
     $userID = isset($data["userID"]) ? $data["userID"] : "";
 
@@ -23,15 +23,15 @@
         returnWithError($conn->connect_error);
     } else {
         if($next == 1){
-            $stmt = $conn->prepare("SELECT ID, SUBSTRING_INDEX(Name, ' ', 1) AS FirstName, SUBSTRING_INDEX(Name, ' ', -1) AS LastName, Phone, Email, UserID, Favorited FROM Contacts WHERE ID > ? AND UserID = ? ORDER BY ID ASC LIMIT 10");
+            $stmt = $conn->prepare("SELECT ID, SUBSTRING_INDEX(Name, ' ', 1) AS FirstName, SUBSTRING_INDEX(Name, ' ', -1) AS LastName, Phone, Email, UserID, Favorited FROM Contacts WHERE Name > ? AND UserID = ? ORDER BY Name ASC LIMIT 10");
         }else if($next == 0){
-            $stmt = $conn->prepare("SELECT ID, SUBSTRING_INDEX(Name, ' ', 1) AS FirstName, SUBSTRING_INDEX(Name, ' ', -1) AS LastName, Phone, Email, UserID, Favorited FROM Contacts WHERE ID < ? AND UserID = ? ORDER BY ID DESC LIMIT 10");
+            $stmt = $conn->prepare("SELECT ID, SUBSTRING_INDEX(Name, ' ', 1) AS FirstName, SUBSTRING_INDEX(Name, ' ', -1) AS LastName, Phone, Email, UserID, Favorited FROM Contacts WHERE Name < ? AND UserID = ? ORDER BY Name DESC LIMIT 10");
         }else{
             returnWithError("");
             exit();
         }
 
-        $stmt->bind_param("is", $cursor, $userID);
+        $stmt->bind_param("ss", $cursor, $userID);
         $stmt->execute();
         $result = $stmt->get_result();
 

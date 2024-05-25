@@ -84,12 +84,29 @@
   --bs-highlight-bg: #fff3cd;
 }
 
+.contacts-hideable{
+  display:block;
+}
+
 #footer{
   bottom: 0px;
   left: 0px;
   right: 0px;
   margin-bottom: 0px;
 
+}
+
+.icon-cell{
+  display:flex;
+  width:5%;
+  justify-content:center;
+  margin-top:auto;
+  margin-bottom:auto;
+}
+
+.header-link{
+  margin-right:2rem;
+  margin-left:2rem;
 }
 
 .move-page{
@@ -108,6 +125,11 @@
   width: 5rem;
   text-decoration:none;
   padding:0.25rem;
+}
+
+.a-link-alt{
+  width: fit-content;
+  text-decoration: none;
 }
 
 .refresh-page{
@@ -3750,6 +3772,8 @@ textarea.form-control-lg {
   color: var(--bs-nav-link-color);
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  margin-right:2rem;
+  margin-left:2rem;
 }
 @media (prefers-reduced-motion: reduce) {
   .nav-link {

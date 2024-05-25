@@ -347,11 +347,8 @@ function firstPage(){
 	try{
 		xhr.onreadystatechange = function() {
 			if(this.readyState == 4 && this.status == 200){
-				document.getElementById("contact-result").innerHTML = "Contacts have been recieved";
-				let jsonObject = JSON.parse( xhr.responseText )
-				console.log(jsonObject);
-				console.log(typeof(jsonObject));
-				console.log("Length of JSON object "+jsonObject.contacts.length);
+				//document.getElementById("contact-result").innerHTML = "Contacts have been recieved";
+				let jsonObject = JSON.parse( xhr.responseText );
 				globalJsonObject = jsonObject;
 				loadContacts(jsonObject);
 			}
@@ -366,18 +363,48 @@ function firstPage(){
 }
 
 function loadContacts(jsonObject){
-
+	let i = 0;
+	let hide = 1;
+	let show = 0;
 	if(jsonObject.contacts.length == 0){
 		document.getElementById("contact-result").innerHTML = "No contacts found";
 		return;
 	}
-	for(let i = 0; i<jsonObject.contacts.length; i++){
+	for(i = 0; i<jsonObject.contacts.length; i++){
 		console.log(jsonObject.contacts[i].FirstName);
 		console.log("contact-first-name-"+parseInt(i+1));
+
+		let row = document.getElementById("contact-row-"+parseInt(i+1));
+		toggleElement(row,show);
 		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
 		document.getElementById("contact-last-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].LastName;
 		document.getElementById("contact-email-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Email;
 		document.getElementById("contact-phone-number-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Phone;
+
+	}
+	for(j = i; j<10; j++){
+		let row = document.getElementById("contact-row-"+parseInt(j+1));
+		toggleElement(row,hide);
+	}
+}
+
+function showTable(){
+	let table = document.getElementById("contacts-hideable");
+	if(table.style.display === "block"){
+		table.style.display = "none"
+	}
+	else{
+		table.style.display = "block"
+	}
+}
+
+function toggleElement(row,num){
+	//block = show | none = hide
+	if(num===0){
+		row.style.display="flex";
+	}
+	else if(num === 1){
+		row.style.display="none";
 	}
 }
 
@@ -389,8 +416,8 @@ function searchContact(){
 	let url = urlBase + "/Search." + extension;
 
 	let searchField = document.getElementById("search-bar").value;
-	
-	let tmp = {UserID:userId, showFavorites:0,search:searchField};
+	//ADD cursor{firstname/lastname/contactID}, next(tru||false)
+	let tmp = {UserID:userId, showFavorites:0, search:searchField};
 
 	document.getElementById("contact-result").innerHTML = "";
 	
@@ -408,8 +435,8 @@ function searchContact(){
 	try{
 		xhr.onreadystatechange = function() {
 			if(this.readyState == 4 && this.status == 200){
-				document.getElementById("contact-result").innerHTML = "Contacts have been recieved";
-				let jsonObject = JSON.parse( xhr.responseText )
+				let jsonObject = JSON.parse( xhr.responseText );
+				//document.getElementById("contact-result").innerHTML ="Contacts have been recieved";
 				loadContacts(jsonObject);
 			}
 		};
@@ -420,51 +447,54 @@ function searchContact(){
 		document.getElementById("contact-result").innerHTML = err.message;
 		console.log(err.message);
 	}
-
-
 }
 
 function deleteContact(num){
-
-	let trigger = "contact-delete-";
-
 	console.log(num);
-
-	let name = document.getElementById(trigger+num);
-	let email = document.getElementById(trigger+num);
-	let phone = document.getElementById(trigger+num);
 
 	let url = urlBase + "/DeleteContact." + extension;
 
+	//globalJsonObject.splice(num-1,1);
+	console.log(globalJsonObject);
 
+	let deletedContactID = globalJsonObject.contacts[num-1].ID
+	let convertToString = "" + deletedContactID;
 
-	globalJsonObject.splice(num-1,1);
-	console(globalJsonObject);
-
-	/* Alternative with only sending the contact ID*/
-	/* let contactID = num - 1;*/
-
+	let tmp = {contactID:deletedContactID};
 	
+	let jsonPayload = JSON.stringify(tmp);
 
-	let jsonPayload = {name:name, phone:phone, email:email ,userID:userId};
-	//let jsonPayload = {ID:contactID};
-	
-	let xhr = XMLHttpRequest();
+	console.log(convertToString);
+
+	let xhr = new XMLHttpRequest();
 
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-
+	console.log(jsonPayload);
 	try{
 		xhr.onreadystatechange = function() {
 			if(this.readyState == 4 && this.status == 200){
-				document.getElementById("delete-result").innerHTML = "Contact has been deleted";
+				let jsonObject = JSON.parse(xhr.responseText);
+				console.log(jsonObject.deleted);
+				console.log(jsonObject.error);
+				if(jsonObject.deleted === "Yes"){
+					document.getElementById("contact-result").innerHTML = "Contact has been deleted";
+					if(document.getElementById("search-bar").value == ""){
+						firstPage();
+					}
+					else{
+						searchContact();
+					}
+				}
+				else{
+					document.getElementById("contact-result").innerHTML = "Contact was not deleted";
+				}
 			}
 		};
 		xhr.send(jsonPayload);
-		
 	}
 	catch(err){
-		document.getElementById("delete-result").innerHTML = err.message;
+		document.getElementById("contact-result").innerHTML = err.message;
 		console.log(err.message);
 	}
 }

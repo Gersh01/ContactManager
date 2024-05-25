@@ -13,6 +13,8 @@
     //     exit();
     // }
 
+    // echo json_encode($data);
+
     // $requiredFields = ["name", "phone", "email", "userID"];
     $requiredFields = ["contactID"];
     $missingFields = [];
@@ -26,7 +28,7 @@
         $missingFieldsStr = implode(", ", $missingFields);
         returnWithError("Missing or invalid fields: $missingFieldsStr");
         exit();
-    }
+    }   
 
     // $name = $data["name"];
     // $phone = $data["phone"];
@@ -48,10 +50,11 @@
         // $stmt = $conn->prepare("DELETE FROM Contacts WHERE Name=? AND Email=? AND Phone=?");
         //      $stmt->bind_param("sss", $name, $email, $phone);
         $stmt = $conn->prepare("DELETE FROM Contacts WHERE ID=?");
-                $stmt->bind_param("s", $contactID);
+                $stmt->bind_param("i", $contactID);
                 $stmt->execute();
 
         $result = $stmt->get_result();
+        
 
         if($stmt->affected_rows > 0){
                 returnWithInfo();
