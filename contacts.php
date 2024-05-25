@@ -34,7 +34,7 @@
                     <!--Search Bar-->
                     <div class="text-center my-6">
                         <div id="search-bar" class="search-bar row-alt">
-                            <input id="search-bar-text" type="text" placeholder="Search..." required onkeyup = "searchContact()">
+                            <input id="search-bar" type="text" placeholder="Search..." required onkeyup = "searchContact()">
                             <a id="refresh-button" href="javascript:firstPage()" class="text-black a-link"><div id="refreshButton" class="text-black refresh-page" type="button">Refresh</div></a>
                         </div>
                     </div>
