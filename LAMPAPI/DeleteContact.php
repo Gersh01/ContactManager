@@ -13,6 +13,8 @@
     //     exit();
     // }
 
+    print_r($data);
+
     // $requiredFields = ["name", "phone", "email", "userID"];
     $requiredFields = ["contactID"];
     $missingFields = [];
