@@ -377,7 +377,7 @@ function loadContacts(jsonObject){
 		console.log(jsonObject.contacts[i].FirstName);
 		console.log("contact-first-name-"+parseInt(i+1));
 
-		let row = document.getElementById("contact-row-"+parseInt(j+1));
+		let row = document.getElementById("contact-row-"+parseInt(i+1));
 		hideRow(row,show);
 		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
 		document.getElementById("contact-last-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].LastName;
