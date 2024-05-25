@@ -1,8 +1,12 @@
 <?php
 
+	echo "0";
+
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
+
+	echo "1";
 
     $data = json_decode(file_get_contents('php://input'), true);
 
@@ -10,9 +14,10 @@
 
     if ($conn->connect_error) {
 
-        return returnWithError($conn->connect_error);
+        returnWithError($conn->connect_error);
 
     } else {
+
         $stmt = null;
 
         if ($data["showFavorites"]) {
@@ -20,6 +25,7 @@
         } else {
             $stmt = $conn->prepare("SELECT * FROM Contacts WHERE (Name like ? OR Phone like ? OR Email like ?) AND UserID = ? ORDER BY Favorited DESC");
         }
+
 
         $search = "%" . $data["search"] . "%";
 		$stmt->bind_param("ssss", $search, $search, $search, $data["UserID"]);
@@ -45,6 +51,7 @@
         if ($results == 0) {
             returnWithError("No Records Found");
         } else {
+			echo $searchResults;
             returnWithInfo($searchResults);
         }
 

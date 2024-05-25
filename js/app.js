@@ -13,6 +13,7 @@ let registerFieldsFull = false;
 
 let inputLogin = document.getElementById("login-password");
 let inputRegister = document.getElementById("register-password-confirm");
+let globalJsonObject = null;
 
 if(inputLogin != null){
 	inputLogin.addEventListener("keypress", function(event){
@@ -351,6 +352,7 @@ function firstPage(){
 				console.log(jsonObject);
 				console.log(typeof(jsonObject));
 				console.log("Length of JSON object "+jsonObject.contacts.length);
+				globalJsonObject = jsonObject;
 				loadContacts(jsonObject);
 			}
 		};
@@ -388,11 +390,14 @@ function searchContact(){
 
 	let searchField = document.getElementById("search-bar").value;
 	
-	let tmp = {UserID:userId, search:searchField};
+	let tmp = {UserID:userId, showFavorites:0,search:searchField};
 
 	document.getElementById("contact-result").innerHTML = "";
+	
 
 	let jsonPayload = JSON.stringify( tmp );
+
+	console.log(tmp);
 
 	let xhr = new XMLHttpRequest();
 
@@ -419,10 +424,49 @@ function searchContact(){
 
 }
 
-function deleteContact(){
+function deleteContact(num){
+
+	let trigger = "contact-delete-";
+
+	console.log(num);
+
+	let name = document.getElementById(trigger+num);
+	let email = document.getElementById(trigger+num);
+	let phone = document.getElementById(trigger+num);
+
+	let url = urlBase + "/DeleteContact." + extension;
 
 
 
+	globalJsonObject.splice(num-1,1);
+	console(globalJsonObject);
+
+	/* Alternative with only sending the contact ID*/
+	/* let contactID = num - 1;*/
+
+	
+
+	let jsonPayload = {name:name, phone:phone, email:email ,userID:userId};
+	//let jsonPayload = {ID:contactID};
+	
+	let xhr = XMLHttpRequest();
+
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	try{
+		xhr.onreadystatechange = function() {
+			if(this.readyState == 4 && this.status == 200){
+				document.getElementById("delete-result").innerHTML = "Contact has been deleted";
+			}
+		};
+		xhr.send(jsonPayload);
+		
+	}
+	catch(err){
+		document.getElementById("delete-result").innerHTML = err.message;
+		console.log(err.message);
+	}
 }
 
 function updateContact(){

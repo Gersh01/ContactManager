@@ -33,7 +33,7 @@
 
                     <!--Search Bar-->
                     <div class="text-center my-6">
-                        <div id="search-bar" class="search-bar row-alt">
+                        <div id="search-bar-row" class="search-bar row-alt">
                             <input id="search-bar" type="text" placeholder="Search..." required onkeyup = "searchContact()">
                             <a id="refresh-button" href="javascript:firstPage()" class="text-black a-link"><div id="refreshButton" class="text-black refresh-page" type="button">Refresh</div></a>
                         </div>
@@ -55,7 +55,7 @@
                             <div id="contact-email-1" class="cell text-black"></div>
                             <div id="contact-phone-number-1" class="cell text-black"></div>
                             <div id="contact-edit-1" class="cell text-black" type="button">Edit</div>
-                            <div id="contact-delete-1" class="cell text-black" type="button">Delete</div>
+                            <a id="contact-delete-1" href="javascript:deleteContact(1)" class="text-black a-link"><div id="deteleButton" class="cell text-black" type="button">Delete</div></a>
                         </div>
                         <div id="contact-row-02" class="cell">
                             <div id="contact-first-name-2" class="cell text-black"></div>
@@ -63,7 +63,7 @@
                             <div id="contact-email-2" class="cell text-black"></div>
                             <div id="contact-phone-number-2" class="cell text-black"></div>
                             <div id="contact-edit-2" class="cell text-black" type="button">Edit</div>
-                            <div id="contact-delete-2" class="cell text-black" type="button">Delete</div>
+                            <div id="contact-delete-222" class="cell text-black" type="button">Delete</div>
                         </div>
                         <div id="contact-row-03" class="cell">
                             <div id="contact-first-name-3" class="cell text-black"></div>
