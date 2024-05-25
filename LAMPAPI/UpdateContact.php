@@ -8,7 +8,7 @@
 
     $data = json_decode(file_get_contents('php://input'), true);
 
-    $requiredFields = ["name", "phone", "email", "userID", "favorite"];
+    $requiredFields = ["name", "phone", "email", "userID"];
     $missingFields = [];
     foreach ($requiredFields as $field) {
         if (!isset($data[$field]) || empty($data[$field])) {
@@ -33,6 +33,14 @@
     $userID = $data["userID"];
     $favorite = $data["favorite"];
 
+
+    // isset($data["cursor"]) ? $data["cursor"] : 0
+    $newName = isset($data["newName"]) ? $data["newName"] : $name;
+    $newPhone = isset($data["newPhone"]) ? $data["newPhone"] : $phone;
+    $newEmail = isset($data["newEmail"]) ? $data["newEmail"] : $email;
+    // $newUserID = isset($data["newUserID"]) ? $data["newUserID"] : $userID;
+    $newFavorite = isset($data["newFavorite"]) ? $data["newFavorite"] : $favorite;
+
     $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331" ,"COP4331");
 
     if ($conn->connect_error) {
@@ -48,7 +56,7 @@
 
         if($row = $result->fetch_assoc()){
                 $stmt = $conn->prepare("UPDATE Contacts SET Name=?, Phone=?, Email=?, Favorited=? WHERE ID=?;");
-                $stmt->bind_param("sssss", $name, $phone, $email, $favorite, $row['ID']);
+                $stmt->bind_param("sssss", $newName, $newPhone, $newEmail, $newFavorite, $row['ID']);
                 $stmt->execute();
                 returnWithInfo();
         } else {
