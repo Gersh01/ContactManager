@@ -45,6 +45,9 @@
         if ($results == 0) {
             returnWithError("No Records Found");
         } else {
+			echo "1";
+			echo $searchResults;
+			echo "2";
             returnWithInfo($searchResults);
         }
 
