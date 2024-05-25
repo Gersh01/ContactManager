@@ -479,6 +479,12 @@ function deleteContact(num){
 				console.log(jsonObject.error);
 				if(jsonObject.deleted === "Yes"){
 					document.getElementById("contact-result").innerHTML = "Contact has been deleted";
+					if(document.getElementById("search-bar").value == null){
+						loadContacts();
+					}
+					else{
+						searchContact();
+					}
 				}
 				else{
 					document.getElementById("contact-result").innerHTML = "Contact was not deleted";
