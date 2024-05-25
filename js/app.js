@@ -347,11 +347,8 @@ function firstPage(){
 	try{
 		xhr.onreadystatechange = function() {
 			if(this.readyState == 4 && this.status == 200){
-				document.getElementById("contact-result").innerHTML = "Contacts have been recieved";
-				let jsonObject = JSON.parse( xhr.responseText )
-				console.log(jsonObject);
-				console.log(typeof(jsonObject));
-				console.log("Length of JSON object "+jsonObject.contacts.length);
+				//document.getElementById("contact-result").innerHTML = "Contacts have been recieved";
+				let jsonObject = JSON.parse( xhr.responseText );
 				globalJsonObject = jsonObject;
 				loadContacts(jsonObject);
 			}
@@ -383,14 +380,11 @@ function loadContacts(jsonObject){
 		document.getElementById("contact-last-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].LastName;
 		document.getElementById("contact-email-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Email;
 		document.getElementById("contact-phone-number-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Phone;
+
 	}
 	for(j = i; j<10; j++){
 		let row = document.getElementById("contact-row-"+parseInt(j+1));
 		hideRow(row,hide);
-		document.getElementById("contact-first-name-"+parseInt(j+1)).textContent = "";
-		document.getElementById("contact-last-name-"+parseInt(j+1)).textContent = "";
-		document.getElementById("contact-email-"+parseInt(j+1)).textContent = "";
-		document.getElementById("contact-phone-number-"+parseInt(j+1)).textContent = "";
 	}
 
 }
@@ -434,7 +428,7 @@ function searchContact(){
 		xhr.onreadystatechange = function() {
 			if(this.readyState == 4 && this.status == 200){
 				let jsonObject = JSON.parse( xhr.responseText );
-				document.getElementById("contact-result").innerHTML ="Contacts have been recieved";
+				//document.getElementById("contact-result").innerHTML ="Contacts have been recieved";
 				loadContacts(jsonObject);
 			}
 		};
