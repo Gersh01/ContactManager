@@ -132,16 +132,14 @@
                                 <a id="contact-delete-10" href="javascript:deleteContact(10)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
                             </div>
                         </div>
-                    </div>
-    
                     
-                    <span id="contact-result" class="text-black row cell"></span>
+                        <span id="contact-result" class="text-black row cell"></span>
                     
-                    <!--TODO: FINISH PAGINATION-->
-                    <div id="page-selector" class="row-alt justify-content-end">
-                        
+                        <!--TODO: FINISH PAGINATION-->
+                        <div id="page-selector" class="row-alt justify-content-end">
                         <div id="backButton" class="move-page" type="button">Previous</div>
                         <div id="forwardButton" class="move-page" type="button">Next</div>
+                        </div>
                     </div>
                 </div>
             </div>
