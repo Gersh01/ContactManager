@@ -2,8 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <!-- On load event to check for cookies -->
-    <body onload= "readCookie()">
-    <body onload= "firstPage()">
+    <body onload= "readCookie(); firstPage()">
     
     <head>
         <meta charset="utf-8" />
