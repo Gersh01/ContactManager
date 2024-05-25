@@ -11,7 +11,7 @@
     $userID = isset($data["userID"]) ? $data["userID"] : "";
 
     if (empty($data) || !isset($data["userID"])) {
-        returnWithError("Invalid input data");
+        returnWithError("Missing or invalid input data");
         exit();
     }
 
