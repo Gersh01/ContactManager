@@ -30,6 +30,8 @@
 		$results = 0;
         $searchResults = "";
 
+		echo "1";
+
 		while($row = $result->fetch_assoc()) {
 			if ($results !== 0) {
 				$searchResults .= ",";
@@ -43,12 +45,9 @@
 		}
 
         if ($results == 0) {
-			echo "0";
             returnWithError("No Records Found");
         } else {
-			echo "1";
 			echo $searchResults;
-			echo "2";
             returnWithInfo($searchResults);
         }
 
