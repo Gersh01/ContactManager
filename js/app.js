@@ -391,7 +391,7 @@ function loadContacts(jsonObject){
 function showTable(){
 	let table = document.getElementById("contacts-hideable");
 	let show = 0;
-	if(table.style.display="flex"){
+	if(table.style.display === "flex"){
 		show = 1;
 	}
 	else{
