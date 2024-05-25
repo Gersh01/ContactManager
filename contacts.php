@@ -105,28 +105,28 @@
                             <div id="contact-delete" class="cell text-black" type="button">Delete</div>
                         </div>
                         <div id="contact-row-08" class="cell">
-                            <div id="contact-first-name" class="cell text-black"></div>
-                            <div id="contact-last-name" class="cell text-black"></div>
-                            <div id="contact-email" class="cell text-black"></div>
-                            <div id="contact-phone-number" class="cell text-black"></div>
-                            <div id="contact-edit" class="cell text-black" type="button">Edit</div>
-                            <div id="contact-delete" class="cell text-black" type="button">Delete</div>
+                            <div id="contact-first-name-8" class="cell text-black"></div>
+                            <div id="contact-last-name-8" class="cell text-black"></div>
+                            <div id="contact-email-8" class="cell text-black"></div>
+                            <div id="contact-phone-number-8" class="cell text-black"></div>
+                            <div id="contact-edit-8" class="cell text-black" type="button">Edit</div>
+                            <div id="contact-delete-8" class="cell text-black" type="button">Delete</div>
                         </div>
                         <div id="contact-row-09" class="cell">
-                            <div id="contact-first-name" class="cell text-black"></div>
-                            <div id="contact-last-name" class="cell text-black"></div>
-                            <div id="contact-email" class="cell text-black"></div>
-                            <div id="contact-phone-number" class="cell text-black"></div>
-                            <div id="contact-edit" class="cell text-black" type="button">Edit</div>
-                            <div id="contact-delete" class="cell text-black" type="button">Delete</div>
+                            <div id="contact-first-name-9" class="cell text-black"></div>
+                            <div id="contact-last-name-9" class="cell text-black"></div>
+                            <div id="contact-email-9" class="cell text-black"></div>
+                            <div id="contact-phone-number-9" class="cell text-black"></div>
+                            <div id="contact-edit-9" class="cell text-black" type="button">Edit</div>
+                            <div id="contact-delete-9" class="cell text-black" type="button">Delete</div>
                         </div>
                         <div id="contact-row-10" class="cell">
-                            <div id="contact-first-name" class="cell text-black"></div>
-                            <div id="contact-last-name" class="cell text-black"></div>
-                            <div id="contact-email" class="cell text-black"></div>
-                            <div id="contact-phone-number" class="cell text-black"></div>
-                            <div id="contact-edit" class="cell text-black" type="button">Edit</div>
-                            <div id="contact-delete" class="cell text-black" type="button">Delete</div>
+                            <div id="contact-first-name-10" class="cell text-black"></div>
+                            <div id="contact-last-name-10" class="cell text-black"></div>
+                            <div id="contact-email-10" class="cell text-black"></div>
+                            <div id="contact-phone-number-10" class="cell text-black"></div>
+                            <div id="contact-edit-10" class="cell text-black" type="button">Edit</div>
+                            <div id="contact-delete-10" class="cell text-black" type="button">Delete</div>
                         </div>
                     </div>
                 </div>
