@@ -10,7 +10,7 @@
 
     if ($conn->connect_error) {
 
-        return returnWithError($conn->connect_error);
+        returnWithError($conn->connect_error);
 
     } else {
         $stmt = null;
