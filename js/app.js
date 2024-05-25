@@ -380,7 +380,6 @@ function loadContacts(jsonObject){
 		document.getElementById("contact-phone-number-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Phone;
 	}
 	for(j = i; j<10; j++){
-		console.log(jsonObject.contacts[i].FirstName);
 		console.log("contact-first-name-"+parseInt(j+1));
 		document.getElementById("contact-first-name-"+parseInt(j+1)).textContent = "";
 		document.getElementById("contact-last-name-"+parseInt(j+1)).textContent = "";
