@@ -13,7 +13,7 @@ let registerFieldsFull = false;
 
 let inputLogin = document.getElementById("login-password");
 let inputRegister = document.getElementById("register-password-confirm");
-const globalJsonObject = null;
+let globalJsonObject = null;
 
 if(inputLogin != null){
 	inputLogin.addEventListener("keypress", function(event){
