@@ -370,7 +370,7 @@ function loadContacts(jsonObject){
 		document.getElementById("contact-result").innerHTML = "No contacts found";
 		return;
 	}
-	for(let i = 0; i<jsonObject.contacts.length-1; i++){
+	for(let i = 0; i<jsonObject.contacts.length; i++){
 		console.log(jsonObject.contacts[i].FirstName);
 		console.log("contact-first-name-"+parseInt(i+1));
 		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
