@@ -439,7 +439,7 @@ function deleteContact(num){
 	//globalJsonObject.splice(num-1,1);
 	console.log(globalJsonObject);
 
-	let jsonPayload = {contactID:toString(globalJsonObject.contacts[num-1].ID)};
+	let jsonPayload = {contactID:"globalJsonObject.contacts[num-1].ID"};
 
 	console.log(globalJsonObject.contacts[num-1].ID);
 
