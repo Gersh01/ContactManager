@@ -415,8 +415,8 @@ function searchContact(){
 	try{
 		xhr.onreadystatechange = function() {
 			if(this.readyState == 4 && this.status == 200){
-				document.getElementById("contact-result").innerHTML = "Contacts have been recieved";
-				let jsonObject = JSON.parse( xhr.responseText )
+				let jsonObject = JSON.parse( xhr.responseText );
+				document.getElementById("contact-result").innerHTML ="Contacts have been recieved";
 				loadContacts(jsonObject);
 			}
 		};
@@ -443,7 +443,7 @@ function deleteContact(num){
 
 
 
-	globalJsonObject.splice(num-1,1);
+	//globalJsonObject.splice(num-1,1);
 	console(globalJsonObject);
 
 	/* Alternative with only sending the contact ID*/
@@ -462,14 +462,14 @@ function deleteContact(num){
 	try{
 		xhr.onreadystatechange = function() {
 			if(this.readyState == 4 && this.status == 200){
-				document.getElementById("delete-result").innerHTML = "Contact has been deleted";
+				document.getElementById("contact-result").innerHTML = "Contact has been deleted";
 			}
 		};
 		xhr.send(jsonPayload);
 		
 	}
 	catch(err){
-		document.getElementById("delete-result").innerHTML = err.message;
+		document.getElementById("contact-result").innerHTML = err.message;
 		console.log(err.message);
 	}
 }
