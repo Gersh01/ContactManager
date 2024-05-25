@@ -136,9 +136,9 @@
                         <span id="contact-result" class="text-black row cell"></span>
                     
                         <!--TODO: FINISH PAGINATION-->
-                        <div id="page-selector" class="row-alt justify-content-end"></div>
-                        <div id="backButton" class="move-page" type="button">Previous</div>
-                        <div id="forwardButton" class="move-page" type="button">Next</div>
+                        <div id="page-selector" class="row-alt justify-content-end">
+                            <div id="backButton" class="move-page" type="button">Previous</div>
+                            <div id="forwardButton" class="move-page" type="button">Next</div>
                         </div>
                     </div>
                 </div>
