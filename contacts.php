@@ -63,7 +63,7 @@
                             <div id="contact-email-2" class="cell text-black"></div>
                             <div id="contact-phone-number-2" class="cell text-black"></div>
                             <div id="contact-edit-2" class="cell text-black" type="button">Edit</div>
-                            <div id="contact-delete-2" class="cell text-black" type="button">Delete</div>
+                            <div id="contact-delete-222" class="cell text-black" type="button">Delete</div>
                         </div>
                         <div id="contact-row-03" class="cell">
                             <div id="contact-first-name-3" class="cell text-black"></div>
