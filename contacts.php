@@ -55,7 +55,7 @@
                             <div id="contact-email-1" class="cell text-black"></div>
                             <div id="contact-phone-number-1" class="cell text-black"></div>
                             <div id="contact-edit-1" class="cell text-black" type="button">Edit</div>
-                            <a id="contact-delete-1" href="javascript:deleteContact(1)"><div class="cell text-black" type="button">Delete</div></a>
+                            <a id="contact-delete-1" href="javascript:deleteContact(1)"><div id="deteleButton" class="cell text-black" type="button">Delete</div></a>
                         </div>
                         <div id="contact-row-02" class="cell">
                             <div id="contact-first-name-2" class="cell text-black"></div>
