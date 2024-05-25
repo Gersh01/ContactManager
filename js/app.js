@@ -382,6 +382,8 @@ function loadContacts(jsonObject){
 
 function searchContact(){
 
+	console.log("Accessing contacts for search");
+
 	let url = urlBase + "/Search." + extension;
 
 	let searchField = document.getElementById("search-bar-text").value;
