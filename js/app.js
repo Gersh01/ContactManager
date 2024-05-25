@@ -434,15 +434,13 @@ function deleteContact(num){
 
 	let url = urlBase + "/DeleteContact." + extension;
 
-
-
 	//globalJsonObject.splice(num-1,1);
 	console.log(globalJsonObject);
 
 	let deletedContactID = globalJsonObject.contacts[num-1].ID
 	let convertToString = "" + deletedContactID;
 
-	let jsonPayload = {contactID:convertToString};
+	let jsonPayload = {contactID:deletedContactID};
 	
 
 	console.log(convertToString);
