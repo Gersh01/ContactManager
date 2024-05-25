@@ -457,6 +457,7 @@ function deleteContact(num){
 			if(this.readyState == 4 && this.status == 200){
 				let jsonObject = JSON.parse(xhr.responseText);
 				console.log(jsonObject.deleted);
+				console.log(jsonObject.error);
 				if(jsonObject.deleted === "Yes"){
 					document.getElementById("contact-result").innerHTML = "Contact has been deleted";
 				}
