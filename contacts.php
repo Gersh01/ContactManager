@@ -48,7 +48,7 @@
                         <div id="contact-delete" class="cell text-black">Delete</div>
                     </div>
                     <div id="contact-row-01" class="cell">
-                        <div id="contact-first-name-01" class="cell text-black"></div>
+                        <span id="contact-first-name-01" class="cell text-black"></span>
                         <div id="contact-last-name-01" class="cell text-black"></div>
                         <div id="contact-email-01" class="cell text-black"></div>
                         <div id="contact-phone-number-01" class="cell text-black"></div>
