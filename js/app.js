@@ -13,7 +13,7 @@ let registerFieldsFull = false;
 
 let inputLogin = document.getElementById("login-password");
 let inputRegister = document.getElementById("register-password-confirm");
-let globalJsonObject = null;
+const globalJsonObject = null;
 
 if(inputLogin != null){
 	inputLogin.addEventListener("keypress", function(event){
@@ -390,7 +390,7 @@ function searchContact(){
 
 	let searchField = document.getElementById("search-bar").value;
 	
-	let tmp = {UserID:userId, search:searchField};
+	let tmp = {UserID:userId, showFavorites:0,search:searchField};
 
 	document.getElementById("contact-result").innerHTML = "";
 	
