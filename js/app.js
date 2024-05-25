@@ -396,8 +396,8 @@ function searchContact(){
 	let url = urlBase + "/Search." + extension;
 
 	let searchField = document.getElementById("search-bar").value;
-	
-	let tmp = {UserID:userId, showFavorites:0,search:searchField};
+	//ADD cursor{firstname/lastname/contactID}, next(tru||false)
+	let tmp = {UserID:userId, showFavorites:0, search:searchField};
 
 	document.getElementById("contact-result").innerHTML = "";
 	
