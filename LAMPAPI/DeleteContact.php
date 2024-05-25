@@ -13,7 +13,8 @@
     //     exit();
     // }
 
-    $requiredFields = ["name", "phone", "email", "userID"];
+    // $requiredFields = ["name", "phone", "email", "userID"];
+    $requiredFields = ["contactID"];
     $missingFields = [];
     foreach ($requiredFields as $field) {
         if (!isset($data[$field]) || empty($data[$field])) {
@@ -27,10 +28,11 @@
         exit();
     }
 
-    $name = $data["name"];
-    $phone = $data["phone"];
-    $email = $data["email"];
-    $userID = $data["userID"];
+    // $name = $data["name"];
+    // $phone = $data["phone"];
+    // $email = $data["email"];
+    // $userID = $data["userID"];
+    $contactID = $data["contactID"];
 
     
 
@@ -43,8 +45,10 @@
 
     } else {
         
-        $stmt = $conn->prepare("DELETE FROM Contacts WHERE Name=? AND Email=? AND Phone=?");
-                $stmt->bind_param("sss", $name, $email, $phone);
+        // $stmt = $conn->prepare("DELETE FROM Contacts WHERE Name=? AND Email=? AND Phone=?");
+        //      $stmt->bind_param("sss", $name, $email, $phone);
+        $stmt = $conn->prepare("DELETE FROM Contacts WHERE ID=?");
+                $stmt->bind_param("s", $contactID);
                 $stmt->execute();
 
         $result = $stmt->get_result();
