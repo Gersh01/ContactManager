@@ -388,7 +388,7 @@ function searchContact(){
 
 	let url = urlBase + "/Search." + extension;
 
-	let searchField = document.getElementById("search-bar-row").value;
+	let searchField = document.getElementById("search-bar").value;
 	
 	let tmp = {UserID:userId, search:searchField};
 
@@ -429,7 +429,6 @@ function deleteContact(num){
 	let trigger = "contact-delete-";
 
 	console.log(num);
-	console.log(contact);
 
 	let name = document.getElementById(trigger+num);
 	let email = document.getElementById(trigger+num);
