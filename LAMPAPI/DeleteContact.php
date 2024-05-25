@@ -48,7 +48,7 @@
         // $stmt = $conn->prepare("DELETE FROM Contacts WHERE Name=? AND Email=? AND Phone=?");
         //      $stmt->bind_param("sss", $name, $email, $phone);
         $stmt = $conn->prepare("DELETE FROM Contacts WHERE ID=?");
-                $stmt->bind_param("i", $contactID);
+                $stmt->bind_param("s", $contactID);
                 $stmt->execute();
 
         $result = $stmt->get_result();
