@@ -23,6 +23,7 @@
 		if ($data["cursor"]["firstName"] == "") {
 			$stmt = $conn->prepare("SELECT * FROM Contacts WHERE Favorited >= ? AND (Name like ? OR Phone like ? OR Email like ?) AND UserID = ? ORDER BY Favorited DESC, Name ASC, ID ASC LIMIT 10");
 
+			$search = "%" . $data["search"] . "%";
 			$stmt->bind_param("sssss", $data["showFavorites"], $search, $search, $search, $data["UserID"]);
 			
 		} else {
@@ -64,7 +65,7 @@
 		}
 
         if ($results == 0) {
-			returnWithInfo("");
+			echo "No Records Found";
         } else {
             returnWithInfo($searchResults);
         }
