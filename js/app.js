@@ -451,10 +451,11 @@ function deleteContact(num){
 
 	
 
-	let jsonPayload = {name:name, phone:phone, email:email ,userID:userId};
+	let jsonPayload = {contactID:globalJsonObject.contacts[num-1].ID};
 	//let jsonPayload = {ID:contactID};
-	
-	let xhr = XMLHttpRequest();
+	console.log(globalJsonObject.contacts[num-1].ID);
+
+	let xhr = new XMLHttpRequest();
 
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
