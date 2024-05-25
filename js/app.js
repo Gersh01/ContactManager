@@ -452,8 +452,9 @@ function deleteContact(num){
 		xhr.onreadystatechange = function() {
 			if(this.readyState == 4 && this.status == 200){
 				let jsonObject = JSON.parse(xhr.responseText);
+				console.log(jsonObject.deleted);
 				if(jsonObject.deleted === "Yes"){
-					console.log(jsonObject.deleted);
+					
 					document.getElementById("contact-result").innerHTML = "Contact has been deleted";
 				}
 				else{
