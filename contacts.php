@@ -144,10 +144,6 @@
                 </div>
             </div>
         </div>
-
-        <div id="add-contact">
-            
-        </div>
         
         <!--Site Footer-->
         <footer class="py-5 bg-accent" id="footer">
