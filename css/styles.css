@@ -121,7 +121,7 @@
 }
 
 .a-link-alt{
-  width: 1%;
+  width: fit-content;
   text-decoration: none;
 }
 
