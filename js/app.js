@@ -439,7 +439,7 @@ function deleteContact(num){
 	//globalJsonObject.splice(num-1,1);
 	console.log(globalJsonObject);
 
-	let jsonPayload = {contactID:globalJsonObject.contacts[num-1].ID};
+	let jsonPayload = {contactID:toString(globalJsonObject.contacts[num-1].ID)};
 
 	console.log(globalJsonObject.contacts[num-1].ID);
 
@@ -454,7 +454,6 @@ function deleteContact(num){
 				let jsonObject = JSON.parse(xhr.responseText);
 				console.log(jsonObject.deleted);
 				if(jsonObject.deleted === "Yes"){
-					
 					document.getElementById("contact-result").innerHTML = "Contact has been deleted";
 				}
 				else{
