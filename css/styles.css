@@ -100,7 +100,10 @@
   margin-bottom:auto;
 }
 
-
+.header-link{
+  margin-right:2rem;
+  margin-left:2rem;
+}
 
 .move-page{
   display:flex;
