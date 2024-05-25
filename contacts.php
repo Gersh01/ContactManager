@@ -36,7 +36,7 @@
                         <div id="search-bar-row" class="search-bar row-alt">
                             <input id="search-bar" type="text" placeholder="Search..." required onkeyup = "searchContact()">
                             <a id="refresh-button" href="javascript:firstPage()" class="text-black a-link"><div id="refreshButton" class="text-black refresh-page" type="button">Refresh</div></a>
-                            <a id="add-contac-button" href="javascript:firstPage()" class="text-black a-link"><div id="addContactButton" class="text-black refresh-page" type="button">Add Contact</div></a>
+                            <a id="add-contact-button" href="javascript:toggleElement()" class="text-black a-link"><div id="addContactButton" class="text-black refresh-page" type="button">Add Contact</div></a>
                         </div>
                     </div>
 
@@ -145,6 +145,10 @@
             </div>
         </div>
 
+        <div id=add-contact>
+            
+        </div>
+        
         <!--Site Footer-->
         <footer class="py-5 bg-accent" id="footer">
             <div class="m-0 text-center text-black">A student project for COP4331, University of Central Florida</div>
