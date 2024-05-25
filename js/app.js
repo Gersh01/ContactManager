@@ -379,14 +379,47 @@ function loadContacts(jsonObject){
 	}
 }
 
-function deleteContact(){
 
+function searchContact(){
+
+	console.log("Accessing contacts for search");
+
+	let url = urlBase + "/Search." + extension;
+
+	let searchField = document.getElementById("search-bar-text").value;
+	
+	let tmp = {UserID:userId, search:searchField};
+
+	document.getElementById("contact-result").innerHTML = "";
+
+	let jsonPayload = JSON.stringify( tmp );
+
+	let xhr = new XMLHttpRequest();
+
+	xhr.open("POST", url, true);
+
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	
+	try{
+		xhr.onreadystatechange = function() {
+			if(this.readyState == 4 && this.status == 200){
+				document.getElementById("contact-result").innerHTML = "Contacts have been recieved";
+				let jsonObject = JSON.parse( xhr.responseText )
+				loadContacts(jsonObject);
+			}
+		};
+		xhr.send(jsonPayload);
+		
+	}
+	catch(err){
+		document.getElementById("contact-result").innerHTML = err.message;
+		console.log(err.message);
+	}
 
 
 }
 
-
-function searchContact(){
+function deleteContact(){
 
 
 
@@ -405,8 +438,3 @@ function doPagenation(){
 
 }
 
-function refreshContactTable(){
-
-
-
-}
