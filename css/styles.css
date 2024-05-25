@@ -92,6 +92,12 @@
 
 }
 
+.icon-cell{
+  width:10%;
+}
+
+
+
 .move-page{
   display:flex;
   margin:auto;
