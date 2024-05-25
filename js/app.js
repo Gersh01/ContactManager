@@ -439,9 +439,13 @@ function deleteContact(num){
 	//globalJsonObject.splice(num-1,1);
 	console.log(globalJsonObject);
 
-	let jsonPayload = {contactID:"globalJsonObject.contacts[num-1].ID"};
+	let deletedContactID = globalJsonObject.contacts[num-1].ID
+	let convertToString = "" + deletedContactID;
 
-	console.log(globalJsonObject.contacts[num-1].ID);
+	let jsonPayload = {contactID:convertToString};
+	
+
+	console.log(convertToString);
 
 	let xhr = new XMLHttpRequest();
 
