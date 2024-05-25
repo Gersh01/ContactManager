@@ -42,7 +42,7 @@
                     <!--each nested div at this indentation represents one row/contact-->
                     <div class="table">
                         <div id="contact-row-top" class="cell-top">
-                            <div id="contact-first-name" class="cell text-black">First Name</div>
+                            <div id="contact-first-name" class="cell text-black" type="text">First Name</div>
                             <div id="contact-last-name" class="cell text-black">Last Name</div>
                             <div id="contact-email" class="cell text-black">Email</div>
                             <div id="contact-phone-number" class="cell text-black">Phone Number</div>
