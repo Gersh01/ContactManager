@@ -26,17 +26,19 @@
             <!-- "Glassy" Window -->
             <div class="container">
 
-                <!--Search Bar-->
-                <div class="text-center my-6">
-                    <div id="search-bar" class="search-bar row-alt">
-                        <input type="text" placeholder="Search...">
-                        <a id="refresh-button" href="javascript:firstPage()" class="text-black a-link"><div id="refreshButton" class="text-black refresh-page" type="button">Refresh</div></a>
-                    </div>
-                </div>
+                
 
                 <!--Search Results/Contacts Table-->
                 <h3 class="text-center text-black">Contacts</h3>
                 <div id="contact-table" class="table">
+
+                    <!--Search Bar-->
+                    <div class="text-center my-6">
+                        <div id="search-bar" class="search-bar row-alt">
+                            <input type="text" placeholder="Search...">
+                            <a id="refresh-button" href="javascript:firstPage()" class="text-black a-link"><div id="refreshButton" class="text-black refresh-page" type="button">Refresh</div></a>
+                        </div>
+                    </div>
 
                     <!--each nested div at this indentation represents one row/contact-->
                     <div id="contact-row-top" class="cell-top">
