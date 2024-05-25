@@ -31,7 +31,7 @@
         $searchResults = "";
 
 		while($row = $result->fetch_assoc()) {
-			if ($result === 0) {
+			if ($results !== 0) {
 				$searchResults .= ",";
 			} else {
 				$results++;
