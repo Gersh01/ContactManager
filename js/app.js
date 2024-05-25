@@ -30,7 +30,6 @@ if(inputRegister != null){
 	});
 }
 
-
 function doRedirect(){
 	window.location.href = "login.php";
 }
@@ -350,10 +349,13 @@ function firstPage(){
 				document.getElementById("contact-result").innerHTML = "Contacts have been recieved";
 				let jsonObject = JSON.parse( xhr.responseText )
 				console.log(jsonObject);
+				console.log(typeof(jsonObject));
+				console.log("Length of JSON object "+jsonObject.contacts.length);
 				loadContacts(jsonObject);
 			}
 		};
 		xhr.send(jsonPayload);
+		
 	}
 	catch(err){
 		document.getElementById("contact-result").innerHTML = err.message;
@@ -362,14 +364,19 @@ function firstPage(){
 }
 
 function loadContacts(jsonObject){
-	if(jsonObject.results.length == 0){
+
+	if(jsonObject.contacts.length == 0){
 		document.getElementById("contact-result").innerHTML = "No contacts found";
 		return;
 	}
-	for(let i = 0; i<jsonObject.results.length-1; i++){
-		document.getElementById("contact-row-"+ i + 1).getElementById("contact-first-name").innerHTML = jsonObject[i].results.contactFirst;
+	for(let i = 0; i<jsonObject.contacts.length; i++){
+		console.log(jsonObject.contacts[i].FirstName);
+		console.log("contact-first-name-"+parseInt(i+1));
+		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
+		document.getElementById("contact-last-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].LastName;
+		document.getElementById("contact-email-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Email;
+		document.getElementById("contact-phone-number-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Phone;
 	}
-
 }
 
 function deleteContact(){

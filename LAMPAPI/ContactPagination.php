@@ -1,16 +1,17 @@
 <?php
 
-    // ini_set('display_errors', 1);
-    // ini_set('display_startup_errors', 1);
-    // error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 
     $data = json_decode(file_get_contents('php://input'), true);
 
     $cursor = isset($data["cursor"]) ? $data["cursor"] : 0; 
-    $userID = $data["userID"];
+    $next = isset($data["next"]) ? $data["next"] : 1; 
+    $userID = isset($data["userID"]) ? $data["userID"] : "";
 
     if (empty($data) || !isset($data["userID"])) {
-        returnWithError("Invalid input data");
+        returnWithError("Missing or invalid input data");
         exit();
     }
 
@@ -21,9 +22,17 @@
         echo "Something went wrong\n";
         returnWithError($conn->connect_error);
     } else {
-        $stmt = $conn->prepare("SELECT ID, Name, Phone, Email, UserID, Favorited FROM Contacts WHERE ID > ? AND UserID = ? ORDER BY ID LIMIT 10");
-                $stmt->bind_param("is", $cursor, $userID);
-                $stmt->execute();
+        if($next == 1){
+            $stmt = $conn->prepare("SELECT ID, SUBSTRING_INDEX(Name, ' ', 1) AS FirstName, SUBSTRING_INDEX(Name, ' ', -1) AS LastName, Phone, Email, UserID, Favorited FROM Contacts WHERE ID > ? AND UserID = ? ORDER BY ID ASC LIMIT 10");
+        }else if($next == 0){
+            $stmt = $conn->prepare("SELECT ID, SUBSTRING_INDEX(Name, ' ', 1) AS FirstName, SUBSTRING_INDEX(Name, ' ', -1) AS LastName, Phone, Email, UserID, Favorited FROM Contacts WHERE ID < ? AND UserID = ? ORDER BY ID DESC LIMIT 10");
+        }else{
+            returnWithError("");
+            exit();
+        }
+
+        $stmt->bind_param("is", $cursor, $userID);
+        $stmt->execute();
         $result = $stmt->get_result();
 
         $contacts = array();
@@ -34,7 +43,14 @@
         $stmt->close();
         $conn->close();
 
+
+        if ($next == 0) {
+            $contacts = array_reverse($contacts);
+        }
+
         sendResultInfoAsJson(json_encode(array("contacts" => $contacts)));
+
+
     }
 
     function sendResultInfoAsJson($obj) {

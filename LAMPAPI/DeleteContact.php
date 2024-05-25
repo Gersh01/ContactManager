@@ -8,18 +8,31 @@
 
     $data = json_decode(file_get_contents('php://input'), true);
 
+    // if (empty($data) || !isset($data["name"], $data["phone"], $data["email"], $data["userID"])) {
+    //     returnWithError("Invalid or missing input data");
+    //     exit();
+    // }
+
+    $requiredFields = ["name", "phone", "email", "userID"];
+    $missingFields = [];
+    foreach ($requiredFields as $field) {
+        if (!isset($data[$field]) || empty($data[$field])) {
+            $missingFields[] = $field;
+        }
+    }
+
+    if (!empty($missingFields)) {
+        $missingFieldsStr = implode(", ", $missingFields);
+        returnWithError("Missing or invalid fields: $missingFieldsStr");
+        exit();
+    }
 
     $name = $data["name"];
     $phone = $data["phone"];
     $email = $data["email"];
-    // $userID = $data["userID"];
-    // $contactID = $data["contactID"];
-    // $favorite = $data["favorite"];
+    $userID = $data["userID"];
 
-    if (empty($data) || !isset($data["name"], $data["phone"], $data["email"])) {
-        returnWithError("Invalid input data");
-        exit();
-    }
+    
 
     $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331" ,"COP4331");
 
