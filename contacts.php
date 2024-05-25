@@ -49,12 +49,12 @@
                             <div id="contact-delete" class="cell text-black">Delete</div>
                         </div>
                         <div id="contact-row-01" class="cell">
-                            <span id="contact-first-name-01" class="cell text-black"></span>
-                            <div id="contact-last-name-01" class="cell text-black"></div>
-                            <div id="contact-email-01" class="cell text-black"></div>
-                            <div id="contact-phone-number-01" class="cell text-black"></div>
-                            <div id="contact-edit-01" class="cell text-black" type="button">Edit</div>
-                            <div id="contact-delete-01" class="cell text-black" type="button">Delete</div>
+                            <span id="contact-first-name-1" class="cell text-black"></span>
+                            <div id="contact-last-name-1" class="cell text-black"></div>
+                            <div id="contact-email-1" class="cell text-black"></div>
+                            <div id="contact-phone-number-1" class="cell text-black"></div>
+                            <div id="contact-edit-1" class="cell text-black" type="button">Edit</div>
+                            <div id="contact-delete-1" class="cell text-black" type="button">Delete</div>
                         </div>
                         <div id="contact-row-02" class="cell">
                             <div id="contact-first-name" class="cell text-black"></div>
