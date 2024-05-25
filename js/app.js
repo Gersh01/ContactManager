@@ -479,7 +479,7 @@ function deleteContact(num){
 				console.log(jsonObject.error);
 				if(jsonObject.deleted === "Yes"){
 					document.getElementById("contact-result").innerHTML = "Contact has been deleted";
-					if(document.getElementById("search-bar").value == null){
+					if(document.getElementById("search-bar").value == ""){
 						loadContacts();
 					}
 					else{
