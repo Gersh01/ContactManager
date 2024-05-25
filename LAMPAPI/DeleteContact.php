@@ -14,7 +14,7 @@
     // }
 
     // $requiredFields = ["name", "phone", "email", "userID"];
-    $requiredFields = ["contactID"];
+/*    $requiredFields = ["contactID"];
     $missingFields = [];
     foreach ($requiredFields as $field) {
         if (!isset($data[$field]) || empty($data[$field])) {
@@ -26,7 +26,7 @@
         $missingFieldsStr = implode(", ", $missingFields);
         returnWithError("Missing or invalid fields: $missingFieldsStr");
         exit();
-    }
+    }   */
 
     // $name = $data["name"];
     // $phone = $data["phone"];
@@ -52,6 +52,7 @@
                 $stmt->execute();
 
         $result = $stmt->get_result();
+        
 
         if($stmt->affected_rows > 0){
                 returnWithInfo();
