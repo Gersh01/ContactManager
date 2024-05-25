@@ -424,10 +424,48 @@ function searchContact(){
 function deleteContact(num){
 
 	let trigger = "contact-delete-";
+	let contact = globalJsonObject.findIndex(globalJsonObject.contacts[num-1]);
 
 	console.log(num);
+	console.log(contact);
+
+	let name = document.getElementById(trigger+num);
+	let email = document.getElementById(trigger+num);
+	let phone = document.getElementById(trigger+num);
+
+	let url = urlBase + "/DeleteContact." + extension;
+
+
+
+	globalJsonObject.splice(num-1,1);
+	console(globalJsonObject);
+
+	/* Alternative with only sending the contact ID*/
+	/* let contactID = num - 1;*/
+
 	
 
+	let jsonPayload = {name:name, phone:phone, email:email ,userID:userId};
+	//let jsonPayload = {ID:contactID};
+	
+	let xhr = XMLHttpRequest();
+
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	try{
+		xhr.onreadystatechange = function() {
+			if(this.readyState == 4 && this.status == 200){
+				document.getElementById("delete-result").innerHTML = "Contact has been deleted";
+			}
+		};
+		xhr.send(jsonPayload);
+		
+	}
+	catch(err){
+		document.getElementById("delete-result").innerHTML = err.message;
+		console.log(err.message);
+	}
 }
 
 function updateContact(){
