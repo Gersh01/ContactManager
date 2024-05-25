@@ -16,7 +16,7 @@
     $favorite = $data["favorite"];
 
     if (empty($data) || !isset($data["name"], $data["phone"], $data["email"], $data["userID"], $data["favorite"])) {
-        returnWithError("Invalid input data");
+        returnWithError("Invalid or missing input data");
         exit();
     }
 
