@@ -23,7 +23,7 @@
     }
 
     if (!empty($missingFields)) {
-        $missingFieldsStr = implode(", ", $missingFields);
+        $missingFieldsStr = implode(", ", $missingFields, ": ", $data[$missingFields]);
         returnWithError("Missing or invalid fields: $missingFieldsStr");
         exit();
     }   
