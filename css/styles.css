@@ -92,6 +92,16 @@
 
 }
 
+.icon-cell{
+  display:flex;
+  width:5%;
+  justify-content:center;
+  margin-top:auto;
+  margin-bottom:auto;
+}
+
+
+
 .move-page{
   display:flex;
   margin:auto;
