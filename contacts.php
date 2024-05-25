@@ -36,12 +36,12 @@
                         <div id="search-bar-row" class="search-bar row-alt">
                             <input id="search-bar" type="text" placeholder="Search..." required onkeyup = "searchContact()">
                             <a id="refresh-button" href="javascript:firstPage()" class="text-black a-link"><div id="refreshButton" class="text-black refresh-page" type="button">Refresh</div></a>
-                            <a id="add-contact-button" href="javascript:toggleElement()" class="text-black a-link"><div id="addContactButton" class="text-black refresh-page" type="button">Add Contact</div></a>
+                            <a id="add-contact-button" href="javascript:showTable()" class="text-black a-link"><div id="addContactButton" class="text-black refresh-page" type="button">Add Contact</div></a>
                         </div>
                     </div>
 
                     <!--each nested div at this indentation represents one row/contact-->
-                    <div id="contacts-hideable">
+                    <div id="contacts-hideable" class="contacts-hideable">
                         <div id="table" class="table">
                             <div id="contact-row-top" class="cell-top">
                                 <div id="contact-first-name" class="cell text-black">First Name</div>
