@@ -390,14 +390,12 @@ function loadContacts(jsonObject){
 
 function showTable(){
 	let table = document.getElementById("contacts-hideable");
-	let show = 0;
-	if(table.style.display === "flex"){
-		show = 1;
+	if(table.style.display === "block"){
+		table.style.display = "none"
 	}
 	else{
-		show = 0;
+		table.style.display = "block"
 	}
-	toggleElement(table,show)
 }
 
 function toggleElement(row,num){
