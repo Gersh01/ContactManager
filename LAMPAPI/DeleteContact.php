@@ -13,6 +13,8 @@
     //     exit();
     // }
 
+    echo json_encode($data);
+
     // $requiredFields = ["name", "phone", "email", "userID"];
     $requiredFields = ["contactID"];
     $missingFields = [];
