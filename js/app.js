@@ -190,8 +190,55 @@ function toggleElement(row,num){
 	}
 }
 
-function toggleEditElement(){
+function toggleEditElement(num){
+	let firstName = document.getElementById("contact-first-name-"+num);
+	let lastName = document.getElementById("contact-last-name-"+num);
+	let email = document.getElementById("contact-email-"+num);
+	let phone = document.getElementById("contact-phone-number-"+num);
+	let edit = document.getElementById("contact-edit-"+num);
+	let del = document.getElementById("contact-delete-"+num);
 
+	let editFirstName = document.getElementById("contact-first-name-edit-"+num).value;
+	let editLastName = document.getElementById("contact-last-name-edit-"+num).value;
+	let editEmail = document.getElementById("contact-email-edit-"+num).value;
+	let editPhone = document.getElementById("contact-phone-number-edit-"+num).value;
+	let save = document.getElementById("contact-save-edit-"+num);
+	let cancel = document.getElementById("contact-save-edit-"+num);
+
+	//show edit field
+	if(num === 1){
+		firstName.style.display = "none";
+		lastName.style.display = "none";
+		email.style.display = "none";
+		phone.style.display = "none";
+		edit.style.display = "none";
+		del.style.display = "none";
+
+	
+		editFirstName.style.display = "flex";
+		editLastName.style.display = "flex";
+		editEmail.style.display = "flex";
+		editPhone.style.display = "flex";
+		save.style.display = "flex";
+		cancel.style.display = "flex";
+	}
+	//hide edit field
+	else{
+		editFirstName.style.display = "none";
+		editLastName.style.display = "none";
+		editEmail.style.display = "none";
+		editPhone.style.display = "none";
+		save.style.display = "none";
+		cancel.style.display = "none";
+
+
+		firstName.style.display = "flex";
+		lastName.style.display = "flex";
+		email.style.display = "flex";
+		phone.style.display = "flex";
+		edit.style.display = "flex";
+		del.style.display = "flex";
+	}
 
 }
 
@@ -609,18 +656,32 @@ function deleteContact(num){
 }
 
 function updateContact(num){
+	let edit = 1;
+	
+	let editFirstName = document.getElementById("contact-first-name-"+num).value;
+	let editLastName = document.getElementById("contact-last-name-"+num).value;
+	let editEmail = document.getElementById("contact-email-"+num).value;
+	let editPhone = document.getElementById("contact-phone-number-"+num).value;
+	
+	toggleEditElement(edit);
+
+
 
 
 
 }
 
 function saveContact(num){
+	let done = 0;
 
+	toggleEditElement(done);
 
 }
 
 function cancelContact(num){
+	let done = 0;
 
+	toggleEditElement(done);
 
 }
 
