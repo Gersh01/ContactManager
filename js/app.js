@@ -596,7 +596,7 @@ function emptyContactFields(num){
 
 	//If a new contact is being created
 	if(firstName.style == "flex"){
-		if(firstName.innerHTML === "" || lastName.innerHTML === "" || email.innerHTML === "" || phone.innerHTML === ""){
+		if(firstName.textContent === "" || lastName.textContent === "" || email.textContent === "" || phone.textContent === ""){
 			return missingField;
 		}
 		else{
@@ -604,7 +604,7 @@ function emptyContactFields(num){
 		}
 	}
 	else{
-		if(editFirst.value === "" || editLast.value === "" || editEmail.value === "" || editPhone === ""){
+		if(editFirst.value === "" || editLast.value === "" || editEmail.value === "" || editPhone.value === ""){
 			return missingField;
 		}
 		else{
