@@ -309,7 +309,7 @@ function confirmValidContactRegex(){
     let newContactPhone = document.getElementById("add-contact-phone-number").innerHTML.value;
 
 	let emailRegex = new RegExp("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/");
-	let phoneRegex = new RegExp("/^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}/");
+	let phoneRegex = new RegExp("/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/");
 	
 	if(emailRegex.test(newContactEmail) === false){
 		//document.getElementById("contact-email").innerHTML = "Email is invalid";
