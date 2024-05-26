@@ -263,17 +263,17 @@
                     </div>
 
                     <!--Add Contact Section (display none by default)-->
-                    <div id="add-contact" style="display:none" class="table">
-                        <div class="search-bar row" style="width:20%">
+                    <div id="add-contact" style="display:none" class="table justify-content-center" style="width:40%">
+                        <div class="search-bar row justify-content-center" style="width:20%">
                             <input id="add-contact-first-name" type="text" placeholder="First Name">
                         </div>
-                        <div class="search-bar row" style="width:20%">
+                        <div class="search-bar row justify-content-center" style="width:20%">
                             <input id="add-contact-last-name" type="text" placeholder="Last Name">
                         </div>
-                        <div class="search-bar row" style="width:20%">
+                        <div class="search-bar row justify-content-center" style="width:20%">
                             <input id="add-contact-email" type="text" placeholder="Email">
                         </div>
-                        <div class="search-bar row" style="width:20%">
+                        <div class="search-bar row justify-content-center" style="width:20%">
                             <input id="add-contact-phone-number" type="text" placeholder="Phone Number">
                         </div>
 
