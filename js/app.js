@@ -333,7 +333,7 @@ function confirmValidContactRegex(){
 		console.log("New contact is valid");
 		properContactRegix===true;
 	}
-	/*
+	*/
 
 }
 
