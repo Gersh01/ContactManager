@@ -574,7 +574,7 @@ function loadContacts(jsonObject){
 function noContactsFound(){
 	let hide = 1;
 	for(let i = 0; i<10; i++){
-		let row = document.getElementById("contact-row-"+parseInt(j+1));
+		let row = document.getElementById("contact-row-"+parseInt(i+1));
 		toggleElement(row,hide);
 	}
 }
