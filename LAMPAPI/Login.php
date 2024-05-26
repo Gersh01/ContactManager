@@ -24,7 +24,7 @@
                 $result = $stmt->get_result();
 
                 if($row = $result->fetch_assoc()){
-                        returnWithInfo( $row['firstName'], $row['lastName'], $ro                                                                                                                                                             w['ID'] );
+                        returnWithInfo( $row['firstName'], $row['lastName'], $row["ID"];                                                                                                                                                w['ID'] );
                 } else {
                         returnWithError("No Records Found");
                 }
