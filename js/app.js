@@ -447,6 +447,7 @@ function confirmValidPhoneRegex(num){
 
 	console.log(num + "inside phoneRegex");
 	if(phone.length === 3 || phone.length === 7){
+		console.log("adding -")
 		phone.value += "-";
 	}
 	console.log(phoneRegex.test(phone.value));
