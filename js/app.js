@@ -175,6 +175,7 @@ function showTable(){
 
 		refresh.style.display = "block";
 		table.style.display = "block";
+		firstPage();
 	}
 }
 
@@ -468,6 +469,9 @@ function firstPage(){
 		xhr.onreadystatechange = function() {
 			if(this.readyState == 4 && this.status == 200){
 				//document.getElementById("contact-result").innerHTML = "Contacts have been recieved";
+
+				document.getElementById("search-bar").value = "";
+
 				let jsonObject = JSON.parse( xhr.responseText );
 				globalJsonObject = jsonObject;
 				loadContacts(jsonObject);
@@ -483,9 +487,11 @@ function firstPage(){
 }
 
 function loadContacts(jsonObject){
+
 	let i = 0;
 	let hide = 1;
 	let show = 0;
+
 	if(jsonObject.contacts.length == 0){
 		document.getElementById("contact-result").innerHTML = "No contacts found";
 		return;
@@ -623,4 +629,5 @@ function doPagenation(){
 
 
 }
+
 
