@@ -329,7 +329,7 @@ function doRegister(){
 
 //Names are subject to change based on HTML and css files
 function addContact(){
-	let num = 0;
+	let num = -1;
     //temp elementById names, need to confirm with style.css
     let newContactFirst = document.getElementById("add-contact-first-name").value;
     let newContactLast = document.getElementById("add-contact-last-name").value;
@@ -596,7 +596,7 @@ function emptyContactFields(num){
 	let editPhone = document.getElementById("contact-phone-number-edit-"+num);
 
 	//If a new contact is being created
-	if(firstName.style == "flex"){
+	if(num === -1){
 		if(firstName.value === "" || lastName.value === "" || email.value === "" || phone.value === ""){
 			return missingField;
 		}
