@@ -453,11 +453,10 @@ function confirmValidPhoneRegex(num){
 					console.log("adding -")
 					phone.value += "-";
 				}
-				console.log(phoneRegex.test(phone.value));
 			}
 		});
 	}
-	
+	console.log(phoneRegex.test(phone.value));
 	}
 
 function passwordRegexChecker(){
