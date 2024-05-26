@@ -8,8 +8,6 @@ let firstName = "";
 let lastName = "";
 
 let properPassword = false;
-let properContactEmailRegex = false;
-let properContactPhoneRegex = false;
 let properEmailRegex = true;
 let properPhoneRegex = false;
 
@@ -369,36 +367,25 @@ function addContact(){
 	}
 }
 
-function confirmValidContactRegex(){
-	let newContactEmail = document.getElementById("add-contact-email").value;
-    let newContactPhone = document.getElementById("add-contact-phone-number").value;
+function confirmValidContactRegex(num){
+	let email = "";
 
-	let emailRegex = new RegExp("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/");
-	//let phoneRegex = new RegExp("/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$");
-	/*
-	if(emailRegex.test(newContactEmail) === false){
-		//document.getElementById("contact-email").innerHTML = "Email is invalid";
+	let emailRegex = new RegExp();
+
+	if(num===-1){
+		email = document.getElementById("add-contact-email");
+	}
+	else{
+		email = document.getElementById("contact-email-edit-"+num);
+	}
+
+	if(email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/) === false){
 		console.log("Email is invalid");
-		properContactEmailRegex = false;
+		properEmailRegex = false;
 	}else{
 		console.log("Email is valid");
-		properContactEmailRegex = true;
+		properEmailRegex = true;
 	}
-
-	if(newContactPhone.match(phoneRegex) === false){
-		//document.getElementById("contact-phone").innerHTML = "Phone number is invalid";
-		properContactPhoneRegex = false;
-		console.log("Phone number is invalid");
-	}else{
-		properContactPhoneRegex = true;
-		console.log("Phone number is valid");
-	}
-
-	if(properContactEmailRegex===true && properContactPhoneRegex===true){
-		console.log("New contact is valid");
-		properContactRegix===true;
-	}
-	*/
 
 }
 
