@@ -690,7 +690,7 @@ function saveContact(num){
 	let email = document.getElementById("contact-email-"+num);
 	let phone = document.getElementById("contact-phone-number-"+num);
 
-	let Id = globalJsonObject.contact[num-1].ID;
+	let Id = globalJsonObject.contacts[num-1].ID;
 
 	firstName.textContent = editFirst.value;
 	lastName.textContent = editLast.value;
