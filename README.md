@@ -1,5 +1,5 @@
 # Contact Manager
-Small Project assignment for COP4331 Processes of Object-Oriented Software Development. Due May 30th
+Small Project assignment for COP4331 Processes of Object-Oriented Software Development.  May 30th
 
 # Overview
 Written in html, css, javascript, and php. Webapp that requires a user to register or login. Once logged in, user is able to add, search, update, and delete contacts from the database.
