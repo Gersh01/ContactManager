@@ -300,7 +300,7 @@ function doRegister(){
 				{
 					if(this.readyState == 4 && this.status == 200){
 						jsonResponse = JSON.parse( xhr.responseText );
-						if(jsonResponse !== "login was taken"){
+						if(jsonResponse.value === "login was taken"){
 							document.getElementById("register-first-name").value = "";
 							document.getElementById("register-last-name").value = "";
 							document.getElementById("register-username").value = "";
