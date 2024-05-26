@@ -154,11 +154,17 @@ function doLogout(){
 
 function showTable(){
 	let table = document.getElementById("contacts-hideable");
+	let contact = document.getElementById("add-contact");
+	console.log("Hiding table");
 	if(table.style.display === "block"){
 		table.style.display = "none";
+		contact.style.display = "block";
+		
 	}
 	else{
+		contact.style.display="none";
 		table.style.display = "block";
+
 	}
 }
 
