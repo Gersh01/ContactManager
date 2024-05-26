@@ -313,6 +313,7 @@ function confirmValidContactRegex(){
 	
 	if(emailRegex.test(newContactEmail) === false){
 		//document.getElementById("contact-email").innerHTML = "Email is invalid";
+		console.log("Email is invalid");
 		properContactEmailRegix = false;
 	}else{
 		console.log("Email is valid");
@@ -322,12 +323,14 @@ function confirmValidContactRegex(){
 	if(phoneRegex.test(newContactPhone) === false){
 		//document.getElementById("contact-phone").innerHTML = "Phone number is invalid";
 		properContactPhoneRegix = false;
+		console.log("Phone number is invalid");
 	}else{
 		properContactPhoneRegix = true;
+		console.log("Phone number is valid");
 	}
 
 	if(properContactEmailRegix===true && properContactPhoneRegix===true){
-		console.log("Phone number is valid");
+		console.log("New contact is valid");
 		properContactRegix===true;
 	}
 
