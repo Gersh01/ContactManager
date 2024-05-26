@@ -194,8 +194,7 @@ function toggleEditElement(){
 }
 
 function formatPhoneNumber(num){
-	newNum = num.value.replace(/\D[^\.]/g, "");
-	num = newNum.split(0,3) + "-" + newNum.split(3,6) + "-" + newNum.split(6);
+	num = num.split(0,3) + "-" + num.split(3,6) + "-" + num.split(6);
 	return num;
 }
 
