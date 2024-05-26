@@ -303,9 +303,11 @@ function doRegister(){
 						console.log(jsonResponse +" results");
 						if(jsonResponse.verdict === "login was taken"){
 							document.getElementById("register-result").innerHTML = "Username is already taken";
+							document.getElementById("register-username").value = "";
+							document.getElementById("register-password").value= "";
+							document.getElementById("register-password-confirm").value = "";
 						}
 						else{
-
 							document.getElementById("register-first-name").value = "";
 							document.getElementById("register-last-name").value = "";
 							document.getElementById("register-username").value = "";
