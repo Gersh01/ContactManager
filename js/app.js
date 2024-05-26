@@ -690,7 +690,7 @@ function saveContact(num){
 	let email = document.getElementById("contact-email-"+num);
 	let phone = document.getElementById("contact-phone-number-"+num);
 
-	let contactId = globalJsonObject.contact[num-1].ID;
+	let Id = globalJsonObject.contact[num-1].ID;
 
 	firstName.textContent = editFirst.value;
 	lastName.textContent = editLast.value;
@@ -701,7 +701,7 @@ function saveContact(num){
 
 	let url = urlBase + "/UpdateContact." + extension;
 	
-	let tmp = {newName:fullName, newPhone:phone.textContent, newEmail:email.textContent, contactID:contactId, newFavorite:0};
+	let tmp = {newName:fullName, newPhone:phone.textContent, newEmail:email.textContent, contactID:Id, newFavorite:0};
 
 	//document.getElementById("contact-edit-result").innerHTML = "";
 
@@ -712,6 +712,7 @@ function saveContact(num){
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
+	console.log(Id);
 	console.log(jsonPayload);
 
 	try{
