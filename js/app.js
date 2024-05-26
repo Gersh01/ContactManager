@@ -597,18 +597,18 @@ function emptyContactFields(num){
 	//If a new contact is being created
 	if(firstName.style == "flex"){
 		if(firstName.innerHTML === "" || lastName.innerHTML === "" || email.innerHTML === "" || phone.innerHTML === ""){
-			return noMissingFields;
+			return missingField;
 		}
 		else{
-			return missingField;
+			return noMissingFields;
 		}
 	}
 	else{
 		if(editFirst.value === "" || editLast.value === "" || editEmail.value === "" || editPhone === ""){
-			return noMissingFields;
+			return missingField;
 		}
 		else{
-			return missingField;
+			return noMissingFields;
 		}
 	}
 }
