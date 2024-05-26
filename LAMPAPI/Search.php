@@ -1,11 +1,9 @@
 <?php
 
 
-
     // ini_set('display_errors', 1);
     // ini_set('display_startup_errors', 1);
     // error_reporting(E_ALL);
-
 
 
     $data = json_decode(file_get_contents('php://input'), true);
@@ -46,6 +44,7 @@
 			$stmt->bind_param("sssssssssss", $data["showFavorites"], $search, $search, $search, $data["cursor"]["favorite"], $data["cursor"]["favorite"], $name, $data["cursor"]["favorite"], $name, $data["cursor"]["ID"], $data["UserID"]);
 		}
 
+
 		$stmt->execute();
 		
 		$result = $stmt->get_result();
@@ -54,7 +53,6 @@
         $searchResults = "";
 
 		while($row = $result->fetch_assoc()) {
-
 			if ($results > 0) {
 				$searchResults .= ",";
 			}
@@ -68,7 +66,6 @@
 
         if ($results == 0) {
 			echo "No Records Found";
-
         } else {
             returnWithInfo($searchResults);
         }
@@ -81,11 +78,10 @@
 		header('Content-type: application/json');
 		echo $obj;
 	}
-
+	
 	function returnWithInfo( $searchResults )
 	{
 		$retValue = '{"contacts":[' . $searchResults . '],"error":""}';
-
 		sendResultInfoAsJson( $retValue );
 	}
 ?>
