@@ -550,10 +550,10 @@ function loadContacts(jsonObject){
 
 		let row = document.getElementById("contact-row-"+parseInt(i+1));
 		toggleElement(row,show);
-		document.getElementById("contact-first-name-"+parseInt(i+1)).value = jsonObject.contacts[i].FirstName;
-		document.getElementById("contact-last-name-"+parseInt(i+1)).value = jsonObject.contacts[i].LastName;
-		document.getElementById("contact-email-"+parseInt(i+1)).value = jsonObject.contacts[i].Email;
-		document.getElementById("contact-phone-number-"+parseInt(i+1)).value = jsonObject.contacts[i].Phone;
+		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
+		document.getElementById("contact-last-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].LastName;
+		document.getElementById("contact-email-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Email;
+		document.getElementById("contact-phone-number-"+parseInt(i+1)).textContent= jsonObject.contacts[i].Phone;
 
 	}
 	for(j = i; j<10; j++){
@@ -668,15 +668,10 @@ function updateContact(num){
 	let email = document.getElementById("contact-email-"+num);
 	let phone = document.getElementById("contact-phone-number-"+num);
 
-	editFirst.value = firstName.value;
-	editLast.value = lastName.value;
-	editEmail.value = email.value;
-	editPhone.value = phone.value;
-
-	firstName.value = editFirst.value;
-	lastName.value = editLast.value;
-	email.value = editEmail.value;
-	phone.value = editPhone.value;
+	editFirst.value = firstName.textContent;
+	editLast.value = lastName.textContent;
+	editEmail.value = email.textContent;
+	editPhone.value = phone.textContent;
 
 	toggleEditElement(edit,num);
 }
@@ -694,10 +689,10 @@ function saveContact(num){
 	let email = document.getElementById("contact-email-"+num);
 	let phone = document.getElementById("contact-phone-number-"+num);
 
-	firstName.value = editFirst.value;
-	lastName.value = editLast.value;
-	email.value = editEmail.value;
-	phone.value = editPhone.value;
+	firstName.textContent = editFirst.value;
+	lastName.textContent = editLast.value;
+	email.textContent = editEmail.value;
+	phone.textContent = editPhone.value;
 
 	toggleEditElement(done,num);
 
@@ -716,10 +711,10 @@ function cancelContact(num){
 	let email = document.getElementById("contact-email-"+num);
 	let phone = document.getElementById("contact-phone-number-"+num);
 
-	editFirst.value = firstName.value;
-	editLast.value = lastName.value;
-	editEmail.value = email.value;
-	editPhone.value = phone.value;
+	editFirst.value = firstName.textContent;
+	editLast.value = lastName.textContent;
+	editEmail.value = email.textContent;
+	editPhone.value = phone.textContent;
 
 	toggleEditElement(done,num);
 
