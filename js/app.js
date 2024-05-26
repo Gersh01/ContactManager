@@ -264,8 +264,10 @@ function addContact(){
     let newContactEmail = document.getElementById("add-contact-email").value;
     let newContactPhone = document.getElementById("add-contact-phone-number").value;
 
+	console.log(newContactPhone);
 	newContactPhone = newContactPhone.value.splice(0,3)+"-"+newContactPhone.value.splice(3,6)+"-"+newContactPhone.value.splice(6,10)
 
+	console.log(newContactPhone);
 	if(newContactFirst !== "" && newContactLast !== "" && newContactFirst !== "" && newContactPhone !== ""){
 		if(properContactRegix === true){
 
@@ -288,6 +290,10 @@ function addContact(){
 				xhr.onreadystatechange = function(){
 					if(this.readyState == 4 && this.statust == 200){
 						document.getElementById("add-contact-result").innerHTML = "Contact has been added";
+						document.getElementById("add-contact-first-name").value = "";
+						document.getElementById("add-contact-last-name").value = "";
+						document.getElementById("add-contact-email").value = "";
+						document.getElementById("add-contact-phone-number").value = "";
 					}
 				};
 				xhr.send( jsonPayload );
