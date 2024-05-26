@@ -300,7 +300,7 @@ function doRegister(){
 				{
 					if(this.readyState == 4 && this.status == 200){
 						jsonResponse = JSON.parse( xhr.responseText );
-						if(jsonResponse.value === "login was taken"){
+						if(jsonResponse.verdict === "login was taken"){
 							document.getElementById("register-result").innerHTML = "Username is already taken";
 						}
 						else{
