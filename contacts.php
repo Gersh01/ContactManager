@@ -53,16 +53,16 @@
                             </div>
                             <div id="contact-row-1" class="cell">
                                 <span id="contact-first-name-1" class="cell text-black"></span>
-                                <input id="contact-first-name-edit-1" value = "Some Text" type="text" class="cell text-black" style="display:none">
+                                <input id="contact-first-name-edit-1" value = "" type="text" class="cell text-black" style="display:none">
 
                                 <div id="contact-last-name-1" class="cell text-black"></div>
-                                <input id="contact-last-name-edit-1" type="text" class="cell text-black" style="display:none">
+                                <input id="contact-last-name-edit-1" value = "" type="text" class="cell text-black" style="display:none">
 
                                 <div id="contact-email-1" class="cell text-black"></div>
-                                <input id="contact-email-edit-1" type="text" class="cell text-black" style="display:none">
+                                <input id="contact-email-edit-1"value = ""  type="text" class="cell text-black" style="display:none">
 
                                 <div id="contact-phone-number-1" class="cell text-black"></div>
-                                <input id="contact-phone-number-edit-1" type="text" class="cell text-black" style="display:none">
+                                <input id="contact-phone-number-edit-1" value = "" type="text" class="cell text-black" style="display:none">
 
                                 <a id="contact-edit-1" href="javascript:updateContact(1)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
                                 <a id="contact-save-edit-1" href="javascript:saveContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
