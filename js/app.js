@@ -697,7 +697,7 @@ function cancelContact(num){
 	let email = document.getElementById("contact-email-"+num);
 	let phone = document.getElementById("contact-phone-number-"+num);
 
-	editFirst.value = firstName.value;
+	editFirst.innerHTML = firstName.value;
 	editLast.value = lastName.value;
 	editEmail.value = email.value;
 	editPhone.value = phone.value;
