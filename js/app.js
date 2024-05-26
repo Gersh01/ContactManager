@@ -190,7 +190,7 @@ function toggleElement(row,num){
 	}
 }
 
-function toggleEditElement(num){
+function toggleEditElement(toggle,num){
 	let firstName = document.getElementById("contact-first-name-"+num);
 	let lastName = document.getElementById("contact-last-name-"+num);
 	let email = document.getElementById("contact-email-"+num);
@@ -206,7 +206,7 @@ function toggleEditElement(num){
 	let cancel = document.getElementById("contact-save-edit-"+num);
 
 	//show edit field
-	if(num === 1){
+	if(toggle === 1){
 		firstName.style.display = "none";
 		lastName.style.display = "none";
 		email.style.display = "none";
@@ -655,7 +655,7 @@ function deleteContact(num){
 	}
 }
 
-function updateContact(num){
+function updateContact(num){	
 	let edit = 1;
 	
 	let editFirstName = document.getElementById("contact-first-name-"+num).value;
@@ -663,7 +663,7 @@ function updateContact(num){
 	let editEmail = document.getElementById("contact-email-"+num).value;
 	let editPhone = document.getElementById("contact-phone-number-"+num).value;
 	
-	toggleEditElement(edit);
+	toggleEditElement(edit,num);
 
 
 
