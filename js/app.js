@@ -370,7 +370,7 @@ function addContact(){
 function confirmValidContactRegex(num){
 	let email = "";
 
-	let emailRegex = new RegExp();
+	let emailRegex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
 
 	if(num===-1){
 		email = document.getElementById("add-contact-email").value;
@@ -379,7 +379,7 @@ function confirmValidContactRegex(num){
 		email = document.getElementById("contact-email-edit-"+num).value;
 	}
 
-	if(email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/) === false){
+	if(emailRegex.test(email) === false){
 		console.log("Email is invalid");
 		properEmailRegex = false;
 	}else{
