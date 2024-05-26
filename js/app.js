@@ -305,11 +305,11 @@ function addContact(){
 }
 
 function confirmValidContactRegex(){
-	let newContactEmail = document.getElementById("add-contact-email").innerHTML.value;
-    let newContactPhone = document.getElementById("add-contact-phone-number").innerHTML.value;
+	let newContactEmail = document.getElementById("add-contact-email").value;
+    let newContactPhone = document.getElementById("add-contact-phone-number").value;
 
-	let emailRegex = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
-	let phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	let emailRegex = new RegExp("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/");
+	let phoneRegex = new RegExp("/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$");
 	
 	if(newContactEmail.match(emailRegex) === false){
 		//document.getElementById("contact-email").innerHTML = "Email is invalid";
