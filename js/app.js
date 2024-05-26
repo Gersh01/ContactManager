@@ -607,7 +607,7 @@ function searchContact(){
 		xhr.onreadystatechange = function() {
 			if(this.readyState == 4 && this.status == 200){
 				//document.getElementById("contact-result").innerHTML ="Contacts have been recieved";
-				if(xhr.responseText==null){
+				if(xhr.responseText!=null){
 					let jsonObject = JSON.parse( xhr.responseText );
 					globalJsonObject = jsonObject;
 					loadContacts(jsonObject);
