@@ -734,6 +734,7 @@ function updateContact(num){
 function saveContact(num){
 	let done = 0;
 	let emptyCheck = 0;
+	let cell = num;
 
 	let editFirst = document.getElementById("contact-first-name-edit-"+num);
 	let editLast = document.getElementById("contact-last-name-edit-"+num);
@@ -753,7 +754,7 @@ function saveContact(num){
 	phone.textContent = editPhone.value;
 
 	let fullName = firstName.textContent+ " " + lastName.textContent;
-	emptyCheck = emptyContactFields(num);
+	emptyCheck = emptyContactFields(cell);
 
 
 	if(emptyCheck === 0){
