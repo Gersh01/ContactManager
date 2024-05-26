@@ -53,16 +53,16 @@
                             </div>
                             <div id="contact-row-1" class="cell">
                                 <span id="contact-first-name-1" class="cell text-black"></span>
-                                <input id="contact-first-name-edit-1" value = " " type="text" class="cell text-black" style="display:none">
+                                <input id="contact-first-name-edit-1" type="text" class="cell text-black" style="display:none">
 
                                 <div id="contact-last-name-1" class="cell text-black"></div>
-                                <input id="contact-last-name-edit-1" value = " " type="text" class="cell text-black" style="display:none">
+                                <input id="contact-last-name-edit-1" type="text" class="cell text-black" style="display:none">
 
                                 <div id="contact-email-1" class="cell text-black"></div>
-                                <input id="contact-email-edit-1" value = " " type="text" class="cell text-black" style="display:none">
+                                <input id="contact-email-edit-1" type="text" class="cell text-black" style="display:none">
 
                                 <div id="contact-phone-number-1" class="cell text-black"></div>
-                                <input id="contact-phone-number-edit-1" value = " " type="text" class="cell text-black" style="display:none">
+                                <input id="contact-phone-number-edit-1" type="text" required onkeyup="confirmValidPhoneRegex(1)" class="cell text-black" style="display:none">
 
                                 <a id="contact-edit-1" href="javascript:updateContact(1)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
                                 <a id="contact-save-edit-1" href="javascript:saveContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
@@ -202,7 +202,7 @@
                                 <input id="contact-email-edit-8" type="text" style="display:none">
 
                                 <div id="contact-phone-number-8" class="cell text-black"></div>
-                                <input id="contact-phone-number-edit-8" type="text" style="display:none">
+                                <input id="contact-phone-number-edit-8" type="text" required onkeyup="confirmValidPhoneRegex(8)" style="display:none">
 
                                 <a id="contact-edit-8" href="javascript:updateContact(8)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
                                 <a id="contact-save-edit-8" href="javascript:saveContact(8)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
@@ -221,7 +221,7 @@
                                 <input id="contact-email-edit-9" type="text" style="display:none">
 
                                 <div id="contact-phone-number-9" class="cell text-black"></div>
-                                <input id="contact-phone-number-edit-9" type="text" style="display:none">
+                                <input id="contact-phone-number-edit-9" type="text" required onkeyup="confirmValidPhoneRegex(9)" style="display:none">
 
                                 <a id="contact-edit-9" href="javascript:updateContact(9)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
                                 <a id="contact-save-edit-9" href="javascript:saveContact(9)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
@@ -241,7 +241,7 @@
                                 <input id="contact-email-edit-10" type="text" style="display:none">
 
                                 <div id="contact-phone-number-10" class="cell text-black"></div>
-                                <input id="contact-phone-number-edit-10" type="text" style="display:none">
+                                <input id="contact-phone-number-edit-10" type="text" required onkeyup="confirmValidPhoneRegex(10)" style="display:none">
 
                                 <a id="contact-edit-10" href="javascript:updateContact(10)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
                                 <a id="contact-save-edit-10" href="javascript:saveContact(10)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
