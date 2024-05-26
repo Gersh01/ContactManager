@@ -7,6 +7,8 @@ let userId = 0;
 let firstName = "";
 let lastName = "";
 let properPassword = false;
+let properContactEmailRegix = false;
+let properContactPhoneRegix = false;
 let passwordMatches = false;
 let loginFieldsFull = false;
 let registerFieldsFull = false;
@@ -150,6 +152,31 @@ function doLogout(){
 	window.location.href = "login.php";
 }
 
+function showTable(){
+	let table = document.getElementById("contacts-hideable");
+	if(table.style.display === "block"){
+		table.style.display = "none";
+	}
+	else{
+		table.style.display = "block";
+	}
+}
+
+function toggleElement(row,num){
+	//block = show | none = hide
+	if(num===0){
+		row.style.display="flex";
+	}
+	else if(num === 1){
+		row.style.display="none";
+	}
+}
+
+function toggleEditElement(){
+
+
+}
+
 //Names are subject to change depending on HTML and css
 function doRegister(){
 
@@ -212,38 +239,76 @@ function doRegister(){
 		}	
 	}	
 }
+
 //Names are subject to change based on HTML and css files
 function addContact(){
     //temp elementById names, need to confirm with style.css
-    let newContactFirst = document.getElementById("contactFirst").innerHTML;
-    let newContactLast = document.getElementById("contactLast").innerHTML;
-    let newContactEmail = document.getElementById("contactEmail").innerHTML;
-    let newContactPhone = document.getElementById("contactPhone").innerHTML;
+    let newContactFirst = document.getElementById("add-content-first-name").innerHTML.value;
+    let newContactLast = document.getElementById("add-content-last-name").innerHTML.value;
+    let newContactEmail = document.getElementById("add-contact-email").innerHTML.value;
+    let newContactPhone = document.getElementById("add-contact-phone-number").innerHTML.value;
 
-    document.getElementById("addContactResult").innerHTML = "";
 
-    let tmp = {contactFirst:newContactFirst, contactLast:newContactLast, contactEmail:newContactEmail, contactPhone:newContactPhone};
+	if(newContactFirst !== "" && newContactLast !== "" && newContactFirst !== "" && newContactPhone !== ""){
+		if(properContactRegix === true){
 
-    let jsonPayload = JSON.stringify( tmp );
-    //temporary name depends on sites URL
-    let url = urlBase + "/AddContact." + extension;
+			let newContactName = newContactFirst +" "+newContactLast;
 
-    let xhr = new XMLHttpRequest();
+			document.getElementById("add-contact-result").innerHTML = "";
 
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-    
-    try{
-        xhr.onreadystatechange = function(){
-            if(this.readyState == 4 && this.statust == 200){
-                document.getElementById("addContatctResult").innerHTML = "Contact has been added";
-            }
-        };
-        xhr.send( jsonPayload );
-    }
-    catch (err){
-        document.getElementById("addContactResult").innerHTML = err.message;
-    }
+			let tmp = {name:newContactName, phone:newContactPhone, email:newContactEmail, userID:userId, favorite:0};
+
+			let jsonPayload = JSON.stringify( tmp );
+
+			let url = urlBase + "/AddContact." + extension;
+
+			let xhr = new XMLHttpRequest();
+
+			xhr.open("POST", url, true);
+			xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+			
+			try{
+				xhr.onreadystatechange = function(){
+					if(this.readyState == 4 && this.statust == 200){
+						document.getElementById("add-contact-result").innerHTML = "Contact has been added";
+					}
+				};
+				xhr.send( jsonPayload );
+			}
+			catch (err){
+				document.getElementById("add-contact-result").innerHTML = err.message;
+			}
+		}
+		else{
+			document.getElementById("add-contact-result").innerHTML = "Required fields are invalid";
+		}
+	}
+	else{
+		document.getElementById("add-contact-result").innerHTML = "Required fields are missing";
+	}
+}
+
+function confirmValidContactRegex(){
+	let newContactEmail = document.getElementById("add-contact-email").innerHTML.value;
+    let newContactPhone = document.getElementById("add-contact-phone-number").innerHTML.value;
+
+	let emailRegex = new RegExp("^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$");
+	let phoneRegex = new RegExp("^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$");
+	
+	if(emailRegex.test(newContactEmail) === false){
+		//document.getElementById("contact-email").innerHTML = "Email is invalid";
+		properContactEmailRegix = false;
+	}else{
+		properContactEmailRegix = true;
+	}
+
+	if(phoneRegex.test(newContactPhone) === false){
+		//document.getElementById("contact-phone").innerHTML = "Phone number is invalid";
+		properContactPhoneRegix = false;
+	}else{
+		properContactPhoneRegix = true;
+	}
+
 }
 
 function confirmPassword(){
@@ -281,6 +346,7 @@ function passwordRegexChecker(){
 	document.getElementById("password-number").innerHTML = "";
 	*/
 
+
 	if(password.length>=8){
 		console.log("length = true");
 	}
@@ -296,7 +362,7 @@ function passwordRegexChecker(){
 	else{
 		properPassword = false;
 		console.log("upper = false");
-		//document.getElementById("password-lowercase").innerHTML = "Password must contain at least 1 uppercase character";
+		//document.getElementById("password-uppercase").innerHTML = "Password must contain at least 1 uppercase character";
 	}
 
 	if(specialPasswordRegex.test(password)){
@@ -305,7 +371,7 @@ function passwordRegexChecker(){
 	else{
 		properPassword = false;
 		console.log("special = false");
-		//document.getElementById("password-uppercase").innerHTML = "Password must contain at least 1 specail character";
+		//document.getElementById("password-special").innerHTML = "Password must contain at least 1 specail character";
 	}
 
 	if(numberPasswordRegex.test(password)){
@@ -388,25 +454,7 @@ function loadContacts(jsonObject){
 	}
 }
 
-function showTable(){
-	let table = document.getElementById("contacts-hideable");
-	if(table.style.display === "flex"){
-		table.style.display = "none"
-	}
-	else{
-		table.style.display = "flex"
-	}
-}
 
-function toggleElement(row,num){
-	//block = show | none = hide
-	if(num===0){
-		row.style.display="flex";
-	}
-	else if(num === 1){
-		row.style.display="none";
-	}
-}
 
 
 function searchContact(){
@@ -457,7 +505,7 @@ function deleteContact(num){
 	//globalJsonObject.splice(num-1,1);
 	console.log(globalJsonObject);
 
-	let deletedContactID = globalJsonObject.contacts[num-1].ID
+	let deletedContactID = globalJsonObject.contacts[num-1].ID;
 	let convertToString = "" + deletedContactID;
 
 	let tmp = {contactID:deletedContactID};
@@ -499,8 +547,18 @@ function deleteContact(num){
 	}
 }
 
-function updateContact(){
+function updateContact(num){
 
+
+
+}
+
+function saveContact(num){
+
+
+}
+
+function cancelContact(num){
 
 
 }
