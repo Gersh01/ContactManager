@@ -697,11 +697,11 @@ function saveContact(num){
 	email.textContent = editEmail.value;
 	phone.textContent = editPhone.value;
 
-	let fullName = firstName + " " + lastName;
+	let fullName = firstName.textContent+ " " + lastName.textContent;
 
 	let url = urlBase + "/UpdateContact." + extension;
 	
-	let tmp = {newName:fullName, newPhone:phone, newEmail:email, contactID:contactId, newFavorite:0};
+	let tmp = {newName:fullName, newPhone:phone.textContent, newEmail:email.textContent, contactID:contactId, newFavorite:0};
 
 	//document.getElementById("contact-edit-result").innerHTML = "";
 
