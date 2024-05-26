@@ -442,9 +442,11 @@ function confirmPassword(){
 }
 
 function confirmValidPhoneRegex(num){
+	let phoneRegex = new RegExp("[0-9]{3}-[0-9]{3}-[0-9]{4}");
+	let phone = document.getElementById("add-contact-phone-number").value;
 
 	console.log(num + "inside phoneRegex");
-
+	console.log(phoneRegex.test(phone));
 	}
 
 function passwordRegexChecker(){
