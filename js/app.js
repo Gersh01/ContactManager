@@ -8,9 +8,9 @@ let firstName = "";
 let lastName = "";
 
 let properPassword = false;
-let properContactEmailRegix = false;
-let properContactPhoneRegix = false;
-let properEmailRegix = true;
+let properContactEmailRegex = false;
+let properContactPhoneRegex = false;
+let properEmailRegex = true;
 let properPhoneRegex = false;
 
 let passwordMatches = false;
@@ -323,10 +323,10 @@ function addContact(){
     let newContactLast = document.getElementById("add-contact-last-name").value;
     let newContactEmail = document.getElementById("add-contact-email").value;
     let newContactPhone = document.getElementById("add-contact-phone-number").value;
-	
+
 	console.log(newContactPhone);
 	if(emptyContactFields(num) === 0){
-		if(properEmailRegix === true && properPhoneRegex === true){
+		if(properEmailRegex === true && properPhoneRegex === true){
 
 			let newContactName = newContactFirst +" "+newContactLast;
 
@@ -379,22 +379,22 @@ function confirmValidContactRegex(){
 	if(emailRegex.test(newContactEmail) === false){
 		//document.getElementById("contact-email").innerHTML = "Email is invalid";
 		console.log("Email is invalid");
-		properContactEmailRegix = false;
+		properContactEmailRegex = false;
 	}else{
 		console.log("Email is valid");
-		properContactEmailRegix = true;
+		properContactEmailRegex = true;
 	}
 
 	if(newContactPhone.match(phoneRegex) === false){
 		//document.getElementById("contact-phone").innerHTML = "Phone number is invalid";
-		properContactPhoneRegix = false;
+		properContactPhoneRegex = false;
 		console.log("Phone number is invalid");
 	}else{
-		properContactPhoneRegix = true;
+		properContactPhoneRegex = true;
 		console.log("Phone number is valid");
 	}
 
-	if(properContactEmailRegix===true && properContactPhoneRegix===true){
+	if(properContactEmailRegex===true && properContactPhoneRegex===true){
 		console.log("New contact is valid");
 		properContactRegix===true;
 	}
