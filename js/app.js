@@ -155,16 +155,23 @@ function doLogout(){
 function showTable(){
 	let table = document.getElementById("contacts-hideable");
 	let contact = document.getElementById("add-contact");
+	let refresh = document.getElementById("refresh-button");
+	let addContactButton = document.getElementById("add-contact-button");
+
 	console.log("Hiding table");
 	if(table.style.display === "block"){
 		table.style.display = "none";
+		refresh.style.display = "none"
+
+		addContactButton.innerHTML = "cancel"
 		contact.style.display = "block";
-		
 	}
 	else{
 		contact.style.display="none";
-		table.style.display = "block";
+		addContactButton.innerHTML = "Add Contact";
 
+		refresh.style.display = "block";
+		table.style.display = "block";
 	}
 }
 
