@@ -85,7 +85,7 @@
 }
 
 .contacts-hide{
-  display:flex;
+  display:block;
 }
 
 #footer{
@@ -93,6 +93,11 @@
   left: 0px;
   right: 0px;
   margin-bottom: 0px;
+
+}
+
+.hidden-field{
+  display:none;
 
 }
 
@@ -111,7 +116,7 @@
 
 .move-page{
   display:flex;
-  margin:auto;
+  margin-left:3px;
   padding:0.3rem;
   border-radius:15px;
   background-color:var(--accent-color);
@@ -141,6 +146,15 @@
   width: auto;
   justify-content:center;
   filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0,0,0,0.5));
+}
+
+.refresh-page:hover, .move-page:hover, .button:hover{
+  background-color:var(--subcolor);
+
+}
+
+.refresh-page:active, .move-page:active, .button:active{
+  background-color:lightgray;
 }
 
 .error{
