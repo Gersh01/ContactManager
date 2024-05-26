@@ -441,6 +441,12 @@ function confirmPassword(){
 
 }
 
+function confirmValidPhoneRegex(num){
+
+	console.log(num + "inside phoneRegex");
+
+	}
+
 function passwordRegexChecker(){
 
 	let password = document.getElementById("register-password").value;
