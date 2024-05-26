@@ -323,8 +323,6 @@ function addContact(){
     let newContactLast = document.getElementById("add-contact-last-name").value;
     let newContactEmail = document.getElementById("add-contact-email").value;
     let newContactPhone = document.getElementById("add-contact-phone-number").value;
-
-	console.log(newContactPhoneRaw);
 	
 	console.log(newContactPhone);
 	if(emptyContactFields(num) === 0){
@@ -422,7 +420,7 @@ function confirmPassword(){
 }
 
 function confirmValidPhoneRegex(num){
-	
+
 	let phoneRegex = new RegExp("[0-9]{3}-[0-9]{3}-[0-9]{4}");
 	let phone = "";
 
