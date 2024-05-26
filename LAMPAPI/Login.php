@@ -1,8 +1,7 @@
 <?php
-
-    // ini_set('display_errors', 1);
-    // ini_set('display_startup_errors', 1);
-    // error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 
     $id = 0;
     $firstName = "";
@@ -18,21 +17,17 @@
 
     } else {
 
-
-        $stmt = $conn->prepare("SELECT ID,firstName,lastName,Login,Password FROM Users WHERE Login=? AND Password =?");
-
-
+        $stmt = $conn->prepare("SELECT ID,firstName,lastName,Login,Password FROM Users WHERE Login=? AND Password=?");
                 $stmt->bind_param("ss", $data["login"], $data["password"]);
                 $stmt->execute();
                 $result = $stmt->get_result();
-                
                 $flag = 0;
                 while ($row = $result->fetch_assoc()){
-
 
                     // foreach ($row as $key => $value) {
                     //     echo "Key: $key; Value: $value\n";
                     // }
+
 
                     // echo $row['Login'];
                     // echo "data\n";
@@ -54,12 +49,9 @@
                     }
                 }
 
-                if (!$flag) {
-                    
+                if (!$flag){
                     returnWithError("No Records Found");
-
-                }
-                
+		}
 
                 $stmt->close();
                 $conn->close();

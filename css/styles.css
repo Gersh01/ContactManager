@@ -84,6 +84,10 @@
   --bs-highlight-bg: #fff3cd;
 }
 
+.contacts-hide{
+  display:block;
+}
+
 #footer{
   bottom: 0px;
   left: 0px;
@@ -92,23 +96,113 @@
 
 }
 
+.hidden-field{
+  display:none;
+
+}
+
+.icon-cell{
+  display:flex;
+  width:5%;
+  justify-content:center;
+  margin-top:auto;
+  margin-bottom:auto;
+}
+
+.header-link{
+  margin-right:2rem;
+  margin-left:2rem;
+}
+
+.move-page{
+  display:flex;
+  margin-left:3px;
+  padding:0.3rem;
+  border-radius:15px;
+  background-color:var(--accent-color);
+  width: 6rem;
+  justify-content:center;
+  float:right;
+  filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0,0,0,0.5));
+}
+
+.a-link{
+  width: 5rem;
+  text-decoration:none;
+  padding:0.25rem;
+}
+
+.a-link-alt{
+  width: fit-content;
+  text-decoration: none;
+}
+
+.refresh-page{
+  display:flex;
+  margin:0%;
+  padding:0.3rem;
+  border-radius: 15px;
+  background-color: var(--accent-color);
+  width: auto;
+  justify-content:center;
+  filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0,0,0,0.5));
+}
+
+.refresh-page:hover, .move-page:hover, .button:hover{
+  background-color:var(--subcolor);
+
+}
+
+.refresh-page:active, .move-page:active, .button:active{
+  background-color:lightgray;
+}
+
+.error{
+  color: red;
+}
+
 .header{
-  margin:3rem;
+  margin: 3rem;
 }
 
 .cell {
-  display:flex;
-  margin:auto;
-  width:auto;
+  display: flex;
+  margin: auto;
+  width: auto;
   justify-content: center;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+.cell-top {
+  display: flex;
+  margin: auto;
+  width: auto;
+  justify-content: center;
+  background-color: var(--subcolor);
+  border-radius: 15px;
+  font-style: bold;
+  padding-top:5px;
+  padding-bottom:5px;
 }
 
 .spacer{
-  width:3.5px;
-  display:block;
+  width: 3.5px;
+  display: block;
 }
 
 .search-bar input[type=text] {
+  border-radius: 15px;
+  filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0,0,0,0.5));
+  padding: 6px;
+  border: none;
+  font-size: 17px;
+  background-color:#ededed;
+  margin:auto;
+  width:90%;
+}
+
+.search-bar-pass input[type=password] {
   border-radius: 15px;
   filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0,0,0,0.5));
   padding: 6px;
@@ -726,6 +820,16 @@ progress {
   margin-left: calc(-0.5 * var(--bs-gutter-x));
 
 }
+
+.row-alt {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  margin-top: 0.5rem;
+  margin-bottom:0.5rem;
+
+}
+
 .row > * {
   flex-shrink: 0;
   width: 100%;
@@ -3682,6 +3786,8 @@ textarea.form-control-lg {
   color: var(--bs-nav-link-color);
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  margin-right:2rem;
+  margin-left:2rem;
 }
 @media (prefers-reduced-motion: reduce) {
   .nav-link {

@@ -1,14 +1,12 @@
 <!--Nonfunctional Prototype-->
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Contact Manager Template</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
@@ -34,36 +32,34 @@
                     <div class="search-bar row">
                         <input id="login-username" type="text" placeholder="Username">
                     </div>
-                    <div class="search-bar row">
-                        <input id="login-password" type="text" placeholder="Password">
+                    <div class="search-bar-pass row">
+                        <input id="login-password" type="password" placeholder="Password">
                     </div>
-                    <a id="doLogin"><div id="login-button" class="button" type="button">Log in!</div></a>
+                    <!--Error Message-->
+                    <a id="doLogin" href="javascript:doLogin();"><div id="login-button" class="button" type="button">Log in!</div></a>
+                    <span id="login-result" class="error row cell"></span>
                 </div>
-
-                <!--Error Message-->
-                <?php 
-                  define("login-result", "");
-                  define("register-result", "");
-                ?>
 
                 <!--Signup Column-->
                 <div id="register-column" class="col">
-                    <div id="register-first-name" class="search-bar row">
-                        <input type="text" placeholder="First Name">
+                    <div class="search-bar row">
+                        <input id="register-first-name" type="text" placeholder="First Name">
                     </div>
-                    <div id="register-last-name" class="search-bar row">
-                        <input type="text" placeholder="Last Name">
+                    <div class="search-bar row">
+                        <input id="register-last-name" type="text" placeholder="Last Name">
                     </div>
-                    <div id="register-username"class="search-bar row">
-                        <input type="text" placeholder="Username">
+                    <div class="search-bar row">
+                        <input id="register-username" type="text" placeholder="Username">
                     </div>
-                    <div id="register-password" class="search-bar row">
-                        <input type="text" placeholder="Password">
+                    <div class="search-bar-pass row">
+                        <input id="register-password" type="password" placeholder="Password" required onkeyup = "passwordRegexChecker()">
                     </div>
-                     <div id="register-password-confirm" class="search-bar row">
-                        <input type="text" placeholder="Confirm Password">
+                     <div class="search-bar-pass row">
+                        <input id="register-password-confirm" type="password" placeholder="Confirm Password" required onkeyup="confirmPassword()">
                     </div>
-                    <a id="doRegister" href="#"><div class="button" type="button">Sign up!</div></a>
+                    <!--Error Message-->
+                    <a id="doRegister" href="javascript:doRegister()"><div class="button" type="button">Sign up!</div></a>
+                    <span id="register-result" class="text-black row cell"></span>
                 </div>
             </div>
         </section>
@@ -73,5 +69,5 @@
             <div class="m-0 text-center text-black">A student project for COP4331, University of Central Florida</div>
         </footer>
     </body>
-    <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
 </html>
