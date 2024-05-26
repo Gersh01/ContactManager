@@ -717,6 +717,7 @@ function saveContact(num){
 			if(this.readyState == 4 && this.status == 200){
 				//document.getElementById("contact-edit-result").innerHTML = "Contact has been updated";
 				toggleEditElement(done,num);
+				console.log(jsonPayload);
 				if(document.getElementById("search-bar").value == ""){
 					firstPage();
 				}
