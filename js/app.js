@@ -690,7 +690,7 @@ function saveContact(num){
 	let email = document.getElementById("contact-email-"+num);
 	let phone = document.getElementById("contact-phone-number-"+num);
 
-	let contactId = globalJsonObject.contact
+	let contactId = globalJsonObject.contact[num-1].contactId;
 
 	firstName.textContent = editFirst.value;
 	lastName.textContent = editLast.value;
@@ -711,6 +711,7 @@ function saveContact(num){
 
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
 	console.log(jsonPayload);
 
 	try{
