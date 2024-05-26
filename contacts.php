@@ -264,21 +264,21 @@
 
                     <!--Add Contact Section (display none by default)-->
                     <div id="add-contact" style="display:none" class="table">
-                        <div class="search-bar row">
+                        <div class="search-bar row" style="width:20%">
                             <input id="add-contact-first-name" type="text" placeholder="First Name">
                         </div>
-                        <div class="search-bar row">
+                        <div class="search-bar row" style="width:20%">
                             <input id="add-contact-last-name" type="text" placeholder="Last Name">
                         </div>
-                        <div class="search-bar row">
+                        <div class="search-bar row" style="width:20%">
                             <input id="add-contact-email" type="text" placeholder="Email">
                         </div>
-                        <div class="search-bar row">
+                        <div class="search-bar row" style="width:20%">
                             <input id="add-contact-phone-number" type="text" placeholder="Phone Number">
                         </div>
 
                         <!--Button-->
-                        <a id="addContact" href="javascript:addContact()"><div class="button" type="button">Add User</div></a>
+                        <a id="addContact" href="javascript:addContact()" class="justify-content-center"><div class="button" type="button">Add User</div></a>
                     </div>
 
                     <span id="add-contact-result" class="text-black row cell"></span>
