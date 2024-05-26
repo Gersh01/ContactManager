@@ -198,10 +198,10 @@ function toggleEditElement(num){
 	let edit = document.getElementById("contact-edit-"+num);
 	let del = document.getElementById("contact-delete-"+num);
 
-	let editFirstName = document.getElementById("contact-first-name-edit-"+num).value;
-	let editLastName = document.getElementById("contact-last-name-edit-"+num).value;
-	let editEmail = document.getElementById("contact-email-edit-"+num).value;
-	let editPhone = document.getElementById("contact-phone-number-edit-"+num).value;
+	let editFirst = document.getElementById("contact-first-name-edit-"+num);
+	let editLast = document.getElementById("contact-last-name-edit-"+num);
+	let editEmail = document.getElementById("contact-email-edit-"+num);
+	let editPhone = document.getElementById("contact-phone-number-edit-"+num);
 	let save = document.getElementById("contact-save-edit-"+num);
 	let cancel = document.getElementById("contact-save-edit-"+num);
 
@@ -215,8 +215,8 @@ function toggleEditElement(num){
 		del.style.display = "none";
 
 	
-		editFirstName.style.display = "flex";
-		editLastName.style.display = "flex";
+		editFirst.style.display = "flex";
+		editLast.style.display = "flex";
 		editEmail.style.display = "flex";
 		editPhone.style.display = "flex";
 		save.style.display = "flex";
@@ -224,8 +224,8 @@ function toggleEditElement(num){
 	}
 	//hide edit field
 	else{
-		editFirstName.style.display = "none";
-		editLastName.style.display = "none";
+		editFirs.style.display = "none";
+		editLast.style.display = "none";
 		editEmail.style.display = "none";
 		editPhone.style.display = "none";
 		save.style.display = "none";
