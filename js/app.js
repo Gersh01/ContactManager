@@ -194,7 +194,14 @@ function toggleEditElement(){
 }
 
 function formatPhoneNumber(num){
-	num = num.split(0,3) + "-" + num.split(3,6) + "-" + num.split(6);
+	let first = "";
+	let second = "";
+	let third = ""
+	first = num.substr(0,3);
+	second = num.substr(3,3);
+	third = num.substr(6,4);
+
+	num = first + "-" + second + "-" + third;
 	return num;
 }
 
