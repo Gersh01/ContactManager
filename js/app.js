@@ -309,7 +309,7 @@ function confirmValidContactRegex(){
     let newContactPhone = document.getElementById("add-contact-phone-number").value;
 
 	let emailRegex = new RegExp("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/");
-	let phoneRegex = new RegExp("/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$");
+	//let phoneRegex = new RegExp("/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$");
 	
 	if(newContactEmail.match(emailRegex) === false){
 		//document.getElementById("contact-email").innerHTML = "Email is invalid";
@@ -320,14 +320,14 @@ function confirmValidContactRegex(){
 		properContactEmailRegix = true;
 	}
 
-	if(newContactPhone.match(phoneRegex) === false){
+	/*if(newContactPhone.match(phoneRegex) === false){
 		//document.getElementById("contact-phone").innerHTML = "Phone number is invalid";
 		properContactPhoneRegix = false;
 		console.log("Phone number is invalid");
 	}else{
 		properContactPhoneRegix = true;
 		console.log("Phone number is valid");
-	}
+	}*/
 
 	if(properContactEmailRegix===true && properContactPhoneRegix===true){
 		console.log("New contact is valid");
