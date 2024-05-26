@@ -329,6 +329,7 @@ function doRegister(){
 
 //Names are subject to change based on HTML and css files
 function addContact(){
+	let num = 0;
     //temp elementById names, need to confirm with style.css
     let newContactFirst = document.getElementById("add-contact-first-name").value;
     let newContactLast = document.getElementById("add-contact-last-name").value;
@@ -346,7 +347,7 @@ function addContact(){
 	}
 	
 	console.log(newContactPhone);
-	if(newContactFirst !== "" && newContactLast !== "" && newContactFirst !== "" && newContactPhone !== ""){
+	if(emptyContactFields(num) === 0){
 		if(properContactRegix === true){
 
 			let newContactName = newContactFirst +" "+newContactLast;
@@ -584,10 +585,10 @@ function emptyContactFields(num){
 	let noMissingFields =0;
 
 
-	let firstName = document.getElementById("contact-first-name-"+num);
-	let lastName = document.getElementById("contact-last-name-"+num);
-	let email = document.getElementById("contact-email-"+num);
-	let phone = document.getElementById("contact-phone-number-"+num);
+	let firstName = document.getElementById("add-contact-first-name");
+	let lastName = document.getElementById("add-contact-last-name");
+	let email = document.getElementById("add-contact-email");
+	let phone = document.getElementById("add-contact-phone-number");
 
 	let editFirst = document.getElementById("contact-first-name-edit-"+num);
 	let editLast = document.getElementById("contact-last-name-edit-"+num);
@@ -596,7 +597,7 @@ function emptyContactFields(num){
 
 	//If a new contact is being created
 	if(firstName.style == "flex"){
-		if(firstName.textContent === "" || lastName.textContent === "" || email.textContent === "" || phone.textContent === ""){
+		if(firstName.value === "" || lastName.value === "" || email.value === "" || phone.value === ""){
 			return missingField;
 		}
 		else{
