@@ -315,6 +315,7 @@ function confirmValidContactRegex(){
 		//document.getElementById("contact-email").innerHTML = "Email is invalid";
 		properContactEmailRegix = false;
 	}else{
+		console.log("Email is valid");
 		properContactEmailRegix = true;
 	}
 
@@ -326,6 +327,7 @@ function confirmValidContactRegex(){
 	}
 
 	if(properContactEmailRegix===true && properContactPhoneRegix===true){
+		console.log("Phone number is valid");
 		properContactRegix===true;
 	}
 
