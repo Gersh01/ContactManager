@@ -8,7 +8,8 @@
 
     $data = json_decode(file_get_contents('php://input'), true);
 
-    $requiredFields = ["name", "phone", "email", "userID"];
+    // $requiredFields = ["name", "phone", "email", "userID"];
+    $requiredFields = ["contactID"];
     $missingFields = [];
     foreach ($requiredFields as $field) {
         if (!isset($data[$field]) || empty($data[$field])) {
@@ -27,11 +28,12 @@
     //     exit();
     // }
 
-    $name = $data["name"];
-    $phone = $data["phone"];
-    $email = $data["email"];
-    $userID = $data["userID"];
-    $favorite = $data["favorite"];
+    // $name = $data["name"];
+    // $phone = $data["phone"];
+    // $email = $data["email"];
+    // $userID = $data["userID"];
+    // $favorite = $data["favorite"];
+    $contactID = $data["contactID"];
 
 
     // isset($data["cursor"]) ? $data["cursor"] : 0
@@ -49,8 +51,9 @@
 
     } else {
         
-        $stmt1 = $conn->prepare("SELECT ID FROM Contacts WHERE Name=? AND Phone=? AND Email=?");
-        $stmt1->bind_param("sss", $name, $phone, $email);
+        $stmt1 = $conn->prepare("SELECT ID FROM Contacts WHERE ID=?");
+        // $stmt1->bind_param("sss", $name, $phone, $email);
+        $stmt1->bind_param("i", $contactID);
         $stmt1->execute();
         $result = $stmt1->get_result();
 
