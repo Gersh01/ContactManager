@@ -41,7 +41,7 @@
                     </div>
 
                     <!--each nested div at this indentation represents one row/contact-->
-                    <div id="contacts-hideable" class="contacts-hide">
+                    <div id="contacts-hideable" class="contacts-hide" style="display:block">
                         <div id="table" class="table">
                             <div id="contact-row-top" class="cell-top">
                                 <div id="contact-first-name" class="cell text-black">First Name</div>
