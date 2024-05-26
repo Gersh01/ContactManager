@@ -273,7 +273,7 @@
                             <input id="add-contact-email" type="text" placeholder="Email" required onkeyup="confirmValidContactRegex()">
                         </div>
                         <div class="search-bar row justify-content-center" style="width:20%">
-                            <input type="tel" id="add-contact-phone-number" type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required onkeyup="confirmValidPhoneRegex(-1)"placeholder="Phone Number">
+                            <input id="add-contact-phone-number" type="text" required onkeyup="confirmValidPhoneRegex(-1)"placeholder="Phone Number">
                         </div>
 
                         <!--Button-->

@@ -10,7 +10,8 @@ let lastName = "";
 let properPassword = false;
 let properContactEmailRegix = false;
 let properContactPhoneRegix = false;
-let properContactRegix = true;
+let properEmailRegix = true;
+let properPhoneRegex = false;
 
 let passwordMatches = false;
 let loginFieldsFull = false;
@@ -241,19 +242,6 @@ function toggleEditElement(toggle,num){
 
 }
 
-function formatPhoneNumber(num){
-	let first = "";
-	let second = "";
-	let third = ""
-	first = num.substr(0,3);
-	second = num.substr(3,3);
-	third = num.substr(6,4);
-
-	num = first + "-" + second + "-" + third;
-	return num;
-}
-
-
 //Names are subject to change depending on HTML and css
 function doRegister(){
 
@@ -334,21 +322,13 @@ function addContact(){
     let newContactFirst = document.getElementById("add-contact-first-name").value;
     let newContactLast = document.getElementById("add-contact-last-name").value;
     let newContactEmail = document.getElementById("add-contact-email").value;
-    let newContactPhoneRaw = document.getElementById("add-contact-phone-number").value;
-	let newContactPhone = "";
+    let newContactPhone = document.getElementById("add-contact-phone-number").value;
 
 	console.log(newContactPhoneRaw);
-
-	if(newContactPhoneRaw.length<=10){
-		newContactPhone = formatPhoneNumber(newContactPhoneRaw)
-	}
-	else{
-		newContactPhone = newContactPhoneRaw;
-	}
 	
 	console.log(newContactPhone);
 	if(emptyContactFields(num) === 0){
-		if(properContactRegix === true){
+		if(properEmailRegix === true && properPhoneRegex === true){
 
 			let newContactName = newContactFirst +" "+newContactLast;
 
@@ -442,9 +422,16 @@ function confirmPassword(){
 }
 
 function confirmValidPhoneRegex(num){
+	
 	let phoneRegex = new RegExp("[0-9]{3}-[0-9]{3}-[0-9]{4}");
-	let phone = document.getElementById("add-contact-phone-number");
+	let phone = "";
 
+	if(num === -1){
+		phone = document.getElementById("add-contact-phone-number");
+	}
+	else{
+		phone = document.getElementById("contact-phone-number-edit-"+num);
+	}
 	console.log(num + "inside phoneRegex");
 	if(phone.value!== ""){
 		phone.addEventListener("keypress", function(event){
@@ -457,6 +444,12 @@ function confirmValidPhoneRegex(num){
 		});
 	}
 	console.log(phoneRegex.test(phone.value));
+	if(phoneRegex.test(phone.value)===true){
+		properPhoneRegex = true;
+	}
+	else{
+		properPhoneRegex = false;
+	}
 	}
 
 function passwordRegexChecker(){
