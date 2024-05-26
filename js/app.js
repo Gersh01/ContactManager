@@ -763,50 +763,51 @@ function saveContact(num){
 
 
 	if(emptyCheck === 0){
+		if(properEmailRegex === true && properPhoneRegex === true){
+			let Id = globalJsonObject.contacts[num-1].ID;
 
-		let Id = globalJsonObject.contacts[num-1].ID;
-
-		firstName.textContent = editFirst.value;
-		lastName.textContent = editLast.value;
-		email.textContent = editEmail.value;
-		phone.textContent = editPhone.value;
-	
-		let fullName = firstName.textContent+ " " + lastName.textContent;
-
-		let url = urlBase + "/UpdateContact." + extension;
+			firstName.textContent = editFirst.value;
+			lastName.textContent = editLast.value;
+			email.textContent = editEmail.value;
+			phone.textContent = editPhone.value;
 		
-		let tmp = {newName:fullName, newPhone:phone.textContent, newEmail:email.textContent, contactID:Id, newFavorite:0};
+			let fullName = firstName.textContent+ " " + lastName.textContent;
 
-		//document.getElementById("contact-edit-result").innerHTML = "";
+			let url = urlBase + "/UpdateContact." + extension;
+			
+			let tmp = {newName:fullName, newPhone:phone.textContent, newEmail:email.textContent, contactID:Id, newFavorite:0};
 
-		let jsonPayload = JSON.stringify( tmp );
+			//document.getElementById("contact-edit-result").innerHTML = "";
 
-		let xhr = new XMLHttpRequest();
+			let jsonPayload = JSON.stringify( tmp );
 
-		xhr.open("POST", url, true);
-		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-		try{
-			xhr.onreadystatechange = function(){
-				if(this.readyState == 4 && this.status == 200){
-					//document.getElementById("contact-edit-result").innerHTML = "Contact has been updated";
-					toggleEditElement(done,num);
-					
-					if(document.getElementById("search-bar").value == ""){
-						firstPage();
+			let xhr = new XMLHttpRequest();
+
+			xhr.open("POST", url, true);
+			xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+			try{
+				xhr.onreadystatechange = function(){
+					if(this.readyState == 4 && this.status == 200){
+						//document.getElementById("contact-edit-result").innerHTML = "Contact has been updated";
+						toggleEditElement(done,num);
+						
+						if(document.getElementById("search-bar").value == ""){
+							firstPage();
+						}
+						else{
+							searchContact();
+						}
 					}
 					else{
-						searchContact();
+						//document.getElementById("contact-edit-result").innerHTML = "Contact cannot be updated";
 					}
-				}
-				else{
-					//document.getElementById("contact-edit-result").innerHTML = "Contact cannot be updated";
-				}
-			};
-			xhr.send(jsonPayload);
-		}
-		catch(err){
-			document.getElementById("contact-result").innerHTML = err.message;
-			console.log(err.message);
+				};
+				xhr.send(jsonPayload);
+			}
+			catch(err){
+				document.getElementById("contact-result").innerHTML = err.message;
+				console.log(err.message);
+			}
 		}
 	}
 	else{
