@@ -6,9 +6,12 @@ const extension = 'php';
 let userId = 0;
 let firstName = "";
 let lastName = "";
+
 let properPassword = false;
 let properContactEmailRegix = false;
 let properContactPhoneRegix = false;
+let properContactRegix = false;
+
 let passwordMatches = false;
 let loginFieldsFull = false;
 let registerFieldsFull = false;
@@ -320,6 +323,10 @@ function confirmValidContactRegex(){
 		properContactPhoneRegix = false;
 	}else{
 		properContactPhoneRegix = true;
+	}
+
+	if(properContactEmailRegix===true && properContactPhoneRegix===true){
+		properContactRegix===true;
 	}
 
 }
