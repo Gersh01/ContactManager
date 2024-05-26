@@ -1,5 +1,5 @@
 # Contact Manager
-Small Project assignment for COP4331 Processes of Object-Oriented Software Development
+Small Project assignment for COP4331 Processes of Object-Oriented Software Development. Due May 30th
 
 # Contributors
 - Alexander Gershfeld (Project Manager)
