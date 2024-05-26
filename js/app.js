@@ -579,7 +579,7 @@ function noContactsFound(){
 	}
 }
 
-function emptyContactFields(){
+function emptyContactFields(num){
 	let missingField = 1;
 	let noMissingFields =0;
 
