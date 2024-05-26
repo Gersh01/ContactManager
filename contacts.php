@@ -68,7 +68,7 @@
                                 <a id="contact-save-edit-1" href="javascript:saveContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
 
                                 <a id="contact-delete-1" href="javascript:deleteContact(1)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-save-edit-1" href="javascript:cancelContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
+                                <a id="contact-cancel-edit-1" href="javascript:cancelContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
                                 
                             </div>
                             <div id="contact-row-2" class="cell">
@@ -88,7 +88,7 @@
                                 <a id="contact-save-edit-2" href="javascript:saveContact(2)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
 
                                 <a id="contact-delete-2" href="javascript:deleteContact(2)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-save-edit-2" href="javascript:saveContact(2)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+                                <a id="contact-cancel-edit-2" href="javascript:cancelContact(2)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
 
                             </div>
                             <div id="contact-row-3" class="cell">
@@ -108,7 +108,7 @@
                                 <a id="contact-save-edit-3" href="javascript:saveContact(3)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
 
                                 <a id="contact-delete-3" href="javascript:deleteContact(3)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-save-edit-3" href="javascript:saveContact(3)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+                                <a id="contact-cancel-edit-3" href="javascript:cancelContact(3)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
 
                             </div>
                             <div id="contact-row-4" class="cell">
@@ -128,7 +128,7 @@
                                 <a id="contact-save-edit-4" href="javascript:saveContact(4)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
 
                                 <a id="contact-delete-4" href="javascript:deleteContact(4)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-save-edit-4" href="javascript:saveContact(4)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+                                <a id="contact-cancel-edit-4" href="javascript:cancelContact(4)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
 
                             </div>
                             <div id="contact-row-5" class="cell">
@@ -148,7 +148,7 @@
                                 <a id="contact-save-edit-5" href="javascript:saveContact(5)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
 
                                 <a id="contact-delete-5" href="javascript:deleteContact(5)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-save-edit-5" href="javascript:saveContact(5)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+                                <a id="contact-cancel-edit-5" href="javascript:cancelContact(5)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
 
                             </div>
                             <div id="contact-row-6" class="cell">
@@ -168,7 +168,7 @@
                                 <a id="contact-save-edit-6" href="javascript:saveContact(6)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
 
                                 <a id="contact-delete-6" href="javascript:deleteContact(6)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-save-edit-6" href="javascript:saveContact(6)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+                                <a id="contact-cancel-edit-6" href="javascript:cancelContact(6)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
 
                             </div>
                             <div id="contact-row-7" class="cell">
@@ -188,7 +188,7 @@
                                 <a id="contact-save-edit-7" href="javascript:saveContact(7)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
 
                                 <a id="contact-delete-7" href="javascript:deleteContact(7)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-save-edit-7" href="javascript:saveContact(7)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+                                <a id="contact-cancel-edit-7" href="javascript:cancelContact(7)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
 
                             </div>
                             <div id="contact-row-8" class="cell">
@@ -208,7 +208,7 @@
                                 <a id="contact-save-edit-8" href="javascript:saveContact(8)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
 
                                 <a id="contact-delete-8" href="javascript:deleteContact(8)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-save-edit-8" href="javascript:saveContact(8)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+                                <a id="contact-cancel-edit-8" href="javascript:cancelContact(8)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
                             </div>
                             <div id="contact-row-9" class="cell">
                                 <span id="contact-first-name-9" class="cell text-black"></span>
@@ -227,9 +227,8 @@
                                 <a id="contact-save-edit-9" href="javascript:saveContact(9)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
 
                                 <a id="contact-delete-9" href="javascript:deleteContact(9)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-save-edit-9" href="javascript:saveContact(9)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+                                <a id="contact-cancel-edit-9" href="javascript:cancelContact(9)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
                                 
-
                             </div>
                             <div id="contact-row-10" class="cell">
                                 <span id="contact-first-name-10" class="cell text-black"></span>
@@ -248,7 +247,7 @@
                                 <a id="contact-save-edit-10" href="javascript:saveContact(10)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
 
                                 <a id="contact-delete-10" href="javascript:deleteContact(10)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-save-edit-10" href="javascript:saveContact(10)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+                                <a id="contact-cancel-edit-10" href="javascript:cancelContact(10)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
 
                             </div>
                         </div>
