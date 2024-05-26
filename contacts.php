@@ -53,83 +53,203 @@
                             </div>
                             <div id="contact-row-1" class="cell">
                                 <span id="contact-first-name-1" class="cell text-black"></span>
+                                <input id="contact-first-name-edit-1" type="text" class="cell text-black" style="display:none">
+
                                 <div id="contact-last-name-1" class="cell text-black"></div>
+                                <input id="contact-last-name-edit-1" type="text" class="cell text-black" style="display:none">
+
                                 <div id="contact-email-1" class="cell text-black"></div>
+                                <input id="contact-email-edit-1" type="text" class="cell text-black" style="display:none">
+
                                 <div id="contact-phone-number-1" class="cell text-black"></div>
-                                <div id="contact-edit-1" class="text-black icon-cell" type="button">Edit</div>
-                                <a id="contact-delete-1" href="javascript:deleteContact(1)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <input id="contact-phone-number-edit-1" type="text" class="cell text-black" style="display:none">
+
+                                <a id="contact-edit-1" href="javascript:updateContact(1)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
+                                <a id="contact-save-edit-1" href="javascript:saveContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+
+                                <a id="contact-delete-1" href="javascript:deleteContact(1)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <a id="contact-save-edit-1" href="javascript:cancelContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
+                                
                             </div>
                             <div id="contact-row-2" class="cell">
-                                <div id="contact-first-name-2" class="cell text-black"></div>
+                                <span id="contact-first-name-2" class="cell text-black"></span>
+                                <input id="contact-first-name-edit-2" type="text" style="display:none">
+
                                 <div id="contact-last-name-2" class="cell text-black"></div>
+                                <input id="contact-last-name-edit-2" type="text" style="display:none">
+
                                 <div id="contact-email-2" class="cell text-black"></div>
+                                <input id="contact-email-edit-2" type="text" style="display:none">
+
                                 <div id="contact-phone-number-2" class="cell text-black"></div>
-                                <div id="contact-edit-2" class="text-black icon-cell" type="button">Edit</div>
-                                <a id="contact-delete-2" href="javascript:deleteContact(2)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <input id="contact-phone-number-edit-2" type="text" style="display:none">
+
+                                <a id="contact-edit-2" href="javascript:updateContact(2)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
+                                <a id="contact-save-edit-2" href="javascript:saveContact(2)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+
+                                <a id="contact-delete-2" href="javascript:deleteContact(2)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <a id="contact-save-edit-2" href="javascript:saveContact(2)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+
                             </div>
                             <div id="contact-row-3" class="cell">
-                                <div id="contact-first-name-3" class="cell text-black"></div>
+                                <span id="contact-first-name-3" class="cell text-black"></span>
+                                <input id="contact-first-name-edit-3" type="text" style="display:none">
+
                                 <div id="contact-last-name-3" class="cell text-black"></div>
+                                <input id="contact-last-name-edit-3" type="text" style="display:none">
+
                                 <div id="contact-email-3" class="cell text-black"></div>
+                                <input id="contact-email-edit-3" type="text" style="display:none">
+
                                 <div id="contact-phone-number-3" class="cell text-black"></div>
-                                <div id="contact-edit-3" class="text-black icon-cell" type="button">Edit</div>
-                                <a id="contact-delete-3" href="javascript:deleteContact(3)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <input id="contact-phone-number-edit-3" type="text" style="display:none">
+
+                                <a id="contact-edit-3" href="javascript:updateContact(3)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
+                                <a id="contact-save-edit-3" href="javascript:saveContact(3)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+
+                                <a id="contact-delete-3" href="javascript:deleteContact(3)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <a id="contact-save-edit-3" href="javascript:saveContact(3)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+
                             </div>
                             <div id="contact-row-4" class="cell">
-                                <div id="contact-first-name-4" class="cell text-black"></div>
+                                <span id="contact-first-name-4" class="cell text-black"></span>
+                                <input id="contact-first-name-edit-4" type="text" style="display:none">
+
                                 <div id="contact-last-name-4" class="cell text-black"></div>
+                                <input id="contact-last-name-edit-4" type="text" style="display:none">
+
                                 <div id="contact-email-4" class="cell text-black"></div>
+                                <input id="contact-email-edit-4" type="text" style="display:none">
+
                                 <div id="contact-phone-number-4" class="cell text-black"></div>
-                                <div id="contact-edit-4" class="text-black icon-cell" type="button">Edit</div>
-                                <a id="contact-delete-4" href="javascript:deleteContact(4)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <input id="contact-phone-number-edit-4" type="text" style="display:none">
+
+                                <a id="contact-edit-4" href="javascript:updateContact(4)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
+                                <a id="contact-save-edit-4" href="javascript:saveContact(4)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+
+                                <a id="contact-delete-4" href="javascript:deleteContact(4)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <a id="contact-save-edit-4" href="javascript:saveContact(4)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+
                             </div>
                             <div id="contact-row-5" class="cell">
-                                <div id="contact-first-name-5" class="cell text-black"></div>
+                                <span id="contact-first-name-5" class="cell text-black"></span>
+                                <input id="contact-first-name-edit-5" type="text" style="display:none">
+
                                 <div id="contact-last-name-5" class="cell text-black"></div>
+                                <input id="contact-last-name-edit-5" type="text" style="display:none">
+
                                 <div id="contact-email-5" class="cell text-black"></div>
+                                <input id="contact-email-edit-5" type="text" style="display:none">
+
                                 <div id="contact-phone-number-5" class="cell text-black"></div>
-                                <div id="contact-edit-5" class="text-black icon-cell" type="button">Edit</div>
-                                <a id="contact-delete-5" href="javascript:deleteContact(5)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <input id="contact-phone-number-edit-5" type="text" style="display:none">
+
+                                <a id="contact-edit-5" href="javascript:updateContact(5)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
+                                <a id="contact-save-edit-5" href="javascript:saveContact(5)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+
+                                <a id="contact-delete-5" href="javascript:deleteContact(5)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <a id="contact-save-edit-5" href="javascript:saveContact(5)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+
                             </div>
                             <div id="contact-row-6" class="cell">
-                                <div id="contact-first-name-6" class="cell text-black"></div>
+                                <span id="contact-first-name-6" class="cell text-black"></span>
+                                <input id="contact-first-name-edit-6" type="text" style="display:none">
+
                                 <div id="contact-last-name-6" class="cell text-black"></div>
+                                <input id="contact-last-name-edit-6" type="text" style="display:none">
+
                                 <div id="contact-email-6" class="cell text-black"></div>
+                                <input id="contact-email-edit-6" type="text" style="display:none">
+
                                 <div id="contact-phone-number-6" class="cell text-black"></div>
-                                <div id="contact-edit-6" class="text-black icon-cell" type="button">Edit</div>
-                                <a id="contact-delete-6" href="javascript:deleteContact(6)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <input id="contact-phone-number-edit-6" type="text" style="display:none">
+
+                                <a id="contact-edit-6" href="javascript:updateContact(6)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
+                                <a id="contact-save-edit-6" href="javascript:saveContact(6)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+
+                                <a id="contact-delete-6" href="javascript:deleteContact(6)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <a id="contact-save-edit-6" href="javascript:saveContact(6)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+
                             </div>
                             <div id="contact-row-7" class="cell">
-                                <div id="contact-first-name-7" class="cell text-black"></div>
+                                <span id="contact-first-name-7" class="cell text-black"></span>
+                                <input id="contact-first-name-edit-7" type="text" style="display:none">
+
                                 <div id="contact-last-name-7" class="cell text-black"></div>
+                                <input id="contact-last-name-edit-7" type="text" style="display:none">
+
                                 <div id="contact-email-7" class="cell text-black"></div>
+                                <input id="contact-email-edit-7" type="text" style="display:none">
+
                                 <div id="contact-phone-number-7" class="cell text-black"></div>
-                                <div id="contact-edit-7" class="text-black icon-cell" type="button">Edit</div>
-                                <a id="contact-delete-7" href="javascript:deleteContact(7)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <input id="contact-phone-number-edit-7" type="text" style="display:none">
+
+                                <a id="contact-edit-7" href="javascript:updateContact(7)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
+                                <a id="contact-save-edit-7" href="javascript:saveContact(7)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+
+                                <a id="contact-delete-7" href="javascript:deleteContact(7)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <a id="contact-save-edit-7" href="javascript:saveContact(7)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+
                             </div>
                             <div id="contact-row-8" class="cell">
-                                <div id="contact-first-name-8" class="cell text-black"></div>
+                                <span id="contact-first-name-8" class="cell text-black"></span>
+                                <input id="contact-first-name-edit-8" type="text" style="display:none">
+
                                 <div id="contact-last-name-8" class="cell text-black"></div>
+                                <input id="contact-last-name-edit-8" type="text" style="display:none">
+
                                 <div id="contact-email-8" class="cell text-black"></div>
+                                <input id="contact-email-edit-8" type="text" style="display:none">
+
                                 <div id="contact-phone-number-8" class="cell text-black"></div>
-                                <div id="contact-edit-8" class="text-black icon-cell" type="button">Edit</div>
-                                <a id="contact-delete-8" href="javascript:deleteContact(8)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <input id="contact-phone-number-edit-8" type="text" style="display:none">
+
+                                <a id="contact-edit-8" href="javascript:updateContact(8)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
+                                <a id="contact-save-edit-8" href="javascript:saveContact(8)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+
+                                <a id="contact-delete-8" href="javascript:deleteContact(8)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <a id="contact-save-edit-8" href="javascript:saveContact(8)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
                             </div>
                             <div id="contact-row-9" class="cell">
-                                <div id="contact-first-name-9" class="cell text-black"></div>
+                                <span id="contact-first-name-9" class="cell text-black"></span>
+                                <input id="contact-first-name-edit-9" type="text" style="display:none">
+
                                 <div id="contact-last-name-9" class="cell text-black"></div>
+                                <input id="contact-last-name-edit-9" type="text" style="display:none">
+
                                 <div id="contact-email-9" class="cell text-black"></div>
+                                <input id="contact-email-edit-9" type="text" style="display:none">
+
                                 <div id="contact-phone-number-9" class="cell text-black"></div>
-                                <div id="contact-edit-9" class="text-black icon-cell" type="button">Edit</div>
-                                <a id="contact-delete-9" href="javascript:deleteContact(9)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <input id="contact-phone-number-edit-9" type="text" style="display:none">
+
+                                <a id="contact-edit-9" href="javascript:updateContact(9)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
+                                <a id="contact-save-edit-9" href="javascript:saveContact(9)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+
+                                <a id="contact-delete-9" href="javascript:deleteContact(9)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <a id="contact-save-edit-9" href="javascript:saveContact(9)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+                                
+
                             </div>
                             <div id="contact-row-10" class="cell">
-                                <div id="contact-first-name-10" class="cell text-black"></div>
+                                <span id="contact-first-name-10" class="cell text-black"></span>
+                                <input id="contact-first-name-edit-10" type="text" style="display:none">
+
                                 <div id="contact-last-name-10" class="cell text-black"></div>
+                                <input id="contact-last-name-edit-10" type="text" style="display:none">
+
                                 <div id="contact-email-10" class="cell text-black"></div>
+                                <input id="contact-email-edit-10" type="text" style="display:none">
+
                                 <div id="contact-phone-number-10" class="cell text-black"></div>
-                                <div id="contact-edit-10" class="text-black icon-cell" type="button">Edit</div>
-                                <a id="contact-delete-10" href="javascript:deleteContact(10)" class="icon-cell text-black a-link-alt"><div id="deteleButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <input id="contact-phone-number-edit-10" type="text" style="display:none">
+
+                                <a id="contact-edit-10" href="javascript:updateContact(10)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
+                                <a id="contact-save-edit-10" href="javascript:saveContact(10)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+
+                                <a id="contact-delete-10" href="javascript:deleteContact(10)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
+                                <a id="contact-save-edit-10" href="javascript:saveContact(10)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+
                             </div>
                         </div>
                     
@@ -143,7 +263,7 @@
                     </div>
 
                     <!--Add Contact Section (display none by default)-->
-                    <div id="add-contact" display="none" class="table">
+                    <div id="add-contact" style="display:none" class="table">
                         <div class="search-bar row">
                             <input id="add-contact-first-name" type="text" placeholder="First Name">
                         </div>
