@@ -18,13 +18,17 @@
 
     } else {
 
+
         $stmt = $conn->prepare("SELECT ID,firstName,lastName,Login,Password FROM Users WHERE Login=? AND Password =?");
+
+
                 $stmt->bind_param("ss", $data["login"], $data["password"]);
                 $stmt->execute();
                 $result = $stmt->get_result();
                 
                 $flag = 0;
                 while ($row = $result->fetch_assoc()){
+
 
                     // foreach ($row as $key => $value) {
                     //     echo "Key: $key; Value: $value\n";
@@ -53,6 +57,7 @@
                 if (!$flag) {
                     
                     returnWithError("No Records Found");
+
                 }
                 
 

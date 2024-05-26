@@ -1,4 +1,4 @@
-const urlBase = 'http://oceanic-connections.xyz/LAMPAPI';
+const urlBase = 'http://143.198.9.78/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
@@ -11,18 +11,18 @@ function doLogin(){
 	firstName = "";
 	lastName = "";
 	
-	let login = document.getElementById("loginName").value;
-	let password = document.getElementById("loginPassword").value;
+	let login = document.getElementById("login-username").value;
+	let password = document.getElementById("login-password").value;
     /* Do we want to add hashing to the passwords?*/ 
 //	var hash = md5( password );
 	
-	document.getElementById("loginResult").innerHTML = "";
+	document.getElementById("login-result").innerHTML = "";
 
 	let tmp = {login:login,password:password};
 //	var tmp = {login:login,password:hash};
 	let jsonPayload = JSON.stringify( tmp );
 	
-	let url = urlBase + '/Login.' + extension;
+	let url = urlBase + '/login.' + extension;
 
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -38,7 +38,7 @@ function doLogin(){
 		
 				if( userId < 1 )
 				{		//loginResult is temp name may need to change element .css name
-					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+					document.getElementById("login-result").innerHTML = "User/Password combination incorrect";
 					return;
 				}
 		
@@ -47,14 +47,14 @@ function doLogin(){
 
 				saveCookie();
                 //refers to page after login, needs to be updated
-				window.location.href = "login.html";
+				window.location.href = "login.php";
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		document.getElementById("loginResult").innerHTML = err.message;
+		document.getElementById("login-result").innerHTML = err.message;
 	}
 }
 
@@ -109,26 +109,26 @@ function doLogout(){
 	window.location.href = "home.html";
 }
 
+//Names are subject to change depending on HTML and css
 function doRegister(){
 
-    let newUserFirst = document.getElementById("userFirst").value;
-    let newUserLast = document.getElementById("userLast").value;
-    let newUserName = document.getElementById("userName").value;
-    let newUserPassword = document.getElementById("userPassword").value;
-    /* This will be used to confirm passwords are the same */
-    //let newUserPasswordConf = document.getElementById("userPasswordConf").value;
+    let newUserFirst = document.getElementById("register-first-name").value;
+    let newUserLast = document.getElementById("register-last-name").value;
+    let newUserName = document.getElementById("register-username").value;
+    let newUserPassword = document.getElementById("register-password").value;
+    let newUserPasswordConf = document.getElementById("register-password-confirm").value;
 
     /* This element items implementation is dependant on time*/
     //let newUserSecurityQ = document.getElementById("userSecurity").value;
 
-    document.getElementById("registerResult").innerHTML = "";
+    document.getElementById("register-result").innerHTML = "";
     
     let tmp = {firstName:newUserFirst, lastName:newUserLast, login:newUserName, password:newUserPassword};
 
     let jsonPayload = JSON.stringify( tmp );
 
     // 'register' is a place holder
-    let url = urlBase + '/register.' + extension;
+    let url = urlBase + 'Register.' + extension;
 
     let xhr = new XMLHttpRequest();
 
@@ -139,20 +139,48 @@ function doRegister(){
         xhr.onreadystatechange = function()
         {
             if(this.readyState == 4 && this.status == 200){
-                document.getElementById("registerResult").innerHTML = "Registration is complete";
+                document.getElementById("register-result").innerHTML = "Registration is complete";
             }
         };
         xhr.send(jsonPayload);
     }
     catch(err){
-        document.getElementById("registerResult").innerHTML = err.message;
+        document.getElementById("register-result").innerHTML = err.message;
     }
 }
-
+//Names are subject to change based on HTML and css files
 function addContact(){
+    //temp elementById names, need to confirm with style.css
+    let newContactFirst = document.getElementById("contactFirst").innerHTML;
+    let newContactLast = document.getElementById("contactLast").innerHTML;
+    let newContactEmail = document.getElementById("contactEmail").innerHTML;
+    let newContactPhone = document.getElementById("contactPhone").innerHTML;
 
+    document.getElementById("addContactResult").innerHTML = "";
 
+    let tmp = {contactFirst:newContactFirst, contactLast:newContactLast, contactEmail:newContactEmail, contactPhone:newContactPhone};
 
+    let jsonPayload = JSON.stringify( tmp );
+    //temporary name depends on sites URL
+    let url = urlBase + "/contacts.php" + extension;
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    
+    try{
+        xhr.onreadystatechange = function(){
+            if(this.readyState == 4 && this.statust == 200){
+                document.getElementById("addContatctResult").innerHTML = "Contact has been added";
+            }
+        };
+        xhr.send( jsonPayload );
+
+    }
+    catch (err){
+        document.getElementById("addContactResult").innerHTML = err.message;
+    }
 }
 
 function deleteContact(){
