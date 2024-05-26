@@ -173,9 +173,10 @@ function showTable(){
 		contact.style.display="none";
 		addContactButton.innerText = "Add Contact";
 
+		firstPage();
+
 		refresh.style.display = "block";
 		table.style.display = "block";
-		firstPage();
 	}
 }
 
