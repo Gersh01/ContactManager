@@ -711,13 +711,14 @@ function saveContact(num){
 
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	
+	console.log(jsonPayload);
+
 	try{
 		xhr.onreadystatechange = function(){
 			if(this.readyState == 4 && this.status == 200){
 				//document.getElementById("contact-edit-result").innerHTML = "Contact has been updated";
 				toggleEditElement(done,num);
-				console.log(jsonPayload);
+				
 				if(document.getElementById("search-bar").value == ""){
 					firstPage();
 				}
