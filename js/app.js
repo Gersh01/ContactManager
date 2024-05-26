@@ -443,10 +443,13 @@ function confirmPassword(){
 
 function confirmValidPhoneRegex(num){
 	let phoneRegex = new RegExp("[0-9]{3}-[0-9]{3}-[0-9]{4}");
-	let phone = document.getElementById("add-contact-phone-number").value;
+	let phone = document.getElementById("add-contact-phone-number");
 
 	console.log(num + "inside phoneRegex");
-	console.log(phoneRegex.test(phone));
+	if(phone.length === 3 || phone.length === 7){
+		phone.value += "-";
+	}
+	console.log(phoneRegex.test(phone.value));
 	}
 
 function passwordRegexChecker(){
