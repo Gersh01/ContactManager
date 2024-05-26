@@ -60,9 +60,8 @@ function doLogin(){
 		return;
 	}
 	else{
-
-		let tmp = {login:login,password:password};
-		//	var tmp = {login:login,password:hash};
+			let tmp = {login:login,password:password};
+			//	var tmp = {login:login,password:hash};
 			let jsonPayload = JSON.stringify( tmp );
 			
 			let url = urlBase + '/Login.' + extension;
@@ -300,13 +299,20 @@ function doRegister(){
 				xhr.onreadystatechange = function()
 				{
 					if(this.readyState == 4 && this.status == 200){
-						document.getElementById("register-first-name").value = "";
-						document.getElementById("register-last-name").value = "";
-						document.getElementById("register-username").value = "";
-						document.getElementById("register-password").value= "";
-						document.getElementById("register-password-confirm").value = "";
+						jsonResponse = JSON.parse( xhr.responseText );
+						if(jsonResponse !== "login was taken"){
+							document.getElementById("register-first-name").value = "";
+							document.getElementById("register-last-name").value = "";
+							document.getElementById("register-username").value = "";
+							document.getElementById("register-password").value= "";
+							document.getElementById("register-password-confirm").value = "";
 
-						document.getElementById("register-result").innerHTML = "Registration is complete";
+							document.getElementById("register-result").innerHTML = "Registration is complete";
+						}
+						else{
+							document.getElementById("register-result").innerHTML = "Username is already taken";
+						}
+						
 					}
 				};
 				xhr.send(jsonPayload);
