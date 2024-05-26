@@ -10,7 +10,7 @@ let lastName = "";
 let properPassword = false;
 let properContactEmailRegix = false;
 let properContactPhoneRegix = false;
-let properContactRegix = false;
+let properContactRegix = true;
 
 let passwordMatches = false;
 let loginFieldsFull = false;
@@ -310,7 +310,7 @@ function confirmValidContactRegex(){
 
 	let emailRegex = new RegExp("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/");
 	//let phoneRegex = new RegExp("/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$");
-	
+	/*
 	if(emailRegex.test(newContactEmail) === false){
 		//document.getElementById("contact-email").innerHTML = "Email is invalid";
 		console.log("Email is invalid");
@@ -320,19 +320,20 @@ function confirmValidContactRegex(){
 		properContactEmailRegix = true;
 	}
 
-	/*if(newContactPhone.match(phoneRegex) === false){
+	if(newContactPhone.match(phoneRegex) === false){
 		//document.getElementById("contact-phone").innerHTML = "Phone number is invalid";
 		properContactPhoneRegix = false;
 		console.log("Phone number is invalid");
 	}else{
 		properContactPhoneRegix = true;
 		console.log("Phone number is valid");
-	}*/
+	}
 
 	if(properContactEmailRegix===true && properContactPhoneRegix===true){
 		console.log("New contact is valid");
 		properContactRegix===true;
 	}
+	/*
 
 }
 
