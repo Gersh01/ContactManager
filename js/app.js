@@ -373,10 +373,10 @@ function confirmValidContactRegex(num){
 	let emailRegex = new RegExp();
 
 	if(num===-1){
-		email = document.getElementById("add-contact-email");
+		email = document.getElementById("add-contact-email").value;
 	}
 	else{
-		email = document.getElementById("contact-email-edit-"+num);
+		email = document.getElementById("contact-email-edit-"+num).value;
 	}
 
 	if(email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/) === false){
