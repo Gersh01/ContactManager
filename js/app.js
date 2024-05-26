@@ -203,7 +203,7 @@ function toggleEditElement(toggle,num){
 	let editEmail = document.getElementById("contact-email-edit-"+num);
 	let editPhone = document.getElementById("contact-phone-number-edit-"+num);
 	let save = document.getElementById("contact-save-edit-"+num);
-	let cancel = document.getElementById("contact-save-edit-"+num);
+	let cancel = document.getElementById("contact-cancel-edit-"+num);
 
 	//show edit field
 	if(toggle === 1){
