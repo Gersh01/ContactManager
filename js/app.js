@@ -308,8 +308,9 @@ function addContact(){
 			
 			try{
 				xhr.onreadystatechange = function(){
-					if(this.readyState == 4 && this.statust == 200){
+					if(this.readyState == 4 && this.status == 200){
 						document.getElementById("add-contact-result").innerHTML = "Contact has been added";
+
 						document.getElementById("add-contact-first-name").value = "";
 						document.getElementById("add-contact-last-name").value = "";
 						document.getElementById("add-contact-email").value = "";
