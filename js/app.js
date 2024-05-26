@@ -256,10 +256,10 @@ function doRegister(){
 //Names are subject to change based on HTML and css files
 function addContact(){
     //temp elementById names, need to confirm with style.css
-    let newContactFirst = document.getElementById("add-content-first-name").innerHTML.value;
-    let newContactLast = document.getElementById("add-content-last-name").innerHTML.value;
-    let newContactEmail = document.getElementById("add-contact-email").innerHTML.value;
-    let newContactPhone = document.getElementById("add-contact-phone-number").innerHTML.value;
+    let newContactFirst = document.getElementById("add-content-first-name").value;
+    let newContactLast = document.getElementById("add-content-last-name").value;
+    let newContactEmail = document.getElementById("add-contact-email").value;
+    let newContactPhone = document.getElementById("add-contact-phone-number").value;
 
 
 	if(newContactFirst !== "" && newContactLast !== "" && newContactFirst !== "" && newContactPhone !== ""){
