@@ -264,6 +264,7 @@ function addContact(){
     let newContactEmail = document.getElementById("add-contact-email").value;
     let newContactPhone = document.getElementById("add-contact-phone-number").value;
 
+	newContactPhone = newContactPhone.value.splice(0,3)+"-"+newContactPhone.value.splice(3,6)+"-"+newContactPhone.value.splice(6,10)
 
 	if(newContactFirst !== "" && newContactLast !== "" && newContactFirst !== "" && newContactPhone !== ""){
 		if(properContactRegix === true){
