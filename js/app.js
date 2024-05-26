@@ -1,4 +1,4 @@
-const urlBase = 'http://159.203.115.181/LAMPAPI';
+const urlBase = 'http://oceanic-connections.xyz/LAMPAPI';
 const extension = 'php';
 
 //** MUST DELETE ALL CONSOLE.LOG **
