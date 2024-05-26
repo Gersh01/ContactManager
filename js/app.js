@@ -596,7 +596,7 @@ function emptyContactFields(num){
 
 	//If a new contact is being created
 	if(firstName.style == "flex"){
-		if(firstName.innerHTML != "" && lastName.innerHTML != "" && email.innerHTML != "" && phone.innerHTML != ""){
+		if(firstName.innerHTML === "" || lastName.innerHTML === "" || email.innerHTML === "" || phone.innerHTML === ""){
 			return noMissingFields;
 		}
 		else{
@@ -604,7 +604,7 @@ function emptyContactFields(num){
 		}
 	}
 	else{
-		if(editFirst.value != "" && editLast.value != "" && editEmail.value != "" & editPhone != ""){
+		if(editFirst.value === "" || editLast.value === "" || editEmail.value === "" || editPhone === ""){
 			return noMissingFields;
 		}
 		else{
@@ -746,18 +746,22 @@ function saveContact(num){
 	let email = document.getElementById("contact-email-"+num);
 	let phone = document.getElementById("contact-phone-number-"+num);
 
-	let Id = globalJsonObject.contacts[num-1].ID;
 
-	firstName.textContent = editFirst.value;
-	lastName.textContent = editLast.value;
-	email.textContent = editEmail.value;
-	phone.textContent = editPhone.value;
 
-	let fullName = firstName.textContent+ " " + lastName.textContent;
 	emptyCheck = emptyContactFields(cell);
 
 
+
 	if(emptyCheck === 0){
+
+		let Id = globalJsonObject.contacts[num-1].ID;
+
+		firstName.textContent = editFirst.value;
+		lastName.textContent = editLast.value;
+		email.textContent = editEmail.value;
+		phone.textContent = editPhone.value;
+	
+		let fullName = firstName.textContent+ " " + lastName.textContent;
 
 		let url = urlBase + "/UpdateContact." + extension;
 		
