@@ -300,7 +300,6 @@ function doRegister(){
 				{
 					if(this.readyState == 4 && this.status == 200){
 						jsonResponse = JSON.parse( xhr.responseText );
-						console.log(jsonResponse +" results");
 						if(jsonResponse.verdict === "login was taken"){
 							document.getElementById("register-result").innerHTML = "Username is already taken";
 							document.getElementById("register-username").value = "";
@@ -607,9 +606,9 @@ function searchContact(){
 	try{
 		xhr.onreadystatechange = function() {
 			if(this.readyState == 4 && this.status == 200){
-				let jsonObject = JSON.parse( xhr.responseText );
 				//document.getElementById("contact-result").innerHTML ="Contacts have been recieved";
-				if(jsonObject.contacts.length!==0){
+				if(xhr.responseText==null){
+					let jsonObject = JSON.parse( xhr.responseText );
 					globalJsonObject = jsonObject;
 					loadContacts(jsonObject);
 				}
