@@ -156,19 +156,19 @@ function showTable(){
 	let table = document.getElementById("contacts-hideable");
 	let contact = document.getElementById("add-contact");
 	let refresh = document.getElementById("refresh-button");
-	let addContactButton = document.getElementById("add-contact-button");
+	let addContactButton = document.getElementById("addContactButton");
 
 	console.log("Hiding table");
 	if(table.style.display === "block"){
 		table.style.display = "none";
 		refresh.style.display = "none"
 
-		addContactButton.innerHTML = "cancel"
+		addContactButton.innerText = "Cancel"
 		contact.style.display = "block";
 	}
 	else{
 		contact.style.display="none";
-		addContactButton.innerHTML = "Add Contact";
+		addContactButton.innerText = "Add Contact";
 
 		refresh.style.display = "block";
 		table.style.display = "block";
