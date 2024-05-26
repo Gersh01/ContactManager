@@ -733,7 +733,8 @@ function updateContact(num){
 
 function saveContact(num){
 	let done = 0;
-	
+	let emptyCheck = 0;
+
 	let editFirst = document.getElementById("contact-first-name-edit-"+num);
 	let editLast = document.getElementById("contact-last-name-edit-"+num);
 	let editEmail = document.getElementById("contact-email-edit-"+num);
@@ -752,8 +753,10 @@ function saveContact(num){
 	phone.textContent = editPhone.value;
 
 	let fullName = firstName.textContent+ " " + lastName.textContent;
+	emptyCheck = emptyContactFields(num);
 
-	if(emptyContactFields(num) === 0){
+
+	if(emptyCheck === 0){
 
 		let url = urlBase + "/UpdateContact." + extension;
 		
