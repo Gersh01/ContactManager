@@ -593,6 +593,7 @@ function searchContact(){
 			if(this.readyState == 4 && this.status == 200){
 				let jsonObject = JSON.parse( xhr.responseText );
 				//document.getElementById("contact-result").innerHTML ="Contacts have been recieved";
+				globalJsonObject = jsonObject;
 				loadContacts(jsonObject);
 			}
 		};
@@ -689,13 +690,50 @@ function saveContact(num){
 	let email = document.getElementById("contact-email-"+num);
 	let phone = document.getElementById("contact-phone-number-"+num);
 
+	let contactId = globalJsonObject.contact
+
 	firstName.textContent = editFirst.value;
 	lastName.textContent = editLast.value;
 	email.textContent = editEmail.value;
 	phone.textContent = editPhone.value;
 
-	toggleEditElement(done,num);
+	let fullName = firstName + " " + lastName;
 
+	let url = urlBase + "/UpdateContact." + extension;
+	
+	let tmp = {newName:fullName, newPhone:phone, newEmail:email, contactID:contactId, newFavorite:0};
+
+	//document.getElementById("contact-edit-result").innerHTML = "";
+
+	let jsonPayload = JSON.stringify( tmp );
+
+	let xhr = new XMLHttpRequest();
+
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	
+	try{
+		xhr.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				//document.getElementById("contact-edit-result").innerHTML = "Contact has been updated";
+				toggleEditElement(done,num);
+				if(document.getElementById("search-bar").value == ""){
+					firstPage();
+				}
+				else{
+					searchContact();
+				}
+			}
+			else{
+				//document.getElementById("contact-edit-result").innerHTML = "Contact cannot be updated";
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err){
+		document.getElementById("contact-result").innerHTML = err.message;
+		console.log(err.message);
+	}
 }
 
 function cancelContact(num){
@@ -715,6 +753,9 @@ function cancelContact(num){
 	editLast.value = lastName.textContent;
 	editEmail.value = email.textContent;
 	editPhone.value = phone.textContent;
+
+
+
 
 	toggleEditElement(done,num);
 
