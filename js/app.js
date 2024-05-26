@@ -550,10 +550,10 @@ function loadContacts(jsonObject){
 
 		let row = document.getElementById("contact-row-"+parseInt(i+1));
 		toggleElement(row,show);
-		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
-		document.getElementById("contact-last-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].LastName;
-		document.getElementById("contact-email-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Email;
-		document.getElementById("contact-phone-number-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Phone;
+		document.getElementById("contact-first-name-"+parseInt(i+1)).value = jsonObject.contacts[i].FirstName;
+		document.getElementById("contact-last-name-"+parseInt(i+1)).value = jsonObject.contacts[i].LastName;
+		document.getElementById("contact-email-"+parseInt(i+1)).value = jsonObject.contacts[i].Email;
+		document.getElementById("contact-phone-number-"+parseInt(i+1)).value = jsonObject.contacts[i].Phone;
 
 	}
 	for(j = i; j<10; j++){
