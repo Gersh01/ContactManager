@@ -193,6 +193,13 @@ function toggleEditElement(){
 
 }
 
+function formatPhoneNumber(num){
+	newNum = num.value.replace(/\D[^\.]/g, "");
+	num = newNum.split(0,3) + "-" + newNum.split(3,6) + "-" + newNum.split(6);
+	return num;
+}
+
+
 //Names are subject to change depending on HTML and css
 function doRegister(){
 
@@ -262,11 +269,18 @@ function addContact(){
     let newContactFirst = document.getElementById("add-contact-first-name").value;
     let newContactLast = document.getElementById("add-contact-last-name").value;
     let newContactEmail = document.getElementById("add-contact-email").value;
-    let newContactPhone = document.getElementById("add-contact-phone-number").value;
+    let newContactPhoneRaw = document.getElementById("add-contact-phone-number").value;
+	let newContactPhone = "";
 
-	console.log(newContactPhone);
-	newContactPhone = newContactPhone.value.splice(0,3)+"-"+newContactPhone.value.splice(3,6)+"-"+newContactPhone.value.splice(6,10)
+	console.log(newContactPhoneRaw);
 
+	if(newContactPhoneRaw.length<=10){
+		newContactPhone = formatPhoneNumber(newContactPhoneRaw)
+	}
+	else{
+		newContactPhone = newContactPhoneRaw;
+	}
+	
 	console.log(newContactPhone);
 	if(newContactFirst !== "" && newContactLast !== "" && newContactFirst !== "" && newContactPhone !== ""){
 		if(properContactRegix === true){
