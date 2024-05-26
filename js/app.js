@@ -9,7 +9,7 @@ let lastName = "";
 
 let properPassword = false;
 let properEmailRegex = true;
-let properPhoneRegex = false;
+let properPhoneRegex = true;
 
 let passwordMatches = false;
 let loginFieldsFull = false;
