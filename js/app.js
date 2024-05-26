@@ -311,7 +311,7 @@ function confirmValidContactRegex(){
 	let emailRegex = new RegExp("^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$");
 	let phoneRegex = new RegExp("^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$");
 	
-	if(emailRegex.test(newContactEmail) === false){
+	if("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/".test(newContactEmail) === false){
 		//document.getElementById("contact-email").innerHTML = "Email is invalid";
 		properContactEmailRegix = false;
 	}else{
