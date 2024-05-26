@@ -572,6 +572,12 @@ function loadContacts(jsonObject){
 	}
 }
 
+function noContacts(){
+	for(let i = 0; i<10; i++){
+		let row = document.getElementById("contact-row-"+parseInt(j+1));
+		toggleElement(row,hide);
+	}
+}
 
 
 
@@ -603,8 +609,14 @@ function searchContact(){
 			if(this.readyState == 4 && this.status == 200){
 				let jsonObject = JSON.parse( xhr.responseText );
 				//document.getElementById("contact-result").innerHTML ="Contacts have been recieved";
-				globalJsonObject = jsonObject;
-				loadContacts(jsonObject);
+				if(jsonObject.contacts.length!==0){
+					globalJsonObject = jsonObject;
+					loadContacts(jsonObject);
+				}
+				else{
+					globalJsonObject = null;
+					noContacts();
+				}
 			}
 		};
 		xhr.send(jsonPayload);
