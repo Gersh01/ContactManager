@@ -442,7 +442,7 @@ function confirmValidPhoneRegex(num){
 		});
 	}
 	console.log(phoneRegex.test(phone.value));
-	if(phoneRegex.test(phone.value)===true){
+	if(phoneRegex.test(phone.value)===true && phone.value.length===12){
 		properPhoneRegex = true;
 	}
 	else{
