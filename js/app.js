@@ -308,10 +308,10 @@ function confirmValidContactRegex(){
 	let newContactEmail = document.getElementById("add-contact-email").innerHTML.value;
     let newContactPhone = document.getElementById("add-contact-phone-number").innerHTML.value;
 
-	let emailRegex = new RegExp("^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$");
-	let phoneRegex = new RegExp("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/");
+	let emailRegex = new RegExp("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/");
+	let phoneRegex = new RegExp("/^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}/");
 	
-	if("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/".test(newContactEmail) === false){
+	if(emailRegex.test(newContactEmail) === false){
 		//document.getElementById("contact-email").innerHTML = "Email is invalid";
 		properContactEmailRegix = false;
 	}else{
