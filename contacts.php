@@ -44,7 +44,6 @@
                     <div id="contacts-hideable" class="contacts-hide" style="display:block">
                         <div id="table" class="table">
                             <div id="contact-row-top" class="cell-top">
-                                <div id="contact-fave-status" class="cell text-black">Favorite</div>
                                 <div id="contact-first-name" class="cell text-black">First Name</div>
                                 <div id="contact-last-name" class="cell text-black">Last Name</div>
                                 <div id="contact-email" class="cell text-black">Email</div>
@@ -179,9 +178,6 @@
                             <div id="contact-row-5" class="cell">
                                 <a id="contact-not-fave-5" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
                                 <a id="contact-fave-5" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
-                                
-                                <a id="contact-not-fave-1" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-1" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
                                 
                                 <span id="contact-first-name-5" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
