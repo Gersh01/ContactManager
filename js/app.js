@@ -15,7 +15,7 @@ let passwordMatches = false;
 let loginFieldsFull = false;
 let registerFieldsFull = false;
 
-let contactInEdit = false;
+let contactInEdit = 0;
 
 let inputLogin = document.getElementById("login-password");
 let inputRegister = document.getElementById("register-password-confirm");
@@ -216,7 +216,7 @@ function toggleEditElement(toggle,num){
 		edit.style.display = "none";
 		del.style.display = "none";
 
-		contactInEdit = true;
+		contactInEdit +=1;
 
 	
 		editFirst.style.display = "flex";
@@ -235,7 +235,7 @@ function toggleEditElement(toggle,num){
 		save.style.display = "none";
 		cancel.style.display = "none";
 
-		contactInEdit = false;
+		contactInEdit -=1;
 
 		firstName.style.display = "flex";
 		lastName.style.display = "flex";
