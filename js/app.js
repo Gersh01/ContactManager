@@ -869,11 +869,10 @@ function goNext(){
 	let lastContactFirstName = document.getElementById("contact-first-name-10").innerText;
 	let lastContactLastName = document.getElementById("contact-last-name-10").innerText;
 
-	let Id = globalJsonObject.contacts[lastIndex].ID;
-	let fav = globalJsonObject.contacts[lastIndex].Favorite;
-	
 	let nextName = lastContactFirstName+" "+lastContactLastName;
 	if(globalJsonObject.contacts.length==10){
+		let Id = globalJsonObject.contacts[lastIndex].ID;
+		let fav = globalJsonObject.contacts[lastIndex].Favorite;
 		if(contactInEdit === 0){
 			firstContactPageFlag += 1;
 			//if search field is empty
@@ -902,11 +901,10 @@ function goPrev(){
 	let firstContactFirstName = document.getElementById("contact-first-name-1").innerText;
 	let firstContactLastName = document.getElementById("contact-last-name-1").innerText;
 
-	let Id = globalJsonObject.contacts[firstIndex].ID;
-	let fav = globalJsonObject.contacts[firstIndex].Favorite;
-
 	let prevName = firstContactFirstName+" "+firstContactLastName;
 	if(firstContactPageFlag > 0){
+		let Id = globalJsonObject.contacts[firstIndex].ID;
+		let fav = globalJsonObject.contacts[firstIndex].Favorite;
 		if(contactInEdit === 0 ){
 			firstContactPageFlag -= 1;
 			//if search field is empty
