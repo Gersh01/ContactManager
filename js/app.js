@@ -156,27 +156,29 @@ function doLogout(){
 }
 
 function showTable(){
-	let table = document.getElementById("contacts-hideable");
-	let contact = document.getElementById("add-contact");
-	let refresh = document.getElementById("refresh-button");
-	let addContactButton = document.getElementById("addContactButton");
+	if(contactInEdit === false){
+		let table = document.getElementById("contacts-hideable");
+		let contact = document.getElementById("add-contact");
+		let refresh = document.getElementById("refresh-button");
+		let addContactButton = document.getElementById("addContactButton");
 
-	console.log("Hiding table");
-	if(table.style.display === "block"){
-		table.style.display = "none";
-		refresh.style.display = "none"
+		console.log("Hiding table");
+		if(table.style.display === "block"){
+			table.style.display = "none";
+			refresh.style.display = "none"
 
-		addContactButton.innerText = "Cancel"
-		contact.style.display = "block";
-	}
-	else{
-		contact.style.display="none";
-		addContactButton.innerText = "Add Contact";
+			addContactButton.innerText = "Cancel"
+			contact.style.display = "block";
+		}
+		else{
+			contact.style.display="none";
+			addContactButton.innerText = "Add Contact";
 
-		firstPage();
+			firstPage();
 
-		refresh.style.display = "block";
-		table.style.display = "block";
+			refresh.style.display = "block";
+			table.style.display = "block";
+		}
 	}
 }
 
@@ -329,7 +331,7 @@ function addContact(){
 
 	console.log(newContactPhone);
 	if(emptyContactFields(num) === 0){
-		if(properEmailRegex === true && properPhoneRegex === true && contactInEdit === false){
+		if(properEmailRegex === true && properPhoneRegex === true){
 
 			let newContactName = newContactFirst +" "+newContactLast;
 
