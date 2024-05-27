@@ -174,7 +174,7 @@ function showTable(){
 			contact.style.display="none";
 			addContactButton.innerText = "Add Contact";
 
-			firstPage();
+			firstPage(null,null);
 
 			refresh.style.display = "block";
 			table.style.display = "block";
@@ -509,14 +509,25 @@ function passwordRegexChecker(){
 	}
 }
 
-function firstPage(){
+function firstPage(contactPageination,pageSelect){
 
 	if(contactInEdit === 0){
+		tmp = null;
+		//Goes to next page
+		if(pageSelect===1){
+			tmp = {userID:userId, cursor:contactPageination, next:pageSelect};
+		}
+		else if(pageSelect===-1){
+			tmp = {userID:userId, cursor:contactPageination, next:pageSelect};
+		}
+		else if(pageSelect===null){
+			tmp = {userID:userId, cursor:0};
+		}
 		console.log("Generating first page");
 
 		let url = urlBase + "/ContactPagination." + extension;
 		
-		let tmp = {userID:userId, cursor:0};
+		
 
 		document.getElementById("contact-result").innerHTML = "";
 
@@ -699,7 +710,7 @@ function deleteContact(num){
 					if(jsonObject.deleted === "Yes"){
 						document.getElementById("contact-result").innerHTML = "Contact has been deleted";
 						if(document.getElementById("search-bar").value == ""){
-							firstPage();
+							firstPage(null,null);
 						}
 						else{
 							searchContact();
@@ -791,7 +802,7 @@ function saveContact(num){
 						toggleEditElement(done,num);
 						
 						if(document.getElementById("search-bar").value == ""){
-							firstPage();
+							firstPage(null,null);
 						}
 						else{
 							searchContact();
@@ -837,10 +848,22 @@ function cancelContact(num){
 
 
 function goNext(){
-	if(contactInEdit === 0){
-		if(document.getElementById("search-bar").value === ""){
+	let next = 1;
 
-		
+	let lastContactFirstName = document.getElementById("contact-first-name-10");
+	let lastContactLastName = document.getElementById("contact-last-name-10");
+	
+	let nextName = lastContactFirstName+" "+lastContactLastName;
+
+	if(contactInEdit === 0){
+		//if search field is empty
+		if(document.getElementById("search-bar").value === ""){
+			firstPage(nextName,next);
+		}
+		//if search field is in use
+		else{
+
+
 		}
 	}
 	
@@ -848,11 +871,21 @@ function goNext(){
 
 }
 
-function goPrev(){
-	if(contactInEdit === 0){
-		if(document.getElementById("search-bar").value === ""){
+function goPrev(){	
+	let prev = -1;
+	let firstContactFirstName = document.getElementById("contact-first-name-1");
+	let firstContactLastName = document.getElementById("contact-last-name-1");
 
-		
+	let prevName = firstContactFirstName+" "+firstContactLastName;
+
+	if(contactInEdit === 0){
+		//if search field is empty
+		if(document.getElementById("search-bar").value === ""){
+			firstPage(prevName,prev);
+		}
+		//if search field is in use
+		else{
+
 		}
 	}
 
