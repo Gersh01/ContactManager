@@ -649,7 +649,7 @@ function searchContact(first, last, contactId, favorite, pagination){
 			tmp = {UserID:userId, showFavorites:0, search:searchField, cursor:{firstName:"",lastName:"",ID:1,favorite:0}};
 			firstContactPageFlag = 0;
 		}
-
+		console.log(searchField);
 		if(searchField = ""){
 			console.log("no search field.");
 			firstPage(null,null);
