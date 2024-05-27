@@ -262,22 +262,22 @@
                     </div>
 
                     <!--Add Contact Section (display none by default)-->
-                    <div id="add-contact" style="display:none" class="table justify-content-center" style="width:40%">
-                        <div class="search-bar row justify-content-center" style="width:20%">
+                    <div id="add-contact" style="display:none" class="add-contacts-container">
+                        <div class="search-bar row">
                             <input id="add-contact-first-name" type="text" placeholder="First Name">
                         </div>
-                        <div class="search-bar row justify-content-center" style="width:20%">
+                        <div class="search-bar row">
                             <input id="add-contact-last-name" type="text" placeholder="Last Name">
                         </div>
-                        <div class="search-bar row justify-content-center" style="width:20%">
+                        <div class="search-bar row">
                             <input id="add-contact-email" type="text" required onkeyup="confirmValidContactRegex(-1)" placeholder="Email">
                         </div>
-                        <div class="search-bar row justify-content-center" style="width:20%">
+                        <div class="search-bar row">
                             <input id="add-contact-phone-number" type="text" required onkeyup="confirmValidPhoneRegex(-1)"placeholder="Phone Number">
                         </div>
 
                         <!--Button-->
-                        <a id="addContact" href="javascript:addContact()" class="justify-content-center"><div class="button" type="button">Add User</div></a>
+                        <a id="addContact" href="javascript:addContact()" class="justify-content-center" style="display:flex"><div class="button" type="button">Add User</div></a>
                     </div>
 
                     <span id="add-contact-result" class="text-black row cell"></span>
