@@ -651,6 +651,7 @@ function searchContact(first, last, contactId, favorite, pagination){
 		}
 
 		if(searchField = ""){
+			console.log("no search field.");
 			firstPage(null,null);
 		}
 		else{
