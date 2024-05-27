@@ -336,8 +336,8 @@
                     
                         <!--TODO: FINISH PAGINATION-->
                         <div id="page-selector" class="row-alt justify-content-end">
-                            <a id="go-prev-button" href="javascript:goPrev()"><div id="backButton" class="move-page" type="button">Previous</div></a>
-                            <a id="go-next-button" href="javascript:goNext()"><div id="forwardButton" class="move-page" type="button">Next</div></a>
+                            <a id="go-prev-button" href="javascript:goPrev()"><div id="backButton" class="move-page text-black" type="button">Previous</div></a>
+                            <a id="go-next-button" href="javascript:goNext()"><div id="forwardButton" class="move-page text-black" type="button">Next</div></a>
                         </div>
                     </div>
 
