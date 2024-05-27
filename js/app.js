@@ -735,7 +735,7 @@ function deleteContact(num){
 							firstPage(null,null);
 						}
 						else{
-							searchContact();
+							searchContact(null,null,null,null,null);
 						}
 					}
 					else{
@@ -827,7 +827,7 @@ function saveContact(num){
 							firstPage(null,null);
 						}
 						else{
-							searchContact();
+							searchContact(null,null,null,null,null);
 						}
 					}
 					else{
