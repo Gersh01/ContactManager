@@ -44,6 +44,7 @@
                     <div id="contacts-hideable" class="contacts-hide" style="display:block">
                         <div id="table" class="table">
                             <div id="contact-row-top" class="cell-top">
+                                <div id="contact-fave-status" class="cell text-black">Favorite</div>
                                 <div id="contact-first-name" class="cell text-black">First Name</div>
                                 <div id="contact-last-name" class="cell text-black">Last Name</div>
                                 <div id="contact-email" class="cell text-black">Email</div>
@@ -52,6 +53,9 @@
                                 <div id="contact-delete" class="text-black icon-cell">Delete</div>
                             </div>
                             <div id="contact-row-1" class="cell">
+                                <a id="contact-not-fave-1" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-1" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                
                                 <span id="contact-first-name-1" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
                                     <input id="contact-first-name-edit-1" type="text" style="display:none">
@@ -80,6 +84,9 @@
                                 
                             </div>
                             <div id="contact-row-2" class="cell">
+                                <a id="contact-not-fave-2" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-2" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                
                                 <span id="contact-first-name-2" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
                                     <input id="contact-first-name-edit-2" type="text" style="display:none">
@@ -108,6 +115,9 @@
 
                             </div>
                             <div id="contact-row-3" class="cell">
+                                <a id="contact-not-fave-3" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-3" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                
                                 <span id="contact-first-name-3" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
                                     <input id="contact-first-name-edit-3" type="text" style="display:none">
@@ -136,6 +146,9 @@
 
                             </div>
                             <div id="contact-row-4" class="cell">
+                                <a id="contact-not-fave-4" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-4" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                
                                 <span id="contact-first-name-4" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
                                     <input id="contact-first-name-edit-4" type="text" style="display:none">
@@ -164,6 +177,12 @@
 
                             </div>
                             <div id="contact-row-5" class="cell">
+                                <a id="contact-not-fave-5" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-5" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                
+                                <a id="contact-not-fave-1" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-1" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                
                                 <span id="contact-first-name-5" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
                                     <input id="contact-first-name-edit-5" type="text" style="display:none">
@@ -192,6 +211,9 @@
 
                             </div>
                             <div id="contact-row-6" class="cell">
+                                <a id="contact-not-fave-6" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-6" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                
                                 <span id="contact-first-name-6" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
                                     <input id="contact-first-name-edit-6" type="text" style="display:none">
@@ -220,6 +242,9 @@
 
                             </div>
                             <div id="contact-row-7" class="cell">
+                                <a id="contact-not-fave-7" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-7" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                
                                 <span id="contact-first-name-7" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
                                     <input id="contact-first-name-edit-7" type="text" style="display:none">
@@ -248,6 +273,9 @@
 
                             </div>
                             <div id="contact-row-8" class="cell">
+                                <a id="contact-not-fave-8" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-8" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                
                                 <span id="contact-first-name-8" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
                                     <input id="contact-first-name-edit-8" type="text" style="display:none">
@@ -275,6 +303,9 @@
                                 <a id="contact-cancel-edit-8" href="javascript:cancelContact(8)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
                             </div>
                             <div id="contact-row-9" class="cell">
+                                <a id="contact-not-fave-9" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-9" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                
                                 <span id="contact-first-name-9" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
                                     <input id="contact-first-name-edit-9" type="text" style="display:none">
@@ -303,6 +334,9 @@
                                 
                             </div>
                             <div id="contact-row-10" class="cell">
+                                <a id="contact-not-fave-10" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-10" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                
                                 <span id="contact-first-name-10" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
                                     <input id="contact-first-name-edit-10" type="text" style="display:none">
