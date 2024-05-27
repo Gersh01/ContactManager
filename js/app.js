@@ -510,7 +510,7 @@ function passwordRegexChecker(){
 }
 
 function firstPage(contactPageination,pageSelect){
-
+	console.log(pageSelect);
 	if(contactInEdit === 0){
 		tmp = null;
 		//Goes to next page
