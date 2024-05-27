@@ -858,7 +858,7 @@ function goNext(){
 	let lastContactLastName = document.getElementById("contact-last-name-10").innerText;
 	
 	let nextName = lastContactFirstName+" "+lastContactLastName;
-	if(lastContactFirstName.stlye!=="none"){
+	if(document.getElementById("contact-first-name-10").style != "none"){
 		if(contactInEdit === 0){
 			firstContactPageFlag += 1;
 			//if search field is empty
