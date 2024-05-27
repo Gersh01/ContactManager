@@ -16,6 +16,7 @@ let loginFieldsFull = false;
 let registerFieldsFull = false;
 
 let contactInEdit = 0;
+let firstContactPageFlag = 0;
 
 let inputLogin = document.getElementById("login-password");
 let inputRegister = document.getElementById("register-password-confirm");
@@ -522,6 +523,7 @@ function firstPage(contactPageination,pageSelect){
 			tmp = {userID:userId, cursor:contactPageination, next:pageSelect};
 		}
 		else if(pageSelect===null){
+			firstContactPageFlag = 0;
 			tmp = {userID:userId, cursor:0};
 		}
 		console.log("Generating first page");
@@ -633,6 +635,7 @@ function emptyContactFields(num){
 
 function searchContact(){
 	if(contactInEdit === 0){
+		
 		console.log("Accessing contacts for search");
 
 		let url = urlBase + "/Search." + extension;
@@ -855,18 +858,21 @@ function goNext(){
 	let lastContactLastName = document.getElementById("contact-last-name-10").innerText;
 	
 	let nextName = lastContactFirstName+" "+lastContactLastName;
-
-	if(contactInEdit === 0){
-		//if search field is empty
-		if(document.getElementById("search-bar").value === ""){
-			firstPage(nextName,next);
-		}
-		//if search field is in use
-		else{
-
-
+	if(lastContactFirstName.innerText!==""){
+		if(contactInEdit === 0){
+			firstContactPageFlag += 1;
+			//if search field is empty
+			if(document.getElementById("search-bar").value === ""){
+				firstPage(nextName,next);
+			}
+			//if search field is in use
+			else{
+	
+	
+			}
 		}
 	}
+	
 	
 
 
@@ -879,18 +885,19 @@ function goPrev(){
 	let firstContactLastName = document.getElementById("contact-last-name-1").innerText;
 
 	let prevName = firstContactFirstName+" "+firstContactLastName;
+	if(firstContactPageFlag > 0){
+		if(contactInEdit === 0 ){
+			firstContactPageFlag -= 1;
+			//if search field is empty
+			if(document.getElementById("search-bar").value === ""){
+				firstPage(prevName,prev);
+			}
+			//if search field is in use
+			else{
 
-	if(contactInEdit === 0){
-		//if search field is empty
-		if(document.getElementById("search-bar").value === ""){
-			firstPage(prevName,prev);
-		}
-		//if search field is in use
-		else{
-
+			}
 		}
 	}
-
 }
 
 
