@@ -44,7 +44,7 @@
         $conn->close();
 
 
-        if ($next == 0) {
+        if ($next == -1) {
             $contacts = array_reverse($contacts);
         }
 
