@@ -851,8 +851,8 @@ function cancelContact(num){
 function goNext(){
 	let next = 1;
 
-	let lastContactFirstName = document.getElementById("contact-first-name-10");
-	let lastContactLastName = document.getElementById("contact-last-name-10");
+	let lastContactFirstName = document.getElementById("contact-first-name-10").innerText;
+	let lastContactLastName = document.getElementById("contact-last-name-10").innerText;
 	
 	let nextName = lastContactFirstName+" "+lastContactLastName;
 
@@ -874,14 +874,14 @@ function goNext(){
 
 function goPrev(){	
 	let prev = -1;
-	let firstContactFirstName = document.getElementById("contact-first-name-1");
-	let firstContactLastName = document.getElementById("contact-last-name-1");
+	let firstContactFirstName = document.getElementById("contact-first-name-1").innerText;
+	let firstContactLastName = document.getElementById("contact-last-name-1").innerText;
 
 	let prevName = firstContactFirstName+" "+firstContactLastName;
 
 	if(contactInEdit === 0){
 		//if search field is empty
-		if(document.getElementById("search-bar").value === ""){
+		if(document.getElementById("search-bar").vale === ""){
 			firstPage(prevName,prev);
 		}
 		//if search field is in use
