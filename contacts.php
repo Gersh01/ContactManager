@@ -53,7 +53,7 @@
                             </div>
                             <div id="contact-row-1" class="cell">
                                 <span id="contact-first-name-1" class="cell text-black"></span>
-                                <input id="contact-first-name-edit-1" type="text" class="cell text-black" style="display:none">
+                                <input id="contact-first-name-edit-1" type="text" class="search-bar cell text-black" style="display:none">
 
                                 <div id="contact-last-name-1" class="cell text-black"></div>
                                 <input id="contact-last-name-edit-1" type="text" class="cell text-black" style="display:none">
