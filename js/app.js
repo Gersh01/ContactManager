@@ -650,7 +650,7 @@ function searchContact(first, last, contactId, favorite, pagination){
 			firstContactPageFlag = 0;
 		}
 		console.log(searchField);
-		if(searchField = ""){
+		if(searchField === ""){
 			console.log("no search field.");
 			firstPage(null,null);
 		}
