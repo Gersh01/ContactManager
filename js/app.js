@@ -156,7 +156,7 @@ function doLogout(){
 }
 
 function showTable(){
-	if(contactInEdit === false){
+	if(contactInEdit === 0){
 		let table = document.getElementById("contacts-hideable");
 		let contact = document.getElementById("add-contact");
 		let refresh = document.getElementById("refresh-button");
@@ -511,7 +511,7 @@ function passwordRegexChecker(){
 
 function firstPage(){
 
-	if(contactInEdit === false){
+	if(contactInEdit === 0){
 		console.log("Generating first page");
 
 		let url = urlBase + "/ContactPagination." + extension;
@@ -620,7 +620,7 @@ function emptyContactFields(num){
 }
 
 function searchContact(){
-	if(contactInEdit === false){
+	if(contactInEdit === 0){
 		console.log("Accessing contacts for search");
 
 		let url = urlBase + "/Search." + extension;
@@ -668,7 +668,7 @@ function searchContact(){
 }
 
 function deleteContact(num){
-	if(contactInEdit === false){
+	if(contactInEdit === 0){
 		console.log(num);
 
 		let url = urlBase + "/DeleteContact." + extension;
@@ -837,7 +837,7 @@ function cancelContact(num){
 
 
 function goNext(){
-	if(contactInEdit === false){
+	if(contactInEdit === 0){
 		if(document.getElementById("search-bar").value === ""){
 
 		
@@ -849,7 +849,7 @@ function goNext(){
 }
 
 function goPrev(){
-	if(contactInEdit === false){
+	if(contactInEdit === 0){
 		if(document.getElementById("search-bar").value === ""){
 
 		
