@@ -511,6 +511,7 @@ function passwordRegexChecker(){
 
 function firstPage(contactPageination,pageSelect){
 	console.log(pageSelect);
+	console.log(contactPageination);
 	if(contactInEdit === 0){
 		tmp = null;
 		//Goes to next page
