@@ -650,47 +650,52 @@ function searchContact(first, last, contactId, favorite, pagination){
 			firstContactPageFlag = 0;
 		}
 
-		console.log("Accessing contacts for search");
-
-		let url = urlBase + "/Search." + extension;
-
-		//ADD cursor{firstname/lastname/contactID}, next(tru||false)
-	
-		document.getElementById("contact-result").innerHTML = "";
-		
-	
-		let jsonPayload = JSON.stringify( tmp );
-	
-		console.log(tmp);
-	
-		let xhr = new XMLHttpRequest();
-	
-		xhr.open("POST", url, true);
-	
-		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-		
-		try{
-			xhr.onreadystatechange = function() {
-				if(this.readyState == 4 && this.status == 200){
-					//document.getElementById("contact-result").innerHTML ="Contacts have been recieved";
-					if(xhr.responseText!="No Records Found"){
-						let jsonObject = JSON.parse( xhr.responseText );
-						globalJsonObject = jsonObject;
-						loadContacts(jsonObject);
-						console.log("GlobalPageCounter "+firstContactPageFlag);
-					}
-					else{
-						globalJsonObject = null;
-						noContactsFound();
-					}
-				}
-			};
-			xhr.send(jsonPayload);
-			
+		if(searchField = ""){
+			firstPage(null,null);
 		}
-		catch(err){
-			document.getElementById("contact-result").innerHTML = err.message;
-			console.log(err.message);
+		else{
+			console.log("Accessing contacts for search");
+
+			let url = urlBase + "/Search." + extension;
+
+			//ADD cursor{firstname/lastname/contactID}, next(tru||false)
+		
+			document.getElementById("contact-result").innerHTML = "";
+			
+		
+			let jsonPayload = JSON.stringify( tmp );
+		
+			console.log(tmp);
+		
+			let xhr = new XMLHttpRequest();
+		
+			xhr.open("POST", url, true);
+		
+			xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+			
+			try{
+				xhr.onreadystatechange = function() {
+					if(this.readyState == 4 && this.status == 200){
+						//document.getElementById("contact-result").innerHTML ="Contacts have been recieved";
+						if(xhr.responseText!="No Records Found"){
+							let jsonObject = JSON.parse( xhr.responseText );
+							globalJsonObject = jsonObject;
+							loadContacts(jsonObject);
+							console.log("GlobalPageCounter "+firstContactPageFlag);
+						}
+						else{
+							globalJsonObject = null;
+							noContactsFound();
+						}
+					}
+				};
+				xhr.send(jsonPayload);
+				
+			}
+			catch(err){
+				document.getElementById("contact-result").innerHTML = err.message;
+				console.log(err.message);
+			}
 		}
 	}
 }
