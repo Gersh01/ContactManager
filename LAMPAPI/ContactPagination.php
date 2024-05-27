@@ -44,9 +44,9 @@
         $conn->close();
 
 
-        // if ($next == 0) {
-        //     $contacts = array_reverse($contacts);
-        // }
+        if ($next == -1) {
+            $contacts = array_reverse($contacts);
+        }
 
         sendResultInfoAsJson(json_encode(array("contacts" => $contacts)));
 
