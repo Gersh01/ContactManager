@@ -858,7 +858,7 @@ function goNext(){
 	let lastContactLastName = document.getElementById("contact-last-name-10").innerText;
 	
 	let nextName = lastContactFirstName+" "+lastContactLastName;
-	if(globalJsonObject.contacts.length<10){
+	if(globalJsonObject.length<10){
 		if(contactInEdit === 0){
 			firstContactPageFlag += 1;
 			//if search field is empty
