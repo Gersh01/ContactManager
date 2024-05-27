@@ -516,10 +516,10 @@ function firstPage(contactPageination,pageSelect){
 	if(contactInEdit === 0){
 		tmp = null;
 		//Goes to next page
-		if(pageSelect===1){
+		if(pageSelect===1 && document.getElementById("search-bar").value==""){
 			tmp = {userID:userId, cursor:contactPageination, next:pageSelect};
 		}
-		else if(pageSelect===-1){
+		else if(pageSelect===-1 && document.getElementById("search-bar").value==""){
 			tmp = {userID:userId, cursor:contactPageination, next:pageSelect};
 		}
 		else if(pageSelect===null){
@@ -551,6 +551,7 @@ function firstPage(contactPageination,pageSelect){
 					let jsonObject = JSON.parse( xhr.responseText );
 					globalJsonObject = jsonObject;
 					loadContacts(jsonObject);
+					console.log("GlobalPageCounter "+firstContactPageFlag);
 				}
 			};
 			xhr.send(jsonPayload);
@@ -676,6 +677,7 @@ function searchContact(first, last, contactId, favorite, pagination){
 						let jsonObject = JSON.parse( xhr.responseText );
 						globalJsonObject = jsonObject;
 						loadContacts(jsonObject);
+						console.log("GlobalPageCounter "+firstContactPageFlag);
 					}
 					else{
 						globalJsonObject = null;
