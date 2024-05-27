@@ -633,16 +633,27 @@ function emptyContactFields(num){
 	}
 }
 
-function searchContact(){
+function searchContact(first, last, contactId, favorite, pagination){
+	let tmp = null;
+	let searchField = document.getElementById("search-bar").value;
 	if(contactInEdit === 0){
-		
+		//Search asking to see next page of contacts
+		if(pagination === 1){
+			tmp = {UserID:userId, showFavorites:0, search:searchField, cursor:{firstName:first, lastName:last, ID:contactId, favorite:favorite},next:pagination};
+		}
+		else if(pagination === 0){
+			tmp = {UserID:userId, showFavorites:0, search:searchField, cursor:{firstName:first, lastName:last, ID:contactId, favorite:favorite},next:pagination};
+		}
+		else if(pagination === null){
+			tmp = {UserID:userId, showFavorites:0, search:searchField, cursor:{firstName:"",lastName:"",ID:1,favorite:0}};
+			firstContactPageFlag = 0;
+		}
+
 		console.log("Accessing contacts for search");
 
 		let url = urlBase + "/Search." + extension;
-	
-		let searchField = document.getElementById("search-bar").value;
+
 		//ADD cursor{firstname/lastname/contactID}, next(tru||false)
-		let tmp = {UserID:userId, showFavorites:0, search:searchField, cursor:{firstName:"",lastName:"",ID:1,favorite:0}};
 	
 		document.getElementById("contact-result").innerHTML = "";
 		
@@ -853,9 +864,13 @@ function cancelContact(num){
 
 function goNext(){
 	let next = 1;
+	let lastIndex = 9;
 
 	let lastContactFirstName = document.getElementById("contact-first-name-10").innerText;
 	let lastContactLastName = document.getElementById("contact-last-name-10").innerText;
+
+	let Id = globalJsonObject.contacts[lastIndex].ID;
+	let fav = globalJsonObject.contacts[lastIndex].Favorite;
 	
 	let nextName = lastContactFirstName+" "+lastContactLastName;
 	if(globalJsonObject.contacts.length==10){
@@ -867,8 +882,8 @@ function goNext(){
 			}
 			//if search field is in use
 			else{
-	
-	
+				searchContact(lastContactFirstName, lastContactLastName, Id, fav, next);
+				
 			}
 		}
 	}
@@ -880,9 +895,15 @@ function goNext(){
 
 function goPrev(){	
 	let prev = -1;
+	let prevSearch = 0;
+	let firstIndex = 0;
+
 	console.log("go prev");
 	let firstContactFirstName = document.getElementById("contact-first-name-1").innerText;
 	let firstContactLastName = document.getElementById("contact-last-name-1").innerText;
+
+	let Id = globalJsonObject.contacts[firstIndex].ID;
+	let fav = globalJsonObject.contacts[firstIndex].Favorite;
 
 	let prevName = firstContactFirstName+" "+firstContactLastName;
 	if(firstContactPageFlag > 0){
@@ -894,7 +915,7 @@ function goPrev(){
 			}
 			//if search field is in use
 			else{
-
+				searchContact(firstContactFirstName, firstContactLastName, Id, fav, prevSearch);
 			}
 		}
 	}
