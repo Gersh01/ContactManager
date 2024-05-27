@@ -882,7 +882,7 @@ function goPrev(){
 
 	if(contactInEdit === 0){
 		//if search field is empty
-		if(document.getElementById("search-bar").vale === ""){
+		if(document.getElementById("search-bar").value === ""){
 			firstPage(prevName,prev);
 		}
 		//if search field is in use
