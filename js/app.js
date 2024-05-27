@@ -874,7 +874,7 @@ function goNext(){
 
 function goPrev(){	
 	let prev = -1;
-	
+	console.log("go prev");
 	let firstContactFirstName = document.getElementById("contact-first-name-1").innerText;
 	let firstContactLastName = document.getElementById("contact-last-name-1").innerText;
 
