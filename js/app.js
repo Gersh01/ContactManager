@@ -673,7 +673,7 @@ function searchContact(first, last, contactId, favorite, pagination){
 			firstContactPageFlag = 0;
 		}
 		console.log(searchField);
-		if(searchField === ""){
+		if(searchField === "" && favoriteSearch === 0){
 			console.log("no search field.");
 			firstPage(null,null);
 		}
