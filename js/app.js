@@ -581,17 +581,18 @@ function loadContacts(jsonObject){
 
 		let row = document.getElementById("contact-row-"+parseInt(i+1));
 		toggleElement(row,show);
+
 		if(jsonObject.contacts[i].Favorited===1){
 			console.log("contact-not-fave-"+parseInt(i+1)+" style change to none");
-			document.getElementById("contact-not-fave-"+parseInt(i+1)).style = "none";
+			document.getElementById("contact-not-fave-"+parseInt(i+1)).style.display = "none";
 			
-			document.getElementById("contact-fave-"+parseInt(i+1)).style = "none";
+			document.getElementById("contact-fave-"+parseInt(i+1)).style.display = "flex";
 			console.log(jsonObject.contacts[i].FirstName+"contact is favorite");
 		}
 
 		else{
-			document.getElementById("contact-fave-"+parseInt(i+1)).style = "none";
-			document.getElementById("contact-not-fave-"+parseInt(i+1)).style = "none";
+			document.getElementById("contact-fave-"+parseInt(i+1)).style.display = "none";
+			document.getElementById("contact-not-fave-"+parseInt(i+1)).style.display = "flex";
 			console.log(jsonObject.contacts[i].FirstName+"contact is not a favorite");
 		}
 		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
@@ -958,14 +959,14 @@ function favoriteContact(row, favStatus){
 
 		let contactId = globalJsonObject.contacts[row-1].ID;
 
-		if(favContact.style === "none"){
-			unFavContact.style = "none";
-			favContact.style = "flex";
+		if(favContact.style.display === "none"){
+			unFavContact.style.display = "none";
+			favContact.style.display = "flex";
 			newFavValue = 1;
 		}
 		else{
-			favContact.style = "none";
-			unFavContact.style = "flex"
+			favContact.style.display = "none";
+			unFavContact.style.display = "flex"
 			newFavValue = 0;
 		}
 
@@ -1000,16 +1001,15 @@ function favoriteSearch(){
 	let favoritedSearch = document.getElementById("search-favorites-on");
 	let nonFavoritedSearch = document.getElementById("search-favorites-off");
 	if(contactInEdit === 0){
-		
-		if(favoritedSearch.style === "none"){
+		if(favoritedSearch.style.display === "none"){
 			console.log("Performing favorite search");
-			nonFavoritedSearch.style = "none";
-			favoritedSearch.style = "flex";
+			nonFavoritedSearch.style.display = "none";
+			favoritedSearch.style.display = "flex";
 		}
 		else{
 			console.log("Performing un-favorited search");
-			favoritedSearch.style = "none";
-			nonFavoritedSearch.style = "flex";
+			favoritedSearch.style.display = "none";
+			nonFavoritedSearch.style.display = "flex";
 		}
 		searchContact(null,null,null,null,null);
 	}
