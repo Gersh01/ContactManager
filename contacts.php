@@ -34,8 +34,8 @@
                     <!--Search Bar-->
                     <div class="text-center my-6">
                         <div id="search-bar-row" class="search-bar row-alt">
-                            <a id="search-favorites-off" href="favoriteSearch()" class="text-black a-link"><div id="searchAll" class="text-black refresh-page" type="button">0</div></a>
-                            <a id="search-favorites-on" href="favoriteSearch()" class="text-black a-link" style="display:none"><div id="searchFaves" class="text-black refresh-page" type="button">1</div></a>
+                            <a id="search-favorites-off" href="javascript:favoriteSearch()" class="text-black a-link"><div id="searchAll" class="text-black refresh-page" type="button">0</div></a>
+                            <a id="search-favorites-on" href="javascript:favoriteSearch()" class="text-black a-link" style="display:none"><div id="searchFaves" class="text-black refresh-page" type="button">1</div></a>
                             
                             <input id="search-bar" type="text" placeholder="Search..." required onkeyup = "searchContact(null, null, null, null, null)">
                             <a id="refresh-button" href="javascript:firstPage(null, null)" class="text-black a-link"><div id="refreshButton" class="text-black refresh-page" type="button">Refresh</div></a>
@@ -55,7 +55,7 @@
                                 <div id="contact-delete" class="text-black icon-cell">Delete</div>
                             </div>
                             <div id="contact-row-1" class="cell">
-                                <a id="contact-not-fave-1" href="javascript:favoriteContact(1, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-not-fave-1" href="javascript:favoriteContact(1, null)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
                                 <a id="contact-fave-1" href="javascript:favoriteContact(1, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
                                 
                                 <span id="contact-first-name-1" class="cell text-black"></span>
