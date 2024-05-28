@@ -570,6 +570,7 @@ function loadContacts(jsonObject){
 	let i = 0;
 	let hide = 1;
 	let show = 0;
+	console.log(jsonObject);
 
 	if(jsonObject.contacts.length == 0){
 		document.getElementById("contact-result").innerHTML = "No contacts found";
@@ -583,16 +584,12 @@ function loadContacts(jsonObject){
 		toggleElement(row,show);
 
 		if(jsonObject.contacts[i].Favorited===1){
-			console.log("contact-not-fave-"+parseInt(i+1)+" style change to none");
-			document.getElementById("contact-not-fave-"+parseInt(i+1)).style.display = "none";
-			
+			document.getElementById("contact-not-fave-"+parseInt(i+1)).style.display = "none";			
 			document.getElementById("contact-fave-"+parseInt(i+1)).style.display = "flex";
-			console.log(jsonObject.contacts[i].FirstName+"contact is favorite");
 		}
 		else if(jsonObject.contacts[i].Favorited===0){
 			document.getElementById("contact-fave-"+parseInt(i+1)).style.display = "none";
 			document.getElementById("contact-not-fave-"+parseInt(i+1)).style.display = "flex";
-			console.log(jsonObject.contacts[i].FirstName+"contact is not a favorite");
 		}
 		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
 		document.getElementById("contact-last-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].LastName;
