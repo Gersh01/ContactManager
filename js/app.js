@@ -576,21 +576,23 @@ function loadContacts(jsonObject){
 		document.getElementById("contact-result").innerHTML = "No contacts found";
 		return;
 	}
+
 	for(i = 0; i<jsonObject.contacts.length; i++){
 		console.log(jsonObject.contacts[i].FirstName);
 		console.log("contact-first-name-"+parseInt(i+1));
 
 		let row = document.getElementById("contact-row-"+parseInt(i+1));
-		if(jsonObject.contacts[i].Favorited===1||jsonObject.contacts[i].Favorite===1){
+
+		if(jsonObject.contacts[i].Favorite===1){
 			console.log("Contact is a fav "+jsonObject.contacts[i].FirstName)
 			document.getElementById("contact-not-fave-"+parseInt(i+1)).style.display = "none";			
 			document.getElementById("contact-fave-"+parseInt(i+1)).style.display = "flex";
 		}
-		else if(jsonObject.contacts[i].Favorited===0||jsonObject.contacts[i].Favorite===0){
+		else if(jsonObject.contacts[i].Favorite===0){
 			document.getElementById("contact-fave-"+parseInt(i+1)).style.display = "none";
 			document.getElementById("contact-not-fave-"+parseInt(i+1)).style.display = "flex";
 		}
-		
+
 		toggleElement(row,show);
 
 		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
