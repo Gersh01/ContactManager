@@ -654,6 +654,7 @@ function searchContact(first, last, contactId, favorite, pagination){
 	let favoriteSearch = null;
 	if(document.getElementById("search-favorites-on").style === "flex"){
 		favoriteSearch = 1;
+		console.log("performing favorited searches");
 	}
 	else{
 		favoriteSearch = 0;
@@ -1010,12 +1011,6 @@ function favoriteSearch(){
 			favoritedSearch.style = "none";
 			nonFavoritedSearch.style = "flex";
 		}
-
-		if(document.getElementById("search-bar").value === ""){
-			searchContact(null,null,null,null,null);
-		}
-		else{
-			firstPage(null,null);
-		}
+		searchContact(null,null,null,null,null);
 	}
 }
