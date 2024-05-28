@@ -3,7 +3,7 @@
 <html lang="en">
     <!-- On load event to check for cookies -->
     <body onload= "readCookie(); firstPage(null, null)">
-    
+        
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -45,325 +45,472 @@
 
                     <!--each nested div at this indentation represents one row/contact-->
                     <div id="contacts-hideable" class="contacts-hide" style="display:block">
-                        <div id="table" class="table">
-                            <div id="contact-row-top" class="cell-top">
-                                <div id="contact-first-name" class="cell text-black">First Name</div>
-                                <div id="contact-last-name" class="cell text-black">Last Name</div>
-                                <div id="contact-email" class="cell text-black">Email</div>
-                                <div id="contact-phone-number" class="cell text-black">Phone Number</div>
-                                <div id="contact-edit" class="text-black icon-cell">Edit</div>
-                                <div id="contact-delete" class="text-black icon-cell">Delete</div>
-                            </div>
-                            <div id="contact-row-1" class="cell">
-                                <a id="contact-not-fave-1" href="javascript:favoriteContact(1, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-1" href="javascript:favoriteContact(1, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
-                                
-                                <span id="contact-first-name-1" class="cell text-black"></span>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-first-name-edit-1" type="text" style="display:none">
-                                </div>
+                        <table id="table" class="table">
+                            <thead id="contact-row-top">
+                                <tr class="table-header">
+                                    <th id="contact-first-name" >Favorite</th>
+                                    <th id="contact-first-name" >First Name</th>
+                                    <th id="contact-last-name" >Last Name</th>
+                                    <th id="contact-email" >Email</th>
+                                    <th id="contact-phone-number">Phone Number</th>
+                                    <th id="contact-edit">Edit</th>
+                                    <th id="contact-delete">Delete</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr id="contact-row-1">
+                                    <!--Favorite Button-->
+                                    <td>
+                                        <a id="contact-not-fave-1" href="javascript:favoriteContact(1, 0)" ><div id="editButton" type="button">0</div></a>
+                                        <a id="contact-fave-1" href="javascript:favoriteContact(1, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                    </td>
                                     
-                                <div id="contact-last-name-1" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-last-name-edit-1" type="text" style="display:none">
-                                </div>
+                                    <td>
+                                        <div id="contact-first-name-1" >Test</div>
+                                        <div >
+                                            <input id="contact-first-name-edit-1" style="display:none" type="text">
+                                    </td>
+                                        
+                                    <td>
+                                        <div id="contact-last-name-1">Test</div>
+                                        <div>
+                                            <input id="contact-last-name-edit-1" style="display:none" type="text">
+                                        </div>
+                                    </td>
 
-                                <div id="contact-email-1" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-email-edit-1" type="text" required onkeyup="confirmValidContactRegex(1)" style="display:none">
-                                </div>
+                                    <td>
+                                        <div id="contact-email-1">Test</div>
+                                        <div>
+                                            <input id="contact-email-edit-1" type="text" required onkeyup="confirmValidContactRegex(1)" style="display:none">
+                                        </div>
+                                    </td>
 
-                                <div id="contact-phone-number-1" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-phone-number-edit-1" type="text" required onkeyup="confirmValidPhoneRegex(1)" style="display:none">
-                                </div>
+                                    <td>
+                                        <div id="contact-phone-number-1">Test</div>
+                                        <div>
+                                            <input id="contact-phone-number-edit-1" type="text" required onkeyup="confirmValidPhoneRegex(1)" style="display:none">
+                                        </div>
+                                    </td>
+                                    
+                                    <!--Buttons-->
+                                    <td >
+                                        <a id="contact-edit-1" href="javascript:updateContact(1)" ><div id="editButton" type="button">Edit</div></a>
+                                        <a id="contact-save-edit-1" href="javascript:saveContact(1)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                    </td>
 
-                                <a id="contact-edit-1" href="javascript:updateContact(1)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
-                                <a id="contact-save-edit-1" href="javascript:saveContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                    <td>
+                                        <a id="contact-delete-1" href="javascript:deleteContact(1)"><div id="deleteButton" type="button">Delete</div></a>
+                                        <a id="contact-cancel-edit-1" href="javascript:cancelContact(1)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                    </td>
+                                </tr>
+                                <tr id="contact-row-2">
+                                    <!--Favorite Button-->
+                                    <td>
+                                        <a id="contact-not-fave-2" href="javascript:favoriteContact(2, 0)" ><div id="editButton" type="button">0</div></a>
+                                        <a id="contact-fave-2" href="javascript:favoriteContact(2, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                    </td>
+                                    
+                                    <td>
+                                        <div id="contact-first-name-2" >Test</div>
+                                        <div >
+                                            <input id="contact-first-name-edit-2" style="display:none" type="text">
+                                    </td>
+                                        
+                                    <td>
+                                        <div id="contact-last-name-2">Test</div>
+                                        <div>
+                                            <input id="contact-last-name-edit-2" style="display:none" type="text">
+                                        </div>
+                                    </td>
 
-                                <a id="contact-delete-1" href="javascript:deleteContact(1)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-cancel-edit-1" href="javascript:cancelContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">Cancel</div></a>
-                                
-                            </div>
-                            <div id="contact-row-2" class="cell">
-                                <a id="contact-not-fave-2" href="javascript:favoriteContact(2, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-2" href="javascript:favoriteContact(2, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
-                                
-                                <span id="contact-first-name-2" class="cell text-black"></span>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-first-name-edit-2" type="text" style="display:none">
-                                </div>
+                                    <td>
+                                        <div id="contact-email-2">Test</div>
+                                        <div>
+                                            <input id="contact-email-edit-2" type="text" required onkeyup="confirmValidContactRegex(2)" style="display:none">
+                                        </div>
+                                    </td>
 
-                                <div id="contact-last-name-2" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-last-name-edit-2" type="text" style="display:none">
-                                </div>
+                                    <td>
+                                        <div id="contact-phone-number-2">Test</div>
+                                        <div>
+                                            <input id="contact-phone-number-edit-2" type="text" required onkeyup="confirmValidPhoneRegex(2)" style="display:none">
+                                        </div>
+                                    </td>
+                                    
+                                    <!--Buttons-->
+                                    <td >
+                                        <a id="contact-edit-2" href="javascript:updateContact(2)" ><div id="editButton" type="button">Edit</div></a>
+                                        <a id="contact-save-edit-2" href="javascript:saveContact(2)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                    </td>
 
-                                <div id="contact-email-2" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-email-edit-2" type="text" required onkeyup="confirmValidContactRegex(2)" style="display:none">
-                                </div>
+                                    <td>
+                                        <a id="contact-delete-2" href="javascript:deleteContact(2)"><div id="deleteButton" type="button">Delete</div></a>
+                                        <a id="contact-cancel-edit-2" href="javascript:cancelContact(2)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                    </td>
+                                </tr>
+                                <tr id="contact-row-3">
+                                    <!--Favorite Button-->
+                                    <td>
+                                        <a id="contact-not-fave-3" href="javascript:favoriteContact(3, 0)" ><div id="editButton" type="button">0</div></a>
+                                        <a id="contact-fave-3" href="javascript:favoriteContact(3, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                    </td>
+                                    
+                                    <td>
+                                        <div id="contact-first-name-3" >Test</div>
+                                        <div >
+                                            <input id="contact-first-name-edit-3" style="display:none" type="text">
+                                    </td>
+                                        
+                                    <td>
+                                        <div id="contact-last-name-3">Test</div>
+                                        <div>
+                                            <input id="contact-last-name-edit-3" style="display:none" type="text">
+                                        </div>
+                                    </td>
 
-                                <div id="contact-phone-number-2" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-phone-number-edit-2" type="text" required onkeyup="confirmValidPhoneRegex(2)" style="display:none">
-                                </div>
+                                    <td>
+                                        <div id="contact-email-3">Test</div>
+                                        <div>
+                                            <input id="contact-email-edit-3" type="text" required onkeyup="confirmValidContactRegex(3)" style="display:none">
+                                        </div>
+                                    </td>
 
-                                <a id="contact-edit-2" href="javascript:updateContact(2)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
-                                <a id="contact-save-edit-2" href="javascript:saveContact(2)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+                                    <td>
+                                        <div id="contact-phone-number-3">Test</div>
+                                        <div>
+                                            <input id="contact-phone-number-edit-3" type="text" required onkeyup="confirmValidPhoneRegex(3)" style="display:none">
+                                        </div>
+                                    </td>
+                                    
+                                    <!--Buttons-->
+                                    <td >
+                                        <a id="contact-edit-3" href="javascript:updateContact(3)" ><div id="editButton" type="button">Edit</div></a>
+                                        <a id="contact-save-edit-3" href="javascript:saveContact(3)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                    </td>
 
-                                <a id="contact-delete-2" href="javascript:deleteContact(2)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-cancel-edit-2" href="javascript:cancelContact(2)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
+                                    <td>
+                                        <a id="contact-delete-3" href="javascript:deleteContact(3)"><div id="deleteButton" type="button">Delete</div></a>
+                                        <a id="contact-cancel-edit-3" href="javascript:cancelContact(3)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                    </td>
+                                </tr>
+                                <tr id="contact-row-4">
+                                    <!--Favorite Button-->
+                                    <td>
+                                        <a id="contact-not-fave-4" href="javascript:favoriteContact(4, 0)" ><div id="editButton" type="button">0</div></a>
+                                        <a id="contact-fave-4" href="javascript:favoriteContact(4, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                    </td>
+                                    
+                                    <td>
+                                        <div id="contact-first-name-4" >Test</div>
+                                        <div >
+                                            <input id="contact-first-name-edit-4" style="display:none" type="text">
+                                    </td>
+                                        
+                                    <td>
+                                        <div id="contact-last-name-4">Test</div>
+                                        <div>
+                                            <input id="contact-last-name-edit-4" style="display:none" type="text">
+                                        </div>
+                                    </td>
 
-                            </div>
-                            <div id="contact-row-3" class="cell">
-                                <a id="contact-not-fave-3" href="javascript:favoriteContact(3, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-3" href="javascript:favoriteContact(3, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
-                                
-                                <span id="contact-first-name-3" class="cell text-black"></span>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-first-name-edit-3" type="text" style="display:none">
-                                </div>
+                                    <td>
+                                        <div id="contact-email-4">Test</div>
+                                        <div>
+                                            <input id="contact-email-edit-4" type="text" required onkeyup="confirmValidContactRegex(4)" style="display:none">
+                                        </div>
+                                    </td>
 
-                                <div id="contact-last-name-3" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-last-name-edit-3" type="text" style="display:none">
-                                </div>
+                                    <td>
+                                        <div id="contact-phone-number-4">Test</div>
+                                        <div>
+                                            <input id="contact-phone-number-edit-4" type="text" required onkeyup="confirmValidPhoneRegex(4)" style="display:none">
+                                        </div>
+                                    </td>
+                                    
+                                    <!--Buttons-->
+                                    <td >
+                                        <a id="contact-edit-4" href="javascript:updateContact(4)" ><div id="editButton" type="button">Edit</div></a>
+                                        <a id="contact-save-edit-4" href="javascript:saveContact(4)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                    </td>
 
-                                <div id="contact-email-3" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-email-edit-3" type="text" required onkeyup="confirmValidContactRegex(3)" style="display:none">
-                                </div>
+                                    <td>
+                                        <a id="contact-delete-4" href="javascript:deleteContact(4)"><div id="deleteButton" type="button">Delete</div></a>
+                                        <a id="contact-cancel-edit-4" href="javascript:cancelContact(4)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                    </td>
+                                </tr>
+                                <tr id="contact-row-5">
+                                    <!--Favorite Button-->
+                                    <td>
+                                        <a id="contact-not-fave-5" href="javascript:favoriteContact(1, 0)" ><div id="editButton" type="button">0</div></a>
+                                        <a id="contact-fave-5" href="javascript:favoriteContact(1, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                    </td>
+                                    
+                                    <td>
+                                        <div id="contact-first-name-5" >Test</div>
+                                        <div >
+                                            <input id="contact-first-name-edit-5" style="display:none" type="text">
+                                    </td>
+                                        
+                                    <td>
+                                        <div id="contact-last-name-5">Test</div>
+                                        <div>
+                                            <input id="contact-last-name-edit-5" style="display:none" type="text">
+                                        </div>
+                                    </td>
 
-                                <div id="contact-phone-number-3" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-phone-number-edit-3" type="text" required onkeyup="confirmValidPhoneRegex(3)" style="display:none">
-                                </div>
+                                    <td>
+                                        <div id="contact-email-5">Test</div>
+                                        <div>
+                                            <input id="contact-email-edit-5" type="text" required onkeyup="confirmValidContactRegex(5)" style="display:none">
+                                        </div>
+                                    </td>
 
-                                <a id="contact-edit-3" href="javascript:updateContact(3)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
-                                <a id="contact-save-edit-3" href="javascript:saveContact(3)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+                                    <td>
+                                        <div id="contact-phone-number-5">Test</div>
+                                        <div>
+                                            <input id="contact-phone-number-edit-5" type="text" required onkeyup="confirmValidPhoneRegex(5)" style="display:none">
+                                        </div>
+                                    </td>
+                                    
+                                    <!--Buttons-->
+                                    <td >
+                                        <a id="contact-edit-5" href="javascript:updateContact(5)" ><div id="editButton" type="button">Edit</div></a>
+                                        <a id="contact-save-edit-5" href="javascript:saveContact(5)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                    </td>
 
-                                <a id="contact-delete-3" href="javascript:deleteContact(3)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-cancel-edit-3" href="javascript:cancelContact(3)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
+                                    <td>
+                                        <a id="contact-delete-5" href="javascript:deleteContact(5)"><div id="deleteButton" type="button">Delete</div></a>
+                                        <a id="contact-cancel-edit-5" href="javascript:cancelContact(5)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                    </td>
+                                </tr>
+                                <tr id="contact-row-6">
+                                    <!--Favorite Button-->
+                                    <td>
+                                        <a id="contact-not-fave-6" href="javascript:favoriteContact(6, 0)" ><div id="editButton" type="button">0</div></a>
+                                        <a id="contact-fave-6" href="javascript:favoriteContact(6, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                    </td>
+                                    
+                                    <td>
+                                        <div id="contact-first-name-6" >Test</div>
+                                        <div >
+                                            <input id="contact-first-name-edit-6" style="display:none" type="text">
+                                    </td>
+                                        
+                                    <td>
+                                        <div id="contact-last-name-6">Test</div>
+                                        <div>
+                                            <input id="contact-last-name-edit-6" style="display:none" type="text">
+                                        </div>
+                                    </td>
 
-                            </div>
-                            <div id="contact-row-4" class="cell">
-                                <a id="contact-not-fave-4" href="javascript:favoriteContact(4, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-4" href="javascript:favoriteContact(4, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
-                                
-                                <span id="contact-first-name-4" class="cell text-black"></span>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-first-name-edit-4" type="text" style="display:none">
-                                </div>
+                                    <td>
+                                        <div id="contact-email-6">Test</div>
+                                        <div>
+                                            <input id="contact-email-edit-6" type="text" required onkeyup="confirmValidContactRegex(6)" style="display:none">
+                                        </div>
+                                    </td>
 
-                                <div id="contact-last-name-4" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-last-name-edit-4" type="text" style="display:none">
-                                </div>
+                                    <td>
+                                        <div id="contact-phone-number-6">Test</div>
+                                        <div>
+                                            <input id="contact-phone-number-edit-6" type="text" required onkeyup="confirmValidPhoneRegex(6)" style="display:none">
+                                        </div>
+                                    </td>
+                                    
+                                    <!--Buttons-->
+                                    <td >
+                                        <a id="contact-edit-6" href="javascript:updateContact(6)" ><div id="editButton" type="button">Edit</div></a>
+                                        <a id="contact-save-edit-6" href="javascript:saveContact(6)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                    </td>
 
-                                <div id="contact-email-4" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-email-edit-4" type="text" required onkeyup="confirmValidContactRegex(4)" style="display:none">
-                                </div>
+                                    <td>
+                                        <a id="contact-delete-6" href="javascript:deleteContact(6)"><div id="deleteButton" type="button">Delete</div></a>
+                                        <a id="contact-cancel-edit-6" href="javascript:cancelContact(6)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                    </td>
+                                </tr>
+                                <tr id="contact-row-7">
+                                    <!--Favorite Button-->
+                                    <td>
+                                        <a id="contact-not-fave-7" href="javascript:favoriteContact(7, 0)" ><div id="editButton" type="button">0</div></a>
+                                        <a id="contact-fave-7" href="javascript:favoriteContact(7, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                    </td>
+                                    
+                                    <td>
+                                        <div id="contact-first-name-7" >Test</div>
+                                        <div >
+                                            <input id="contact-first-name-edit-7" style="display:none" type="text">
+                                    </td>
+                                        
+                                    <td>
+                                        <div id="contact-last-name-7">Test</div>
+                                        <div>
+                                            <input id="contact-last-name-edit-7" style="display:none" type="text">
+                                        </div>
+                                    </td>
 
-                                <div id="contact-phone-number-4" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-phone-number-edit-4" type="text" required onkeyup="confirmValidPhoneRegex(4)" style="display:none">
-                                </div>
+                                    <td>
+                                        <div id="contact-email-7">Test</div>
+                                        <div>
+                                            <input id="contact-email-edit-7" type="text" required onkeyup="confirmValidContactRegex(7)" style="display:none">
+                                        </div>
+                                    </td>
 
-                                <a id="contact-edit-4" href="javascript:updateContact(4)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
-                                <a id="contact-save-edit-4" href="javascript:saveContact(4)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+                                    <td>
+                                        <div id="contact-phone-number-7">Test</div>
+                                        <div>
+                                            <input id="contact-phone-number-edit-7" type="text" required onkeyup="confirmValidPhoneRegex(7)" style="display:none">
+                                        </div>
+                                    </td>
+                                    
+                                    <!--Buttons-->
+                                    <td >
+                                        <a id="contact-edit-7" href="javascript:updateContact(7)" ><div id="editButton" type="button">Edit</div></a>
+                                        <a id="contact-save-edit-7" href="javascript:saveContact(7)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                    </td>
 
-                                <a id="contact-delete-4" href="javascript:deleteContact(4)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-cancel-edit-4" href="javascript:cancelContact(4)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
+                                    <td>
+                                        <a id="contact-delete-7" href="javascript:deleteContact(7)"><div id="deleteButton" type="button">Delete</div></a>
+                                        <a id="contact-cancel-edit-7" href="javascript:cancelContact(7)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                    </td>
+                                </tr>
+                                <tr id="contact-row-6">
+                                    <!--Favorite Button-->
+                                    <td>
+                                        <a id="contact-not-fave-6" href="javascript:favoriteContact(6, 0)" ><div id="editButton" type="button">0</div></a>
+                                        <a id="contact-fave-6" href="javascript:favoriteContact(6, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                    </td>
+                                    
+                                    <td>
+                                        <div id="contact-first-name-8" >Test</div>
+                                        <div >
+                                            <input id="contact-first-name-edit-8" style="display:none" type="text">
+                                    </td>
+                                        
+                                    <td>
+                                        <div id="contact-last-name-8">Test</div>
+                                        <div>
+                                            <input id="contact-last-name-edit-8" style="display:none" type="text">
+                                        </div>
+                                    </td>
 
-                            </div>
-                            <div id="contact-row-5" class="cell">
-                                <a id="contact-not-fave-5" href="javascript:favoriteContact(5, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-5" href="javascript:favoriteContact(5, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
-                                
-                                <span id="contact-first-name-5" class="cell text-black"></span>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-first-name-edit-5" type="text" style="display:none">
-                                </div>
+                                    <td>
+                                        <div id="contact-email-8">Test</div>
+                                        <div>
+                                            <input id="contact-email-edit-8" type="text" required onkeyup="confirmValidContactRegex(8)" style="display:none">
+                                        </div>
+                                    </td>
 
-                                <div id="contact-last-name-5" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-last-name-edit-5" type="text" style="display:none">
-                                </div>
+                                    <td>
+                                        <div id="contact-phone-number-8">Test</div>
+                                        <div>
+                                            <input id="contact-phone-number-edit-8" type="text" required onkeyup="confirmValidPhoneRegex(8)" style="display:none">
+                                        </div>
+                                    </td>
+                                    
+                                    <!--Buttons-->
+                                    <td >
+                                        <a id="contact-edit-8" href="javascript:updateContact(8)" ><div id="editButton" type="button">Edit</div></a>
+                                        <a id="contact-save-edit-8" href="javascript:saveContact(8)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                    </td>
 
-                                <div id="contact-email-5" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-email-edit-5" type="text" required onkeyup="confirmValidContactRegex(5)" style="display:none">
-                                </div>
+                                    <td>
+                                        <a id="contact-delete-8" href="javascript:deleteContact(8)"><div id="deleteButton" type="button">Delete</div></a>
+                                        <a id="contact-cancel-edit-8" href="javascript:cancelContact(8)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                    </td>
+                                </tr>
+                                <tr id="contact-row-9">
+                                    <!--Favorite Button-->
+                                    <td>
+                                        <a id="contact-not-fave-9" href="javascript:favoriteContact(9, 0)" ><div id="editButton" type="button">0</div></a>
+                                        <a id="contact-fave-9" href="javascript:favoriteContact(9, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                    </td>
+                                    
+                                    <td>
+                                        <div id="contact-first-name-9" >Test</div>
+                                        <div >
+                                            <input id="contact-first-name-edit-9" style="display:none" type="text">
+                                    </td>
+                                        
+                                    <td>
+                                        <div id="contact-last-name-9">Test</div>
+                                        <div>
+                                            <input id="contact-last-name-edit-9" style="display:none" type="text">
+                                        </div>
+                                    </td>
 
-                                <div id="contact-phone-number-5" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-phone-number-edit-5" type="text" required onkeyup="confirmValidPhoneRegex(5)" style="display:none">
-                                </div>
+                                    <td>
+                                        <div id="contact-email-9">Test</div>
+                                        <div>
+                                            <input id="contact-email-edit-9" type="text" required onkeyup="confirmValidContactRegex(9)" style="display:none">
+                                        </div>
+                                    </td>
 
-                                <a id="contact-edit-5" href="javascript:updateContact(5)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
-                                <a id="contact-save-edit-5" href="javascript:saveContact(5)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
+                                    <td>
+                                        <div id="contact-phone-number-9">Test</div>
+                                        <div>
+                                            <input id="contact-phone-number-edit-9" type="text" required onkeyup="confirmValidPhoneRegex(9)" style="display:none">
+                                        </div>
+                                    </td>
+                                    
+                                    <!--Buttons-->
+                                    <td >
+                                        <a id="contact-edit-9" href="javascript:updateContact(9)" ><div id="editButton" type="button">Edit</div></a>
+                                        <a id="contact-save-edit-9" href="javascript:saveContact(9)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                    </td>
 
-                                <a id="contact-delete-5" href="javascript:deleteContact(5)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-cancel-edit-5" href="javascript:cancelContact(5)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
+                                    <td>
+                                        <a id="contact-delete-9" href="javascript:deleteContact(9)"><div id="deleteButton" type="button">Delete</div></a>
+                                        <a id="contact-cancel-edit-9" href="javascript:cancelContact(9)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                    </td>
+                                </tr>
+                                <tr id="contact-row-10">
+                                    <!--Favorite Button-->
+                                    <td>
+                                        <a id="contact-not-fave-10" href="javascript:favoriteContact(10, 0)" ><div id="editButton" type="button">0</div></a>
+                                        <a id="contact-fave-10" href="javascript:favoriteContact(10, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                    </td>
+                                    
+                                    <td>
+                                        <div id="contact-first-name-10" >Test</div>
+                                        <div >
+                                            <input id="contact-first-name-edit-10" style="display:none" type="text">
+                                    </td>
+                                        
+                                    <td>
+                                        <div id="contact-last-name-10">Test</div>
+                                        <div>
+                                            <input id="contact-last-name-edit-10" style="display:none" type="text">
+                                        </div>
+                                    </td>
 
-                            </div>
-                            <div id="contact-row-6" class="cell">
-                                <a id="contact-not-fave-6" href="javascript:favoriteContact(6, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-6" href="javascript:favoriteContact(6, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
-                                
-                                <span id="contact-first-name-6" class="cell text-black"></span>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-first-name-edit-6" type="text" style="display:none">
-                                </div>
+                                    <td>
+                                        <div id="contact-email-10">Test</div>
+                                        <div>
+                                            <input id="contact-email-edit-10" type="text" required onkeyup="confirmValidContactRegex(10)" style="display:none">
+                                        </div>
+                                    </td>
 
-                                <div id="contact-last-name-6" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-last-name-edit-6" type="text" style="display:none">
-                                </div>
+                                    <td>
+                                        <div id="contact-phone-number-10">Test</div>
+                                        <div>
+                                            <input id="contact-phone-number-edit-10" type="text" required onkeyup="confirmValidPhoneRegex(10)" style="display:none">
+                                        </div>
+                                    </td>
+                                    
+                                    <!--Buttons-->
+                                    <td >
+                                        <a id="contact-edit-10" href="javascript:updateContact(10)" ><div id="editButton" type="button">Edit</div></a>
+                                        <a id="contact-save-edit-10" href="javascript:saveContact(10)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                    </td>
 
-                                <div id="contact-email-6" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-email-edit-6" type="text" required onkeyup="confirmValidContactRegex(6)" style="display:none">
-                                </div>
-
-                                <div id="contact-phone-number-6" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-phone-number-edit-6" type="text" required onkeyup="confirmValidPhoneRegex(6)" style="display:none">
-                                </div>
-
-                                <a id="contact-edit-6" href="javascript:updateContact(6)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
-                                <a id="contact-save-edit-6" href="javascript:saveContact(6)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
-
-                                <a id="contact-delete-6" href="javascript:deleteContact(6)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-cancel-edit-6" href="javascript:cancelContact(6)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
-
-                            </div>
-                            <div id="contact-row-7" class="cell">
-                                <a id="contact-not-fave-7" href="javascript:favoriteContact(7, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-7" href="javascript:favoriteContact(7, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
-                                
-                                <span id="contact-first-name-7" class="cell text-black"></span>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-first-name-edit-7" type="text" style="display:none">
-                                </div>
-
-                                <div id="contact-last-name-7" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-last-name-edit-7" type="text" style="display:none">
-                                </div>
-
-                                <div id="contact-email-7" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-email-edit-7" type="text" required onkeyup="confirmValidContactRegex(7)" style="display:none">
-                                </div>
-
-                                <div id="contact-phone-number-7" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-phone-number-edit-7" type="text" required onkeyup="confirmValidPhoneRegex(7)" style="display:none">
-                                </div>
-
-                                <a id="contact-edit-7" href="javascript:updateContact(7)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
-                                <a id="contact-save-edit-7" href="javascript:saveContact(7)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
-
-                                <a id="contact-delete-7" href="javascript:deleteContact(7)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-cancel-edit-7" href="javascript:cancelContact(7)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
-
-                            </div>
-                            <div id="contact-row-8" class="cell">
-                                <a id="contact-not-fave-8" href="javascript:favoriteContact(8, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-8" href="javascript:favoriteContact(8, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
-                                
-                                <span id="contact-first-name-8" class="cell text-black"></span>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-first-name-edit-8" type="text" style="display:none">
-                                </div>
-
-                                <div id="contact-last-name-8" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-last-name-edit-8" type="text" style="display:none">
-                                </div>
-
-                                <div id="contact-email-8" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-email-edit-8" type="text" required onkeyup="confirmValidContactRegex(8)" style="display:none">
-                                </div>
-
-                                <div id="contact-phone-number-8" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-phone-number-edit-8" type="text" required onkeyup="confirmValidPhoneRegex(8)" style="display:none">
-                                </div>
-
-                                <a id="contact-edit-8" href="javascript:updateContact(8)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
-                                <a id="contact-save-edit-8" href="javascript:saveContact(8)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
-
-                                <a id="contact-delete-8" href="javascript:deleteContact(8)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-cancel-edit-8" href="javascript:cancelContact(8)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
-                            </div>
-                            <div id="contact-row-9" class="cell">
-                                <a id="contact-not-fave-9" href="javascript:favoriteContact(9, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-9" href="javascript:favoriteContact(9, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
-                                
-                                <span id="contact-first-name-9" class="cell text-black"></span>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-first-name-edit-9" type="text" style="display:none">
-                                </div>
-
-                                <div id="contact-last-name-9" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-last-name-edit-9" type="text" style="display:none">
-                                </div>
-
-                                <div id="contact-email-9" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-email-edit-9" type="text" required onkeyup="confirmValidContactRegex(9)" style="display:none">
-                                </div>
-
-                                <div id="contact-phone-number-9" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-phone-number-edit-9" type="text" required onkeyup="confirmValidPhoneRegex(9)" style="display:none">
-                                </div>
-
-                                <a id="contact-edit-9" href="javascript:updateContact(9)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
-                                <a id="contact-save-edit-9" href="javascript:saveContact(9)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
-
-                                <a id="contact-delete-9" href="javascript:deleteContact(9)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-cancel-edit-9" href="javascript:cancelContact(9)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
-                                
-                            </div>
-                            <div id="contact-row-10" class="cell">
-                                <a id="contact-not-fave-10" href="javascript:favoriteContact(10, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-10" href="javascript:favoriteContact(10, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
-                                
-                                <span id="contact-first-name-10" class="cell text-black"></span>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-first-name-edit-10" type="text" style="display:none">
-                                </div>
-
-                                <div id="contact-last-name-10" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-last-name-edit-10" type="text" style="display:none">
-                                </div>
-
-                                <div id="contact-email-10" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-email-edit-10" type="text" required onkeyup="confirmValidContactRegex(10)" style="display:none">
-                                </div>
-
-                                <div id="contact-phone-number-10" class="cell text-black"></div>
-                                <div class="search-bar cell text-black">
-                                    <input id="contact-phone-number-edit-10" type="text" required onkeyup="confirmValidPhoneRegex(10)" style="display:none">
-                                </div>
-
-                                <a id="contact-edit-10" href="javascript:updateContact(10)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">Edit</div></a>
-                                <a id="contact-save-edit-10" href="javascript:saveContact(10)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Save</div></a>
-
-                                <a id="contact-delete-10" href="javascript:deleteContact(10)" class="icon-cell text-black a-link-alt"><div id="deleteButton" class="text-black icon-cell" type="button">Delete</div></a>
-                                <a id="contact-cancel-edit-10" href="javascript:cancelContact(10)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
-
-                            </div>
-                        </div>
+                                    <td>
+                                        <a id="contact-delete-10" href="javascript:deleteContact(10)"><div id="deleteButton" type="button">Delete</div></a>
+                                        <a id="contact-cancel-edit-10" href="javascript:cancelContact(10)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     
                         <span id="contact-result" class="text-black row cell"></span>
                     
