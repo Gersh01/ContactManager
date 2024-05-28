@@ -16,7 +16,7 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
-        <header id="nav-header" class="text-black nav py-5 bg-accent"> 
+        <header id="nav-header" class="text-black nav py-5 bg-accent">
             <div id="home-button" class= "header-link button" type="button">Home</div>
             <a id="about-us_button" href="javascript:doLogout()"> <div id="about-us-button" class="header-link button" type="button">Logout</div></a>
             <div id="about-link" class="header-link button" type="button">About</div>
@@ -34,6 +34,9 @@
                     <!--Search Bar-->
                     <div class="text-center my-6">
                         <div id="search-bar-row" class="search-bar row-alt">
+                            <a id="search-favorites-off" href="favoriteSearch()" class="text-black a-link"><div id="searchAll" class="text-black refresh-page" type="button">0</div></a>
+                            <a id="search-favorites-on" href="favoriteSearch()" class="text-black a-link" style="display:none"><div id="searchFaves" class="text-black refresh-page" type="button">1</div></a>
+                            
                             <input id="search-bar" type="text" placeholder="Search..." required onkeyup = "searchContact(null, null, null, null, null)">
                             <a id="refresh-button" href="javascript:firstPage(null, null)" class="text-black a-link"><div id="refreshButton" class="text-black refresh-page" type="button">Refresh</div></a>
                             <a id="add-contact-button" href="javascript:showTable()" class="text-black a-link"><div id="addContactButton" class="text-black refresh-page" type="button">Add Contact</div></a>
@@ -52,8 +55,8 @@
                                 <div id="contact-delete" class="text-black icon-cell">Delete</div>
                             </div>
                             <div id="contact-row-1" class="cell">
-                                <a id="contact-not-fave-1" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-1" href="javascript:favoriteContact(1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                <a id="contact-not-fave-1" href="javascript:favoriteContact(1, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-1" href="javascript:favoriteContact(1, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
                                 
                                 <span id="contact-first-name-1" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
@@ -83,8 +86,8 @@
                                 
                             </div>
                             <div id="contact-row-2" class="cell">
-                                <a id="contact-not-fave-2" href="javascript:favoriteContact(2)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-2" href="javascript:favoriteContact(2)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                <a id="contact-not-fave-2" href="javascript:favoriteContact(2, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-2" href="javascript:favoriteContact(2, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
                                 
                                 <span id="contact-first-name-2" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
@@ -114,8 +117,8 @@
 
                             </div>
                             <div id="contact-row-3" class="cell">
-                                <a id="contact-not-fave-3" href="javascript:favoriteContact(3)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-3" href="javascript:favoriteContact(3)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                <a id="contact-not-fave-3" href="javascript:favoriteContact(3, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-3" href="javascript:favoriteContact(3, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
                                 
                                 <span id="contact-first-name-3" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
@@ -145,8 +148,8 @@
 
                             </div>
                             <div id="contact-row-4" class="cell">
-                                <a id="contact-not-fave-4" href="javascript:favoriteContact(4)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-4" href="javascript:favoriteContact(4)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                <a id="contact-not-fave-4" href="javascript:favoriteContact(4, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-4" href="javascript:favoriteContact(4, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
                                 
                                 <span id="contact-first-name-4" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
@@ -176,8 +179,8 @@
 
                             </div>
                             <div id="contact-row-5" class="cell">
-                                <a id="contact-not-fave-5" href="javascript:favoriteContact(5)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-5" href="javascript:favoriteContact(5)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                <a id="contact-not-fave-5" href="javascript:favoriteContact(5, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-5" href="javascript:favoriteContact(5, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
                                 
                                 <span id="contact-first-name-5" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
@@ -207,8 +210,8 @@
 
                             </div>
                             <div id="contact-row-6" class="cell">
-                                <a id="contact-not-fave-6" href="javascript:favoriteContact(6)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-6" href="javascript:favoriteContact(6)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                <a id="contact-not-fave-6" href="javascript:favoriteContact(6, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-6" href="javascript:favoriteContact(6, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
                                 
                                 <span id="contact-first-name-6" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
@@ -238,8 +241,8 @@
 
                             </div>
                             <div id="contact-row-7" class="cell">
-                                <a id="contact-not-fave-7" href="javascript:favoriteContact(7)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-7" href="javascript:favoriteContact(7)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                <a id="contact-not-fave-7" href="javascript:favoriteContact(7, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-7" href="javascript:favoriteContact(7, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
                                 
                                 <span id="contact-first-name-7" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
@@ -269,8 +272,8 @@
 
                             </div>
                             <div id="contact-row-8" class="cell">
-                                <a id="contact-not-fave-8" href="javascript:favoriteContact(8)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-8" href="javascript:favoriteContact(8)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                <a id="contact-not-fave-8" href="javascript:favoriteContact(8, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-8" href="javascript:favoriteContact(8, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
                                 
                                 <span id="contact-first-name-8" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
@@ -299,8 +302,8 @@
                                 <a id="contact-cancel-edit-8" href="javascript:cancelContact(8)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" class="text-black icon-cell" type="button">Cancel</div></a>
                             </div>
                             <div id="contact-row-9" class="cell">
-                                <a id="contact-not-fave-9" href="javascript:favoriteContact(9)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-9" href="javascript:favoriteContact(9)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                <a id="contact-not-fave-9" href="javascript:favoriteContact(9, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-9" href="javascript:favoriteContact(9, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
                                 
                                 <span id="contact-first-name-9" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
@@ -330,8 +333,8 @@
                                 
                             </div>
                             <div id="contact-row-10" class="cell">
-                                <a id="contact-not-fave-10" href="javascript:favoriteContact(10)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
-                                <a id="contact-fave-10" href="javascript:favoriteContact(10)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
+                                <a id="contact-not-fave-10" href="javascript:favoriteContact(10, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-fave-10" href="javascript:favoriteContact(10, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
                                 
                                 <span id="contact-first-name-10" class="cell text-black"></span>
                                 <div class="search-bar cell text-black">
