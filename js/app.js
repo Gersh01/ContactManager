@@ -62,7 +62,10 @@ function doLogin(){
 		return;
 	}
 	else{
-			let tmp = {login:login,password:password};
+			//Hashes password for login
+			let hash = md5(password);
+
+			let tmp = {login:login,password:hash};
 			//	var tmp = {login:login,password:hash};
 			let jsonPayload = JSON.stringify( tmp );
 			
@@ -284,7 +287,10 @@ function doRegister(){
 			return;
 		}
 		else if(passwordMatches == true && properPassword == true){
-			let tmp = {firstName:newUserFirst,lastName:newUserLast,login:newUserName,password:newUserPassword};
+			//Hashes newUsers Password to store in DB
+			let hash = md5(newUserPassword);
+
+			let tmp = {firstName:newUserFirst,lastName:newUserLast,login:newUserName,password:hash};
 
 			console.log(tmp);
 			let jsonPayload = JSON.stringify( tmp );
