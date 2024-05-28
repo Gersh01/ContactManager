@@ -194,6 +194,7 @@ function toggleElement(row,num){
 }
 
 function toggleEditElement(toggle,num){
+
 	let firstName = document.getElementById("contact-first-name-"+num);
 	let lastName = document.getElementById("contact-last-name-"+num);
 	let email = document.getElementById("contact-email-"+num);
@@ -580,11 +581,18 @@ function loadContacts(jsonObject){
 
 		let row = document.getElementById("contact-row-"+parseInt(i+1));
 		toggleElement(row,show);
+		if(jsonObject.contacts[i].Favorited===1){
+			document.getElementById("contact-not-fave-"+parseInt(i+1)).style = "none";
+			document.getElementById("contact-fave-"+parseInt(i+1)).style = "flex";
+		}
+		else{
+			document.getElementById("contact-fave-"+parseInt(i+1)).style = "none";
+			document.getElementById("contact-not-fave-"+parseInt(i+1)).style = "flex";
+		}
 		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
 		document.getElementById("contact-last-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].LastName;
 		document.getElementById("contact-email-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Email;
 		document.getElementById("contact-phone-number-"+parseInt(i+1)).textContent= jsonObject.contacts[i].Phone;
-
 	}
 	for(j = i; j<10; j++){
 		let row = document.getElementById("contact-row-"+parseInt(j+1));
@@ -637,16 +645,26 @@ function emptyContactFields(num){
 function searchContact(first, last, contactId, favorite, pagination){
 	let tmp = null;
 	let searchField = document.getElementById("search-bar").value;
+
+	let favoriteSearch = null;
+	if(document.getElementById("search-favorites-on").style === "flex"){
+		favoriteSearch = 1;
+	}
+	else{
+		favoriteSearch = 0;
+	}
+
+
 	if(contactInEdit === 0){
 		//Search asking to see next page of contacts
 		if(pagination === 1){
-			tmp = {UserID:userId, showFavorites:0, search:searchField, cursor:{firstName:first, lastName:last, ID:contactId, favorite:favorite},next:pagination};
+			tmp = {UserID:userId, showFavorites:favoriteSearch, search:searchField, cursor:{firstName:first, lastName:last, ID:contactId, favorite:favorite},next:pagination};
 		}
 		else if(pagination === 0){
-			tmp = {UserID:userId, showFavorites:0, search:searchField, cursor:{firstName:first, lastName:last, ID:contactId, favorite:favorite},next:pagination};
+			tmp = {UserID:userId, showFavorites:favoriteSearch, search:searchField, cursor:{firstName:first, lastName:last, ID:contactId, favorite:favorite},next:pagination};
 		}
 		else if(pagination === null){
-			tmp = {UserID:userId, showFavorites:0, search:searchField, cursor:{firstName:"",lastName:"",ID:1,favorite:0}};
+			tmp = {UserID:userId, showFavorites:favoriteSearch, search:searchField, cursor:{firstName:"",lastName:"",ID:1,favorite:0}};
 			firstContactPageFlag = 0;
 		}
 		console.log(searchField);
@@ -890,13 +908,10 @@ function goNext(){
 			//if search field is in use
 			else{
 				searchContact(lastContactFirstName, lastContactLastName, Id, fav, next);
-				
 			}
 		}
 	}
 	
-	
-
 
 }
 
@@ -928,3 +943,73 @@ function goPrev(){
 }
 
 
+function favoriteContact(row, favStatus){
+	if(contactInEdit === 0){
+		let newFavValue = null;
+
+		let favContact = document.getElementById("contact-fave-"+row);
+
+		let unFavContact = document.getElementById("contact-not-fave-"+row);
+
+		let contactId = globalJsonObject.contacts[row-1].ID;
+
+		if(favContact.style === "none"){
+			unFavContact.style = "none";
+			favContact.style = "flex";
+			newFavValue = 1;
+		}
+		else{
+			favContact.style = "none";
+			unFavContact.style = "flex"
+			newFavValue = 0;
+		}
+
+		let url = urlBase + "/FavoriteContact." + extension;
+		
+		let tmp = {UserID:contactId, updatedFavorite:newFavValue};
+
+		let jsonPayload = JSON.stringify(tmp);
+
+		let xhr = new XMLHttpRequest();
+		xhr.open("POST", url, true);
+		try{
+			xhr.onreadystatechange = function() {
+				if(this.readyState == 4 && this.status == 200){
+					if(document.getElementById("search-bar").value == ""){
+						firstPage(null,null);
+					}
+					else{
+						searchContact(null,null,null,null,null);
+					}
+				}
+			};
+			xhr.send(jsonPayload);
+		}
+		catch(err){
+			console.log(err.message);
+		}
+	}	
+}
+
+function favoriteSearch(){
+	if(contactInEdit === 0){
+		let favoritedSearch = document.getElementById("search-favorites-on").style;
+		let nonFavoritedSearch = document.getElementById("search-favorites-off").style;
+
+		if(favoritedSearch = "none"){
+			nonFavoritedSearch = "none";
+			favoritedSearch = "flex";
+		}
+		else{
+			favoritedSearch = "none";
+			nonFavoritedSearch = "flex";
+		}
+
+		if(document.getElementById("search-bar").value === ""){
+			searchContact(null,null,null,null,null);
+		}
+		else{
+			firstPage(null,null);
+		}
+	}
+}
