@@ -23,7 +23,7 @@
         returnWithError($conn->connect_error);
     } else {
         if($next == 1){
-            $stmt = $conn->prepare("SELECT ID, SUBSTRING_INDEX(Name, ' ', 1) AS FirstName, SUBSTRING_INDEX(Name, ' ', -1) AS LastName, Phone, Email, UserID, Favorited FROM Contacts WHERE Name > ? AND UserID = ? ORDER BY Name ASC LIMIT 10");
+            $stmt = $conn->prepare("SELECT ID, SUBSTRING_INDEX(Name, ' ', 1) AS FirstName, SUBSTRING_INDEX(Name, ' ', -1) AS LastName, Phone, Email, UserID, Favorited AS Favorite FROM Contacts WHERE Name > ? AND UserID = ? ORDER BY Name ASC LIMIT 10");
         }else if($next == -1){
             $stmt = $conn->prepare("SELECT ID, SUBSTRING_INDEX(Name, ' ', 1) AS FirstName, SUBSTRING_INDEX(Name, ' ', -1) AS LastName, Phone, Email, UserID, Favorited AS Favorite FROM Contacts WHERE Name < ? AND UserID = ? ORDER BY Name DESC LIMIT 10");
         }else{
