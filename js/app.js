@@ -57,8 +57,8 @@ function doLogin(){
 	
 	document.getElementById("login-result").innerHTML = "";
 	if(login === ""){
-		document.getElementById("login-username").style.borderStyle = "red";
-		document.getElementById("login-username").style.borderWidth = "medium";
+		document.getElementById("login-username").style = "border-color:red";
+		document.getElementById("login-username").style = "border-width:medium";
 	}
 
 
