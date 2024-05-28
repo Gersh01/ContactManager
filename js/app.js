@@ -995,12 +995,13 @@ function favoriteSearch(){
 	let nonFavoritedSearch = document.getElementById("search-favorites-off").style;
 	if(contactInEdit === 0){
 		
-
 		if(favoritedSearch = "none"){
+			console.log("Performing favorite search");
 			nonFavoritedSearch = "none";
 			favoritedSearch = "flex";
 		}
 		else{
+			console.log("Performing un-favorited search");
 			favoritedSearch = "none";
 			nonFavoritedSearch = "flex";
 		}
