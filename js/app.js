@@ -991,9 +991,10 @@ function favoriteContact(row, favStatus){
 }
 
 function favoriteSearch(){
+	let favoritedSearch = document.getElementById("search-favorites-on").style;
+	let nonFavoritedSearch = document.getElementById("search-favorites-off").style;
 	if(contactInEdit === 0){
-		let favoritedSearch = document.getElementById("search-favorites-on").style;
-		let nonFavoritedSearch = document.getElementById("search-favorites-off").style;
+		
 
 		if(favoritedSearch = "none"){
 			nonFavoritedSearch = "none";
