@@ -584,10 +584,12 @@ function loadContacts(jsonObject){
 		if(jsonObject.contacts[i].Favorited===1){
 			document.getElementById("contact-not-fave-"+parseInt(i+1)).style = "none";
 			document.getElementById("contact-fave-"+parseInt(i+1)).style = "flex";
+			console.log(jsonObject.contacts[i].FirstName+"contact is favorite");
 		}
 		else{
 			document.getElementById("contact-fave-"+parseInt(i+1)).style = "none";
 			document.getElementById("contact-not-fave-"+parseInt(i+1)).style = "flex";
+			console.log(jsonObject.contacts[i].FirstName+"contact is not a favorite");
 		}
 		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
 		document.getElementById("contact-last-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].LastName;
