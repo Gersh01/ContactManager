@@ -568,10 +568,15 @@ function firstPage(contactPageination,pageSelect){
 					document.getElementById("search-bar").value = "";
 
 					let jsonObject = JSON.parse( xhr.responseText );
-					globalJsonObject = jsonObject;
+					if(jsonObject.contacts.length===0){
+						noContactsFound();
+					}
+					else{
+						globalJsonObject = jsonObject;
 
-					loadContacts(jsonObject);
-					console.log("GlobalPageCounter "+firstContactPageFlag);
+						loadContacts(jsonObject);
+						console.log("GlobalPageCounter "+firstContactPageFlag);
+					}
 				}
 			};
 			xhr.send(jsonPayload);
