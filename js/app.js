@@ -192,7 +192,7 @@ function showTable(){
 function toggleElement(row,num){
 	//block = show | none = hide
 	if(num === 0){
-		console.log("Changing row contact on "+row);
+		console.log("Changing row contact on "+row.style.display);
 		row.style.display = "display-table-row";
 	}
 	else if(num === 1){
