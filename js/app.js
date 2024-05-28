@@ -196,7 +196,7 @@ function toggleElement(row,num){
 		row.style.display = "display:block;";
 	}
 	else if(num === 1){
-		row.style.display = "display:none;";
+		row.style.display = "none";
 	}
 }
 
