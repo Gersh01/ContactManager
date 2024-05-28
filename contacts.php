@@ -16,7 +16,10 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
-        <header id="nav-header" class="text-black nav py-5 bg-accent"> 
+        <header id="nav-header" class="text-black nav py-5 bg-accent">
+            <a id="search-favorites-on" href="favoriteSearch()" class="text-black a-link"><div id="searchAll" class="text-black refresh-page" type="button">0</div></a>
+            <a id="search-favorites-off" href="favoriteSearch()" class="text-black a-link" style="display:none"><div id="searchFaves" class="text-black refresh-page" type="button">1</div></a>
+            
             <div id="home-button" class= "header-link button" type="button">Home</div>
             <a id="about-us_button" href="javascript:doLogout()"> <div id="about-us-button" class="header-link button" type="button">Logout</div></a>
             <div id="about-link" class="header-link button" type="button">About</div>
