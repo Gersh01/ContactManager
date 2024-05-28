@@ -56,6 +56,11 @@ function doLogin(){
 //	var hash = md5( password );
 	
 	document.getElementById("login-result").innerHTML = "";
+	if(login === ""){
+		document.getElementById("login-username").style.borderStyle = "red";
+		document.getElementById("login-username").style.borderWidth = "medium";
+	}
+
 
 	if(login === "" || password === ""){
 		document.getElementById("login-result").innerHTML = "Required fields must be filled";
