@@ -224,15 +224,16 @@ function toggleEditElement(toggle,num){
 		edit.style.display = "none";
 		del.style.display = "none";
 
+
 		contactInEdit +=1;
 
 	
-		editFirst.style.display = "flex";
-		editLast.style.display = "flex";
-		editEmail.style.display = "flex";
-		editPhone.style.display = "flex";
-		save.style.display = "flex";
-		cancel.style.display = "flex";
+		editFirst.style.display = "block";
+		editLast.style.display = "block";
+		editEmail.style.display = "block";
+		editPhone.style.display = "block";
+		save.style.display = "block";
+		cancel.style.display = "block";
 	}
 	//hide edit field
 	else{
@@ -245,12 +246,12 @@ function toggleEditElement(toggle,num){
 
 		contactInEdit -=1;
 
-		firstName.style.display = "flex";
-		lastName.style.display = "flex";
-		email.style.display = "flex";
-		phone.style.display = "flex";
-		edit.style.display = "flex";
-		del.style.display = "flex";
+		firstName.style.display = "block";
+		lastName.style.display = "block";
+		email.style.display = "block";
+		phone.style.display = "block";
+		edit.style.display = "block";
+		del.style.display = "block";
 	}
 
 }
