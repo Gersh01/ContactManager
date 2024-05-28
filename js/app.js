@@ -192,7 +192,7 @@ function showTable(){
 function toggleElement(row,num){
 	//block = show | none = hide
 	if(num === 0){
-		console.log("Changing row contact on "+num);
+		console.log("Changing row contact on "+row);
 		row.style.display = "display-table-row";
 	}
 	else if(num === 1){
@@ -585,6 +585,7 @@ function loadContacts(jsonObject){
 		return;
 	}
 	console.log("The length of the jsonObject "+jsonObject.contacts.length);
+
 	for(i = 0; i<jsonObject.contacts.length; i++){
 		console.log(jsonObject.contacts[i].FirstName);
 		console.log("contact-first-name-"+parseInt(i+1));
