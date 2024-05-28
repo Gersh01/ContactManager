@@ -191,16 +191,12 @@ function showTable(){
 
 function toggleElement(row,num){
 	//block = show | none = hide
-	let hidden = row.getAttribute("hidden");
 
 	if(num === 0){
-		console.log("Changing row contact on "+row.style.display);
 		row.removeAttribute("hidden");
-		//row.style= "display:block;";
 	}
 	else if(num === 1){
 		row.setAttribute("hidden","hidden");
-		//row.style = "display:none;";
 	}
 }
 
@@ -526,6 +522,7 @@ function passwordRegexChecker(){
 function firstPage(contactPageination,pageSelect){
 	console.log(pageSelect);
 	console.log(contactPageination);
+
 	if(contactInEdit === 0){
 		tmp = null;
 		//Goes to next page
@@ -540,6 +537,9 @@ function firstPage(contactPageination,pageSelect){
 			tmp = {userID:userId, cursor:0};
 		}
 		console.log("Generating first page");
+
+		document.getElementById("search-favorites-on").style.display="none";
+		document.getElementById("search-favorites-off").style.display="block";
 
 		let url = urlBase + "/ContactPagination." + extension;
 		
@@ -563,6 +563,7 @@ function firstPage(contactPageination,pageSelect){
 
 					let jsonObject = JSON.parse( xhr.responseText );
 					globalJsonObject = jsonObject;
+
 					loadContacts(jsonObject);
 					console.log("GlobalPageCounter "+firstContactPageFlag);
 				}
