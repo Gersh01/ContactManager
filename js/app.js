@@ -584,7 +584,7 @@ function loadContacts(jsonObject){
 		document.getElementById("contact-result").innerHTML = "No contacts found";
 		return;
 	}
-
+	console.log("The length of the jsonObject "+jsonObject.contacts.length);
 	for(i = 0; i<jsonObject.contacts.length; i++){
 		console.log(jsonObject.contacts[i].FirstName);
 		console.log("contact-first-name-"+parseInt(i+1));
