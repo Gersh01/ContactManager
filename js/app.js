@@ -192,7 +192,7 @@ function showTable(){
 function toggleElement(row,num){
 	//block = show | none = hide
 	if(num===0){
-		row.style.display="block";
+		row.style.display="display-table-row";
 	}
 	else if(num === 1){
 		row.style.display="none";
