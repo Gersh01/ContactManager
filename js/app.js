@@ -179,7 +179,7 @@ function showTable(){
 			contact.style.display="none";
 			addContactButton.innerText = "Add Contact";
 
-			favoriteIconUnFav.style.display = "flex";
+			favoriteIconUnFav.style.display = "block";
 
 			firstPage(null,null);
 
@@ -192,7 +192,7 @@ function showTable(){
 function toggleElement(row,num){
 	//block = show | none = hide
 	if(num===0){
-		row.style.display="flex";
+		row.style.display="block";
 	}
 	else if(num === 1){
 		row.style.display="none";
@@ -593,11 +593,11 @@ function loadContacts(jsonObject){
 		if(jsonObject.contacts[i].Favorite==="1" || jsonObject.contacts[i].Favorite===1){
 			console.log("Contact is a fav "+jsonObject.contacts[i].FirstName)
 			document.getElementById("contact-not-fave-"+parseInt(i+1)).style.display = "none";			
-			document.getElementById("contact-fave-"+parseInt(i+1)).style.display = "flex";
+			document.getElementById("contact-fave-"+parseInt(i+1)).style.display = "block";
 		}
 		else if(jsonObject.contacts[i].Favorite===0 || jsonObject.contacts[i].Favorite=== "0"){
 			document.getElementById("contact-fave-"+parseInt(i+1)).style.display = "none";
-			document.getElementById("contact-not-fave-"+parseInt(i+1)).style.display = "flex";
+			document.getElementById("contact-not-fave-"+parseInt(i+1)).style.display = "block";
 		}
 
 		toggleElement(row,show);
@@ -660,7 +660,7 @@ function searchContact(first, last, contactId, favorite, pagination){
 	let searchField = document.getElementById("search-bar").value;
 
 	let favoriteSearch = null;
-	if(document.getElementById("search-favorites-on").style.display=== "flex"){
+	if(document.getElementById("search-favorites-on").style.display=== "block"){
 		favoriteSearch = 1;
 		console.log("performing favorited searches");
 	}
@@ -968,12 +968,12 @@ function favoriteContact(row, favStatus){
 
 		if(favContact.style.display === "none"){
 			unFavContact.style.display = "none";
-			favContact.style.display = "flex";
+			favContact.style.display = "block";
 			newFavValue = 1;
 		}
 		else{
 			favContact.style.display = "none";
-			unFavContact.style.display = "flex"
+			unFavContact.style.display = "block"
 			newFavValue = 0;
 		}
 
@@ -1006,12 +1006,12 @@ function favoriteSearch(){
 		if(favoritedSearch.style.display === "none"){
 			console.log("Performing favorite search");
 			nonFavoritedSearch.style.display = "none";
-			favoritedSearch.style.display = "flex";
+			favoritedSearch.style.display = "blocl";
 		}
 		else{
 			console.log("Performing un-favorited search");
 			favoritedSearch.style.display = "none";
-			nonFavoritedSearch.style.display = "flex";
+			nonFavoritedSearch.style.display = "block";
 		}
 		searchContact(null,null,null,null,null);
 	}
