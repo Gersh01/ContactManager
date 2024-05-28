@@ -193,10 +193,10 @@ function toggleElement(row,num){
 	//block = show | none = hide
 	if(num === 0){
 		console.log("Changing row contact on "+row.style.display);
-		row.style.display = "visibility:visible";
+		row.style.visibilty= "visible";
 	}
 	else if(num === 1){
-		row.style.display = "visibility:hidden";
+		row.style.display = "none";
 	}
 }
 
