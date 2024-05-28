@@ -88,6 +88,30 @@
   display:block;
 }
 
+.table-header{
+  background-color: var(--subcolor);
+  border-radius: 15px;
+}
+
+table{
+  table-layout:fixed;
+  text-align:center;
+}
+
+thead th:nth-child(1){
+  width:10%
+}
+
+thead th:nth-child(6), thead th:nth-child(7){
+  width:5%;
+}
+
+
+tr {
+  text-align:center;
+  
+}
+
 .add-contacts-container{
   width: fit-content;
   margin: auto;
@@ -184,9 +208,10 @@
   padding-bottom:5px;
 }
 
+
+
 .cell-top {
   display: flex;
-  margin: auto;
   width: auto;
   justify-content: center;
   background-color: var(--subcolor);
@@ -488,21 +513,6 @@ caption {
   text-align: left;
 }
 
-th {
-  text-align: inherit;
-  text-align: -webkit-match-parent;
-}
-
-thead,
-tbody,
-tfoot,
-tr,
-td,
-th {
-  border-color: inherit;
-  border-style: solid;
-  border-width: 0;
-}
 
 label {
   display: inline-block;
