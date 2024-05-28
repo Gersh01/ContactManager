@@ -162,11 +162,15 @@ function showTable(){
 		let contact = document.getElementById("add-contact");
 		let refresh = document.getElementById("refresh-button");
 		let addContactButton = document.getElementById("addContactButton");
+		let favoriteIconFav = document.getElementById("search-favorites-on");
+		let favoriteIconUnFav = document.getElementById("search-favorites-off");
 
 		console.log("Hiding table");
 		if(table.style.display === "block"){
 			table.style.display = "none";
 			refresh.style.display = "none"
+			favoriteIconFav.style.display = "none";
+			favoriteIconUnFav.style.display = "none";
 
 			addContactButton.innerText = "Cancel"
 			contact.style.display = "block";
