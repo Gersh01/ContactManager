@@ -214,6 +214,13 @@ tr {
   left: 16px;
 }
 
+.label-missing-field{
+  position: relative;
+  left: 16px;
+  color: "red";
+  font-weight: bold;
+}
+
 
 .cell-top {
   display: flex;
