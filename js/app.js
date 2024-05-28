@@ -588,6 +588,7 @@ function loadContacts(jsonObject){
 			document.getElementById("contact-fave-"+parseInt(i+1)).style = "none";
 			console.log(jsonObject.contacts[i].FirstName+"contact is favorite");
 		}
+
 		else{
 			document.getElementById("contact-fave-"+parseInt(i+1)).style = "none";
 			document.getElementById("contact-not-fave-"+parseInt(i+1)).style = "none";
@@ -995,19 +996,19 @@ function favoriteContact(row, favStatus){
 }
 
 function favoriteSearch(){
-	let favoritedSearch = document.getElementById("search-favorites-on").style;
-	let nonFavoritedSearch = document.getElementById("search-favorites-off").style;
+	let favoritedSearch = document.getElementById("search-favorites-on");
+	let nonFavoritedSearch = document.getElementById("search-favorites-off");
 	if(contactInEdit === 0){
 		
-		if(favoritedSearch = "none"){
+		if(favoritedSearch.style === "none"){
 			console.log("Performing favorite search");
-			nonFavoritedSearch = "none";
-			favoritedSearch = "flex";
+			nonFavoritedSearch.style = "none";
+			favoritedSearch.style = "flex";
 		}
 		else{
 			console.log("Performing un-favorited search");
-			favoritedSearch = "none";
-			nonFavoritedSearch = "flex";
+			favoritedSearch.style = "none";
+			nonFavoritedSearch.style = "flex";
 		}
 
 		if(document.getElementById("search-bar").value === ""){
