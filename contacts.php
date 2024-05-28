@@ -55,7 +55,7 @@
                                 <div id="contact-delete" class="text-black icon-cell">Delete</div>
                             </div>
                             <div id="contact-row-1" class="cell">
-                                <a id="contact-not-fave-1" href="javascript:favoriteContact(1, 0)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
+                                <a id="contact-not-fave-1" href="javascript:favoriteContact(1, null)" class="icon-cell text-black a-link-alt"><div id="editButton" class="text-black icon-cell" type="button">0</div></a>
                                 <a id="contact-fave-1" href="javascript:favoriteContact(1, 1)" class="icon-cell text-black a-link-alt" style="display:none"><div id="editButton" type="button">1</div></a>
                                 
                                 <span id="contact-first-name-1" class="cell text-black"></span>
