@@ -215,7 +215,9 @@ tr {
 }
 
 .label-missing-field{
-  color: "red";
+  position: relative;
+  left: 16px;
+  color: darkred;
   font-weight: bold;
 }
 
