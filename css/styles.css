@@ -209,6 +209,11 @@ tr {
 }
 
 
+.label{
+  position: relative;
+  left: 7px;
+}
+
 
 .cell-top {
   display: flex;
