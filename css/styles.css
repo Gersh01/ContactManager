@@ -217,8 +217,8 @@ tr {
 .label-missing-field{
   position: relative;
   left: 16px;
-  color: darkred;
-  font-weight: bold;
+  color: red;
+  font-weight:200;
 }
 
 
