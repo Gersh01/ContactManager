@@ -1008,7 +1008,7 @@ function favoriteSearch(){
 		if(favoritedSearch.style.display === "none"){
 			console.log("Performing favorite search");
 			nonFavoritedSearch.style.display = "none";
-			favoritedSearch.style.display = "blocl";
+			favoritedSearch.style.display = "block";
 		}
 		else{
 			console.log("Performing un-favorited search");
