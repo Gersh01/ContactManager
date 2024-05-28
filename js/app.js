@@ -584,6 +584,7 @@ function loadContacts(jsonObject){
 		toggleElement(row,show);
 
 		if(jsonObject.contacts[i].Favorited===1||jsonObject.contacts[i].Favorite===1){
+			console.log("Contact is a fav "+jsonObject.contacts[i].FirstName)
 			document.getElementById("contact-not-fave-"+parseInt(i+1)).style.display = "none";			
 			document.getElementById("contact-fave-"+parseInt(i+1)).style.display = "flex";
 		}
