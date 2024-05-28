@@ -981,12 +981,7 @@ function favoriteContact(row, favStatus){
 		try{
 			xhr.onreadystatechange = function() {
 				if(this.readyState == 4 && this.status == 200){
-					if(document.getElementById("search-bar").value == ""){
-						firstPage(null,null);
-					}
-					else{
-						searchContact(null,null,null,null,null);
-					}
+					searchContact(null,null,null,null,null);
 				}
 			};
 			xhr.send(jsonPayload);
