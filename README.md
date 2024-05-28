@@ -13,5 +13,4 @@ Search capabilities include populating screen with substring matches. To introdu
 - Jacob Peach (Frontend)
 - Alperen Yazmaci (API)
 
-Test
 
