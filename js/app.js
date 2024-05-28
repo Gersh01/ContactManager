@@ -590,7 +590,7 @@ function loadContacts(jsonObject){
 		}
 		else{
 			document.getElementById("contact-fave-"+parseInt(i+1)).style = "none";
-			document.getElementById("contact-not-fave-"+parseInt(i+1)).style = "flex";
+			document.getElementById("contact-not-fave-"+parseInt(i+1)).style = "none";
 			console.log(jsonObject.contacts[i].FirstName+"contact is not a favorite");
 		}
 		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
