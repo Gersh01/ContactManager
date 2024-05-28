@@ -191,11 +191,12 @@ function showTable(){
 
 function toggleElement(row,num){
 	//block = show | none = hide
-	if(num===0){
-		row.style.display="display-table-row";
+	if(num === 0){
+		console.log("Changing row contact on "+num);
+		row.style.display = "display-table-row";
 	}
 	else if(num === 1){
-		row.style.display="none";
+		row.style.display = "none";
 	}
 }
 
@@ -599,7 +600,7 @@ function loadContacts(jsonObject){
 			document.getElementById("contact-fave-"+parseInt(i+1)).style.display = "none";
 			document.getElementById("contact-not-fave-"+parseInt(i+1)).style.display = "block";
 		}
-
+		
 		toggleElement(row,show);
 
 		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
@@ -608,6 +609,7 @@ function loadContacts(jsonObject){
 		document.getElementById("contact-phone-number-"+parseInt(i+1)).textContent= jsonObject.contacts[i].Phone;
 	}
 	for(j = i; j<10; j++){
+		console.log("changing contact row to hide "+j);
 		let row = document.getElementById("contact-row-"+parseInt(j+1));
 		toggleElement(row,hide);
 	}
