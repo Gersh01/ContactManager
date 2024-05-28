@@ -179,6 +179,8 @@ function showTable(){
 			contact.style.display="none";
 			addContactButton.innerText = "Add Contact";
 
+			favoriteIconUnFav.style.display = "flex";
+
 			firstPage(null,null);
 
 			refresh.style.display = "block";
