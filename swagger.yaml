@@ -111,7 +111,30 @@ paths:
           description: URL Not Found
         500:
           description: Server Error
-  
+  /Search.php:
+    post:
+      tags:
+      - Contacts
+      summary: Searches the database for search field
+      operationId: dlSearch
+      description: Searches the database for search field
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: Search
+        description: Update
+        schema:
+          $ref: '#/definitions/Search'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
           
 definitions:
   Login:
@@ -172,6 +195,7 @@ definitions:
       favorite:
         type: boolean
         example: true
+        
   ChangeFavorite:
     type: object
     required:
@@ -184,6 +208,31 @@ definitions:
       updatedFavorite:
         type: integer
         example: 0
+        
+  Search:
+    type: object
+    required: 
+    - UserID
+    - search
+    - showFavorites
+    - cursor
+    - next
+    properties:
+      UserID: 
+        type: integer
+        example: 1
+      search:
+        type: string
+        example: ""
+      showFavorites:
+        type: integer
+        example: 1
+      cursor:
+        type: object
+        example: {"Uma", "Thurman", 124, 1}
+      next:
+        type: integer
+        example: 1
         
 host: 159.203.115.181
 basePath: /LAMPAPI
