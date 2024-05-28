@@ -191,12 +191,16 @@ function showTable(){
 
 function toggleElement(row,num){
 	//block = show | none = hide
+	let hidden = row.getAttribute("hidden");
+
 	if(num === 0){
 		console.log("Changing row contact on "+row.style.display);
-		row.style= "display:block;";
+		row.removeAttribute("hidden");
+		//row.style= "display:block;";
 	}
 	else if(num === 1){
-		row.style = "display:none;";
+		row.setAttribute("hidden","hidden");
+		//row.style = "display:none;";
 	}
 }
 
