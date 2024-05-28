@@ -581,8 +581,6 @@ function loadContacts(jsonObject){
 		console.log("contact-first-name-"+parseInt(i+1));
 
 		let row = document.getElementById("contact-row-"+parseInt(i+1));
-		toggleElement(row,show);
-
 		if(jsonObject.contacts[i].Favorited===1||jsonObject.contacts[i].Favorite===1){
 			console.log("Contact is a fav "+jsonObject.contacts[i].FirstName)
 			document.getElementById("contact-not-fave-"+parseInt(i+1)).style.display = "none";			
@@ -592,6 +590,9 @@ function loadContacts(jsonObject){
 			document.getElementById("contact-fave-"+parseInt(i+1)).style.display = "none";
 			document.getElementById("contact-not-fave-"+parseInt(i+1)).style.display = "flex";
 		}
+		
+		toggleElement(row,show);
+
 		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
 		document.getElementById("contact-last-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].LastName;
 		document.getElementById("contact-email-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Email;
