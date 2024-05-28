@@ -583,11 +583,11 @@ function loadContacts(jsonObject){
 		let row = document.getElementById("contact-row-"+parseInt(i+1));
 		toggleElement(row,show);
 
-		if(jsonObject.contacts[i].Favorited===1){
+		if(jsonObject.contacts[i].Favorite===1){
 			document.getElementById("contact-not-fave-"+parseInt(i+1)).style.display = "none";			
 			document.getElementById("contact-fave-"+parseInt(i+1)).style.display = "flex";
 		}
-		else if(jsonObject.contacts[i].Favorited===0){
+		else if(jsonObject.contacts[i].Favorite===0){
 			document.getElementById("contact-fave-"+parseInt(i+1)).style.display = "none";
 			document.getElementById("contact-not-fave-"+parseInt(i+1)).style.display = "flex";
 		}
