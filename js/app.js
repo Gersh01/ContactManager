@@ -582,7 +582,9 @@ function loadContacts(jsonObject){
 		let row = document.getElementById("contact-row-"+parseInt(i+1));
 		toggleElement(row,show);
 		if(jsonObject.contacts[i].Favorited===1){
+			console.log("contact-not-fave-"+parseInt(i+1)+" style change to none");
 			document.getElementById("contact-not-fave-"+parseInt(i+1)).style = "none";
+			
 			document.getElementById("contact-fave-"+parseInt(i+1)).style = "flex";
 			console.log(jsonObject.contacts[i].FirstName+"contact is favorite");
 		}
