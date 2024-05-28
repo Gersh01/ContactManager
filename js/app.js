@@ -60,7 +60,7 @@ function doLogin(){
 		document.getElementById("login-username").style = "border-color:red";
 		document.getElementById("login-username").style = "border-width:medium";
 		document.getElementById("login-username-label").innerText = "Username *";
-		document.getElementById("login-username-label").style = "label-missing-field";
+		document.getElementById("login-username-label").className = "label-missing-field";
 	}
 
 
