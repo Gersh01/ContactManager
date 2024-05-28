@@ -964,9 +964,9 @@ function favoriteContact(row, favStatus){
 			newFavValue = 0;
 		}
 
-		let url = urlBase + "/FavoriteContact." + extension;
+		let url = urlBase + "/ChangeFavorite." + extension;
 		
-		let tmp = {UserID:contactId, updatedFavorite:newFavValue};
+		let tmp = {ID:contactId, updatedFavorite:newFavValue};
 
 		let jsonPayload = JSON.stringify(tmp);
 
