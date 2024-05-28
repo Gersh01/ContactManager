@@ -654,7 +654,6 @@ function searchContact(first, last, contactId, favorite, pagination){
 		favoriteSearch = 0;
 	}
 
-
 	if(contactInEdit === 0){
 		//Search asking to see next page of contacts
 		if(pagination === 1){
