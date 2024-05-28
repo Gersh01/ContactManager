@@ -1,4 +1,4 @@
-swagger: '2.0'
+swagger: "2.0"
 info:
   description: This is the API documentation for the COP 4331 Contact Manager
   version: 1.0.0
@@ -86,6 +86,31 @@ paths:
           description: URL Not Found
         500:
           description: Server Error
+          
+  /ChangeFavorite.php:
+    post:
+      tags:
+      - Contacts
+      summary: Changes the favorite tag of a contact
+      operationId: dlChangeFavorite
+      description: Changes the favorite tag of a contact
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: changeFavorite
+        description: Update
+        schema:
+          $ref: '#/definitions/ChangeFavorite'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
   
           
 definitions:
@@ -147,9 +172,20 @@ definitions:
       favorite:
         type: boolean
         example: true
-
-
-host: 143.198.9.78
+  ChangeFavorite:
+    type: object
+    required:
+    - ID
+    - updatedFavorite
+    properties:
+      ID:
+        type: integer
+        example: 1
+      updatedFavorite:
+        type: integer
+        example: 0
+        
+host: 159.203.115.181
 basePath: /LAMPAPI
 schemes:
 - http
