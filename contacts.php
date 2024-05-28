@@ -34,8 +34,8 @@
                     <!--Search Bar-->
                     <div class="text-center my-6">
                         <div id="search-bar-row" class="search-bar row-alt">
-                            <a id="search-favorites-off" href="favoriteSearch()" class="text-black a-link"><div id="searchAll" class="text-black refresh-page" type="button">0</div></a>
-                            <a id="search-favorites-on" href="favoriteSearch()" class="text-black a-link" style="display:none"><div id="searchFaves" class="text-black refresh-page" type="button">1</div></a>
+                            <a id="search-favorites-off" href="javascript:favoriteSearch()" class="text-black a-link"><div id="searchAll" class="text-black refresh-page" type="button">0</div></a>
+                            <a id="search-favorites-on" href="javascript:favoriteSearch()" class="text-black a-link" style="display:none"><div id="searchFaves" class="text-black refresh-page" type="button">1</div></a>
                             
                             <input id="search-bar" type="text" placeholder="Search..." required onkeyup = "searchContact(null, null, null, null, null)">
                             <a id="refresh-button" href="javascript:firstPage(null, null)" class="text-black a-link"><div id="refreshButton" class="text-black refresh-page" type="button">Refresh</div></a>
