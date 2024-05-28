@@ -374,11 +374,11 @@
                                         <a id="contact-cancel-edit-7" href="javascript:cancelContact(7)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
                                     </td>
                                 </tr>
-                                <tr id="contact-row-6">
+                                <tr id="contact-row-8">
                                     <!--Favorite Button-->
                                     <td>
-                                        <a id="contact-not-fave-6" href="javascript:favoriteContact(6, 0)" ><div id="editButton" type="button">0</div></a>
-                                        <a id="contact-fave-6" href="javascript:favoriteContact(6, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                        <a id="contact-not-fave-8" href="javascript:favoriteContact(8, 0)" ><div id="editButton" type="button">0</div></a>
+                                        <a id="contact-fave-8" href="javascript:favoriteContact(8, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
                                     </td>
                                     
                                     <td>
