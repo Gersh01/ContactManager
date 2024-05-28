@@ -29,7 +29,7 @@
 
                 <!--Login Column-->
                 <div id="login-column" class="col">
-                   <label for ="login-username"  class="label" style="display:flex">Username </label>
+                   <label for ="login-username" id="login-username-label" class="label" style="display:flex">Username </label>
                         <div class="search-bar row">
                         <input id="login-username" type="text" placeholder="Username">
                     </div>
