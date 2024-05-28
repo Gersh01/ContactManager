@@ -29,9 +29,11 @@
 
                 <!--Login Column-->
                 <div id="login-column" class="col">
-                    <div class="search-bar row">
+                   <label for ="login-username"  class="label" style="display:flex">Username </label>
+                        <div class="search-bar row">
                         <input id="login-username" type="text" placeholder="Username">
                     </div>
+                    <label for ="login-password" class="label" style="display:flex">Password</label>
                     <div class="search-bar-pass row">
                         <input id="login-password" type="password" placeholder="Password">
                     </div>
@@ -49,6 +51,7 @@
                         <input id="register-last-name" type="text" placeholder="Last Name">
                     </div>
                     <div class="search-bar row">
+                    
                         <input id="register-username" type="text" placeholder="Username">
                     </div>
                     <div class="search-bar-pass row">
