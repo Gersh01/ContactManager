@@ -1071,7 +1071,7 @@ function goNext(){
 		if(contactInEdit === 0){
 			firstContactPageFlag += 1;
 			//if search field is empty
-			if(document.getElementById("search-bar").value === "" && document.getElementById("search-favorites-on").style === "none"){
+			if(document.getElementById("search-bar").value === "" && document.getElementById("search-favorites-off").style === "block"){
 				firstPage(nextName,next);
 			}
 			//if search field is in use
@@ -1080,8 +1080,6 @@ function goNext(){
 			}
 		}
 	}
-	
-
 }
 
 function goPrev(){	
@@ -1100,7 +1098,7 @@ function goPrev(){
 		if(contactInEdit === 0 ){
 			firstContactPageFlag -= 1;
 			//if search field is empty
-			if(document.getElementById("search-bar").value === "" && document.getElementById("search-favorites-on").style === "none"){
+			if(document.getElementById("search-bar").value === "" && document.getElementById("search-favorites-off").style === "block"){
 				firstPage(prevName,prev);
 			}
 			//if search field is in use
