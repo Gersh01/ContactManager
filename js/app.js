@@ -268,7 +268,7 @@ function doLogout(){
 
 function showTable(){
 	if(contactInEdit === 0){
-		missingAddContactFields();
+		
 
 		let table = document.getElementById("contacts-hideable");
 		let contact = document.getElementById("add-contact");
@@ -289,6 +289,7 @@ function showTable(){
 			contact.style.display = "block";
 		}
 		else{
+			missingAddContactFields();
 			contact.style.display="none";
 			addContactButton.innerText = "Add Contact";
 
