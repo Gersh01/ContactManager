@@ -37,7 +37,7 @@
 				
 			} else {
 				// going to previous page
-				$stmt = $conn->prepare("SELECT * FROM Contacts WHERE Favorited >= ? AND (Name like ? OR Phone like ? OR Email like ?) AND ((Favorited > ?) or (Favorited = ? and Name < ?) or (Favorited = ? and Name = ? and ID < ?)) AND UserID = ? ORDER BY Favorited DESC, Name ASC, ID ASC LIMIT 10");
+				$stmt = $conn->prepare("SELECT * FROM Contacts WHERE Favorited >= ? AND (Name like ? OR Phone like ? OR Email like ?) AND ((Favorited > ?) or (Favorited = ? and Name < ?) or (Favorited = ? and Name = ? and ID < ?)) AND UserID = ? ORDER BY Favorited ASC, Name ASC, ID DESC LIMIT 10");
 			}
 
 			
