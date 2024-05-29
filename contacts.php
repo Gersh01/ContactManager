@@ -34,12 +34,12 @@
                     <!--Search Bar-->
                     <div class="text-center my-6">
                         <div id="search-bar-row" class="search-bar row-alt">
-                            <a id="search-favorites-off" href="javascript:favoriteSearch()" class="text-black a-link"><div id="searchAll" class="text-black refresh-page" type="button">0</div></a>
-                            <a id="search-favorites-on" href="javascript:favoriteSearch()" class="text-black a-link" style="display:none"><div id="searchFaves" class="text-black refresh-page" type="button">1</div></a>
+                            <a id="search-favorites-off" href="javascript:favoriteSearch()" class="text-black a-link"><div id="searchAll" class="text-black refresh-page" type="button"><img src="images/favorite-no-fill.png" class="icon"></img></div></a>
+                            <a id="search-favorites-on" href="javascript:favoriteSearch()" class="text-black a-link" style="display:none"><div id="searchFaves" class="text-black refresh-page" type="button"><img src="images/favorite-fill.png" class="icon"></img></div></a>
                             
                             <input id="search-bar" type="text" placeholder="Search..." required onkeyup = "searchContact(null, null, null, null, null)">
-                            <a id="refresh-button" href="javascript:firstPage(null, null)" class="text-black a-link"><div id="refreshButton" class="text-black refresh-page" type="button">Refresh</div></a>
-                            <a id="add-contact-button" href="javascript:showTable()" class="text-black a-link"><div id="addContactButton" class="text-black refresh-page" type="button">Add Contact</div></a>
+                            <a id="refresh-button" href="javascript:firstPage(null, null)" class="text-black a-link"><div id="refreshButton" class="text-black refresh-page" type="button"><img src="images/refresh.png" class="icon"></img></div></a>
+                            <a id="add-contact-button" href="javascript:showTable()" class="text-black a-link"><div id="addContactButton" class="text-black refresh-page" type="button"><img src="images/add-contact.png" class="icon"></img></div></a>
                         </div>
                     </div>
 
@@ -62,8 +62,8 @@
                                 <tr id="contact-row-1">
                                     <!--Favorite Button-->
                                     <td>
-                                        <a id="contact-not-fave-1" href="javascript:favoriteContact(1, 0)" ><div id="editButton" type="button">0</div></a>
-                                        <a id="contact-fave-1" href="javascript:favoriteContact(1, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                        <a id="contact-not-fave-1" href="javascript:favoriteContact(1, 0)" ><div id="editButton" type="button"><img src="images/favorite-no-fill.png" class="icon"></img></div></a>
+                                        <a id="contact-fave-1" href="javascript:favoriteContact(1, 1)" style="display:none"><div id="editButton" type="button"><img src="images/favorite-fill.png" class="icon"></img></div></a>
                                     </td>
                                     
                                     <td>
@@ -95,20 +95,20 @@
                                     
                                     <!--Buttons-->
                                     <td >
-                                        <a id="contact-edit-1" href="javascript:updateContact(1)" ><div id="editButton" type="button">Edit</div></a>
-                                        <a id="contact-save-edit-1" href="javascript:saveContact(1)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                        <a id="contact-edit-1" href="javascript:updateContact(1)" ><div id="editButton" type="button"><img src="images/edit.png" class="icon"></img></div></a>
+                                        <a id="contact-save-edit-1" href="javascript:saveContact(1)" style="display:none"><div id="editButton" type="button"><img src="images/save.png" class="icon"></img></div></a>
                                     </td>
 
                                     <td>
-                                        <a id="contact-delete-1" href="javascript:deleteContact(1)"><div id="deleteButton" type="button">Delete</div></a>
-                                        <a id="contact-cancel-edit-1" href="javascript:cancelContact(1)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                        <a id="contact-delete-1" href="javascript:deleteContact(1)"><div id="deleteButton" type="button"><img src="images/delete.png" class="icon"></img></div></a>
+                                        <a id="contact-cancel-edit-1" href="javascript:cancelContact(1)" style="display:none"><div id="editButton" type="button"><img src="images/cancel.png" class="icon"></img></div></a>
                                     </td>
                                 </tr>
                                 <tr id="contact-row-2">
                                     <!--Favorite Button-->
                                     <td>
-                                        <a id="contact-not-fave-2" href="javascript:favoriteContact(2, 0)" ><div id="editButton" type="button">0</div></a>
-                                        <a id="contact-fave-2" href="javascript:favoriteContact(2, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                        <a id="contact-not-fave-2" href="javascript:favoriteContact(2, 0)" ><div id="editButton" type="button"><img src="images/favorite-no-fill.png" class="icon"></img></div></a>
+                                        <a id="contact-fave-2" href="javascript:favoriteContact(2, 1)" style="display:none"><div id="editButton" type="button"><img src="images/favorite-fill.png" class="icon"></img></div></a>
                                     </td>
                                     
                                     <td>
@@ -140,20 +140,20 @@
                                     
                                     <!--Buttons-->
                                     <td >
-                                        <a id="contact-edit-2" href="javascript:updateContact(2)" ><div id="editButton" type="button">Edit</div></a>
-                                        <a id="contact-save-edit-2" href="javascript:saveContact(2)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                        <a id="contact-edit-2" href="javascript:updateContact(2)" ><div id="editButton" type="button"><img src="images/edit.png" class="icon"></img></div></a>
+                                        <a id="contact-save-edit-2" href="javascript:saveContact(2)" style="display:none"><div id="editButton" type="button"><img src="images/save.png" class="icon"></img></div></a>
                                     </td>
 
                                     <td>
-                                        <a id="contact-delete-2" href="javascript:deleteContact(2)"><div id="deleteButton" type="button">Delete</div></a>
-                                        <a id="contact-cancel-edit-2" href="javascript:cancelContact(2)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                        <a id="contact-delete-2" href="javascript:deleteContact(2)"><div id="deleteButton" type="button"><img src="images/delete.png" class="icon"></img></div></a>
+                                        <a id="contact-cancel-edit-2" href="javascript:cancelContact(2)" style="display:none"><div id="editButton" type="button"><img src="images/cancel.png" class="icon"></img></div></a>
                                     </td>
                                 </tr>
                                 <tr id="contact-row-3">
                                     <!--Favorite Button-->
                                     <td>
-                                        <a id="contact-not-fave-3" href="javascript:favoriteContact(3, 0)" ><div id="editButton" type="button">0</div></a>
-                                        <a id="contact-fave-3" href="javascript:favoriteContact(3, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                        <a id="contact-not-fave-3" href="javascript:favoriteContact(3, 0)" ><div id="editButton" type="button"><img src="images/favorite-no-fill.png" class="icon"></img></div></a>
+                                        <a id="contact-fave-3" href="javascript:favoriteContact(3, 1)" style="display:none"><div id="editButton" type="button"><img src="images/favorite-fill.png" class="icon"></img></div></a>
                                     </td>
                                     
                                     <td>
@@ -185,20 +185,20 @@
                                     
                                     <!--Buttons-->
                                     <td >
-                                        <a id="contact-edit-3" href="javascript:updateContact(3)" ><div id="editButton" type="button">Edit</div></a>
-                                        <a id="contact-save-edit-3" href="javascript:saveContact(3)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                        <a id="contact-edit-3" href="javascript:updateContact(3)" ><div id="editButton" type="button"><img src="images/edit.png" class="icon"></img></div></a>
+                                        <a id="contact-save-edit-3" href="javascript:saveContact(3)" style="display:none"><div id="editButton" type="button"><img src="images/save.png" class="icon"></img></div></a>
                                     </td>
 
                                     <td>
-                                        <a id="contact-delete-3" href="javascript:deleteContact(3)"><div id="deleteButton" type="button">Delete</div></a>
-                                        <a id="contact-cancel-edit-3" href="javascript:cancelContact(3)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                        <a id="contact-delete-3" href="javascript:deleteContact(3)"><div id="deleteButton" type="button"><img src="images/delete.png" class="icon"></img></div></a>
+                                        <a id="contact-cancel-edit-3" href="javascript:cancelContact(3)" style="display:none"><div id="editButton" type="button"><img src="images/cancel.png" class="icon"></img></div></a>
                                     </td>
                                 </tr>
                                 <tr id="contact-row-4">
                                     <!--Favorite Button-->
                                     <td>
-                                        <a id="contact-not-fave-4" href="javascript:favoriteContact(4, 0)" ><div id="editButton" type="button">0</div></a>
-                                        <a id="contact-fave-4" href="javascript:favoriteContact(4, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                        <a id="contact-not-fave-4" href="javascript:favoriteContact(4, 0)" ><div id="editButton" type="button"><img src="images/favorite-no-fill.png" class="icon"></img></div></a>
+                                        <a id="contact-fave-4" href="javascript:favoriteContact(4, 1)" style="display:none"><img src="images/favorite-fill.png" class="icon"></img></div></a>
                                     </td>
                                     
                                     <td>
@@ -230,20 +230,20 @@
                                     
                                     <!--Buttons-->
                                     <td >
-                                        <a id="contact-edit-4" href="javascript:updateContact(4)" ><div id="editButton" type="button">Edit</div></a>
-                                        <a id="contact-save-edit-4" href="javascript:saveContact(4)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                        <a id="contact-edit-4" href="javascript:updateContact(4)" ><div id="editButton" type="button"><img src="images/edit.png" class="icon"></img></div></a>
+                                        <a id="contact-save-edit-4" href="javascript:saveContact(4)" style="display:none"><div id="editButton" type="button"><img src="images/save.png" class="icon"></img></div></a>
                                     </td>
 
                                     <td>
-                                        <a id="contact-delete-4" href="javascript:deleteContact(4)"><div id="deleteButton" type="button">Delete</div></a>
-                                        <a id="contact-cancel-edit-4" href="javascript:cancelContact(4)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                        <a id="contact-delete-4" href="javascript:deleteContact(4)"><div id="deleteButton" type="button"><img src="images/delete.png" class="icon"></img></div></a>
+                                        <a id="contact-cancel-edit-4" href="javascript:cancelContact(4)" style="display:none"><div id="editButton" type="button"><img src="images/cancel.png" class="icon"></img></div></a>
                                     </td>
                                 </tr>
                                 <tr id="contact-row-5">
                                     <!--Favorite Button-->
                                     <td>
-                                        <a id="contact-not-fave-5" href="javascript:favoriteContact(1, 0)" ><div id="editButton" type="button">0</div></a>
-                                        <a id="contact-fave-5" href="javascript:favoriteContact(1, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                        <a id="contact-not-fave-5" href="javascript:favoriteContact(1, 0)" ><div id="editButton" type="button"><img src="images/favorite-no-fill.png" class="icon"></img></div></a>
+                                        <a id="contact-fave-5" href="javascript:favoriteContact(1, 1)" style="display:none"><img src="images/favorite-fill.png" class="icon"></img></div></a>
                                     </td>
                                     
                                     <td>
@@ -275,20 +275,20 @@
                                     
                                     <!--Buttons-->
                                     <td >
-                                        <a id="contact-edit-5" href="javascript:updateContact(5)" ><div id="editButton" type="button">Edit</div></a>
-                                        <a id="contact-save-edit-5" href="javascript:saveContact(5)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                        <a id="contact-edit-5" href="javascript:updateContact(5)" ><div id="editButton" type="button"><img src="images/edit.png" class="icon"></img></div></a>
+                                        <a id="contact-save-edit-5" href="javascript:saveContact(5)" style="display:none"><div id="editButton" type="button"><img src="images/save.png" class="icon"></img></div></a>
                                     </td>
 
                                     <td>
-                                        <a id="contact-delete-5" href="javascript:deleteContact(5)"><div id="deleteButton" type="button">Delete</div></a>
-                                        <a id="contact-cancel-edit-5" href="javascript:cancelContact(5)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                        <a id="contact-delete-5" href="javascript:deleteContact(5)"><div id="deleteButton" type="button"><img src="images/delete.png" class="icon"></img></div></a>
+                                        <a id="contact-cancel-edit-5" href="javascript:cancelContact(5)" style="display:none"><div id="editButton" type="button"><img src="images/cancel.png" class="icon"></img></div></a>
                                     </td>
                                 </tr>
                                 <tr id="contact-row-6">
                                     <!--Favorite Button-->
                                     <td>
-                                        <a id="contact-not-fave-6" href="javascript:favoriteContact(6, 0)" ><div id="editButton" type="button">0</div></a>
-                                        <a id="contact-fave-6" href="javascript:favoriteContact(6, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                        <a id="contact-not-fave-6" href="javascript:favoriteContact(6, 0)" ><div id="editButton" type="button"><img src="images/favorite-no-fill.png" class="icon"></img></div></a>
+                                        <a id="contact-fave-6" href="javascript:favoriteContact(6, 1)" style="display:none"><div id="editButton" type="button"><img src="images/favorite-fill.png" class="icon"></img></div></a>
                                     </td>
                                     
                                     <td>
@@ -320,20 +320,20 @@
                                     
                                     <!--Buttons-->
                                     <td >
-                                        <a id="contact-edit-6" href="javascript:updateContact(6)" ><div id="editButton" type="button">Edit</div></a>
-                                        <a id="contact-save-edit-6" href="javascript:saveContact(6)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                        <a id="contact-edit-6" href="javascript:updateContact(6)" ><div id="editButton" type="button"><img src="images/edit.png" class="icon"></img></div></a>
+                                        <a id="contact-save-edit-6" href="javascript:saveContact(6)" style="display:none"><div id="editButton" type="button"><img src="images/save.png" class="icon"></img></div></a>
                                     </td>
 
                                     <td>
-                                        <a id="contact-delete-6" href="javascript:deleteContact(6)"><div id="deleteButton" type="button">Delete</div></a>
-                                        <a id="contact-cancel-edit-6" href="javascript:cancelContact(6)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                        <a id="contact-delete-6" href="javascript:deleteContact(6)"><div id="deleteButton" type="button"><img src="images/delete.png" class="icon"></img></div></a>
+                                        <a id="contact-cancel-edit-6" href="javascript:cancelContact(6)" style="display:none"><div id="editButton" type="button"><img src="images/cancel.png" class="icon"></img></div></a>
                                     </td>
                                 </tr>
                                 <tr id="contact-row-7">
                                     <!--Favorite Button-->
                                     <td>
-                                        <a id="contact-not-fave-7" href="javascript:favoriteContact(7, 0)" ><div id="editButton" type="button">0</div></a>
-                                        <a id="contact-fave-7" href="javascript:favoriteContact(7, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                        <a id="contact-not-fave-7" href="javascript:favoriteContact(7, 0)" ><div id="editButton" type="button"><img src="images/favorite-no-fill.png" class="icon"></img></div></a>
+                                        <a id="contact-fave-7" href="javascript:favoriteContact(7, 1)" style="display:none"><div id="editButton" type="button"><img src="images/favorite-fill.png" class="icon"></img></div></a>
                                     </td>
                                     
                                     <td>
@@ -365,20 +365,20 @@
                                     
                                     <!--Buttons-->
                                     <td >
-                                        <a id="contact-edit-7" href="javascript:updateContact(7)" ><div id="editButton" type="button">Edit</div></a>
-                                        <a id="contact-save-edit-7" href="javascript:saveContact(7)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                        <a id="contact-edit-7" href="javascript:updateContact(7)" ><div id="editButton" type="button"><img src="images/edit.png" class="icon"></img></div></a>
+                                        <a id="contact-save-edit-7" href="javascript:saveContact(7)" style="display:none"><div id="editButton" type="button"><img src="images/save.png" class="icon"></img></div></a>
                                     </td>
 
                                     <td>
-                                        <a id="contact-delete-7" href="javascript:deleteContact(7)"><div id="deleteButton" type="button">Delete</div></a>
-                                        <a id="contact-cancel-edit-7" href="javascript:cancelContact(7)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                        <a id="contact-delete-7" href="javascript:deleteContact(7)"><div id="deleteButton" type="button"><img src="images/delete.png" class="icon"></img></div></a>
+                                        <a id="contact-cancel-edit-7" href="javascript:cancelContact(7)" style="display:none"><div id="editButton" type="button"><img src="images/cancel.png" class="icon"></img></div></a>
                                     </td>
                                 </tr>
                                 <tr id="contact-row-8">
                                     <!--Favorite Button-->
                                     <td>
-                                        <a id="contact-not-fave-8" href="javascript:favoriteContact(8, 0)" ><div id="editButton" type="button">0</div></a>
-                                        <a id="contact-fave-8" href="javascript:favoriteContact(8, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                        <a id="contact-not-fave-8" href="javascript:favoriteContact(8, 0)" ><div id="editButton" type="button"><img src="images/favorite-no-fill.png" class="icon"></img></div></a>
+                                        <a id="contact-fave-8" href="javascript:favoriteContact(8, 1)" style="display:none"><div id="editButton" type="button"><img src="images/favorite-fill.png" class="icon"></img></div></a>
                                     </td>
                                     
                                     <td>
@@ -410,20 +410,20 @@
                                     
                                     <!--Buttons-->
                                     <td >
-                                        <a id="contact-edit-8" href="javascript:updateContact(8)" ><div id="editButton" type="button">Edit</div></a>
-                                        <a id="contact-save-edit-8" href="javascript:saveContact(8)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                        <a id="contact-edit-8" href="javascript:updateContact(8)" ><div id="editButton" type="button"><img src="images/edit.png" class="icon"></img></div></a>
+                                        <a id="contact-save-edit-8" href="javascript:saveContact(8)" style="display:none"><div id="editButton" type="button"><img src="images/save.png" class="icon"></img></div></a>
                                     </td>
 
                                     <td>
-                                        <a id="contact-delete-8" href="javascript:deleteContact(8)"><div id="deleteButton" type="button">Delete</div></a>
-                                        <a id="contact-cancel-edit-8" href="javascript:cancelContact(8)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                        <a id="contact-delete-8" href="javascript:deleteContact(8)"><div id="deleteButton" type="button"><img src="images/delete.png" class="icon"></img></div></a>
+                                        <a id="contact-cancel-edit-8" href="javascript:cancelContact(8)" style="display:none"><div id="editButton" type="button"><img src="images/cancel.png" class="icon"></img></div></a>
                                     </td>
                                 </tr>
                                 <tr id="contact-row-9">
                                     <!--Favorite Button-->
                                     <td>
-                                        <a id="contact-not-fave-9" href="javascript:favoriteContact(9, 0)" ><div id="editButton" type="button">0</div></a>
-                                        <a id="contact-fave-9" href="javascript:favoriteContact(9, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                        <a id="contact-not-fave-9" href="javascript:favoriteContact(9, 0)" ><div id="editButton" type="button"><img src="images/favorite-no-fill.png" class="icon"></img></div></a>
+                                        <a id="contact-fave-9" href="javascript:favoriteContact(9, 1)" style="display:none"><div id="editButton" type="button"><img src="images/favorite-fill.png" class="icon"></img></div></a>
                                     </td>
                                     
                                     <td>
@@ -455,20 +455,20 @@
                                     
                                     <!--Buttons-->
                                     <td >
-                                        <a id="contact-edit-9" href="javascript:updateContact(9)" ><div id="editButton" type="button">Edit</div></a>
-                                        <a id="contact-save-edit-9" href="javascript:saveContact(9)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                        <a id="contact-edit-9" href="javascript:updateContact(9)" ><div id="editButton" type="button"><img src="images/edit.png" class="icon"></img></div></a>
+                                        <a id="contact-save-edit-9" href="javascript:saveContact(9)" style="display:none"><div id="editButton" type="button"><img src="images/save.png" class="icon"></img></div></a>
                                     </td>
 
                                     <td>
-                                        <a id="contact-delete-9" href="javascript:deleteContact(9)"><div id="deleteButton" type="button">Delete</div></a>
-                                        <a id="contact-cancel-edit-9" href="javascript:cancelContact(9)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                        <a id="contact-delete-9" href="javascript:deleteContact(9)"><div id="deleteButton" type="button"><img src="images/delete.png" class="icon"></img></div></a>
+                                        <a id="contact-cancel-edit-9" href="javascript:cancelContact(9)" style="display:none"><div id="editButton" type="button"><img src="images/cancel.png" class="icon"></img></div></a>
                                     </td>
                                 </tr>
                                 <tr id="contact-row-10">
                                     <!--Favorite Button-->
                                     <td>
-                                        <a id="contact-not-fave-10" href="javascript:favoriteContact(10, 0)" ><div id="editButton" type="button">0</div></a>
-                                        <a id="contact-fave-10" href="javascript:favoriteContact(10, 1)" style="display:none"><div id="editButton" type="button">1</div></a>
+                                        <a id="contact-not-fave-10" href="javascript:favoriteContact(10, 0)" ><div id="editButton" type="button"><img src="images/favorite-no-fill.png" class="icon"></img></div></a>
+                                        <a id="contact-fave-10" href="javascript:favoriteContact(10, 1)" style="display:none"><div id="editButton" type="button"><img src="images/favorite-fill.png" class="icon"></img></div></a>
                                     </td>
                                     
                                     <td>
@@ -500,13 +500,13 @@
                                     
                                     <!--Buttons-->
                                     <td >
-                                        <a id="contact-edit-10" href="javascript:updateContact(10)" ><div id="editButton" type="button">Edit</div></a>
-                                        <a id="contact-save-edit-10" href="javascript:saveContact(10)" style="display:none"><div id="editButton" type="button">Save</div></a>
+                                        <a id="contact-edit-10" href="javascript:updateContact(10)" ><div id="editButton" type="button"><img src="images/edit.png" class="icon"></img></div></a>
+                                        <a id="contact-save-edit-10" href="javascript:saveContact(10)" style="display:none"><div id="editButton" type="button"><img src="images/save.png" class="icon"></img></div></a>
                                     </td>
 
                                     <td>
-                                        <a id="contact-delete-10" href="javascript:deleteContact(10)"><div id="deleteButton" type="button">Delete</div></a>
-                                        <a id="contact-cancel-edit-10" href="javascript:cancelContact(10)" style="display:none"><div id="editButton" type="button">Cancel</div></a>
+                                        <a id="contact-delete-10" href="javascript:deleteContact(10)"><div id="deleteButton" type="button"><img src="images/delete.png" class="icon"></img></div></a>
+                                        <a id="contact-cancel-edit-10" href="javascript:cancelContact(10)" style="display:none"><div id="editButton" type="button"><img src="images/cancel.png" class="icon"></img></div></a>
                                     </td>
                                 </tr>
                             </tbody>
