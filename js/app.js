@@ -525,7 +525,7 @@ function addContact(){
 			}
 		}
 	else{
-		document.getElementById("contact.validatio").style = "display:block";
+		document.getElementById("contact-validation").style = "display:block";
 	}
 }
 
