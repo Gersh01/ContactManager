@@ -78,6 +78,7 @@ function doLogin(){
 
 
 	if(login === "" || password === ""){
+		missingLoginFields();
 		document.getElementById("login-result").innerHTML = "* Required fields must be filled";
 		return;
 	}
