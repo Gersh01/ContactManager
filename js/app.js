@@ -564,14 +564,14 @@ function confirmPassword(){
 
 	if(password!==confirmPassword){
 		passwordMatches = false;
-		document.getElementById("correct-5").style = "none";
+		document.getElementById("correct-5").style = "display:none";
 		document.getElementById("incorrect-5").style = "display:flex";
 	}
 	else{
 		passwordMatches = true;
 		document.getElementById("register-result").innerHTML = "";
 		document.getElementById("correct-5").style = "display:flex";
-		document.getElementById("incorrect-5").style = "none";
+		document.getElementById("incorrect-5").style = "display:none";
 	}
 
 }
@@ -618,41 +618,41 @@ function passwordRegexChecker(){
 
 	if(password.length>=8){
 		document.getElementById("correct-1").style = "display:flex";
-		document.getElementById("incorrect-1").style = "none";
+		document.getElementById("incorrect-1").style = "display:none";
 	}
 	else{
 		properPassword = false;
-		document.getElementById("correct-1").style = "none";
+		document.getElementById("correct-1").style = "display:none";
 		document.getElementById("incorrect-1").style = "display:flex";
 	}
 
 	if(upperPasswordRegex.test(password)){
 		document.getElementById("correct-2").style = "display:flex";
-		document.getElementById("incorrect-2").style = "none";
+		document.getElementById("incorrect-2").style = "display:none";
 		}
 	else{
 		properPassword = false;
-		document.getElementById("correct-4").style = "none";
+		document.getElementById("correct-4").style = "display:none";
 		document.getElementById("incorrect-4").style = "display:flex";
 	}
 
 	if(specialPasswordRegex.test(password)){
 		document.getElementById("correct-4").style = "display:flex";
-		document.getElementById("incorrect-4").style = "none";
+		document.getElementById("incorrect-4").style = "display:none";
 	}
 	else{
 		properPassword = false;
-		document.getElementById("correct-2").style = "none";
+		document.getElementById("correct-2").style = "display:none";
 		document.getElementById("incorrect-2").style = "display:flex";
 	}
 
 	if(numberPasswordRegex.test(password)){
 		document.getElementById("correct-3").style = "display:flex";
-		document.getElementById("incorrect-3").style = "none";
+		document.getElementById("incorrect-3").style = "display:none";
 	}
 	else{
 		properPassword = false;
-		document.getElementById("correct-3").style = "none";
+		document.getElementById("correct-3").style = "display:none";
 		document.getElementById("incorrect-3").style = "display:flex";
 	}
 
