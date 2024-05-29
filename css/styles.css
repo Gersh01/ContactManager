@@ -84,6 +84,22 @@
   --bs-highlight-bg: #fff3cd;
 }
 
+td{
+  text-align:center;
+}
+
+.label{
+  position: relative;
+  left: 16px;
+}
+
+.label-missing-field{
+  position: relative;
+  left: 16px;
+  color: red;
+  font-weight: 300;
+}
+
 section{
   min-height: 79vh;
   align-items: center;
