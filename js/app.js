@@ -1071,12 +1071,13 @@ function goNext(){
 		if(contactInEdit === 0){
 			firstContactPageFlag += 1;
 			//if search field is empty
-			if(document.getElementById("search-bar").value === ""){
+			if(document.getElementById("search-favorites-on").style === "block" || document.getElementById("search-bar").value !== ""){
+				searchContact(lastContactFirstName, lastContactLastName, Id, fav, next);
 				firstPage(nextName,next);
 			}
 			//if search field is in use
-			else{
-				searchContact(lastContactFirstName, lastContactLastName, Id, fav, next);
+			else if(document.getElementById("search-bar").value === ""){
+				
 			}
 		}
 	}
@@ -1098,13 +1099,13 @@ function goPrev(){
 		if(contactInEdit === 0 ){
 			firstContactPageFlag -= 1;
 			//if search field is empty
-			if(document.getElementById("search-bar").value === ""){
-				console.log("prevname = "+prevName+" prev = "+prev);
-				firstPage(prevName,prev);
+			if(document.getElementById("search-favorites-on").style === "block" || document.getElementById("search-bar").value !== ""){
+				searchContact(firstContactFirstName, firstContactLastName, Id, fav, prevSearch);
 			}
 			//if search field is in use
-			else{
-				searchContact(firstContactFirstName, firstContactLastName, Id, fav, prevSearch);
+			else if(document.getElementById("search-bar").value === ""){
+				console.log("prevname = "+prevName+" prev = "+prev);
+				firstPage(prevName,prev);
 			}
 		}
 	}
