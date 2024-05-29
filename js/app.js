@@ -1099,6 +1099,7 @@ function goPrev(){
 			firstContactPageFlag -= 1;
 			//if search field is empty
 			if(document.getElementById("search-bar").value === "" && document.getElementById("search-favorites-off").style === "block"){
+				console.log("prevname = "+prevName+" prev = "+prev);
 				firstPage(prevName,prev);
 			}
 			//if search field is in use
