@@ -342,7 +342,7 @@ function doRegister(){
 
 	if(newUserFirst === "" || newUserLast === "" || newUserName === "" || newUserPassword === "" || newUserPasswordConfirm === ""){
 		missingRegisterFields();
-		document.getElementById("register-result").innerHTML = "Required fields must be filled";
+		document.getElementById("register-result").innerHTML = "* Required fields must be filled *";
 		return;
 	}
 	else{
@@ -353,7 +353,7 @@ function doRegister(){
 		if(passwordMatches == false){
 			//need to change color to red, this doesn't work right now
 			document.getElementById("register-result").style.color = "red";
-			document.getElementById("register-result").innerHTML = "* Passwords do not match";
+			document.getElementById("register-result").innerHTML = "* Passwords do not match *";
 			return;
 		}
 		else if(passwordMatches == true && properPassword == true){
