@@ -102,7 +102,7 @@ thead th:nth-child(1){
   width:10%
 }
 
-thead th:nth-child(2)-thead th:nth-child(5){
+thead th:nth-child(2), thead th:nth-child(3),thead th:nth-child(4),thead th:nth-child(5){
   align-content:left;
 }
 
