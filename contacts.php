@@ -242,8 +242,8 @@
                                 <tr id="contact-row-5">
                                     <!--Favorite Button-->
                                     <td>
-                                        <a id="contact-not-fave-5" href="javascript:favoriteContact(1, 0)" ><div id="editButton" type="button"><img src="images/favorite-no-fill.png" class="icon"></img></div></a>
-                                        <a id="contact-fave-5" href="javascript:favoriteContact(1, 1)" style="display:none"><img src="images/favorite-fill.png" class="icon"></img></div></a>
+                                        <a id="contact-not-fave-5" href="javascript:favoriteContact(5, 0)" ><div id="editButton" type="button"><img src="images/favorite-no-fill.png" class="icon"></img></div></a>
+                                        <a id="contact-fave-5" href="javascript:favoriteContact(5, 1)" style="display:none"><img src="images/favorite-fill.png" class="icon"></img></div></a>
                                     </td>
                                     
                                     <td>
