@@ -209,7 +209,7 @@ tr {
 }
 
 .add-contacts-container{
-  width: fit-content;
+  width: 40%;
   margin: auto;
   border-radius: 15px;
   background-color: var(--accent-color);
