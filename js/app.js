@@ -1068,9 +1068,10 @@ function goNext(){
 	if(globalJsonObject.contacts.length==10){
 		let Id = globalJsonObject.contacts[lastIndex].ID;
 		let fav = globalJsonObject.contacts[lastIndex].Favorite;
+
 		if(contactInEdit === 0){
 			firstContactPageFlag += 1;
-			console.log(document.getElementById("search-favorites-on").style);
+			console.log("Search-favorite-on = "+document.getElementById("search-favorites-on").style);
 			//if search field is empty
 			if(document.getElementById("search-favorites-on").style === "block" || document.getElementById("search-bar").value !== ""){
 				searchContact(lastContactFirstName, lastContactLastName, Id, fav, next);
