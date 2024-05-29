@@ -41,7 +41,7 @@ if(inputRegister != null){
 }
 
 registerPassword.addEventListener("focus", function(event){
-	if(event = onfocus){
+	if(onfocus = event){
 		passwordValidation.style="display:block";
 	}
 });
