@@ -564,11 +564,14 @@ function confirmPassword(){
 
 	if(password!==confirmPassword){
 		passwordMatches = false;
+		document.getElementById("correct-5").style = "none";
+		document.getElementById("incorrect-5").style = "display:flex";
 	}
 	else{
 		passwordMatches = true;
 		document.getElementById("register-result").innerHTML = "";
-		passwordValidation.style ="display:none";
+		document.getElementById("correct-5").style = "display:flex";
+		document.getElementById("incorrect-5").style = "none";
 	}
 
 }
@@ -613,51 +616,44 @@ function passwordRegexChecker(){
 	let numberPasswordRegex = new RegExp("(?=.*[0-9])");
 	let wholePasswordRegex = new RegExp("(?=.*[A-Z])(?=.*[@$!%*?&])(?=.*[0-9])");
 
-	//passwordValidation.style ="display:block";
-	
-	//These elements needed to be added to website page
-	/*
-	document.getElementById("password-length").innerHTML = "";
-	document.getElementById("password-lowercase").innerHTML = "";
-	document.getElementById("password-uppercase").innerHTML = "";
-	document.getElementById("password-number").innerHTML = "";
-	*/
-
-
 	if(password.length>=8){
-		console.log("length = true");
+		document.getElementById("correct-1").style = "display:flex";
+		document.getElementById("incorrect-1").style = "none";
 	}
 	else{
 		properPassword = false;
-		console.log("length = false");
-		//document.getElementById("password-length").innerHTML = "Password must be at least 8 characters";
+		document.getElementById("correct-1").style = "none";
+		document.getElementById("incorrect-1").style = "display:flex";
 	}
 
 	if(upperPasswordRegex.test(password)){
-		console.log("upper = true");
+		document.getElementById("correct-2").style = "display:flex";
+		document.getElementById("incorrect-2").style = "none";
 		}
 	else{
 		properPassword = false;
-		console.log("upper = false");
-		//document.getElementById("password-uppercase").innerHTML = "Password must contain at least 1 uppercase character";
+		document.getElementById("correct-4").style = "none";
+		document.getElementById("incorrect-4").style = "display:flex";
 	}
 
 	if(specialPasswordRegex.test(password)){
-		console.log("special = true");
+		document.getElementById("correct-4").style = "display:flex";
+		document.getElementById("incorrect-4").style = "none";
 	}
 	else{
 		properPassword = false;
-		console.log("special = false");
-		//document.getElementById("password-special").innerHTML = "Password must contain at least 1 specail character";
+		document.getElementById("correct-2").style = "none";
+		document.getElementById("incorrect-2").style = "display:flex";
 	}
 
 	if(numberPasswordRegex.test(password)){
-		console.log("number = true");
+		document.getElementById("correct-3").style = "display:flex";
+		document.getElementById("incorrect-3").style = "none";
 	}
 	else{
 		properPassword = false;
-		console.log("number = false");
-		//document.getElementById("password-number").innerHTML = "Password must containt at least 1 number";
+		document.getElementById("correct-3").style = "none";
+		document.getElementById("incorrect-3").style = "display:flex";
 	}
 
 	if(wholePasswordRegex.test(password)){
@@ -666,7 +662,6 @@ function passwordRegexChecker(){
 	}
 	else{
 		console.log("password = false");
-		console.log(password);
 	}
 }
 
