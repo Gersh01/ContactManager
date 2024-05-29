@@ -791,6 +791,7 @@ function emptyContactFields(num, field){
 
 	//If a new contact is being created
 	if(num === -1 && field === 1){
+		console.log("New contact fields are empty");
 		if(firstName.value === "" || lastName.value === "" || email.value === "" || phone.value === ""){
 			missingAddContactFields();
 			return missingField;
@@ -801,6 +802,7 @@ function emptyContactFields(num, field){
 		}
 	}
 	else{
+		console.log("edit contact fields are empty");
 		if(editFirst.value === "" || editLast.value === "" || editEmail.value === "" || editPhone.value === ""){
 			return missingField;
 		}
