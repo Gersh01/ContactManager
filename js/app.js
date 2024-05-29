@@ -594,6 +594,15 @@ function confirmValidPhoneRegex(num){
 	let phoneRegex = new RegExp("[0-9]{3}-[0-9]{3}-[0-9]{4}");
 	let phone = "";
 
+
+	if(num === -1){
+		phone = document.getElementById("add-contact-phone-number");
+	}
+	else{
+		phone = document.getElementById("contact-phone-number-edit-"+num);
+
+	}
+
 	if(phone.value!== ""){
 		phone.addEventListener("keypress", function(event){
 			if(event.key!=="Backspace"){
@@ -606,7 +615,6 @@ function confirmValidPhoneRegex(num){
 	}
 
 	if(num === -1){
-		phone = document.getElementById("add-contact-phone-number");
 		if(phoneRegex.test(phone.value)===true && phone.value.length===12){
 			properPhoneRegex = true;
 			document.getElementById("correct-7").style = "display:flex";
@@ -619,7 +627,6 @@ function confirmValidPhoneRegex(num){
 		}
 	}
 	else{
-		phone = document.getElementById("contact-phone-number-edit-"+num);
 		if(phoneRegex.test(phone.value)===true && phone.value.length===12){
 			properPhoneRegex = true;
 		}
