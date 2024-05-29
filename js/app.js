@@ -268,6 +268,8 @@ function doLogout(){
 
 function showTable(){
 	if(contactInEdit === 0){
+		missingAddContactFields();
+
 		let table = document.getElementById("contacts-hideable");
 		let contact = document.getElementById("add-contact");
 		let refresh = document.getElementById("refresh-button");
@@ -276,6 +278,7 @@ function showTable(){
 		let favoriteIconUnFav = document.getElementById("search-favorites-off");
 
 		console.log("Hiding table");
+
 		if(table.style.display === "block"){
 			table.style.display = "none";
 			refresh.style.display = "none"
@@ -496,7 +499,7 @@ function addContact(){
 		}
 	}
 	else{
-		document.getElementById("add-contact-result").innerHTML = "Required fields are missing";
+		document.getElementById("add-contact-result").innerHTML = "* Required fields are missing *";
 	}
 }
 
