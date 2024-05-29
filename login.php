@@ -76,18 +76,23 @@
                             <div id="length">Password must contain at least 8 characters.</div>
                         </div>
                         <div id="case-validation"> 
-                            <img id="incorrect-2" src="images/incorrect.png" class="icon"></img>
-                            <img id="correct-2" src="images/correct.png" class="icon" style="display:none"></img>
+                            <img id="incorrect-2" src="images/incorrect.png" class="icon" ></img>
+                            <img id="correct-2"src="images/correct.png" class="icon" style="display:none"></img>
                             <div id="case">Password must contain at least 1 uppercase letter.</div>
                         </div>
+                        <div id="num-validation"> 
+                            <img id="incorrect-3" src="images/incorrect.png" class="icon"></img>
+                            <img id="correct-3" src="images/correct.png" class="icon" style="display:none"></img>
+                            <div id="num">Password must contain at least 1 number.</div>
+                        </div>
                         <div id="special-character-validation"> 
-                            <img id="incorrect-3" src="images/incorrect.png" class="icon" ></img>
-                            <img id="correct-3"src="images/correct.png" class="icon" style="display:none"></img>
+                            <img id="incorrect-4" src="images/incorrect.png" class="icon" ></img>
+                            <img id="correct-4"src="images/correct.png" class="icon" style="display:none"></img>
                             <div id="special">Password must contain at least 1 special character.</div>
                         </div>
                         <div id="confirm-validation"> 
-                            <img id="incorrect-4" src="images/incorrect.png" class="icon"></img>
-                            <img id="correct-4" src="images/correct.png" class="icon" style="display:none"></img>
+                            <img id="incorrect-5" src="images/incorrect.png" class="icon"></img>
+                            <img id="correct-5" src="images/correct.png" class="icon" style="display:none"></img>
                             <div id="length">Passwords must match.</div>
                         </div>
                     </div>
