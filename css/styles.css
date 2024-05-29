@@ -219,17 +219,6 @@ tr {
   margin-left:2rem;
 }
 
-.label{
-  position: relative;
-  left: 16px;
-}
-
-.label-missing-field{
-  position: relative;
-  left: 16px;
-  color: red;
-  font-weight: 300;
-}
 
 
 

@@ -305,13 +305,13 @@ function showTable(){
 			favoriteIconFav.style.display = "none";
 			favoriteIconUnFav.style.display = "none";
 
-			addContactButton.innerText = "Cancel"
+			addContactButton.innerHTML = '<img src="images/cancel.png" class="icon"></img>';
 			contact.style.display = "block";
 		}
 		else{
 			resetAddContactFields();
 			contact.style.display="none";
-			addContactButton.innerText = "Add Contact";
+			addContactButton.innerHTML = '<img src="images/add-contact.png" class="icon"></img>';
 
 			favoriteIconUnFav.style.display = "block";
 
