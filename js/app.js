@@ -148,6 +148,8 @@ function missingAddContactFields(){
 }
 
 function resetAddContactFields(){
+	document.getElementById("add-contact-result").innerHTML = "";
+
 	document.getElementById("add-contact-first-name").value = "";
 	document.getElementById("add-contact-first-name-label").innerText = "First Name";
 	document.getElementById("add-contact-first-name-label").className = "label";
