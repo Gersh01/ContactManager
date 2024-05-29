@@ -564,7 +564,6 @@ function confirmPassword(){
 
 	if(password!==confirmPassword){
 		passwordMatches = false;
-		document.getElementById("register-result").innerHTML = "* Password does not match *";
 	}
 	else{
 		passwordMatches = true;
