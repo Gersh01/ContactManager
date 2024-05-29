@@ -488,8 +488,7 @@ function addContact(){
     let newContactPhone = document.getElementById("add-contact-phone-number").value;
 
 	console.log(newContactPhone);
-	if(emptyContactFields(num,1) === 0){
-		if(properEmailRegex === true && properPhoneRegex === true){
+	if(emptyContactFields(num,1) === 0 && properEmailRegex === true && properPhoneRegex === true){
 			document.getElementById("contact-validation").style = "display:none";
 			
 
@@ -525,12 +524,8 @@ function addContact(){
 				document.getElementById("add-contact-result").innerHTML = err.message;
 			}
 		}
-		else{
-			document.getElementById("contact-validation").style = "display:block";
-		}
-	}
 	else{
-		document.getElementById("add-contact-result").innerHTML = "* Required fields are missing *";
+		document.getElementById("contact.validatio").style = "display:block";
 	}
 }
 
@@ -830,10 +825,12 @@ function emptyContactFields(num, field){
 		console.log("New contact fields are empty");
 		if(firstName.value === "" || lastName.value === "" || email.value === "" || phone.value === ""){
 			missingAddContactFields();
+			document.getElementById("incorrect-8").style = "display:block";
 			return missingField;
 		}
 		else{
 			missingAddContactFields();
+			document.getElementById("incorrect-8").style = "display:none";
 			return noMissingFields;
 		}
 	}
