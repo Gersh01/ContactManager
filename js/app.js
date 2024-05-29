@@ -363,12 +363,12 @@ function toggleEditElement(toggle,num){
 		contactInEdit +=1;
 
 	
-		editFirst.style.display = "block";
-		editLast.style.display = "block";
-		editEmail.style.display = "block";
-		editPhone.style.display = "block";
-		save.style.display = "block";
-		cancel.style.display = "block";
+		editFirst.style.display = "inline-table";
+		editLast.style.display = "inline-table";
+		editEmail.style.display = "inline-table";
+		editPhone.style.display = "inline-table";
+		save.style.display = "inline-table";
+		cancel.style.display = "inline-table";
 	}
 	//hide edit field
 	else{
