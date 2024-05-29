@@ -86,7 +86,7 @@
                             <div id="special">Password must contain at least 1 special character.</div>
                         </div>
                         <div id="confirm-validation"> 
-                            <img id="incorrect-4" "src="images/incorrect.png"></img>
+                            <img id="incorrect-4" src="images/incorrect.png"></img>
                             <img id="correct-4" src="images/correct.png" style="display:none"></img>
                             <div id="length">Passwords must match.</div>
                         </div>
