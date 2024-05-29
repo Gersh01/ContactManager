@@ -675,11 +675,11 @@ function firstPage(contactPageination,pageSelect){
 		else if(pageSelect===null){
 			firstContactPageFlag = 0;
 			tmp = {userID:userId, cursor:0};
+			document.getElementById("search-favorites-on").style.display="none";
+			document.getElementById("search-favorites-off").style.display="block";
 		}
 		console.log("Generating first page");
 
-		document.getElementById("search-favorites-on").style.display="none";
-		document.getElementById("search-favorites-off").style.display="block";
 
 		let url = urlBase + "/ContactPagination." + extension;
 		
@@ -1073,7 +1073,7 @@ function goNext(){
 			firstContactPageFlag += 1;
 			console.log("Search-favorite-on = "+document.getElementById("search-favorites-on").style);
 			//if search field is empty
-			if(document.getElementById("search-favorites-on").style === "block" || document.getElementById("search-bar").value !== ""){
+			if(document.getElementById("search-favorites-on").style.display === "block" || document.getElementById("search-bar").value !== ""){
 				searchContact(lastContactFirstName, lastContactLastName, Id, fav, next);
 			}
 			//if search field is in use
@@ -1100,7 +1100,7 @@ function goPrev(){
 		if(contactInEdit === 0 ){
 			firstContactPageFlag -= 1;
 			//if search field is empty
-			if(document.getElementById("search-favorites-on").style === "block" || document.getElementById("search-bar").value !== ""){
+			if(document.getElementById("search-favorites-on").style.display === "block" || document.getElementById("search-bar").value !== ""){
 				searchContact(firstContactFirstName, firstContactLastName, Id, fav, prevSearch);
 			}
 			//if search field is in use
@@ -1163,12 +1163,12 @@ function favoriteSearch(){
 		if(favoritedSearch.style.display === "none"){
 			console.log("Performing favorite search");
 			nonFavoritedSearch.style.display = "none";
-			favoritedSearch.style.display = "block";
+			favoritedSearch.style.display = "flex";
 		}
 		else{
 			console.log("Performing un-favorited search");
 			favoritedSearch.style.display = "none";
-			nonFavoritedSearch.style.display = "block";
+			nonFavoritedSearch.style.display = "flex";
 		}
 		searchContact(null,null,null,null,null);
 	}
