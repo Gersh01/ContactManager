@@ -44,23 +44,23 @@
 
                 <!--Signup Column-->
                 <div id="register-column" class="col">
-                    <label for ="register-first-name"  class="label" style="display:flex">First Name </label>
+                    <label for ="register-first-name"  id="register-first-name-label" class="label" style="display:flex">First Name </label>
                     <div class="search-bar row">
                         <input id="register-first-name" type="text" placeholder="First Name">
                     </div>
-                    <label for ="register-last-name"  class="label" style="display:flex">Last Name </label>
+                    <label for ="register-last-name"  id="register-last-name-label" class="label" style="display:flex">Last Name </label>
                     <div class="search-bar row">
                         <input id="register-last-name" type="text" placeholder="Last Name">
                     </div>
-                    <label for ="register-username"  class="label" style="display:flex">Username </label>
+                    <label for ="register-username"  id="register-username-label" class="label" style="display:flex">Username </label>
                     <div class="search-bar row">
                         <input id="register-username" type="text" placeholder="Username">
                     </div>
-                    <label for ="register-password"  class="label" style="display:flex">Password </label>
+                    <label for ="register-password"  id="register-password-label" class="label" style="display:flex">Password </label>
                     <div class="search-bar-pass row">
                         <input id="register-password" type="password" placeholder="Password" required onkeyup = "passwordRegexChecker()">
                     </div>
-                    <label for ="register-password-confirm"  class="label" style="display:flex">Confirm Password </label>
+                    <label for ="register-password-confirm"  id="register-password-confirm-label" class="label" style="display:flex">Confirm Password </label>
                      <div class="search-bar-pass row">
                         <input id="register-password-confirm" type="password" placeholder="Confirm Password" required onkeyup="confirmPassword()">
                     </div>
