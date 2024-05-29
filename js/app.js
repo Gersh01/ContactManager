@@ -986,7 +986,7 @@ function saveContact(num){
 
 
 
-	emptyCheck = emptyContactFields(cel,0);
+	emptyCheck = emptyContactFields(cell,0);
 
 
 
