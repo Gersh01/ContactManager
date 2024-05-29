@@ -26,6 +26,7 @@ CREATE TABLE `COP4331`.`Contacts`
   FOREIGN KEY (`UserID`) REFERENCES `Users`(`ID`) ON DELETE CASCADE
 ) ENGINE = InnoDB;
 
+
 insert into Users (FirstName,LastName,Login,Password) VALUES ('Tony','Chau','TonyC','c9671fcaa7ba36237c183508451aebfc');
 insert into Users (FirstName,LastName,Login,Password) VALUES ('Alex','Gershfeld','AlexG','c9671fcaa7ba36237c183508451aebfc');
 insert into Users (FirstName,LastName,Login,Password) VALUES ('Golden','Lin','GoldenL','c9671fcaa7ba36237c183508451aebfc');
