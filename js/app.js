@@ -1070,14 +1070,14 @@ function goNext(){
 		let fav = globalJsonObject.contacts[lastIndex].Favorite;
 		if(contactInEdit === 0){
 			firstContactPageFlag += 1;
+			console.log(document.getElementById("search-favorites-on").style);
 			//if search field is empty
 			if(document.getElementById("search-favorites-on").style === "block" || document.getElementById("search-bar").value !== ""){
 				searchContact(lastContactFirstName, lastContactLastName, Id, fav, next);
-				firstPage(nextName,next);
 			}
 			//if search field is in use
 			else if(document.getElementById("search-bar").value === ""){
-				
+				firstPage(nextName,next);
 			}
 		}
 	}
