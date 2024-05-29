@@ -490,7 +490,7 @@ function addContact(){
 	console.log(newContactPhone);
 	if(emptyContactFields(num,1) === 0){
 		if(properEmailRegex === true && properPhoneRegex === true){
-
+			document.getElementById("contact-validation").style = "display:none";
 			
 
 			let newContactName = newContactFirst +" "+newContactLast;
@@ -526,7 +526,7 @@ function addContact(){
 			}
 		}
 		else{
-			document.getElementById("add-contact-result").innerHTML = "Required fields are invalid";
+			document.getElementById("contact-validation").style = "display:flex";
 		}
 	}
 	else{
@@ -541,18 +541,31 @@ function confirmValidContactRegex(num){
 
 	if(num===-1){
 		email = document.getElementById("add-contact-email").value;
+		if(emailRegex.test(email) === false){
+			console.log("Email is invalid");
+			properEmailRegex = false;
+			document.getElementById("correct-6").style = "display:none";
+			document.getElementById("incorrect-6").style = "display:flex";
+
+		}else{
+			console.log("Email is valid");
+			properEmailRegex = true;
+			document.getElementById("correct-6").style = "display:flex";
+			document.getElementById("incorrect-6").style = "display:none";
+		}
 	}
 	else{
 		email = document.getElementById("contact-email-edit-"+num).value;
+		if(emailRegex.test(email) === false){
+			console.log("Email is invalid");
+			properEmailRegex = false;
+		}else{
+			console.log("Email is valid");
+			properEmailRegex = true;
+		}
 	}
 
-	if(emailRegex.test(email) === false){
-		console.log("Email is invalid");
-		properEmailRegex = false;
-	}else{
-		console.log("Email is valid");
-		properEmailRegex = true;
-	}
+	
 
 }
 
@@ -581,13 +594,6 @@ function confirmValidPhoneRegex(num){
 	let phoneRegex = new RegExp("[0-9]{3}-[0-9]{3}-[0-9]{4}");
 	let phone = "";
 
-	if(num === -1){
-		phone = document.getElementById("add-contact-phone-number");
-	}
-	else{
-		phone = document.getElementById("contact-phone-number-edit-"+num);
-	}
-	console.log(num + "inside phoneRegex");
 	if(phone.value!== ""){
 		phone.addEventListener("keypress", function(event){
 			if(event.key!=="Backspace"){
@@ -598,13 +604,30 @@ function confirmValidPhoneRegex(num){
 			}
 		});
 	}
-	console.log(phoneRegex.test(phone.value));
-	if(phoneRegex.test(phone.value)===true && phone.value.length===12){
-		properPhoneRegex = true;
+
+	if(num === -1){
+		phone = document.getElementById("add-contact-phone-number");
+		if(phoneRegex.test(phone.value)===true && phone.value.length===12){
+			properPhoneRegex = true;
+			document.getElementById("correct-7").style = "display:flex";
+			document.getElementById("incorrect-7").style = "display:none";
+		}
+		else{
+			properPhoneRegex = false;
+			document.getElementById("correct-7").style = "display:none";
+			document.getElementById("incorrect-7").style = "display:flex";
+		}
 	}
 	else{
-		properPhoneRegex = false;
+		phone = document.getElementById("contact-phone-number-edit-"+num);
+		if(phoneRegex.test(phone.value)===true && phone.value.length===12){
+			properPhoneRegex = true;
+		}
+		else{
+			properPhoneRegex = false;
+		}
 	}
+
 	}
 
 function passwordRegexChecker(){
