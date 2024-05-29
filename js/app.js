@@ -825,12 +825,14 @@ function emptyContactFields(num, field){
 		console.log("New contact fields are empty");
 		if(firstName.value === "" || lastName.value === "" || email.value === "" || phone.value === ""){
 			missingAddContactFields();
+			document.getElementById("correct-8").style = "display:none";
 			document.getElementById("incorrect-8").style = "display:block";
 			return missingField;
 		}
 		else{
 			missingAddContactFields();
 			document.getElementById("incorrect-8").style = "display:none";
+			document.getElementById("correct-8").style = "display:block";
 			return noMissingFields;
 		}
 	}
