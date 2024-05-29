@@ -103,7 +103,7 @@ thead th:nth-child(1){
 }
 
 thead th:nth-child(2), thead th:nth-child(3),thead th:nth-child(4),thead th:nth-child(5){
-  align-content:left;
+  text-align:left;
 }
 
 thead th:nth-child(6), thead th:nth-child(7){
