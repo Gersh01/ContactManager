@@ -814,7 +814,7 @@ function searchContact(first, last, contactId, favorite, pagination){
 	let searchField = document.getElementById("search-bar").value;
 
 	let favoriteSearch = null;
-	if(document.getElementById("search-favorites-on").style.display=== "block"){
+	if(document.getElementById("search-favorites-on").style.display === "block"){
 		favoriteSearch = 1;
 		console.log("performing favorited searches");
 	}
