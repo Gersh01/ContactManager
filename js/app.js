@@ -789,10 +789,11 @@ function emptyContactFields(num){
 	let editEmail = document.getElementById("contact-email-edit-"+num);
 	let editPhone = document.getElementById("contact-phone-number-edit-"+num);
 
-	missingAddContactFields();
+	
 
 	//If a new contact is being created
 	if(num === -1){
+		missingAddContactFields();
 		if(firstName.value === "" || lastName.value === "" || email.value === "" || phone.value === ""){
 			return missingField;
 		}
