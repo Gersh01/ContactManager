@@ -185,7 +185,8 @@ section{
 }
 
 .table-header{
-  background-color: var(--subcolor);
+  padding-top:3rem;
+  padding-bottom:3rem;
   border-radius: 15px;
 }
 
