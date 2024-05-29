@@ -542,6 +542,20 @@
 
                         <!--Button-->
                         <a id="addContact" href="javascript:addContact()" class="justify-content-center" style="display:flex"><div class="button" type="button">Add User</div></a>
+
+                        <!--Registration Validation field-->
+                        <div id="contact-validation" style="display:none;">
+                            <div id="email-validation" class="cell"> 
+                                <img id="incorrect-4" src="images/incorrect.png" class="icon" ></img>
+                                <img id="correct-4"src="images/correct.png" class="icon" style="display:none"></img>
+                                <div id="special">Email is incorrect.</div>
+                            </div>
+                            <div id="phone-validation" class="cell"> 
+                                <img id="incorrect-5" src="images/incorrect.png" class="icon"></img>
+                                <img id="correct-5" src="images/correct.png" class="icon" style="display:none"></img>
+                                <div id="phone">Phone Number is an incorrect Format.</div>
+                            </div>
+                        </div>
                     </div>
 
                     <span id="add-contact-result" class="text-black row cell"></span>
