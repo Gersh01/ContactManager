@@ -1100,7 +1100,7 @@ function goPrev(){
 		if(contactInEdit === 0 ){
 			firstContactPageFlag -= 1;
 			//if search field is empty
-			if(document.getElementById("search-bar").value === ""){
+			if(document.getElementById("search-bar").value === "" && document.getElementById("search-favorites-on").style === "none"){
 				firstPage(prevName,prev);
 			}
 			//if search field is in use
