@@ -548,12 +548,17 @@
                             <div id="email-validation" class="cell"> 
                                 <img id="incorrect-6" src="images/incorrect.png" class="icon" ></img>
                                 <img id="correct-6"src="images/correct.png" class="icon" style="display:none"></img>
-                                <div id="special">Email is incorrect.</div>
+                                <div id="special">Email must be correct format.</div>
                             </div>
                             <div id="phone-validation" class="cell"> 
                                 <img id="incorrect-7" src="images/incorrect.png" class="icon"></img>
                                 <img id="correct-7" src="images/correct.png" class="icon" style="display:none"></img>
-                                <div id="phone">Phone Number is an incorrect Format.</div>
+                                <div id="phone">Phone Number must be correct format.</div>
+                            </div>
+                            <div id="field-fill-validation" class="cell"> 
+                                <img id="incorrect-8" src="images/incorrect.png" class="icon" ></img>
+                                <img id="correct-8"src="images/correct.png" class="icon" style="display:none"></img>
+                                <div id="field">All fields must be filled.</div>
                             </div>
                         </div>
                     </div>
