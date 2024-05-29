@@ -130,6 +130,7 @@ function doLogin(){
 		return;
 	}
 	else{
+			missingLoginFields();
 			//Hashes password for login
 			let hash = md5(password);
 
@@ -345,7 +346,7 @@ function doRegister(){
 		return;
 	}
 	else{
-	
+		missingRegisterFields();
 		/* This element items implementation is dependant on time*/
 		//let newUserSecurityQ = document.getElementById("userSecurity").value;
 		
