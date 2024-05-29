@@ -59,7 +59,54 @@ function missingLoginFields(){
 		document.getElementById("login-password-label").innerText = "Password";
 		document.getElementById("login-password-label").className = "label";
 	}
+}
 
+function missingRegisterFields(){
+
+	if(document.getElementById("register-first-name").value === ""){
+		document.getElementById("register-first-name-label").innerText = "First Name *";
+		document.getElementById("register-first-name-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("register-first-name-label").innerText = "First Name";
+		document.getElementById("register-first-name-label").className = "label";
+	}
+
+	if(document.getElementById("register-last-name").value === ""){
+		document.getElementById("register-last-name-label").innerText = "Last Name *";
+		document.getElementById("register-last-name-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("register-last-name-label").innerText = "Last Name";
+		document.getElementById("register-last-name-label").className = "label";
+	}
+
+	if(document.getElementById("register-username").value === ""){
+		document.getElementById("register-username-label").innerText = "Username *";
+		document.getElementById("register-username-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("register-username-label").innerText = "Username";
+		document.getElementById("register-username-label").className = "label";
+	}
+
+	if(document.getElementById("register-password").value === ""){
+		document.getElementById("register-password-label").innerText = "Password *";
+		document.getElementById("register-password-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("register-password-label").innerText = "Password";
+		document.getElementById("register-password-label").className = "label";
+	}
+
+	if(document.getElementById("register-password-confirm").value === ""){
+		document.getElementById("register-password-confirm-label").innerText = "Confirm Password *";
+		document.getElementById("register-password-confirm-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("register-password-confirm-label").innerText = "Confirm Password";
+		document.getElementById("register-password-confirm-label").className = "label";
+	}
 }
 
 function doLogin(){
@@ -293,6 +340,7 @@ function doRegister(){
 	let newUserPasswordConfirm = document.getElementById("register-password-confirm").value;
 
 	if(newUserFirst === "" || newUserLast === "" || newUserName === "" || newUserPassword === "" || newUserPasswordConfirm === ""){
+		missingRegisterFields();
 		document.getElementById("register-result").innerHTML = "Required fields must be filled";
 		return;
 	}
