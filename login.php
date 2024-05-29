@@ -81,12 +81,12 @@
                             <div id="case">Password must contain at least 1 uppercase letter.</div>
                         </div>
                         <div id="special-character-validation"> 
-                            <img img="incorrect-3" src="images/incorrect.png"></img>
+                            <img id="incorrect-3" src="images/incorrect.png"></img>
                             <img id="correct-3"src="images/correct.png" style="display:none"></img>
                             <div id="special">Password must contain at least 1 special character.</div>
                         </div>
                         <div id="confirm-validation"> 
-                            <img img="incorrect-4" incorrect-1"src="images/incorrect.png"></img>
+                            <img id="incorrect-4" incorrect-1"src="images/incorrect.png"></img>
                             <img id="correct-4" src="images/correct.png" style="display:none"></img>
                             <div id="length">Passwords must match.</div>
                         </div>
