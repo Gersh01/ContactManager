@@ -42,7 +42,7 @@ if(inputRegister != null){
 
 registerPassword.addEventListener("focus", function(event){
 	if(event = onfocus){
-		passwordValidation.style.display= "block";
+		passwordValidation.style="display:block";
 	}
 });
 
@@ -427,7 +427,7 @@ function doRegister(){
 			return;
 		}
 		else if(passwordMatches == true && properPassword == true){
-			passwordValidation.style.display = "none";
+			passwordValidation.style = "display:none";
 
 			//Hashes newUsers Password to store in DB
 			let hash = md5(newUserPassword);
@@ -613,6 +613,7 @@ function passwordRegexChecker(){
 	let numberPasswordRegex = new RegExp("(?=.*[0-9])");
 	let wholePasswordRegex = new RegExp("(?=.*[A-Z])(?=.*[@$!%*?&])(?=.*[0-9])");
 
+	passwordValidation.style ="display:block";
 	
 	//These elements needed to be added to website page
 	/*
