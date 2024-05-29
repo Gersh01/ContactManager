@@ -478,7 +478,7 @@ function addContact(){
     let newContactPhone = document.getElementById("add-contact-phone-number").value;
 
 	console.log(newContactPhone);
-	if(emptyContactFields(num) === 0){
+	if(emptyContactFields(num,1) === 0){
 		if(properEmailRegex === true && properPhoneRegex === true){
 
 			
@@ -772,7 +772,7 @@ function noContactsFound(){
 	}
 }
 
-function emptyContactFields(num){
+function emptyContactFields(num, field){
 	let missingField = 1;
 	let noMissingFields =0;
 
@@ -790,7 +790,7 @@ function emptyContactFields(num){
 	
 
 	//If a new contact is being created
-	if(num === -1){
+	if(num === -1 && field === 1){
 		missingAddContactFields();
 		if(firstName.value === "" || lastName.value === "" || email.value === "" || phone.value === ""){
 			return missingField;
@@ -983,7 +983,7 @@ function saveContact(num){
 
 
 
-	emptyCheck = emptyContactFields(cell);
+	emptyCheck = emptyContactFields(cel,0);
 
 
 
