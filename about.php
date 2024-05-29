@@ -63,7 +63,7 @@
             </div>
 
             <div id="project-git-link">
-                <a href="https://github.com/Gersh01/ContactManager" class="text-black h3" style="text-align:center"><div class="go-to-github-page button" type="button">Check out the source code in Github!</div></a>
+                <a href="https://github.com/Gersh01/ContactManager" class="text-black h3" style="text-align:center"><div class="go-to-github-page" type="button">Check out the source code in Github!</div></a>
             </div>
 
         </section>
