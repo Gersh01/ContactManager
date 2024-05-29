@@ -109,6 +109,44 @@ function missingRegisterFields(){
 	}
 }
 
+function missingAddContactFields(){
+	if(document.getElementById("add-contact-first-name").value === ""){
+		document.getElementById("add-contact-first-name-label").innerText = "First Name *";
+		document.getElementById("add-contact-first-name-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("add-contact-first-name-label").innerText = "First Name";
+		document.getElementById("add-contact-first-name-label").className = "label";
+	}
+
+	if(document.getElementById("add-contact-last-name").value === ""){
+		document.getElementById("add-contact-last-name-label").innerText = "Last Name *";
+		document.getElementById("add-contact-last-name-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("add-contact-last-name-label").innerText = "Last Name *";
+		document.getElementById("add-contact-last-name-label").className = "label-missing-field";
+	}
+
+	if(document.getElementById("add-contact-email").value === ""){
+		document.getElementById("add-contact-email-label").innerText = "Email *";
+		document.getElementById("add-contact-email-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("add-contact-email-label").innerText = "Email *";
+		document.getElementById("add-contact-email-label").className = "label-missing-field";
+	}
+
+	if(document.getElementById("add-contact-phone-number").value === ""){
+		document.getElementById("add-contact-phone-number-label").innerText = "Phone Number *";
+		document.getElementById("add-contact-phone-number-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("add-contact-phone-number-label").innerText = "Phone Number *";
+		document.getElementById("add-contact-phone-number-label").className = "label-missing-field";
+	}
+}
+
 function doLogin(){
 
     userId = 0;
@@ -419,6 +457,8 @@ function addContact(){
 	if(emptyContactFields(num) === 0){
 		if(properEmailRegex === true && properPhoneRegex === true){
 
+			missingAddContactFields();
+			
 			let newContactName = newContactFirst +" "+newContactLast;
 
 			document.getElementById("add-contact-result").innerHTML = "";

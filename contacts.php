@@ -523,15 +523,19 @@
 
                     <!--Add Contact Section (display none by default)-->
                     <div id="add-contact" style="display:none" class="add-contacts-container">
+                        <label for ="add-contact-first-name"  id="add-contact-first-name-label" class="label" style="display:flex">First Name</label>
                         <div class="search-bar row">
                             <input id="add-contact-first-name" type="text" placeholder="First Name">
                         </div>
+                        <label for ="add-contact-last-name"  id="add-contact-last-name-label" class="label" style="display:flex">Last Name</label>
                         <div class="search-bar row">
                             <input id="add-contact-last-name" type="text" placeholder="Last Name">
                         </div>
+                        <label for ="add-contact-email"  id="add-contact-email-label" class="label" style="display:flex">Email</label>
                         <div class="search-bar row">
                             <input id="add-contact-email" type="text" required onkeyup="confirmValidContactRegex(-1)" placeholder="Email">
                         </div>
+                        <label for ="add-contact-phone-number"  id="add-contact-phone-number-label" class="label" style="display:flex">Phone Number</label>
                         <div class="search-bar row">
                             <input id="add-contact-phone-number" type="text" required onkeyup="confirmValidPhoneRegex(-1)"placeholder="Phone Number">
                         </div>
