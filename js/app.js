@@ -381,12 +381,12 @@ function toggleEditElement(toggle,num){
 
 		contactInEdit -=1;
 
-		firstName.style.display = "block";
-		lastName.style.display = "block";
-		email.style.display = "block";
-		phone.style.display = "block";
-		edit.style.display = "block";
-		del.style.display = "block";
+		firstName.style.display = "inline-table";
+		lastName.style.display = "inline-table";
+		email.style.display = "inline-table";
+		phone.style.display = "inline-table";
+		edit.style.display = "inline-table";
+		del.style.display = "inline-table";
 	}
 
 }
