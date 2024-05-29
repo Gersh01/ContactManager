@@ -26,13 +26,14 @@ CREATE TABLE `COP4331`.`Contacts`
   FOREIGN KEY (`UserID`) REFERENCES `Users`(`ID`) ON DELETE CASCADE
 ) ENGINE = InnoDB;
 
-insert into Users (FirstName,LastName,Login,Password) VALUES ('Tony','Chau','TonyC','COP4331');
-insert into Users (FirstName,LastName,Login,Password) VALUES ('Alex','Gershfeld','AlexG','COP4331');
-insert into Users (FirstName,LastName,Login,Password) VALUES ('Golden','Lin','GoldenL','COP4331');
-insert into Users (FirstName,LastName,Login,Password) VALUES ('Jacob','Peach','JacobP','COP4331');
-insert into Users (FirstName,LastName,Login,Password) VALUES('James','Salzer','JamesS','COP4331');
-insert into Users (FirstName,LastName,Login,Password) VALUES('Alperen','Yazmaci','AlperenY','COP4331');
-insert into Users (FirstName,LastName,Login,Password) VALUES('Test','User','TestUser','COP4331');
+
+insert into Users (FirstName,LastName,Login,Password) VALUES ('Tony','Chau','TonyC','c9671fcaa7ba36237c183508451aebfc');
+insert into Users (FirstName,LastName,Login,Password) VALUES ('Alex','Gershfeld','AlexG','c9671fcaa7ba36237c183508451aebfc');
+insert into Users (FirstName,LastName,Login,Password) VALUES ('Golden','Lin','GoldenL','c9671fcaa7ba36237c183508451aebfc');
+insert into Users (FirstName,LastName,Login,Password) VALUES ('Jacob','Peach','JacobP','c9671fcaa7ba36237c183508451aebfc');
+insert into Users (FirstName,LastName,Login,Password) VALUES('James','Salzer','JamesS','c9671fcaa7ba36237c183508451aebfc');
+insert into Users (FirstName,LastName,Login,Password) VALUES('Alperen','Yazmaci','AlperenY','c9671fcaa7ba36237c183508451aebfc');
+insert into Users (FirstName,LastName,Login,Password) VALUES('Test','User','TestUser','c9671fcaa7ba36237c183508451aebfc');
 
 INSERT INTO `COP4331`.`Contacts` (`Name`, `Phone`, `Email`, `UserID`, `Favorited`) VALUES
 ('Aaron Brooks', '555-555-0301', 'aaron.brooks@example.com', 1, 0),
