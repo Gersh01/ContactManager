@@ -864,6 +864,7 @@ function searchContact(first, last, contactId, favorite, pagination){
 					if(this.readyState == 4 && this.status == 200){
 						//document.getElementById("contact-result").innerHTML ="Contacts have been recieved";
 						if(xhr.responseText!="No Records Found"){
+							console.log(xhr.responseText);
 							let jsonObject = JSON.parse( xhr.responseText );
 							globalJsonObject = jsonObject;
 							loadContacts(jsonObject);
