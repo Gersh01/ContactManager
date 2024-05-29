@@ -310,7 +310,6 @@ tr {
   display: flex;
   width: auto;
   justify-content: center;
-  background-color: var(--subcolor);
   border-radius: 15px;
   font-style: bold;
   padding-top:5px;
