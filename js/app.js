@@ -568,6 +568,7 @@ function confirmPassword(){
 	else{
 		passwordMatches = true;
 		document.getElementById("register-result").innerHTML = "";
+		passwordValidation.style ="display:none";
 	}
 
 }
@@ -612,7 +613,7 @@ function passwordRegexChecker(){
 	let numberPasswordRegex = new RegExp("(?=.*[0-9])");
 	let wholePasswordRegex = new RegExp("(?=.*[A-Z])(?=.*[@$!%*?&])(?=.*[0-9])");
 
-	passwordValidation.style ="display:block";
+	//passwordValidation.style ="display:block";
 	
 	//These elements needed to be added to website page
 	/*
