@@ -279,12 +279,12 @@ tr {
   filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0,0,0,0.5));
 }
 
-.refresh-page:hover, .move-page:hover, .button:hover{
+.refresh-page:hover, .move-page:hover, .button:hover .go-to-github-page:hover{
   background-color:var(--subcolor);
 
 }
 
-.refresh-page:active, .move-page:active, .button:active{
+.refresh-page:active, .move-page:active, .button:active, .go-to-github-page:active{
   background-color:lightgray;
 }
 
