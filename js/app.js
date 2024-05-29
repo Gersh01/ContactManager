@@ -39,12 +39,13 @@ if(inputRegister != null){
 		}
 	});
 }
-
-registerPassword.addEventListener("focus", function(event){
-	if(onfocus = event){
-		passwordValidation.style="display:block";
-	}
-});
+if(registerPassword!= null){
+	registerPassword.addEventListener("focus", function(event){
+		if(onfocus = event){
+			passwordValidation.style="display:block";
+		}
+	});
+}
 
 function doRedirect(){
 	window.location.href = "login.php";
