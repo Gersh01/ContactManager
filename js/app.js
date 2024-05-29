@@ -680,9 +680,7 @@ function firstPage(contactPageination,pageSelect){
 		}
 		console.log("Generating first page");
 
-
 		let url = urlBase + "/ContactPagination." + extension;
-		
 		
 
 		document.getElementById("contact-result").innerHTML = "";
@@ -1163,12 +1161,12 @@ function favoriteSearch(){
 		if(favoritedSearch.style.display === "none"){
 			console.log("Performing favorite search");
 			nonFavoritedSearch.style.display = "none";
-			favoritedSearch.style.display = "flex";
+			favoritedSearch.style.display = "block";
 		}
 		else{
 			console.log("Performing un-favorited search");
 			favoritedSearch.style.display = "none";
-			nonFavoritedSearch.style.display = "flex";
+			nonFavoritedSearch.style.display = "block";
 		}
 		searchContact(null,null,null,null,null);
 	}
