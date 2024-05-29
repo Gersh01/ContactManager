@@ -29,7 +29,7 @@
                     </div>
                     <div id="contributor">
                         <a href="https://github.com/jsalzer312" id="picture" >
-                            <img src="https://images.squarespace-cdn.com/content/v1/5936fbebcd0f68f67d5916ff/c3942c2f-3b38-4333-88a9-16ccd7d7cebb/person-placeholder-300x300.jpeg?format=1000w" class="picture-icon"></img>
+                            <img src="images/James.PNG" class="picture-icon"></img>
                         </a>
                         <div id="name">James Salzer - Frontend and Support</div>
                     </div>
