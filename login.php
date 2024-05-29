@@ -70,27 +70,27 @@
 
                     <!--Registration Validation field-->
                     <div id="password-validation" style="display:none;">
-                        <div id="length-validation"> 
+                        <div id="length-validation" class="cell"> 
                             <img id="incorrect-1" src="images/incorrect.png" class="icon"></img>
                             <img id="correct-1" src="images/correct.png" class="icon"style="display:none"></img>
                             <div id="length">Password must contain at least 8 characters.</div>
                         </div>
-                        <div id="case-validation"> 
+                        <div id="case-validation" class="cell"> 
                             <img id="incorrect-2" src="images/incorrect.png" class="icon" ></img>
                             <img id="correct-2"src="images/correct.png" class="icon" style="display:none"></img>
                             <div id="case">Password must contain at least 1 uppercase letter.</div>
                         </div>
-                        <div id="num-validation"> 
+                        <div id="num-validation" class="cell"> 
                             <img id="incorrect-3" src="images/incorrect.png" class="icon"></img>
                             <img id="correct-3" src="images/correct.png" class="icon" style="display:none"></img>
                             <div id="num">Password must contain at least 1 number.</div>
                         </div>
-                        <div id="special-character-validation"> 
+                        <div id="special-character-validation" class="cell"> 
                             <img id="incorrect-4" src="images/incorrect.png" class="icon" ></img>
                             <img id="correct-4"src="images/correct.png" class="icon" style="display:none"></img>
                             <div id="special">Password must contain at least 1 special character.</div>
                         </div>
-                        <div id="confirm-validation"> 
+                        <div id="confirm-validation" class="cell"> 
                             <img id="incorrect-5" src="images/incorrect.png" class="icon"></img>
                             <img id="correct-5" src="images/correct.png" class="icon" style="display:none"></img>
                             <div id="length">Passwords must match.</div>
