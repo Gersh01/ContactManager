@@ -8,13 +8,15 @@ let firstName = "";
 let lastName = "";
 
 let properPassword = false;
-let properContactEmailRegix = false;
-let properContactPhoneRegix = false;
-let properContactRegix = true;
+let properEmailRegex = true;
+let properPhoneRegex = true;
 
 let passwordMatches = false;
 let loginFieldsFull = false;
 let registerFieldsFull = false;
+
+let contactInEdit = 0;
+let firstContactPageFlag = 0;
 
 let inputLogin = document.getElementById("login-password");
 let inputRegister = document.getElementById("register-password-confirm");
@@ -39,7 +41,131 @@ if(inputRegister != null){
 function doRedirect(){
 	window.location.href = "login.php";
 }
-	
+
+function missingLoginFields(){
+	if(document.getElementById("login-username").value === ""){
+		document.getElementById("login-username-label").innerText = "Username *";
+		document.getElementById("login-username-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("login-username-label").innerText = "Username";
+		document.getElementById("login-username-label").className = "label";
+	}
+	if(document.getElementById("login-password").value === ""){
+		document.getElementById("login-password-label").innerText = "Password *";
+		document.getElementById("login-password-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("login-password-label").innerText = "Password";
+		document.getElementById("login-password-label").className = "label";
+	}
+}
+
+function missingRegisterFields(){
+
+	if(document.getElementById("register-first-name").value === ""){
+		document.getElementById("register-first-name-label").innerText = "First Name *";
+		document.getElementById("register-first-name-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("register-first-name-label").innerText = "First Name";
+		document.getElementById("register-first-name-label").className = "label";
+	}
+
+	if(document.getElementById("register-last-name").value === ""){
+		document.getElementById("register-last-name-label").innerText = "Last Name *";
+		document.getElementById("register-last-name-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("register-last-name-label").innerText = "Last Name";
+		document.getElementById("register-last-name-label").className = "label";
+	}
+
+	if(document.getElementById("register-username").value === ""){
+		document.getElementById("register-username-label").innerText = "Username *";
+		document.getElementById("register-username-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("register-username-label").innerText = "Username";
+		document.getElementById("register-username-label").className = "label";
+	}
+
+	if(document.getElementById("register-password").value === ""){
+		document.getElementById("register-password-label").innerText = "Password *";
+		document.getElementById("register-password-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("register-password-label").innerText = "Password";
+		document.getElementById("register-password-label").className = "label";
+	}
+
+	if(document.getElementById("register-password-confirm").value === ""){
+		document.getElementById("register-password-confirm-label").innerText = "Confirm Password *";
+		document.getElementById("register-password-confirm-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("register-password-confirm-label").innerText = "Confirm Password";
+		document.getElementById("register-password-confirm-label").className = "label";
+	}
+}
+
+function missingAddContactFields(){
+	if(document.getElementById("add-contact-first-name").value === ""){
+		document.getElementById("add-contact-first-name-label").innerText = "First Name *";
+		document.getElementById("add-contact-first-name-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("add-contact-first-name-label").innerText = "First Name";
+		document.getElementById("add-contact-first-name-label").className = "label";
+	}
+
+	if(document.getElementById("add-contact-last-name").value === ""){
+		document.getElementById("add-contact-last-name-label").innerText = "Last Name *";
+		document.getElementById("add-contact-last-name-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("add-contact-last-name-label").innerText = "Last Name";
+		document.getElementById("add-contact-last-name-label").className = "label";
+	}
+
+	if(document.getElementById("add-contact-email").value === ""){
+		document.getElementById("add-contact-email-label").innerText = "Email *";
+		document.getElementById("add-contact-email-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("add-contact-email-label").innerText = "Email";
+		document.getElementById("add-contact-email-label").className = "label";
+	}
+
+	if(document.getElementById("add-contact-phone-number").value === ""){
+		document.getElementById("add-contact-phone-number-label").innerText = "Phone Number *";
+		document.getElementById("add-contact-phone-number-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("add-contact-phone-number-label").innerText = "Phone Number";
+		document.getElementById("add-contact-phone-number-label").className = "label";
+	}
+}
+
+function resetAddContactFields(){
+	document.getElementById("add-contact-result").innerHTML = "";
+
+	document.getElementById("add-contact-first-name").value = "";
+	document.getElementById("add-contact-first-name-label").innerText = "First Name";
+	document.getElementById("add-contact-first-name-label").className = "label";
+
+	document.getElementById("add-contact-last-name").value = "";
+	document.getElementById("add-contact-last-name-label").innerText = "Last Name";
+	document.getElementById("add-contact-last-name-label").className = "label";
+
+	document.getElementById("add-contact-email").value = "";
+	document.getElementById("add-contact-email-label").innerText = "Email";
+	document.getElementById("add-contact-email-label").className = "label";
+
+	document.getElementById("add-contact-phone-number").value = "";
+	document.getElementById("add-contact-phone-number-label").innerText = "Phone Number";
+	document.getElementById("add-contact-phone-number-label").className = "label";
+}
 
 function doLogin(){
 
@@ -55,12 +181,18 @@ function doLogin(){
 	
 	document.getElementById("login-result").innerHTML = "";
 
+
 	if(login === "" || password === ""){
-		document.getElementById("login-result").innerHTML = "Required fields must be filled";
+		missingLoginFields();
+		document.getElementById("login-result").innerHTML = "* Required fields must be filled *";
 		return;
 	}
 	else{
-			let tmp = {login:login,password:password};
+			missingLoginFields();
+			//Hashes password for login
+			let hash = md5(password);
+
+			let tmp = {login:login,password:hash};
 			//	var tmp = {login:login,password:hash};
 			let jsonPayload = JSON.stringify( tmp );
 			
@@ -155,41 +287,55 @@ function doLogout(){
 }
 
 function showTable(){
-	let table = document.getElementById("contacts-hideable");
-	let contact = document.getElementById("add-contact");
-	let refresh = document.getElementById("refresh-button");
-	let addContactButton = document.getElementById("addContactButton");
+	if(contactInEdit === 0){
+		
 
-	console.log("Hiding table");
-	if(table.style.display === "block"){
-		table.style.display = "none";
-		refresh.style.display = "none"
+		let table = document.getElementById("contacts-hideable");
+		let contact = document.getElementById("add-contact");
+		let refresh = document.getElementById("refresh-button");
+		let addContactButton = document.getElementById("addContactButton");
+		let favoriteIconFav = document.getElementById("search-favorites-on");
+		let favoriteIconUnFav = document.getElementById("search-favorites-off");
 
-		addContactButton.innerText = "Cancel"
-		contact.style.display = "block";
-	}
-	else{
-		contact.style.display="none";
-		addContactButton.innerText = "Add Contact";
+		console.log("Hiding table");
 
-		firstPage();
+		if(table.style.display === "block"){
+			table.style.display = "none";
+			refresh.style.display = "none"
+			favoriteIconFav.style.display = "none";
+			favoriteIconUnFav.style.display = "none";
 
-		refresh.style.display = "block";
-		table.style.display = "block";
+			addContactButton.innerHTML = '<img src="images/cancel.png" class="icon"></img>';
+			contact.style.display = "block";
+		}
+		else{
+			resetAddContactFields();
+			contact.style.display="none";
+			addContactButton.innerHTML = '<img src="images/add-contact.png" class="icon"></img>';
+
+			favoriteIconUnFav.style.display = "block";
+
+			firstPage(null,null);
+
+			refresh.style.display = "block";
+			table.style.display = "block";
+		}
 	}
 }
 
 function toggleElement(row,num){
 	//block = show | none = hide
-	if(num===0){
-		row.style.display="flex";
+
+	if(num === 0){
+		row.removeAttribute("hidden");
 	}
 	else if(num === 1){
-		row.style.display="none";
+		row.setAttribute("hidden","hidden");
 	}
 }
 
 function toggleEditElement(toggle,num){
+
 	let firstName = document.getElementById("contact-first-name-"+num);
 	let lastName = document.getElementById("contact-last-name-"+num);
 	let email = document.getElementById("contact-email-"+num);
@@ -213,13 +359,16 @@ function toggleEditElement(toggle,num){
 		edit.style.display = "none";
 		del.style.display = "none";
 
+
+		contactInEdit +=1;
+
 	
-		editFirst.style.display = "flex";
-		editLast.style.display = "flex";
-		editEmail.style.display = "flex";
-		editPhone.style.display = "flex";
-		save.style.display = "flex";
-		cancel.style.display = "flex";
+		editFirst.style.display = "inline-table";
+		editLast.style.display = "inline-table";
+		editEmail.style.display = "inline-table";
+		editPhone.style.display = "inline-table";
+		save.style.display = "inline-table";
+		cancel.style.display = "inline-table";
 	}
 	//hide edit field
 	else{
@@ -230,29 +379,17 @@ function toggleEditElement(toggle,num){
 		save.style.display = "none";
 		cancel.style.display = "none";
 
+		contactInEdit -=1;
 
-		firstName.style.display = "flex";
-		lastName.style.display = "flex";
-		email.style.display = "flex";
-		phone.style.display = "flex";
-		edit.style.display = "flex";
-		del.style.display = "flex";
+		firstName.style.display = "inline-table";
+		lastName.style.display = "inline-table";
+		email.style.display = "inline-table";
+		phone.style.display = "inline-table";
+		edit.style.display = "inline-table";
+		del.style.display = "inline-table";
 	}
 
 }
-
-function formatPhoneNumber(num){
-	let first = "";
-	let second = "";
-	let third = ""
-	first = num.substr(0,3);
-	second = num.substr(3,3);
-	third = num.substr(6,4);
-
-	num = first + "-" + second + "-" + third;
-	return num;
-}
-
 
 //Names are subject to change depending on HTML and css
 function doRegister(){
@@ -266,22 +403,26 @@ function doRegister(){
 	let newUserPasswordConfirm = document.getElementById("register-password-confirm").value;
 
 	if(newUserFirst === "" || newUserLast === "" || newUserName === "" || newUserPassword === "" || newUserPasswordConfirm === ""){
-		document.getElementById("register-result").innerHTML = "Required fields must be filled";
+		missingRegisterFields();
+		document.getElementById("register-result").innerHTML = "* Required fields must be filled *";
 		return;
 	}
 	else{
-	
+		missingRegisterFields();
 		/* This element items implementation is dependant on time*/
 		//let newUserSecurityQ = document.getElementById("userSecurity").value;
 		
 		if(passwordMatches == false){
 			//need to change color to red, this doesn't work right now
 			document.getElementById("register-result").style.color = "red";
-			document.getElementById("register-result").innerHTML = "* Passwords do not match";
+			document.getElementById("register-result").innerHTML = "* Passwords do not match *";
 			return;
 		}
 		else if(passwordMatches == true && properPassword == true){
-			let tmp = {firstName:newUserFirst,lastName:newUserLast,login:newUserName,password:newUserPassword};
+			//Hashes newUsers Password to store in DB
+			let hash = md5(newUserPassword);
+
+			let tmp = {firstName:newUserFirst,lastName:newUserLast,login:newUserName,password:hash};
 
 			console.log(tmp);
 			let jsonPayload = JSON.stringify( tmp );
@@ -300,12 +441,13 @@ function doRegister(){
 				{
 					if(this.readyState == 4 && this.status == 200){
 						jsonResponse = JSON.parse( xhr.responseText );
-						console.log(jsonResponse +" results");
 						if(jsonResponse.verdict === "login was taken"){
 							document.getElementById("register-result").innerHTML = "Username is already taken";
+							document.getElementById("register-username").value = "";
+							document.getElementById("register-password").value= "";
+							document.getElementById("register-password-confirm").value = "";
 						}
 						else{
-
 							document.getElementById("register-first-name").value = "";
 							document.getElementById("register-last-name").value = "";
 							document.getElementById("register-username").value = "";
@@ -328,25 +470,18 @@ function doRegister(){
 
 //Names are subject to change based on HTML and css files
 function addContact(){
+	let num = -1;
     //temp elementById names, need to confirm with style.css
     let newContactFirst = document.getElementById("add-contact-first-name").value;
     let newContactLast = document.getElementById("add-contact-last-name").value;
     let newContactEmail = document.getElementById("add-contact-email").value;
-    let newContactPhoneRaw = document.getElementById("add-contact-phone-number").value;
-	let newContactPhone = "";
+    let newContactPhone = document.getElementById("add-contact-phone-number").value;
 
-	console.log(newContactPhoneRaw);
-
-	if(newContactPhoneRaw.length<=10){
-		newContactPhone = formatPhoneNumber(newContactPhoneRaw)
-	}
-	else{
-		newContactPhone = newContactPhoneRaw;
-	}
-	
 	console.log(newContactPhone);
-	if(newContactFirst !== "" && newContactLast !== "" && newContactFirst !== "" && newContactPhone !== ""){
-		if(properContactRegix === true){
+	if(emptyContactFields(num,1) === 0){
+		if(properEmailRegex === true && properPhoneRegex === true){
+
+			
 
 			let newContactName = newContactFirst +" "+newContactLast;
 
@@ -385,40 +520,29 @@ function addContact(){
 		}
 	}
 	else{
-		document.getElementById("add-contact-result").innerHTML = "Required fields are missing";
+		document.getElementById("add-contact-result").innerHTML = "* Required fields are missing *";
 	}
 }
 
-function confirmValidContactRegex(){
-	let newContactEmail = document.getElementById("add-contact-email").value;
-    let newContactPhone = document.getElementById("add-contact-phone-number").value;
+function confirmValidContactRegex(num){
+	let email = "";
 
-	let emailRegex = new RegExp("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/");
-	//let phoneRegex = new RegExp("/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$");
-	/*
-	if(emailRegex.test(newContactEmail) === false){
-		//document.getElementById("contact-email").innerHTML = "Email is invalid";
+	let emailRegex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
+
+	if(num===-1){
+		email = document.getElementById("add-contact-email").value;
+	}
+	else{
+		email = document.getElementById("contact-email-edit-"+num).value;
+	}
+
+	if(emailRegex.test(email) === false){
 		console.log("Email is invalid");
-		properContactEmailRegix = false;
+		properEmailRegex = false;
 	}else{
 		console.log("Email is valid");
-		properContactEmailRegix = true;
+		properEmailRegex = true;
 	}
-
-	if(newContactPhone.match(phoneRegex) === false){
-		//document.getElementById("contact-phone").innerHTML = "Phone number is invalid";
-		properContactPhoneRegix = false;
-		console.log("Phone number is invalid");
-	}else{
-		properContactPhoneRegix = true;
-		console.log("Phone number is valid");
-	}
-
-	if(properContactEmailRegix===true && properContactPhoneRegix===true){
-		console.log("New contact is valid");
-		properContactRegix===true;
-	}
-	*/
 
 }
 
@@ -430,7 +554,7 @@ function confirmPassword(){
 
 	if(password!==confirmPassword){
 		passwordMatches = false;
-		document.getElementById("register-result").innerHTML = "Password does not match";
+		document.getElementById("register-result").innerHTML = "* Password does not match *";
 	}
 	else{
 		passwordMatches = true;
@@ -438,6 +562,37 @@ function confirmPassword(){
 	}
 
 }
+
+function confirmValidPhoneRegex(num){
+
+	let phoneRegex = new RegExp("[0-9]{3}-[0-9]{3}-[0-9]{4}");
+	let phone = "";
+
+	if(num === -1){
+		phone = document.getElementById("add-contact-phone-number");
+	}
+	else{
+		phone = document.getElementById("contact-phone-number-edit-"+num);
+	}
+	console.log(num + "inside phoneRegex");
+	if(phone.value!== ""){
+		phone.addEventListener("keypress", function(event){
+			if(event.key!=="Backspace"){
+				if(phone.value.length === 3 || phone.value.length === 7){
+					console.log("adding -")
+					phone.value += "-";
+				}
+			}
+		});
+	}
+	console.log(phoneRegex.test(phone.value));
+	if(phoneRegex.test(phone.value)===true && phone.value.length===12){
+		properPhoneRegex = true;
+	}
+	else{
+		properPhoneRegex = false;
+	}
+	}
 
 function passwordRegexChecker(){
 
@@ -504,41 +659,65 @@ function passwordRegexChecker(){
 	}
 }
 
-function firstPage(){
+function firstPage(contactPageination,pageSelect){
+	console.log(pageSelect);
+	console.log(contactPageination);
 
-	console.log("Generating first page");
+	if(contactInEdit === 0){
+		tmp = null;
+		//Goes to next page
+		if(pageSelect===1 && document.getElementById("search-bar").value==""){
+			tmp = {userID:userId, cursor:contactPageination, next:pageSelect};
+		}
+		else if(pageSelect===-1 && document.getElementById("search-bar").value==""){
+			tmp = {userID:userId, cursor:contactPageination, next:pageSelect};
+		}
+		else if(pageSelect===null){
+			firstContactPageFlag = 0;
+			tmp = {userID:userId, cursor:0};
+			document.getElementById("search-favorites-on").style.display="none";
+			document.getElementById("search-favorites-off").style.display="block";
+		}
+		console.log("Generating first page");
 
-	let url = urlBase + "/ContactPagination." + extension;
-	
-	let tmp = {userID:userId, cursor:0};
-
-	document.getElementById("contact-result").innerHTML = "";
-
-	let jsonPayload = JSON.stringify( tmp );
-
-	let xhr = new XMLHttpRequest();
-
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	
-	try{
-		xhr.onreadystatechange = function() {
-			if(this.readyState == 4 && this.status == 200){
-				//document.getElementById("contact-result").innerHTML = "Contacts have been recieved";
-
-				document.getElementById("search-bar").value = "";
-
-				let jsonObject = JSON.parse( xhr.responseText );
-				globalJsonObject = jsonObject;
-				loadContacts(jsonObject);
-			}
-		};
-		xhr.send(jsonPayload);
+		let url = urlBase + "/ContactPagination." + extension;
 		
-	}
-	catch(err){
-		document.getElementById("contact-result").innerHTML = err.message;
-		console.log(err.message);
+
+		document.getElementById("contact-result").innerHTML = "";
+
+		let jsonPayload = JSON.stringify( tmp );
+
+		let xhr = new XMLHttpRequest();
+
+		xhr.open("POST", url, true);
+		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+		console.log(tmp);
+		try{
+			xhr.onreadystatechange = function() {
+				if(this.readyState == 4 && this.status == 200){
+					//document.getElementById("contact-result").innerHTML = "Contacts have been recieved";
+
+					document.getElementById("search-bar").value = "";
+
+					let jsonObject = JSON.parse( xhr.responseText );
+					if(jsonObject.contacts.length===0){
+						noContactsFound();
+					}
+					else{
+						globalJsonObject = jsonObject;
+
+						loadContacts(jsonObject);
+						console.log("GlobalPageCounter "+firstContactPageFlag);
+					}
+				}
+			};
+			xhr.send(jsonPayload);
+			
+		}
+		catch(err){
+			document.getElementById("contact-result").innerHTML = err.message;
+			console.log(err.message);
+		}
 	}
 }
 
@@ -547,120 +726,225 @@ function loadContacts(jsonObject){
 	let i = 0;
 	let hide = 1;
 	let show = 0;
+	console.log(jsonObject);
 
 	if(jsonObject.contacts.length == 0){
 		document.getElementById("contact-result").innerHTML = "No contacts found";
 		return;
 	}
+	console.log("The length of the jsonObject "+jsonObject.contacts.length);
+
 	for(i = 0; i<jsonObject.contacts.length; i++){
 		console.log(jsonObject.contacts[i].FirstName);
 		console.log("contact-first-name-"+parseInt(i+1));
 
 		let row = document.getElementById("contact-row-"+parseInt(i+1));
+
+		if(jsonObject.contacts[i].Favorite==="1" || jsonObject.contacts[i].Favorite===1){
+			console.log("Contact is a fav "+jsonObject.contacts[i].FirstName)
+			document.getElementById("contact-not-fave-"+parseInt(i+1)).style.display = "none";			
+			document.getElementById("contact-fave-"+parseInt(i+1)).style.display = "block";
+		}
+		else if(jsonObject.contacts[i].Favorite===0 || jsonObject.contacts[i].Favorite=== "0"){
+			document.getElementById("contact-fave-"+parseInt(i+1)).style.display = "none";
+			document.getElementById("contact-not-fave-"+parseInt(i+1)).style.display = "block";
+		}
+		
 		toggleElement(row,show);
+
 		document.getElementById("contact-first-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].FirstName;
 		document.getElementById("contact-last-name-"+parseInt(i+1)).textContent = jsonObject.contacts[i].LastName;
 		document.getElementById("contact-email-"+parseInt(i+1)).textContent = jsonObject.contacts[i].Email;
 		document.getElementById("contact-phone-number-"+parseInt(i+1)).textContent= jsonObject.contacts[i].Phone;
-
 	}
 	for(j = i; j<10; j++){
+		console.log("changing contact row to hide "+j);
 		let row = document.getElementById("contact-row-"+parseInt(j+1));
 		toggleElement(row,hide);
 	}
 }
 
-
-
-
-function searchContact(){
-
-	console.log("Accessing contacts for search");
-
-	let url = urlBase + "/Search." + extension;
-
-	let searchField = document.getElementById("search-bar").value;
-	//ADD cursor{firstname/lastname/contactID}, next(tru||false)
-	let tmp = {UserID:userId, showFavorites:0, search:searchField, cursor:{firstName:"",lastName:"",ID:1,favorite:0}};
-
-	document.getElementById("contact-result").innerHTML = "";
-	
-
-	let jsonPayload = JSON.stringify( tmp );
-
-	console.log(tmp);
-
-	let xhr = new XMLHttpRequest();
-
-	xhr.open("POST", url, true);
-
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	
-	try{
-		xhr.onreadystatechange = function() {
-			if(this.readyState == 4 && this.status == 200){
-				let jsonObject = JSON.parse( xhr.responseText );
-				//document.getElementById("contact-result").innerHTML ="Contacts have been recieved";
-				globalJsonObject = jsonObject;
-				loadContacts(jsonObject);
-			}
-		};
-		xhr.send(jsonPayload);
-		
+function noContactsFound(){
+	let hide = 1;
+	for(let i = 0; i<10; i++){
+		let row = document.getElementById("contact-row-"+parseInt(i+1));
+		toggleElement(row,hide);
 	}
-	catch(err){
-		document.getElementById("contact-result").innerHTML = err.message;
-		console.log(err.message);
+}
+
+function emptyContactFields(num, field){
+	let missingField = 1;
+	let noMissingFields =0;
+
+
+	let firstName = document.getElementById("add-contact-first-name");
+	let lastName = document.getElementById("add-contact-last-name");
+	let email = document.getElementById("add-contact-email");
+	let phone = document.getElementById("add-contact-phone-number");
+
+	let editFirst = document.getElementById("contact-first-name-edit-"+num);
+	let editLast = document.getElementById("contact-last-name-edit-"+num);
+	let editEmail = document.getElementById("contact-email-edit-"+num);
+	let editPhone = document.getElementById("contact-phone-number-edit-"+num);
+
+	
+
+	//If a new contact is being created
+	if(num === -1 && field === 1){
+		console.log("New contact fields are empty");
+		if(firstName.value === "" || lastName.value === "" || email.value === "" || phone.value === ""){
+			missingAddContactFields();
+			return missingField;
+		}
+		else{
+			missingAddContactFields();
+			return noMissingFields;
+		}
+	}
+	else{
+		console.log("edit contact fields are empty");
+		if(editFirst.value === "" || editLast.value === "" || editEmail.value === "" || editPhone.value === ""){
+			return missingField;
+		}
+		else{
+			return noMissingFields;
+		}
+	}
+}
+
+function searchContact(first, last, contactId, favorite, pagination){
+	let tmp = null;
+	let searchField = document.getElementById("search-bar").value;
+
+	let favoriteSearch = null;
+	if(document.getElementById("search-favorites-on").style.display === "block"){
+		favoriteSearch = 1;
+		console.log("performing favorited searches");
+	}
+	else{
+		favoriteSearch = 0;
+	}
+
+	if(contactInEdit === 0){
+		//Search asking to see next page of contacts
+		if(pagination === 1){
+			tmp = {UserID:userId, showFavorites:favoriteSearch, search:searchField, cursor:{firstName:first, lastName:last, ID:contactId, favorite:favorite},next:pagination};
+		}
+		else if(pagination === 0){
+			tmp = {UserID:userId, showFavorites:favoriteSearch, search:searchField, cursor:{firstName:first, lastName:last, ID:contactId, favorite:favorite},next:pagination};
+		}
+		else if(pagination === null){
+			tmp = {UserID:userId, showFavorites:favoriteSearch, search:searchField, cursor:{firstName:"",lastName:"",ID:1,favorite:0}};
+			firstContactPageFlag = 0;
+		}
+		console.log(searchField);
+		if(searchField === "" && favoriteSearch === 0){
+			console.log("no search field.");
+			firstPage(null,null);
+		}
+		else{
+			console.log("Accessing contacts for search");
+
+			let url = urlBase + "/Search." + extension;
+
+			//ADD cursor{firstname/lastname/contactID}, next(tru||false)
+		
+			document.getElementById("contact-result").innerHTML = "";
+			
+		
+			let jsonPayload = JSON.stringify( tmp );
+		
+			console.log(tmp);
+		
+			let xhr = new XMLHttpRequest();
+		
+			xhr.open("POST", url, true);
+		
+			xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+			
+			try{
+				xhr.onreadystatechange = function() {
+					if(this.readyState == 4 && this.status == 200){
+						//document.getElementById("contact-result").innerHTML ="Contacts have been recieved";
+						if(xhr.responseText!="No Records Found"){
+							console.log(xhr.responseText);
+							let jsonObject = JSON.parse( xhr.responseText );
+							globalJsonObject = jsonObject;
+							loadContacts(jsonObject);
+							console.log("GlobalPageCounter "+firstContactPageFlag);
+						}
+						else{
+							if(pagination === 1){
+								firstContactPageFlag -=1;
+								return;
+							}
+							else{
+								globalJsonObject = null;
+								noContactsFound();
+							}
+						}
+					}
+				};
+				xhr.send(jsonPayload);
+				
+			}
+			catch(err){
+				document.getElementById("contact-result").innerHTML = err.message;
+				console.log(err.message);
+			}
+		}
 	}
 }
 
 function deleteContact(num){
-	console.log(num);
+	if(contactInEdit === 0){
+		console.log(num);
 
-	let url = urlBase + "/DeleteContact." + extension;
+		let url = urlBase + "/DeleteContact." + extension;
 
-	//globalJsonObject.splice(num-1,1);
-	console.log(globalJsonObject);
+		//globalJsonObject.splice(num-1,1);
+		console.log(globalJsonObject);
 
-	let deletedContactID = globalJsonObject.contacts[num-1].ID;
-	let convertToString = "" + deletedContactID;
+		let deletedContactID = globalJsonObject.contacts[num-1].ID;
+		let convertToString = "" + deletedContactID;
 
-	let tmp = {contactID:deletedContactID};
-	
-	let jsonPayload = JSON.stringify(tmp);
+		let tmp = {contactID:deletedContactID};
+		
+		let jsonPayload = JSON.stringify(tmp);
 
-	console.log(convertToString);
+		console.log(convertToString);
 
-	let xhr = new XMLHttpRequest();
+		let xhr = new XMLHttpRequest();
 
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	console.log(jsonPayload);
-	try{
-		xhr.onreadystatechange = function() {
-			if(this.readyState == 4 && this.status == 200){
-				let jsonObject = JSON.parse(xhr.responseText);
-				console.log(jsonObject.deleted);
-				console.log(jsonObject.error);
-				if(jsonObject.deleted === "Yes"){
-					document.getElementById("contact-result").innerHTML = "Contact has been deleted";
-					if(document.getElementById("search-bar").value == ""){
-						firstPage();
+		xhr.open("POST", url, true);
+		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+		console.log(jsonPayload);
+		try{
+			xhr.onreadystatechange = function() {
+				if(this.readyState == 4 && this.status == 200){
+					let jsonObject = JSON.parse(xhr.responseText);
+					console.log(jsonObject.deleted);
+					console.log(jsonObject.error);
+					if(jsonObject.deleted === "Yes"){
+						document.getElementById("contact-result").innerHTML = "Contact has been deleted";
+						if(document.getElementById("search-bar").value == ""){
+							firstPage(null,null);
+						}
+						else{
+							searchContact(null,null,null,null,null);
+						}
 					}
 					else{
-						searchContact();
+						document.getElementById("contact-result").innerHTML = "Contact was not deleted";
 					}
 				}
-				else{
-					document.getElementById("contact-result").innerHTML = "Contact was not deleted";
-				}
-			}
-		};
-		xhr.send(jsonPayload);
-	}
-	catch(err){
-		document.getElementById("contact-result").innerHTML = err.message;
-		console.log(err.message);
+			};
+			xhr.send(jsonPayload);
+		}
+		catch(err){
+			document.getElementById("contact-result").innerHTML = err.message;
+			console.log(err.message);
+		}
 	}
 }
 
@@ -687,7 +971,9 @@ function updateContact(num){
 
 function saveContact(num){
 	let done = 0;
-	
+	let emptyCheck = 0;
+	let cell = num;
+
 	let editFirst = document.getElementById("contact-first-name-edit-"+num);
 	let editLast = document.getElementById("contact-last-name-edit-"+num);
 	let editEmail = document.getElementById("contact-email-edit-"+num);
@@ -698,53 +984,62 @@ function saveContact(num){
 	let email = document.getElementById("contact-email-"+num);
 	let phone = document.getElementById("contact-phone-number-"+num);
 
-	let Id = globalJsonObject.contacts[num-1].ID;
 
-	firstName.textContent = editFirst.value;
-	lastName.textContent = editLast.value;
-	email.textContent = editEmail.value;
-	phone.textContent = editPhone.value;
 
-	let fullName = firstName.textContent+ " " + lastName.textContent;
+	emptyCheck = emptyContactFields(cell,0);
 
-	let url = urlBase + "/UpdateContact." + extension;
-	
-	let tmp = {newName:fullName, newPhone:phone.textContent, newEmail:email.textContent, contactID:Id, newFavorite:0};
 
-	//document.getElementById("contact-edit-result").innerHTML = "";
 
-	let jsonPayload = JSON.stringify( tmp );
+	if(emptyCheck === 0){
+		if(properEmailRegex === true && properPhoneRegex === true){
+			let Id = globalJsonObject.contacts[num-1].ID;
 
-	let xhr = new XMLHttpRequest();
+			firstName.textContent = editFirst.value;
+			lastName.textContent = editLast.value;
+			email.textContent = editEmail.value;
+			phone.textContent = editPhone.value;
+		
+			let fullName = firstName.textContent+ " " + lastName.textContent;
 
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+			let url = urlBase + "/UpdateContact." + extension;
+			
+			let tmp = {newName:fullName, newPhone:phone.textContent, newEmail:email.textContent, contactID:Id, newFavorite:0};
 
-	console.log(Id);
-	console.log(jsonPayload);
+			//document.getElementById("contact-edit-result").innerHTML = "";
 
-	try{
-		xhr.onreadystatechange = function(){
-			if(this.readyState == 4 && this.status == 200){
-				//document.getElementById("contact-edit-result").innerHTML = "Contact has been updated";
-				toggleEditElement(done,num);
-				
-				if(document.getElementById("search-bar").value == ""){
-					firstPage();
-				}
-				else{
-					searchContact();
-				}
+			let jsonPayload = JSON.stringify( tmp );
+
+			let xhr = new XMLHttpRequest();
+
+			xhr.open("POST", url, true);
+			xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+			try{
+				xhr.onreadystatechange = function(){
+					if(this.readyState == 4 && this.status == 200){
+						//document.getElementById("contact-edit-result").innerHTML = "Contact has been updated";
+						toggleEditElement(done,num);
+						
+						if(document.getElementById("search-bar").value == ""){
+							firstPage(null,null);
+						}
+						else{
+							searchContact(null,null,null,null,null);
+						}
+					}
+					else{
+						//document.getElementById("contact-edit-result").innerHTML = "Contact cannot be updated";
+					}
+				};
+				xhr.send(jsonPayload);
 			}
-			else{
-				//document.getElementById("contact-edit-result").innerHTML = "Contact cannot be updated";
+			catch(err){
+				document.getElementById("contact-result").innerHTML = err.message;
+				console.log(err.message);
 			}
-		};
-		xhr.send(jsonPayload);
+		}
 	}
-	catch(err){
-		document.getElementById("contact-result").innerHTML = err.message;
-		console.log(err.message);
+	else{
+		document.getElementById("contact-result").innerHTML = "Required fields missing";
 	}
 }
 
@@ -766,18 +1061,123 @@ function cancelContact(num){
 	editEmail.value = email.textContent;
 	editPhone.value = phone.textContent;
 
-
-
-
 	toggleEditElement(done,num);
-
 }
 
 
-function doPagenation(){
+function goNext(){
+	let next = 1;
+	let lastIndex = 9;
 
+	let lastContactFirstName = document.getElementById("contact-first-name-10").innerText;
+	let lastContactLastName = document.getElementById("contact-last-name-10").innerText;
 
+	let nextName = lastContactFirstName+" "+lastContactLastName;
+	if(globalJsonObject.contacts.length==10){
+		let Id = globalJsonObject.contacts[lastIndex].ID;
+		let fav = globalJsonObject.contacts[lastIndex].Favorite;
 
+		if(contactInEdit === 0){
+			firstContactPageFlag += 1;
+			console.log("Search-favorite-on = "+document.getElementById("search-favorites-on").style);
+			//if search field is empty
+			if(document.getElementById("search-favorites-on").style.display === "block" || document.getElementById("search-bar").value !== ""){
+				searchContact(lastContactFirstName, lastContactLastName, Id, fav, next);
+			}
+			//if search field is in use
+			else if(document.getElementById("search-bar").value === ""){
+				firstPage(nextName,next);
+			}
+		}
+	}
+}
+
+function goPrev(){	
+	let prev = -1;
+	let prevSearch = 0;
+	let firstIndex = 0;
+
+	console.log("go prev");
+	let firstContactFirstName = document.getElementById("contact-first-name-1").innerText;
+	let firstContactLastName = document.getElementById("contact-last-name-1").innerText;
+
+	let prevName = firstContactFirstName+" "+firstContactLastName;
+	if(firstContactPageFlag > 0){
+		let Id = globalJsonObject.contacts[firstIndex].ID;
+		let fav = globalJsonObject.contacts[firstIndex].Favorite;
+		if(contactInEdit === 0 ){
+			firstContactPageFlag -= 1;
+			//if search field is empty
+			if(document.getElementById("search-favorites-on").style.display === "block" || document.getElementById("search-bar").value !== ""){
+				searchContact(firstContactFirstName, firstContactLastName, Id, fav, prevSearch);
+			}
+			//if search field is in use
+			else if(document.getElementById("search-bar").value === ""){
+				console.log("prevname = "+prevName+" prev = "+prev);
+				firstPage(prevName,prev);
+			}
+		}
+	}
 }
 
 
+function favoriteContact(row, favStatus){
+	if(contactInEdit === 0){
+		let newFavValue = null;
+
+		let favContact = document.getElementById("contact-fave-"+row);
+
+		let unFavContact = document.getElementById("contact-not-fave-"+row);
+
+		let contactId = globalJsonObject.contacts[row-1].ID;
+
+		if(favContact.style.display === "none"){
+			unFavContact.style.display = "none";
+			favContact.style.display = "block";
+			newFavValue = 1;
+		}
+		else{
+			favContact.style.display = "none";
+			unFavContact.style.display = "block"
+			newFavValue = 0;
+		}
+
+		let url = urlBase + "/ChangeFavorite." + extension;
+		
+		let tmp = {ID:contactId, updatedFavorite:newFavValue};
+
+		let jsonPayload = JSON.stringify(tmp);
+
+		let xhr = new XMLHttpRequest();
+		xhr.open("POST", url, true);
+		try{
+			xhr.onreadystatechange = function() {
+				if(this.readyState == 4 && this.status == 200){
+					searchContact(null,null,null,null,null);
+				}
+			};
+			xhr.send(jsonPayload);
+		}
+		catch(err){
+			console.log(err.message);
+		}
+	}	
+}
+
+function favoriteSearch(){
+	let favoritedSearch = document.getElementById("search-favorites-on");
+	let nonFavoritedSearch = document.getElementById("search-favorites-off");
+	if(contactInEdit === 0){
+		if(favoritedSearch.style.display === "none"){
+			console.log("Performing favorite search");
+			nonFavoritedSearch.style.display = "none";
+			favoritedSearch.style.display = "block";
+		}
+		else{
+			console.log("Performing un-favorited search");
+			favoritedSearch.style.display = "none";
+			nonFavoritedSearch.style.display = "block";
+		}
+		searchContact(null,null,null,null,null);
+	}
+}

@@ -1,4 +1,4 @@
-swagger: '2.0'
+swagger: "2.0"
 info:
   description: This is the API documentation for the COP 4331 Contact Manager
   version: 1.0.0
@@ -62,7 +62,7 @@ paths:
         500:
           description: Server Error
   
-  /AddUser.php:
+  /AddContact.php:
     post:
       tags:
       - Contacts
@@ -78,7 +78,57 @@ paths:
         name: addItem
         description: Add
         schema:
-          $ref: '#/definitions/AddUser'
+          $ref: '#/definitions/AddContact'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
+          
+  /ChangeFavorite.php:
+    post:
+      tags:
+      - Contacts
+      summary: Changes the favorite tag of a contact
+      operationId: dlChangeFavorite
+      description: Changes the favorite tag of a contact
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: changeFavorite
+        description: Update
+        schema:
+          $ref: '#/definitions/ChangeFavorite'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
+
+  /UpdateContact.php:
+    post:
+      tags:
+      - Contacts
+      summary: Updates the values of a Contact
+      operationId: dlUpdateContact
+      description: Updates the values of a Contact
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: UpdateContact
+        description: Update
+        schema:
+          $ref: '#/definitions/UpdateContact'
       responses:
         200:
           description: OK
@@ -87,7 +137,106 @@ paths:
         500:
           description: Server Error
   
+  /ContactPagination.php:
+    post:
+      tags:
+      - Contacts
+      summary: Retrives the next or previous 10 contacts
+      operationId: dlContactPagination
+      description: Retrives the next or previous 10 contacts
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: UpdateContact
+        description: Update
+        schema:
+          $ref: '#/definitions/ContactPagination'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
+
+  /DeleteContact.php:
+    post:
+      tags:
+      - Contacts
+      summary: Deletes a Contatct
+      operationId: dlDeleteContact
+      description: Deletes a Contatct
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: UpdateContact
+        description: Update
+        schema:
+          $ref: '#/definitions/DeleteContact'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
+
+  /Search.php:
+    post:
+      tags:
+      - Contacts
+      summary: Searches the database for search field
+      operationId: dlSearch
+      description: Searches the database for search field
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: Search
+        description: Update
+        schema:
+          $ref: '#/definitions/Search'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
           
+  /GetAllContacts.php:
+    post:
+      tags:
+      - Contacts
+      summary: Grabs all of the contacts
+      operationId: dlGetAll
+      description: Grabs all of the contacts
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: GetAll
+        description: Get
+        schema:
+          $ref: '#/definitions/GetAllContacts'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
+            
 definitions:
   Login:
     type: object
@@ -123,7 +272,7 @@ definitions:
         type: string
         example: "secret"
   
-  AddUser:
+  AddContact:
     type: object
     required:
     - name
@@ -134,7 +283,7 @@ definitions:
     properties:
       name:
         type: string
-        example: "fred"
+        example: "fred labowski"
       phone:
         type: string
         example: "555-555-5555"
@@ -148,8 +297,114 @@ definitions:
         type: boolean
         example: true
 
+  ChangeFavorite:
+    type: object
+    required:
+    - ID
+    - updatedFavorite
+    properties:
+      ID:
+        type: integer
+        example: 1
+      updatedFavorite:
+        type: integer
+        example: 0
+  
+  UpdateContact:
+    type: object
+    required:
+    - name
+    - phone
+    - email
+    - userID
+    - newName
+    - newPhone
+    - newEmail
+    - newFavorite
+    properties:
+      name:
+        type: string
+        example: "test user"
+      phone:
+        type: string
+        example: "555-555-0200"
+      email:
+        type: string
+        example: "testing@example.com"
+      userID:
+        type: integer
+        example: 1
+      newName:
+        type: string
+        example: "testing user"
+      newEmail:
+        type: string
+        example: "test@example.com"
+      newFavorite:
+        type: integer
+        example: 1
 
-host: 143.198.9.78
+  ContactPagination:
+    type: object
+    required:
+    - cursor
+    - userID
+    - next
+    properties:
+      cursor:
+        type: string
+        example: "Jane Smith"
+      userID:
+        type: integer
+        example: 1
+      next:
+        type: integer
+        example: 1
+  
+  DeleteContact:
+    type: object
+    required:
+    - contactID
+    properties:
+      cursor:
+        type: integer
+        example: 1
+  
+  Search:
+    type: object
+    required: 
+    - UserID
+    - search
+    - showFavorites
+    - cursor
+    - next
+    properties:
+      UserID: 
+        type: integer
+        example: 1
+      search:
+        type: string
+        example: ""
+      showFavorites:
+        type: integer
+        example: 1
+      cursor:
+        type: object
+        example: {"firstName", "lastName", "ID", "favorite"}
+      next:
+        type: integer
+        example: 1
+        
+  GetAllContacts:
+    type: object
+    required:
+    - contacts
+    properties:
+      contacts:
+        type: object
+        example: {"ID", "FirstName", "LastName", "Phone", "Email", "UserID", "Favorite"}
+        
+host: 159.203.115.181
 basePath: /LAMPAPI
 schemes:
 - http
