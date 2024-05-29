@@ -546,13 +546,13 @@
                         <!--Registration Validation field-->
                         <div id="contact-validation" style="display:none;">
                             <div id="email-validation" class="cell"> 
-                                <img id="incorrect-1" src="images/incorrect.png" class="icon" ></img>
-                                <img id="correct-1"src="images/correct.png" class="icon" style="display:none"></img>
+                                <img id="incorrect-6" src="images/incorrect.png" class="icon" ></img>
+                                <img id="correct-6"src="images/correct.png" class="icon" style="display:none"></img>
                                 <div id="special">Email is incorrect.</div>
                             </div>
                             <div id="phone-validation" class="cell"> 
-                                <img id="incorrect-2" src="images/incorrect.png" class="icon"></img>
-                                <img id="correct-2" src="images/correct.png" class="icon" style="display:none"></img>
+                                <img id="incorrect-7" src="images/incorrect.png" class="icon"></img>
+                                <img id="correct-7" src="images/correct.png" class="icon" style="display:none"></img>
                                 <div id="phone">Phone Number is an incorrect Format.</div>
                             </div>
                         </div>
