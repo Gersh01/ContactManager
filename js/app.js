@@ -791,11 +791,12 @@ function emptyContactFields(num, field){
 
 	//If a new contact is being created
 	if(num === -1 && field === 1){
-		missingAddContactFields();
 		if(firstName.value === "" || lastName.value === "" || email.value === "" || phone.value === ""){
+			missingAddContactFields();
 			return missingField;
 		}
 		else{
+			missingAddContactFields();
 			return noMissingFields;
 		}
 	}
