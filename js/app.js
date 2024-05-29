@@ -1071,7 +1071,7 @@ function goNext(){
 		if(contactInEdit === 0){
 			firstContactPageFlag += 1;
 			//if search field is empty
-			if(document.getElementById("search-bar").value === "" && document.getElementById("search-favorites-off").style === "block"){
+			if(document.getElementById("search-bar").value === ""){
 				firstPage(nextName,next);
 			}
 			//if search field is in use
