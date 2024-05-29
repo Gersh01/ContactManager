@@ -872,6 +872,7 @@ function searchContact(first, last, contactId, favorite, pagination){
 						}
 						else{
 							if(pagination === 1){
+								firstContactPageFlag -=1;
 								return;
 							}
 							else{
