@@ -457,8 +457,8 @@ function addContact(){
 	if(emptyContactFields(num) === 0){
 		if(properEmailRegex === true && properPhoneRegex === true){
 
-			missingAddContactFields();
 			
+
 			let newContactName = newContactFirst +" "+newContactLast;
 
 			document.getElementById("add-contact-result").innerHTML = "";
@@ -764,6 +764,8 @@ function emptyContactFields(num){
 	let editLast = document.getElementById("contact-last-name-edit-"+num);
 	let editEmail = document.getElementById("contact-email-edit-"+num);
 	let editPhone = document.getElementById("contact-phone-number-edit-"+num);
+
+	missingAddContactFields();
 
 	//If a new contact is being created
 	if(num === -1){
