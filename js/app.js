@@ -871,8 +871,13 @@ function searchContact(first, last, contactId, favorite, pagination){
 							console.log("GlobalPageCounter "+firstContactPageFlag);
 						}
 						else{
-							globalJsonObject = null;
-							noContactsFound();
+							if(pagination === 1){
+								return;
+							}
+							else{
+								globalJsonObject = null;
+								noContactsFound();
+							}
 						}
 					}
 				};
