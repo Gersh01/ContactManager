@@ -68,7 +68,7 @@
                                     
                                     <td>
                                         <div id="contact-first-name-1" ></div>
-                                        <div >
+                                        <div class="search-bar row">
                                             <input id="contact-first-name-edit-1" style="display:none" type="text">
                                     </td>
                                         
