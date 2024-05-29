@@ -67,7 +67,33 @@
                     <!--Error Message-->
                     <a id="doRegister" href="javascript:doRegister()"><div class="button" type="button">Sign up!</div></a>
                     <span id="register-result" class="error row cell"></span>
+
+                    <!--Registration Validation field-->
+                    <div id="password-validation" style="display:none;">
+                        <div id="length-validation"> 
+                            <img src="images/incorrect.png"></img>
+                            <img src="images/correct.png" style="display:none"></img>
+                            <div id="length">Password must contain at least 8 characters.</div>
+                        </div>
+                        <div id="case-validation"> 
+                            <img src="images/incorrect.png"></img>
+                            <img src="images/correct.png" style="display:none"></img>
+                            <div id="case">Password must contain at least 1 uppercase letter.</div>
+                        </div>
+                        <div id="special-character-validation"> 
+                            <img src="images/incorrect.png"></img>
+                            <img src="images/correct.png" style="display:none"></img>
+                            <div id="special">Password must contain at least 1 special character.</div>
+                        </div>
+                        <div id="confirm-validation"> 
+                            <img src="images/incorrect.png"></img>
+                            <img src="images/correct.png" style="display:none"></img>
+                            <div id="length">Passwords must match.</div>
+                        </div>
+                    </div>
                 </div>
+
+                    
             </div>
         </section>
 

@@ -12,7 +12,7 @@
  */
 :root {
   --font-color: #050709;
-  --dominant-color: #0079D6;
+  --dominant-color: #0069b7;
   --subcolor: #2aa1f1;
   --accent-color: #6fcaff;
 
@@ -84,8 +84,28 @@
   --bs-highlight-bg: #fff3cd;
 }
 
+td{
+  text-align:center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+}
+
+.label{
+  position: relative;
+  left: 16px;
+}
+
+.label-missing-field{
+  position: relative;
+  left: 16px;
+  color: red;
+  font-weight: 300;
+}
+
 section{
-  min-height: 80vh;
+  min-height: 79vh;
   align-items: center;
   display:grid;
 }
@@ -98,11 +118,6 @@ section{
   background-color: var(--accent-color);
   justify-content:center;
   filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0,0,0,0.5));
-}
-
-.icon{
-  height:20px;
-  width:20px;
 }
 
 #project-git-link{
@@ -122,6 +137,11 @@ section{
 #personal-git-links{
   justify-content:center;
   display:grid;
+}
+
+.icon{
+  height:20px;
+  width:20px;
 }
 
 .icon-background{
@@ -223,9 +243,6 @@ tr {
   margin-right:2rem;
   margin-left:2rem;
 }
-
-
-
 
 .move-page{
   display:flex;
