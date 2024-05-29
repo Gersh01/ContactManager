@@ -33,7 +33,7 @@
                         <div class="search-bar row">
                         <input id="login-username" type="text" placeholder="Username">
                     </div>
-                    <label for ="login-password" class="label" style="display:flex">Password</label>
+                    <label for ="login-password" id="login-password-label" class="label" style="display:flex">Password</label>
                     <div class="search-bar-pass row">
                         <input id="login-password" type="password" placeholder="Password">
                     </div>

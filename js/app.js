@@ -41,7 +41,26 @@ if(inputRegister != null){
 function doRedirect(){
 	window.location.href = "login.php";
 }
-	
+
+function missingLoginFields(){
+	if(document.getElementById("login-username").value === ""){
+		document.getElementById("login-username-label").innerText = "Username *";
+		document.getElementById("login-username-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("login-username-label").innerText = "Username";
+		document.getElementById("login-username-label").className = "label";
+	}
+	if(document.getElementById("login-password").value === ""){
+		document.getElementById("login-password-label").innerText = "Password *";
+		document.getElementById("login-password-label").className = "label-missing-field";
+	}
+	else{
+		document.getElementById("login-password-label").innerText = "Password";
+		document.getElementById("login-password-label").className = "label";
+	}
+
+}
 
 function doLogin(){
 
@@ -56,16 +75,10 @@ function doLogin(){
 //	var hash = md5( password );
 	
 	document.getElementById("login-result").innerHTML = "";
-	if(login === ""){
-		document.getElementById("login-username").style = "border-color:red";
-		document.getElementById("login-username").style = "border-width:medium";
-		document.getElementById("login-username-label").innerText = "Username *";
-		document.getElementById("login-username-label").className = "label-missing-field";
-	}
 
 
 	if(login === "" || password === ""){
-		document.getElementById("login-result").innerHTML = "Required fields must be filled";
+		document.getElementById("login-result").innerHTML = "* Required fields must be filled";
 		return;
 	}
 	else{
