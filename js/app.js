@@ -19,7 +19,9 @@ let contactInEdit = 0;
 let firstContactPageFlag = 0;
 
 let inputLogin = document.getElementById("login-password");
+let registerPassword = document.getElementById("register-password");
 let inputRegister = document.getElementById("register-password-confirm");
+let passwordValidation = document.getElementById("password-validation");
 let globalJsonObject = null;
 
 if(inputLogin != null){
@@ -37,6 +39,12 @@ if(inputRegister != null){
 		}
 	});
 }
+
+registerPassword.addEventListener("focus", function(event){
+	if(event = onfocus){
+		passwordValidation.style.display= "block";
+	}
+});
 
 function doRedirect(){
 	window.location.href = "login.php";
@@ -419,6 +427,8 @@ function doRegister(){
 			return;
 		}
 		else if(passwordMatches == true && properPassword == true){
+			passwordValidation.style.display = "none";
+
 			//Hashes newUsers Password to store in DB
 			let hash = md5(newUserPassword);
 
