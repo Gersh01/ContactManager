@@ -124,8 +124,8 @@ function missingAddContactFields(){
 		document.getElementById("add-contact-last-name-label").className = "label-missing-field";
 	}
 	else{
-		document.getElementById("add-contact-last-name-label").innerText = "Last Name *";
-		document.getElementById("add-contact-last-name-label").className = "label-missing-field";
+		document.getElementById("add-contact-last-name-label").innerText = "Last Name";
+		document.getElementById("add-contact-last-name-label").className = "label";
 	}
 
 	if(document.getElementById("add-contact-email").value === ""){
@@ -133,8 +133,8 @@ function missingAddContactFields(){
 		document.getElementById("add-contact-email-label").className = "label-missing-field";
 	}
 	else{
-		document.getElementById("add-contact-email-label").innerText = "Email *";
-		document.getElementById("add-contact-email-label").className = "label-missing-field";
+		document.getElementById("add-contact-email-label").innerText = "Email";
+		document.getElementById("add-contact-email-label").className = "label";
 	}
 
 	if(document.getElementById("add-contact-phone-number").value === ""){
@@ -142,9 +142,27 @@ function missingAddContactFields(){
 		document.getElementById("add-contact-phone-number-label").className = "label-missing-field";
 	}
 	else{
-		document.getElementById("add-contact-phone-number-label").innerText = "Phone Number *";
-		document.getElementById("add-contact-phone-number-label").className = "label-missing-field";
+		document.getElementById("add-contact-phone-number-label").innerText = "Phone Number";
+		document.getElementById("add-contact-phone-number-label").className = "label";
 	}
+}
+
+function resetAddContactFields(){
+	document.getElementById("add-contact-first-name").value = "";
+	document.getElementById("add-contact-first-name-label").innerText = "First Name";
+	document.getElementById("add-contact-first-name-label").className = "label";
+
+	document.getElementById("add-contact-last-name").value = "";
+	document.getElementById("add-contact-last-name-label").innerText = "Last Name";
+	document.getElementById("add-contact-last-name-label").className = "label";
+
+	document.getElementById("add-contact-email").value = "";
+	document.getElementById("add-contact-email-label").innerText = "Email";
+	document.getElementById("add-contact-email-label").className = "label";
+
+	document.getElementById("add-contact-phone-number").value = "";
+	document.getElementById("add-contact-phone-number-label").innerText = "Phone Number";
+	document.getElementById("add-contact-phone-number-label").className = "label";
 }
 
 function doLogin(){
@@ -289,7 +307,7 @@ function showTable(){
 			contact.style.display = "block";
 		}
 		else{
-			missingAddContactFields();
+			resetAddContactFields();
 			contact.style.display="none";
 			addContactButton.innerText = "Add Contact";
 
