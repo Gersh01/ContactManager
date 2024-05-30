@@ -464,7 +464,7 @@ function doRegister(){
 							document.getElementById("register-username").value = "";
 							document.getElementById("register-password").value= "";
 							document.getElementById("register-password-confirm").value = "";
-
+							
 							document.getElementById("register-result").innerHTML = "Registration is complete";
 						}
 						
@@ -633,6 +633,25 @@ function confirmValidPhoneRegex(num){
 
 	}
 
+
+function resetRegisterUser(){
+	document.getElementById("correct-1").style = "display:none";
+	document.getElementById("incorrect-1").style = "display:flex";
+
+	document.getElementById("correct-2").style = "display:none";
+	document.getElementById("incorrect-2").style = "display:flex";
+
+	document.getElementById("correct-3").style = "display:none";
+	document.getElementById("incorrect-3").style = "display:flex";
+
+	document.getElementById("correct-4").style = "display:none";
+	document.getElementById("incorrect-4").style = "display:flex";
+
+	document.getElementById("correct-5").style = "display:none";
+	document.getElementById("incorrect-5").style = "display:flex";
+}
+
+
 function passwordRegexChecker(){
 
 	let password = document.getElementById("register-password").value;
@@ -658,8 +677,8 @@ function passwordRegexChecker(){
 		}
 	else{
 		properPassword = false;
-		document.getElementById("correct-4").style = "display:none";
-		document.getElementById("incorrect-4").style = "display:flex";
+		document.getElementById("correct-2").style = "display:none";
+		document.getElementById("incorrect-2").style = "display:flex";
 	}
 
 	if(specialPasswordRegex.test(password)){
@@ -668,8 +687,8 @@ function passwordRegexChecker(){
 	}
 	else{
 		properPassword = false;
-		document.getElementById("correct-2").style = "display:none";
-		document.getElementById("incorrect-2").style = "display:flex";
+		document.getElementById("correct-4").style = "display:none";
+		document.getElementById("incorrect-4").style = "display:flex";
 	}
 
 	if(numberPasswordRegex.test(password)){
