@@ -17,9 +17,9 @@
     </head>
     <body>
         <header id="nav-header" class="text-black nav py-5 bg-accent">
-            <a class="text-black" href="http://oceanic-connections.xyz/contacts.php"><div id="home-button" class= "header-link button" type="button">Home</div></a>
-            <a id="about-us_button" href="javascript:doLogout()"> <div id="about-us-button" class="header-link button" type="button">Logout</div></a>
-            <a class="text-black" href="http://159.203.115.181/about.php"><div id="about-link" class="header-link button" type="button">About</div></a>
+            <a class="text-black" href="http://oceanic-connections.xyz/contacts.php" aira-label="button"><div id="home-button" class= "header-link button" type="button">Home</div></a>
+            <a id="about-us_button" href="javascript:doLogout()" aira-label="button"> <div id="about-us-button" class="header-link button" type="button">Logout</div></a>
+            <a class="text-black" href="http://159.203.115.181/about.php" aira-label="button"><div id="about-link" class="header-link button" type="button">About</div></a>
         </header>
         <!-- Image Background -->
         <div class="py-6 bg-image-full" style="background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5236376f-305d-42da-8e2d-48455360a090/ddzsehq-da9525d2-37e0-448f-aa49-a7274ba68387.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUyMzYzNzZmLTMwNWQtNDJkYS04ZTJkLTQ4NDU1MzYwYTA5MFwvZGR6c2VocS1kYTk1MjVkMi0zN2UwLTQ0OGYtYWE0OS1hNzI3NGJhNjgzODcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.nDVDNj0rk3vuQHD7DawjvowvIEn_70NADgE8MevlAOM')">
@@ -34,12 +34,12 @@
                     <!--Search Bar-->
                     <div class="text-center my-6">
                         <div id="search-bar-row" class="search-bar row-alt">
-                            <a id="search-favorites-off" href="javascript:favoriteSearch()" class="text-black a-link"><div id="searchAll" class="text-black refresh-page" type="button"><img src="images/favorite-no-fill.png" class="icon"></img></div></a>
-                            <a id="search-favorites-on" href="javascript:favoriteSearch()" class="text-black a-link" style="display:none"><div id="searchFaves" class="text-black refresh-page" type="button"><img src="images/favorite-fill.png" class="icon"></img></div></a>
+                            <a id="search-favorites-off" href="javascript:favoriteSearch()" class="text-black a-link" aira-label="button"><div id="searchAll" class="text-black refresh-page" type="button"><img src="images/favorite-no-fill.png" alt="non-fave search" class="icon"></img></div></a>
+                            <a id="search-favorites-on" href="javascript:favoriteSearch()" class="text-black a-link" style="display:none" aira-label="button"><div id="searchFaves" class="text-black refresh-page" type="button"><img src="images/favorite-fill.png" alt="fave search" class="icon"></img></div></a>
                             
                             <input id="search-bar" type="text" placeholder="Search..." required onkeyup = "searchContact(null, null, null, null, null)">
-                            <a id="refresh-button" href="javascript:firstPage(null, null)" class="text-black a-link"><div id="refreshButton" class="text-black refresh-page" type="button"><img src="images/refresh.png" class="icon"></img></div></a>
-                            <a id="add-contact-button" href="javascript:showTable()" class="text-black a-link"><div id="addContactButton" class="text-black refresh-page" type="button"><img src="images/add-contact.png" class="icon"></img></div></a>
+                            <a id="refresh-button" href="javascript:firstPage(null, null)" class="text-black a-link" aira-label="button"><div id="refreshButton" class="text-black refresh-page" type="button"><img src="images/refresh.png" alt="refresh" class="icon"></img></div></a>
+                            <a id="add-contact-button" href="javascript:showTable()" class="text-black a-link" aira-label="button"><div id="addContactButton" class="text-black refresh-page" type="button"><img src="images/add-contact.png" alt="add contact" class="icon"></img></div></a>
                         </div>
                     </div>
 
@@ -516,8 +516,8 @@
                     
                         <!--TODO: FINISH PAGINATION-->
                         <div id="page-selector" class="row-alt justify-content-end">
-                            <a id="go-prev-button" href="javascript:goPrev()" class="text-black"><div id="backButton" class="move-page" type="button">Previous</div></a>
-                            <a id="go-next-button" href="javascript:goNext()" class="text-black"><div id="forwardButton" class="move-page" type="button">Next</div></a>
+                            <a id="go-prev-button" href="javascript:goPrev()" class="text-black" aria-label="button"><div id="backButton" class="move-page" type="button">Previous</div></a>
+                            <a id="go-next-button" href="javascript:goNext()" class="text-black" aria-label="button"><div id="forwardButton" class="move-page" type="button">Next</div></a>
                         </div>
                     </div>
 
@@ -541,23 +541,23 @@
                         </div>
 
                         <!--Button-->
-                        <a id="addContact" href="javascript:addContact()" class="justify-content-center" style="display:flex"><div class="button" type="button">Add User</div></a>
+                        <a id="addContact" href="javascript:addContact()" class="justify-content-center" style="display:flex" aria-label="button"><div class="button" type="button">Add User</div></a>
 
                         <!--Registration Validation field-->
                         <div id="contact-validation" style="display:none;">
                             <div id="email-validation" class="cell"> 
-                                <img id="incorrect-6" src="images/incorrect.png" class="icon" ></img>
-                                <img id="correct-6"src="images/correct.png" class="icon" style="display:none"></img>
+                                <img id="incorrect-6" src="images/incorrect.png" class="icon" alt="incorrect"></img>
+                                <img id="correct-6"src="images/correct.png" class="icon" style="display:none" alt="correct"></img>
                                 <div id="special">Email must be correct format.</div>
                             </div>
                             <div id="phone-validation" class="cell"> 
-                                <img id="incorrect-7" src="images/incorrect.png" class="icon"></img>
-                                <img id="correct-7" src="images/correct.png" class="icon" style="display:none"></img>
+                                <img id="incorrect-7" src="images/incorrect.png" class="icon" alt="incorrect"></img>
+                                <img id="correct-7" src="images/correct.png" class="icon" style="display:none" alt="correct"></img>
                                 <div id="phone">Phone Number must be correct format.</div>
                             </div>
                             <div id="field-fill-validation" class="cell"> 
-                                <img id="incorrect-8" src="images/incorrect.png" class="icon" ></img>
-                                <img id="correct-8"src="images/correct.png" class="icon" style="display:none"></img>
+                                <img id="incorrect-8" src="images/incorrect.png" class="icon" alt="incorrect"></img>
+                                <img id="correct-8"src="images/correct.png" class="icon" style="display:none" alt="correct"></img>
                                 <div id="field">All fields must be filled.</div>
                             </div>
                         </div>
