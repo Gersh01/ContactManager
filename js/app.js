@@ -236,6 +236,7 @@ function doLogin(){
 						window.location.href = "contacts.php";
 					}
 				};
+				console.log(jsonPayload);
 				xhr.send(jsonPayload);
 			}
 			catch(err)
