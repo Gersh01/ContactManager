@@ -1,5 +1,10 @@
 const urlBase = 'http://159.203.115.181/LAMPAPI';
+<<<<<<< HEAD
 //const urlBase = 'http://143.198.9.78/LAMPAPI';
+=======
+// const urlBase = 'http://143.198.9.78/LAMPAPI';
+
+>>>>>>> f5f8ea16a77c14cf1dd8ec821b6fc2a3c81d9c63
 const extension = 'php';
 
 //** MUST DELETE ALL CONSOLE.LOG **
