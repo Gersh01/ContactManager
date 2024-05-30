@@ -100,7 +100,7 @@
                                     </td>
 
                                     <td>
-                                        <a id="contact-delete-1" href="javascript:deleteContact(1)" aira-label="button"><div id="deleteButton" type="button" <img src="images/delete.png" class="icon" alt="delete"></img></div></a>
+                                        <a id="contact-delete-1" href="javascript:deleteContact(1)" aira-label="button"><div id="deleteButton" type="button"><img src="images/delete.png" class="icon" alt="delete"></img></div></a>
                                         <a id="contact-cancel-edit-1" href="javascript:cancelContact(1)" style="display:none" aira-label="button"><div id="editButton" type="button"><img src="images/cancel.png" class="icon" alt="cancel"></img></div></a>
                                     </td>
                                 </tr>
