@@ -14,7 +14,7 @@
     </head>
     <body>
         <header id="nav-header" class="text-black nav py-5 bg-accent"> 
-            <a href="http://oceanic-connections.xyz/contacts.php" class="text-black" aria-label="Go to home/login"><div id="home-button" class= "header-link button" type="button">Home</div></a>
+            <a href="http://159.203.115.181/contacts.php" class="text-black" aria-label="Go to home/login"><div id="home-button" class= "header-link button" type="button">Home</div></a>
         </header>
 
         <section id="about-us-block" class="bg-sub">
