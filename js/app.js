@@ -653,7 +653,7 @@ function resetRegisterUser(){
 
 
 function passwordRegexChecker(){
-
+	document.getElementById("register-result").innerHTML = "";
 	let password = document.getElementById("register-password").value;
 
 	let upperPasswordRegex = new RegExp("(?=.*[A-Z])");
