@@ -90,7 +90,10 @@ td{
   margin-bottom: 0.5rem;
 }
 
+.bg-accent .logout{
+  justify-content:right;
 }
+
 
 .label{
   position: relative;
@@ -185,7 +188,8 @@ section{
 }
 
 .table-header{
-  background-color: var(--subcolor);
+  padding-top:3rem;
+  padding-bottom:3rem;
   border-radius: 15px;
 }
 
@@ -209,7 +213,7 @@ tr {
 }
 
 .add-contacts-container{
-  width: fit-content;
+  width: 40%;
   margin: auto;
   border-radius: 15px;
   background-color: var(--accent-color);
@@ -270,7 +274,7 @@ tr {
 .refresh-page{
   display:flex;
   margin:0%;
-  padding:0.3rem;
+  padding:0.6rem;
   border-radius: 15px;
   background-color: var(--accent-color);
   width: auto;
@@ -278,12 +282,12 @@ tr {
   filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0,0,0,0.5));
 }
 
-.refresh-page:hover, .move-page:hover, .button:hover{
+.refresh-page:hover, .move-page:hover, .button:hover .go-to-github-page:hover{
   background-color:var(--subcolor);
 
 }
 
-.refresh-page:active, .move-page:active, .button:active{
+.refresh-page:active, .move-page:active, .button:active, .go-to-github-page:active{
   background-color:lightgray;
 }
 
@@ -310,7 +314,6 @@ tr {
   display: flex;
   width: auto;
   justify-content: center;
-  background-color: var(--subcolor);
   border-radius: 15px;
   font-style: bold;
   padding-top:5px;

@@ -1,4 +1,6 @@
-const urlBase = 'http://oceanic-connections.xyz/LAMPAPI';
+//const urlBase = 'http://159.203.115.181/LAMPAPI';
+const urlBase = 'http://143.198.9.78/LAMPAPI';
+
 const extension = 'php';
 
 //** MUST DELETE ALL CONSOLE.LOG **
@@ -19,7 +21,9 @@ let contactInEdit = 0;
 let firstContactPageFlag = 0;
 
 let inputLogin = document.getElementById("login-password");
+let registerPassword = document.getElementById("register-password");
 let inputRegister = document.getElementById("register-password-confirm");
+let passwordValidation = document.getElementById("password-validation");
 let globalJsonObject = null;
 
 if(inputLogin != null){
@@ -34,6 +38,13 @@ if(inputRegister != null){
 	inputRegister.addEventListener("keypress", function(event){
 		if(event.key === "Enter"){
 			document.getElementById("doRegister").click();
+		}
+	});
+}
+if(registerPassword!= null){
+	registerPassword.addEventListener("focus", function(event){
+		if(onfocus = event){
+			passwordValidation.style="display:block";
 		}
 	});
 }
@@ -419,6 +430,8 @@ function doRegister(){
 			return;
 		}
 		else if(passwordMatches == true && properPassword == true){
+			passwordValidation.style = "display:none";
+
 			//Hashes newUsers Password to store in DB
 			let hash = md5(newUserPassword);
 
@@ -453,7 +466,7 @@ function doRegister(){
 							document.getElementById("register-username").value = "";
 							document.getElementById("register-password").value= "";
 							document.getElementById("register-password-confirm").value = "";
-
+							resetRegisterUser();
 							document.getElementById("register-result").innerHTML = "Registration is complete";
 						}
 						
@@ -478,9 +491,8 @@ function addContact(){
     let newContactPhone = document.getElementById("add-contact-phone-number").value;
 
 	console.log(newContactPhone);
-	if(emptyContactFields(num,1) === 0){
-		if(properEmailRegex === true && properPhoneRegex === true){
-
+	if(emptyContactFields(num,1) === 0 && properEmailRegex === true && properPhoneRegex === true){
+			document.getElementById("contact-validation").style = "display:none";
 			
 
 			let newContactName = newContactFirst +" "+newContactLast;
@@ -515,12 +527,8 @@ function addContact(){
 				document.getElementById("add-contact-result").innerHTML = err.message;
 			}
 		}
-		else{
-			document.getElementById("add-contact-result").innerHTML = "Required fields are invalid";
-		}
-	}
 	else{
-		document.getElementById("add-contact-result").innerHTML = "* Required fields are missing *";
+		document.getElementById("contact-validation").style = "display:block";
 	}
 }
 
@@ -531,18 +539,31 @@ function confirmValidContactRegex(num){
 
 	if(num===-1){
 		email = document.getElementById("add-contact-email").value;
+		if(emailRegex.test(email) === false){
+			console.log("Email is invalid");
+			properEmailRegex = false;
+			document.getElementById("correct-6").style = "display:none";
+			document.getElementById("incorrect-6").style = "display:flex";
+
+		}else{
+			console.log("Email is valid");
+			properEmailRegex = true;
+			document.getElementById("correct-6").style = "display:flex";
+			document.getElementById("incorrect-6").style = "display:none";
+		}
 	}
 	else{
 		email = document.getElementById("contact-email-edit-"+num).value;
+		if(emailRegex.test(email) === false){
+			console.log("Email is invalid");
+			properEmailRegex = false;
+		}else{
+			console.log("Email is valid");
+			properEmailRegex = true;
+		}
 	}
 
-	if(emailRegex.test(email) === false){
-		console.log("Email is invalid");
-		properEmailRegex = false;
-	}else{
-		console.log("Email is valid");
-		properEmailRegex = true;
-	}
+	
 
 }
 
@@ -554,11 +575,14 @@ function confirmPassword(){
 
 	if(password!==confirmPassword){
 		passwordMatches = false;
-		document.getElementById("register-result").innerHTML = "* Password does not match *";
+		document.getElementById("correct-5").style = "display:none";
+		document.getElementById("incorrect-5").style = "display:flex";
 	}
 	else{
 		passwordMatches = true;
 		document.getElementById("register-result").innerHTML = "";
+		document.getElementById("correct-5").style = "display:flex";
+		document.getElementById("incorrect-5").style = "display:none";
 	}
 
 }
@@ -568,13 +592,15 @@ function confirmValidPhoneRegex(num){
 	let phoneRegex = new RegExp("[0-9]{3}-[0-9]{3}-[0-9]{4}");
 	let phone = "";
 
+
 	if(num === -1){
 		phone = document.getElementById("add-contact-phone-number");
 	}
 	else{
 		phone = document.getElementById("contact-phone-number-edit-"+num);
+
 	}
-	console.log(num + "inside phoneRegex");
+
 	if(phone.value!== ""){
 		phone.addEventListener("keypress", function(event){
 			if(event.key!=="Backspace"){
@@ -585,17 +611,51 @@ function confirmValidPhoneRegex(num){
 			}
 		});
 	}
-	console.log(phoneRegex.test(phone.value));
-	if(phoneRegex.test(phone.value)===true && phone.value.length===12){
-		properPhoneRegex = true;
+
+	if(num === -1){
+		if(phoneRegex.test(phone.value)===true && phone.value.length===12){
+			properPhoneRegex = true;
+			document.getElementById("correct-7").style = "display:flex";
+			document.getElementById("incorrect-7").style = "display:none";
+		}
+		else{
+			properPhoneRegex = false;
+			document.getElementById("correct-7").style = "display:none";
+			document.getElementById("incorrect-7").style = "display:flex";
+		}
 	}
 	else{
-		properPhoneRegex = false;
+		if(phoneRegex.test(phone.value)===true && phone.value.length===12){
+			properPhoneRegex = true;
+		}
+		else{
+			properPhoneRegex = false;
+		}
 	}
+
 	}
+
+
+function resetRegisterUser(){
+	document.getElementById("correct-1").style = "display:none";
+	document.getElementById("incorrect-1").style = "display:flex";
+
+	document.getElementById("correct-2").style = "display:none";
+	document.getElementById("incorrect-2").style = "display:flex";
+
+	document.getElementById("correct-3").style = "display:none";
+	document.getElementById("incorrect-3").style = "display:flex";
+
+	document.getElementById("correct-4").style = "display:none";
+	document.getElementById("incorrect-4").style = "display:flex";
+
+	document.getElementById("correct-5").style = "display:none";
+	document.getElementById("incorrect-5").style = "display:flex";
+}
+
 
 function passwordRegexChecker(){
-
+	document.getElementById("register-result").innerHTML = "";
 	let password = document.getElementById("register-password").value;
 
 	let upperPasswordRegex = new RegExp("(?=.*[A-Z])");
@@ -603,50 +663,44 @@ function passwordRegexChecker(){
 	let numberPasswordRegex = new RegExp("(?=.*[0-9])");
 	let wholePasswordRegex = new RegExp("(?=.*[A-Z])(?=.*[@$!%*?&])(?=.*[0-9])");
 
-	
-	//These elements needed to be added to website page
-	/*
-	document.getElementById("password-length").innerHTML = "";
-	document.getElementById("password-lowercase").innerHTML = "";
-	document.getElementById("password-uppercase").innerHTML = "";
-	document.getElementById("password-number").innerHTML = "";
-	*/
-
-
 	if(password.length>=8){
-		console.log("length = true");
+		document.getElementById("correct-1").style = "display:flex";
+		document.getElementById("incorrect-1").style = "display:none";
 	}
 	else{
 		properPassword = false;
-		console.log("length = false");
-		//document.getElementById("password-length").innerHTML = "Password must be at least 8 characters";
+		document.getElementById("correct-1").style = "display:none";
+		document.getElementById("incorrect-1").style = "display:flex";
 	}
 
 	if(upperPasswordRegex.test(password)){
-		console.log("upper = true");
+		document.getElementById("correct-2").style = "display:flex";
+		document.getElementById("incorrect-2").style = "display:none";
 		}
 	else{
 		properPassword = false;
-		console.log("upper = false");
-		//document.getElementById("password-uppercase").innerHTML = "Password must contain at least 1 uppercase character";
+		document.getElementById("correct-2").style = "display:none";
+		document.getElementById("incorrect-2").style = "display:flex";
 	}
 
 	if(specialPasswordRegex.test(password)){
-		console.log("special = true");
+		document.getElementById("correct-4").style = "display:flex";
+		document.getElementById("incorrect-4").style = "display:none";
 	}
 	else{
 		properPassword = false;
-		console.log("special = false");
-		//document.getElementById("password-special").innerHTML = "Password must contain at least 1 specail character";
+		document.getElementById("correct-4").style = "display:none";
+		document.getElementById("incorrect-4").style = "display:flex";
 	}
 
 	if(numberPasswordRegex.test(password)){
-		console.log("number = true");
+		document.getElementById("correct-3").style = "display:flex";
+		document.getElementById("incorrect-3").style = "display:none";
 	}
 	else{
 		properPassword = false;
-		console.log("number = false");
-		//document.getElementById("password-number").innerHTML = "Password must containt at least 1 number";
+		document.getElementById("correct-3").style = "display:none";
+		document.getElementById("incorrect-3").style = "display:flex";
 	}
 
 	if(wholePasswordRegex.test(password)){
@@ -655,7 +709,6 @@ function passwordRegexChecker(){
 	}
 	else{
 		console.log("password = false");
-		console.log(password);
 	}
 }
 
@@ -794,10 +847,14 @@ function emptyContactFields(num, field){
 		console.log("New contact fields are empty");
 		if(firstName.value === "" || lastName.value === "" || email.value === "" || phone.value === ""){
 			missingAddContactFields();
+			document.getElementById("correct-8").style = "display:none";
+			document.getElementById("incorrect-8").style = "display:block";
 			return missingField;
 		}
 		else{
 			missingAddContactFields();
+			document.getElementById("incorrect-8").style = "display:none";
+			document.getElementById("correct-8").style = "display:block";
 			return noMissingFields;
 		}
 	}

@@ -11,15 +11,20 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
-        <!-- Header - set the background image for the header in the line below-->
-        <header id="splash-image" class="py-6 bg-image-full" style="background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5236376f-305d-42da-8e2d-48455360a090/ddzsehq-da9525d2-37e0-448f-aa49-a7274ba68387.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUyMzYzNzZmLTMwNWQtNDJkYS04ZTJkLTQ4NDU1MzYwYTA5MFwvZGR6c2VocS1kYTk1MjVkMi0zN2UwLTQ0OGYtYWE0OS1hNzI3NGJhNjgzODcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.nDVDNj0rk3vuQHD7DawjvowvIEn_70NADgE8MevlAOM')">
+        <!-- Header --->
+        <header id="nav-header" class="text-black nav py-5 bg-accent">
+            <a class="text-black" href="http://oceanic-connections.xyz/about.php"><div id="about-link" class="header-link button" type="button">About</div></a>
+        </header>
+
+        
+        <div id="splash-image" class="py-6 bg-image-full" style="background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5236376f-305d-42da-8e2d-48455360a090/ddzsehq-da9525d2-37e0-448f-aa49-a7274ba68387.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUyMzYzNzZmLTMwNWQtNDJkYS04ZTJkLTQ4NDU1MzYwYTA5MFwvZGR6c2VocS1kYTk1MjVkMi0zN2UwLTQ0OGYtYWE0OS1hNzI3NGJhNjgzODcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.nDVDNj0rk3vuQHD7DawjvowvIEn_70NADgE8MevlAOM')">
             <div class="container">
                 <div class="text-center my-6">
                     <h1 class="text-black fs-3 fw-bolder">Oceanic Connections</h1>
                     <p class="text-black mb-0">Your Premier Contact Manager</p>
                 </div>
             </div>
-        </header>
+        </div>
 
         <!--White Page Section-->
         <section class="py-5">
@@ -67,7 +72,38 @@
                     <!--Error Message-->
                     <a id="doRegister" href="javascript:doRegister()"><div class="button" type="button">Sign up!</div></a>
                     <span id="register-result" class="error row cell"></span>
+
+                    <!--Registration Validation field-->
+                    <div id="password-validation" style="display:none;">
+                        <div id="length-validation" class="cell"> 
+                            <img id="incorrect-1" src="images/incorrect.png" class="icon"></img>
+                            <img id="correct-1" src="images/correct.png" class="icon"style="display:none"></img>
+                            <div id="length">Password must contain at least 8 characters.</div>
+                        </div>
+                        <div id="case-validation" class="cell"> 
+                            <img id="incorrect-2" src="images/incorrect.png" class="icon" ></img>
+                            <img id="correct-2"src="images/correct.png" class="icon" style="display:none"></img>
+                            <div id="case">Password must contain at least 1 uppercase letter.</div>
+                        </div>
+                        <div id="num-validation" class="cell"> 
+                            <img id="incorrect-3" src="images/incorrect.png" class="icon"></img>
+                            <img id="correct-3" src="images/correct.png" class="icon" style="display:none"></img>
+                            <div id="num">Password must contain at least 1 number.</div>
+                        </div>
+                        <div id="special-character-validation" class="cell"> 
+                            <img id="incorrect-4" src="images/incorrect.png" class="icon" ></img>
+                            <img id="correct-4"src="images/correct.png" class="icon" style="display:none"></img>
+                            <div id="special">Password must contain at least 1 special character.</div>
+                        </div>
+                        <div id="confirm-validation" class="cell"> 
+                            <img id="incorrect-5" src="images/incorrect.png" class="icon"></img>
+                            <img id="correct-5" src="images/correct.png" class="icon" style="display:none"></img>
+                            <div id="length">Passwords must match.</div>
+                        </div>
+                    </div>
                 </div>
+
+                    
             </div>
         </section>
 
