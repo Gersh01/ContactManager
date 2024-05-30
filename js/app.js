@@ -464,7 +464,7 @@ function doRegister(){
 							document.getElementById("register-username").value = "";
 							document.getElementById("register-password").value= "";
 							document.getElementById("register-password-confirm").value = "";
-							
+							resetRegisterUser();
 							document.getElementById("register-result").innerHTML = "Registration is complete";
 						}
 						
