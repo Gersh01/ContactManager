@@ -918,36 +918,37 @@ function searchContact(first, last, contactId, favorite, pagination){
 			xhr.open("POST", url, true);
 		
 			xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-			
-			try{
-				xhr.onreadystatechange = function() {
-					if(this.readyState == 4 && this.status == 200){
-						//document.getElementById("contact-result").innerHTML ="Contacts have been recieved";
-						if(xhr.responseText!="No Records Found"){
-							console.log(xhr.responseText);
-							let jsonObject = JSON.parse( xhr.responseText );
-							globalJsonObject = jsonObject;
-							loadContacts(jsonObject);
-							console.log("GlobalPageCounter "+firstContactPageFlag);
-						}
-						else{
-							if(pagination === 1){
-								firstContactPageFlag -=1;
-								return;
+			if(confirm("Are you sure you want to delete this contact?") == true) {
+				try{
+					xhr.onreadystatechange = function() {
+						if(this.readyState == 4 && this.status == 200){
+							//document.getElementById("contact-result").innerHTML ="Contacts have been recieved";
+							if(xhr.responseText!="No Records Found"){
+								console.log(xhr.responseText);
+								let jsonObject = JSON.parse( xhr.responseText );
+								globalJsonObject = jsonObject;
+								loadContacts(jsonObject);
+								console.log("GlobalPageCounter "+firstContactPageFlag);
 							}
 							else{
-								globalJsonObject = null;
-								noContactsFound();
+								if(pagination === 1){
+									firstContactPageFlag -=1;
+									return;
+								}
+								else{
+									globalJsonObject = null;
+									noContactsFound();
+								}
 							}
 						}
-					}
-				};
-				xhr.send(jsonPayload);
-				
-			}
-			catch(err){
-				document.getElementById("contact-result").innerHTML = err.message;
-				console.log(err.message);
+					};
+					xhr.send(jsonPayload);
+					
+				}
+				catch(err){
+					document.getElementById("contact-result").innerHTML = err.message;
+					console.log(err.message);
+				}
 			}
 		}
 	}
