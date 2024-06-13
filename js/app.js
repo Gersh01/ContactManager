@@ -954,7 +954,7 @@ function searchContact(first, last, contactId, favorite, pagination){
 }
 
 function deleteContact(num){
-	if(confirm("Are you sure you want to delete this contact?")) {
+	if(confirm("Are you sure you want to delete this contact?") == true) {
 		if(contactInEdit === 0){
 			console.log(num);
 	
