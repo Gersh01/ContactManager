@@ -1,4 +1,5 @@
-const urlBase = 'http://159.203.115.181/LAMPAPI';
+//const urlBase = 'http://159.203.115.181/LAMPAPI';
+const urlBase = 'http://oceanic-connections.xyz/LAMPAPI';
 
 const extension = 'php';
 
@@ -1008,6 +1009,59 @@ function deleteContact(num){
 	}
 }
 
+function deleteContact(num){
+	if(confirm("Are you sure you want to delete this contact?")) {
+		if(contactInEdit === 0){
+			console.log(num);
+	
+			let url = urlBase + "/DeleteContact." + extension;
+	
+			//globalJsonObject.splice(num-1,1);
+			console.log(globalJsonObject);
+	
+			let deletedContactID = globalJsonObject.contacts[num-1].ID;
+			let convertToString = "" + deletedContactID;
+	
+			let tmp = {contactID:deletedContactID};
+			
+			let jsonPayload = JSON.stringify(tmp);
+	
+			console.log(convertToString);
+	
+			let xhr = new XMLHttpRequest();
+	
+			xhr.open("POST", url, true);
+			xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+			console.log(jsonPayload);
+			try{
+				xhr.onreadystatechange = function() {
+					if(this.readyState == 4 && this.status == 200){
+						let jsonObject = JSON.parse(xhr.responseText);
+						console.log(jsonObject.deleted);
+						console.log(jsonObject.error);
+						if(jsonObject.deleted === "Yes"){
+							document.getElementById("contact-result").innerHTML = "Contact has been deleted";
+							if(document.getElementById("search-bar").value == ""){
+								firstPage(null,null);
+							}
+							else{
+								searchContact(null,null,null,null,null);
+							}
+						}
+						else{
+							document.getElementById("contact-result").innerHTML = "Contact was not deleted";
+						}
+					}
+				};
+				xhr.send(jsonPayload);
+			}
+			catch(err){
+				document.getElementById("contact-result").innerHTML = err.message;
+				console.log(err.message);
+			}
+		}
+	}
+}
 function updateContact(num){	
 	let edit = 1;
 

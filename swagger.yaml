@@ -404,7 +404,7 @@ definitions:
         type: object
         example: {"ID", "FirstName", "LastName", "Phone", "Email", "UserID", "Favorite"}
         
-host: 159.203.115.181
+host: 143.198.9.78
 basePath: /LAMPAPI
 schemes:
 - http
