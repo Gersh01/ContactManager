@@ -13,7 +13,7 @@
     <body>
         <!-- Header --->
         <header id="nav-header" class="text-black nav py-5 bg-accent">
-            <a class="text-black" href="http://oceanic-connections.xyz/about.php"><div id="about-link" class="header-link button" type="button">About</div></a>
+            <a class="text-black" href="http://159.203.115.181/about.php"><div id="about-link" class="header-link button" type="button">About</div></a>
         </header>
 
         

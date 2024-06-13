@@ -17,8 +17,8 @@
     </head>
     <body>
         <header id="nav-header" class="text-black nav py-5 bg-accent">
-            <a class="text-black" href="http://oceanic-connections.xyz/contacts.php" aira-label="button"><div id="home-button" class= "header-link button" type="button">Home</div></a>
-            <a class="text-black" href="http://oceanic-connections.xyz/about.php" aira-label="button"><div id="about-link" class="header-link button" type="button">About</div></a>
+            <a class="text-black" href="http://159.203.115.181/contacts.php" aira-label="button"><div id="home-button" class= "header-link button" type="button">Home</div></a>
+            <a class="text-black" href="http://159.203.115.181/about.php" aira-label="button"><div id="about-link" class="header-link button" type="button">About</div></a>
             <a class="text-black logout" href="javascript:doLogout()" aira-label="button"> <div id="about-us-button" class="header-link button" type="button">Logout</div></a>
         </header>
         <!-- Image Background -->

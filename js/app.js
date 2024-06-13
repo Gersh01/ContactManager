@@ -1,5 +1,4 @@
-//const urlBase = 'http://159.203.115.181/LAMPAPI';
-const urlBase = 'http://oceanic-connections.xyz/LAMPAPI';
+const urlBase = 'http://159.203.115.181/LAMPAPI';
 
 const extension = 'php';
 
@@ -237,6 +236,7 @@ function doLogin(){
 						window.location.href = "contacts.php";
 					}
 				};
+				console.log(jsonPayload);
 				xhr.send(jsonPayload);
 			}
 			catch(err)
@@ -918,32 +918,87 @@ function searchContact(first, last, contactId, favorite, pagination){
 			xhr.open("POST", url, true);
 		
 			xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+			if(confirm("Are you sure you want to delete this contact?") == true) {
+				try{
+					xhr.onreadystatechange = function() {
+						if(this.readyState == 4 && this.status == 200){
+							//document.getElementById("contact-result").innerHTML ="Contacts have been recieved";
+							if(xhr.responseText!="No Records Found"){
+								console.log(xhr.responseText);
+								let jsonObject = JSON.parse( xhr.responseText );
+								globalJsonObject = jsonObject;
+								loadContacts(jsonObject);
+								console.log("GlobalPageCounter "+firstContactPageFlag);
+							}
+							else{
+								if(pagination === 1){
+									firstContactPageFlag -=1;
+									return;
+								}
+								else{
+									globalJsonObject = null;
+									noContactsFound();
+								}
+							}
+						}
+					};
+					xhr.send(jsonPayload);
+					
+				}
+				catch(err){
+					document.getElementById("contact-result").innerHTML = err.message;
+					console.log(err.message);
+				}
+			}
+		}
+	}
+}
+
+function deleteContact(num){
+	if(confirm("Are you sure you want to delete this contact?") == true) {
+		if(contactInEdit === 0){
+			console.log(num);
+	
+			let url = urlBase + "/DeleteContact." + extension;
+	
+			//globalJsonObject.splice(num-1,1);
+			console.log(globalJsonObject);
+	
+			let deletedContactID = globalJsonObject.contacts[num-1].ID;
+			let convertToString = "" + deletedContactID;
+	
+			let tmp = {contactID:deletedContactID};
 			
+			let jsonPayload = JSON.stringify(tmp);
+	
+			console.log(convertToString);
+	
+			let xhr = new XMLHttpRequest();
+	
+			xhr.open("POST", url, true);
+			xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+			console.log(jsonPayload);
 			try{
 				xhr.onreadystatechange = function() {
 					if(this.readyState == 4 && this.status == 200){
-						//document.getElementById("contact-result").innerHTML ="Contacts have been recieved";
-						if(xhr.responseText!="No Records Found"){
-							console.log(xhr.responseText);
-							let jsonObject = JSON.parse( xhr.responseText );
-							globalJsonObject = jsonObject;
-							loadContacts(jsonObject);
-							console.log("GlobalPageCounter "+firstContactPageFlag);
-						}
-						else{
-							if(pagination === 1){
-								firstContactPageFlag -=1;
-								return;
+						let jsonObject = JSON.parse(xhr.responseText);
+						console.log(jsonObject.deleted);
+						console.log(jsonObject.error);
+						if(jsonObject.deleted === "Yes"){
+							document.getElementById("contact-result").innerHTML = "Contact has been deleted";
+							if(document.getElementById("search-bar").value == ""){
+								firstPage(null,null);
 							}
 							else{
-								globalJsonObject = null;
-								noContactsFound();
+								searchContact(null,null,null,null,null);
 							}
+						}
+						else{
+							document.getElementById("contact-result").innerHTML = "Contact was not deleted";
 						}
 					}
 				};
 				xhr.send(jsonPayload);
-				
 			}
 			catch(err){
 				document.getElementById("contact-result").innerHTML = err.message;
@@ -1006,7 +1061,6 @@ function deleteContact(num){
 		}
 	}
 }
-
 function updateContact(num){	
 	let edit = 1;
 
