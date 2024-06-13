@@ -978,33 +978,31 @@ function deleteContact(num){
 			xhr.open("POST", url, true);
 			xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 			console.log(jsonPayload);
-			if(confirm("Are you sure you want to delete this contact?") == true) {
-				try{
-					xhr.onreadystatechange = function() {
-						if(this.readyState == 4 && this.status == 200){
-							let jsonObject = JSON.parse(xhr.responseText);
-							console.log(jsonObject.deleted);
-							console.log(jsonObject.error);
-							if(jsonObject.deleted === "Yes"){
-								document.getElementById("contact-result").innerHTML = "Contact has been deleted";
-								if(document.getElementById("search-bar").value == ""){
-									firstPage(null,null);
-								}
-								else{
-									searchContact(null,null,null,null,null);
-								}
+			try{
+				xhr.onreadystatechange = function() {
+					if(this.readyState == 4 && this.status == 200){
+						let jsonObject = JSON.parse(xhr.responseText);
+						console.log(jsonObject.deleted);
+						console.log(jsonObject.error);
+						if(jsonObject.deleted === "Yes"){
+							document.getElementById("contact-result").innerHTML = "Contact has been deleted";
+							if(document.getElementById("search-bar").value == ""){
+								firstPage(null,null);
 							}
 							else{
-								document.getElementById("contact-result").innerHTML = "Contact was not deleted";
+								searchContact(null,null,null,null,null);
 							}
 						}
-					};
-					xhr.send(jsonPayload);
-				}
-				catch(err){
-					document.getElementById("contact-result").innerHTML = err.message;
-					console.log(err.message);
-				}
+						else{
+							document.getElementById("contact-result").innerHTML = "Contact was not deleted";
+						}
+					}
+				};
+				xhr.send(jsonPayload);
+			}
+			catch(err){
+				document.getElementById("contact-result").innerHTML = err.message;
+				console.log(err.message);
 			}
 		}
 	}
